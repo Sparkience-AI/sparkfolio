@@ -169,8 +169,12 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
   display: flex;
   flex-direction: column;
 }
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
 .card-hover:hover {
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(12, 35, 64, 0.10), 0 4px 8px -2px rgba(12, 35, 64, 0.06);
   border-color: var(--border-strong);
 }
 
@@ -323,4 +327,129 @@ tr:last-child td { border-bottom: none; }
 }
 .chart-box.animated {
   --donut-pct: var(--donut-target);
+}
+
+/* === SCROLL-DRIVEN TEXT HIGHLIGHT === */
+.scroll-highlight {
+  background-image: linear-gradient(90deg, rgba(212, 163, 115, 0.22), rgba(212, 163, 115, 0.22));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position: left center;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+@supports (animation-timeline: view()) {
+  .scroll-highlight {
+    animation: highlight-sweep linear forwards;
+    animation-timeline: view();
+    animation-range: entry 70% cover 40%;
+  }
+}
+@keyframes highlight-sweep {
+  to { background-size: 100% 100%; }
+}
+/* Fallback: just show the highlight */
+@supports not (animation-timeline: view()) {
+  .scroll-highlight { background-size: 100% 100%; }
+}
+
+/* === CSS TOOLTIPS FOR FINANCIAL JARGON === */
+.jargon {
+  position: relative;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 3px;
+  cursor: help;
+  font-weight: 600;
+}
+.jargon::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: var(--primary-navy);
+  color: var(--text-inverse);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.jargon::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--primary-navy);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+.jargon:hover::after, .jargon:focus::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+.jargon:hover::before, .jargon:focus::before {
+  opacity: 1;
+}
+
+/* === TIMELINE DOT PULSE === */
+@keyframes dot-ping {
+  0% { box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.5); }
+  80% { box-shadow: 0 0 0 12px rgba(42, 157, 143, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(42, 157, 143, 0); }
+}
+.timeline-dot.pulse {
+  animation: dot-ping 0.7s ease-out;
+}
+
+/* === STAGGER ENTRANCE SUPPORT === */
+.stagger-item {
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+/* === SMOOTH ACCORDION === */
+details .details-content {
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+details[open] .details-content {
+  opacity: 1;
+  /* max-height set by JS for precision */
+}
+
+/* === PROGRESSIVE NAVBAR === */
+.navbar {
+  --nav-blur: 8px;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  background: var(--nav-bg);
+  backdrop-filter: blur(var(--nav-blur));
+  -webkit-backdrop-filter: blur(var(--nav-blur));
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

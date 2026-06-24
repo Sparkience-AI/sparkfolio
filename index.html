@@ -126,10 +126,10 @@
 
         <div class="card mt-8 p-4 bg-surface text-center font-mono text-sm border-0">
           <ul class="flex flex-col md-flex-row justify-center gap-4 plain-list mb-0" style="flex-direction:row;flex-wrap:wrap;">
-            <li class="flex items-center gap-1"><span style="color:var(--status-green)" aria-hidden="true">●</span> <strong>Alpha</strong> = excess return versus benchmark</li>
-            <li class="flex items-center gap-1"><span style="color:var(--primary-blue)" aria-hidden="true">●</span> <strong>Beta</strong> = sensitivity to benchmark movements</li>
-            <li class="flex items-center gap-1"><span style="color:var(--primary-navy)" aria-hidden="true">●</span> <strong>Core</strong> = broad market exposure</li>
-            <li class="flex items-center gap-1"><span style="color:var(--status-gold)" aria-hidden="true">●</span> <strong>Satellite</strong> = intentional tilt away from core exposure</li>
+            <li class="flex items-center gap-1"><span style="color:var(--status-green)" aria-hidden="true">●</span> <span class="jargon" data-tip="Excess return generated above the benchmark" tabindex="0"><strong>Alpha</strong></span> = excess return versus benchmark</li>
+            <li class="flex items-center gap-1"><span style="color:var(--primary-blue)" aria-hidden="true">●</span> <span class="jargon" data-tip="Sensitivity of fund returns to market movements" tabindex="0"><strong>Beta</strong></span> = sensitivity to benchmark movements</li>
+            <li class="flex items-center gap-1"><span style="color:var(--primary-navy)" aria-hidden="true">●</span> <span class="jargon" data-tip="Broad, diversified, low-cost foundation" tabindex="0"><strong>Core</strong></span> = broad market exposure</li>
+            <li class="flex items-center gap-1"><span style="color:var(--status-gold)" aria-hidden="true">●</span> <span class="jargon" data-tip="Focused investments to enhance returns" tabindex="0"><strong>Satellite</strong></span> = intentional tilt away from core exposure</li>
           </ul>
         </div>
       </div>
@@ -671,87 +671,129 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
           <strong class="uppercase text-navy font-bold tracking-widest text-sm">KEY TAKEAWAY</strong>
         </div>
-        <p class="text-lg font-heading text-navy mb-4">Build a strong core. Use satellites sparingly. Rebalance tax-aware. Stay diversified.</p>
+        <p class="text-lg font-heading text-navy mb-4"><mark class="scroll-highlight">Build a strong core.</mark> <mark class="scroll-highlight">Use satellites sparingly.</mark> <mark class="scroll-highlight">Rebalance tax-aware.</mark> <mark class="scroll-highlight">Stay diversified.</mark></p>
         <p class="text-xs text-muted font-bold tracking-widest uppercase font-mono mt-4 pt-4 border-t border-subtle w-full max-w-md mx-auto">Sparkfolio Framework v2.0</p>
       </div>
     </footer>
 
     <script type="module" src="/src/main.js"></script>
     <script>
-      // === 1. SCROLL PROGRESS BAR ===
+      // === 1. SCROLL PROGRESS BAR + PROGRESSIVE NAVBAR BLUR ===
       const progressBar = document.getElementById('scrollProgress');
+      const navbar = document.querySelector('.navbar');
       window.addEventListener('scroll', () => {
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const progress = (scrollTop / scrollHeight) * 100;
         progressBar.style.width = progress + '%';
+
+        // Progressive navbar blur
+        const blurVal = Math.min(8 + scrollTop * 0.03, 18);
+        const bgAlpha = Math.min(0.85 + scrollTop * 0.0005, 0.97);
+        navbar.style.setProperty('--nav-blur', blurVal + 'px');
+        navbar.style.setProperty('--nav-bg', `rgba(255,255,255,${bgAlpha})`);
       }, { passive: true });
 
       // === 2. MOBILE MENU LOGIC + AUTO-CLOSE ===
       const btn = document.querySelector('.mobile-menu-btn');
-      const links = document.querySelector('.nav-links');
-      btn.addEventListener('click', () => {
-        links.classList.toggle('active');
-      });
-      // Auto-close mobile nav when a link is clicked
+      const navLinksContainer = document.querySelector('.nav-links');
+      btn.addEventListener('click', () => navLinksContainer.classList.toggle('active'));
       document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          links.classList.remove('active');
-        });
+        link.addEventListener('click', () => navLinksContainer.classList.remove('active'));
       });
 
       // === 3. ACTIVE NAV HIGHLIGHTING (SCROLL SPY) ===
       const sections = document.querySelectorAll('section[id], header[id]');
       const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-
       const spyObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
             navLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === '#' + id) {
-                link.classList.add('active');
-              }
+              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
             });
           }
         });
-      }, {
-        rootMargin: '-20% 0px -60% 0px',
-        threshold: 0
-      });
+      }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+      sections.forEach(s => spyObserver.observe(s));
 
-      sections.forEach(section => spyObserver.observe(section));
+      // === 4. EXCLUSIVE ACCORDIONS (scoped) + SMOOTH ANIMATION ===
+      document.querySelectorAll('details').forEach(detail => {
+        const content = detail.querySelector('.details-content');
+        if (!content) return;
 
-      // === 4. EXCLUSIVE ACCORDIONS (scoped per parent column) ===
-      const details = document.querySelectorAll("details");
-      details.forEach((targetDetail) => {
-        targetDetail.addEventListener("click", () => {
-          // Only close siblings within the same parent container
-          const parent = targetDetail.parentElement;
-          parent.querySelectorAll("details").forEach((detail) => {
-            if (detail !== targetDetail) {
-              detail.removeAttribute("open");
-            }
-          });
+        detail.addEventListener('toggle', () => {
+          if (detail.open) {
+            // Animate open
+            content.style.maxHeight = content.scrollHeight + 'px';
+            // Close siblings within same parent
+            const parent = detail.parentElement;
+            parent.querySelectorAll('details').forEach(sibling => {
+              if (sibling !== detail && sibling.open) {
+                sibling.removeAttribute('open');
+              }
+            });
+          } else {
+            content.style.maxHeight = '0';
+          }
         });
+
+        // Initialize: if already open on load, set max-height
+        if (detail.open) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
       });
 
-      // === 5. DONUT CHART SCROLL ANIMATION ===
+      // === 5. DONUT CHART ANIMATION + NUMBER COUNTER ===
+      function animateCounter(el, target, duration) {
+        const start = performance.now();
+        const update = (now) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+          el.textContent = Math.round(eased * target) + '%';
+          if (progress < 1) requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+      }
+
       const donutObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animated');
+            // Find the number inside and animate it
+            const numEl = entry.target.querySelector('.font-mono.text-2xl');
+            if (numEl) {
+              const target = parseInt(numEl.textContent);
+              animateCounter(numEl, target, 1000);
+            }
             donutObserver.unobserve(entry.target);
           }
         });
       }, { threshold: 0.5 });
+      document.querySelectorAll('.chart-box').forEach(c => donutObserver.observe(c));
 
-      document.querySelectorAll('.chart-box').forEach(chart => {
-        donutObserver.observe(chart);
+      // === 6. STAGGERED CARD ENTRANCE ===
+      document.querySelectorAll('.grid').forEach(grid => {
+        const cards = grid.querySelectorAll(':scope > .card');
+        cards.forEach((card, i) => {
+          card.style.setProperty('--i', i);
+          card.classList.add('stagger-item');
+        });
       });
 
-      // === 6. SVG ICON INJECTION ===
+      // === 7. TIMELINE DOT PULSE ON SCROLL ===
+      const dotObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('pulse');
+            dotObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.8 });
+      document.querySelectorAll('.timeline-dot').forEach(dot => dotObserver.observe(dot));
+
+      // === 8. SVG ICON INJECTION ===
       document.querySelectorAll('.icon-wrapper:not(button .icon-wrapper)').forEach(el => {
         const text = el.innerText.trim();
         let svg = '';
@@ -763,7 +805,6 @@
         else if(text === 'Building') svg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v12h16V10l-8-6z"></path></svg>`;
         else if(text === 'Coins') svg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="M16.71 13.88l-1.42 1.42"></path></svg>`;
         else if(text === 'Wallet') svg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"></path><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"></path><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"></path></svg>`;
-        
         if(svg) el.innerHTML = svg;
       });
     </script>
