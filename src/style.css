@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+/* Fonts loaded via <link> in HTML head for performance */
 
 :root {
   /* Soft Pantone Financial Palette (Easy on the eyes) */
@@ -22,7 +22,7 @@
   
   /* Typography */
   --text-main: #2C3E50; /* Pantone 432 C - Slate Charcoal (softer than black) */
-  --text-muted: #6C7A89;
+  --text-muted: #5A6873; /* WCAG 4.5:1 on --bg-main */
   --text-dim: #95A5A6;
   --text-inverse: #FFFFFF;
   
@@ -54,6 +54,38 @@
   --shadow-hover: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06);
   
   --transition: all 0.2s ease-in-out;
+}
+
+/* Skip to Content (Accessibility) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 8px 16px;
+  background: var(--primary-navy);
+  color: var(--text-inverse);
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary-navy), var(--primary-blue));
+  z-index: 1001;
+  transition: width 0.05s linear;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -260,8 +292,10 @@ tr:last-child td { border-bottom: none; }
   
   .mobile-menu-btn { display: none; }
   .nav-links { display: flex; gap: var(--space-6); }
-  .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; font-family: var(--font-main); transition: var(--transition); }
+  .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; font-family: var(--font-main); transition: var(--transition); position: relative; }
   .nav-links a:hover { color: var(--primary-navy); }
+  .nav-links a.active { color: var(--primary-navy); font-weight: 600; }
+  .nav-links a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: var(--primary-navy); border-radius: 1px; }
   
   .chart-box { width: 160px; height: 160px; }
   .chart-inner { width: 120px; height: 120px; }
@@ -274,4 +308,19 @@ tr:last-child td { border-bottom: none; }
   .lg-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
   .lg-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
   .lg-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* Donut Chart Scroll Animation */
+@property --donut-pct {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+.chart-box {
+  --donut-pct: 0%;
+  background: conic-gradient(var(--donut-color, var(--primary-blue)) var(--donut-pct), var(--bg-surface) 0) !important;
+  transition: --donut-pct 1s ease-out;
+}
+.chart-box.animated {
+  --donut-pct: var(--donut-target);
 }

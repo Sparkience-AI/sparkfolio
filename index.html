@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Sparkfolio Investment Framework | Strategic Asset Allocation</title>
     
+    <!-- Font Preconnect (Performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="icon" href="/sparkfolio/favicon.svg" type="image/svg+xml">
+    
     <!-- Standard SEO -->
     <meta name="description" content="Sparkfolio is an institutional-grade portfolio construction framework. Learn how to build a strong core, use satellites sparingly, and balance asset allocation for long-term growth and stability." />
     <meta name="keywords" content="portfolio construction, asset allocation, investment framework, growth assets, defensive assets, smart beta, alpha, beta, wealth management" />
@@ -69,6 +75,9 @@
   </head>
   <body>
 
+    <a href="#overview" class="skip-link">Skip to main content</a>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
     <nav class="navbar">
       <div class="container nav-content">
         <div class="logo">SPARKFOLIO.</div>
@@ -117,10 +126,10 @@
 
         <div class="card mt-8 p-4 bg-surface text-center font-mono text-sm border-0">
           <ul class="flex flex-col md-flex-row justify-center gap-4 plain-list mb-0" style="flex-direction:row;flex-wrap:wrap;">
-            <li class="flex items-center gap-1"><span style="color:var(--status-green)">●</span> <strong>Alpha</strong> = excess return versus benchmark</li>
-            <li class="flex items-center gap-1"><span style="color:var(--primary-blue)">●</span> <strong>Beta</strong> = sensitivity to benchmark movements</li>
-            <li class="flex items-center gap-1"><span style="color:var(--primary-navy)">●</span> <strong>Core</strong> = broad market exposure</li>
-            <li class="flex items-center gap-1"><span style="color:var(--status-gold)">●</span> <strong>Satellite</strong> = intentional tilt away from core exposure</li>
+            <li class="flex items-center gap-1"><span style="color:var(--status-green)" aria-hidden="true">●</span> <strong>Alpha</strong> = excess return versus benchmark</li>
+            <li class="flex items-center gap-1"><span style="color:var(--primary-blue)" aria-hidden="true">●</span> <strong>Beta</strong> = sensitivity to benchmark movements</li>
+            <li class="flex items-center gap-1"><span style="color:var(--primary-navy)" aria-hidden="true">●</span> <strong>Core</strong> = broad market exposure</li>
+            <li class="flex items-center gap-1"><span style="color:var(--status-gold)" aria-hidden="true">●</span> <strong>Satellite</strong> = intentional tilt away from core exposure</li>
           </ul>
         </div>
       </div>
@@ -255,7 +264,7 @@
             <div class="card text-center">
               <h3 class="text-green text-lg mb-1 uppercase tracking-widest">CONSERVATIVE</h3>
               <p class="text-xs text-muted mb-6">Lower risk | Capital preservation</p>
-              <div class="chart-box chart-con" style="background: conic-gradient(var(--status-green) 40%, var(--status-gold) 0);"><div class="chart-inner"><span class="font-mono text-2xl font-bold">40%</span><small class="text-xs text-muted">GROWTH<br>ASSETS</small></div></div>
+              <div class="chart-box" style="--donut-target: 40%; --donut-color: var(--status-green);"><div class="chart-inner"><span class="font-mono text-2xl font-bold">40%</span><small class="text-xs text-muted">GROWTH<br>ASSETS</small></div></div>
               <div class="inner-box text-left mt-auto">
                 <div class="flex justify-between mb-1 text-sm"><strong class="text-green">Growth Assets</strong><span class="font-mono font-bold">40%</span></div>
                 <ul class="plain-list text-xs text-muted ml-4 mb-2"><li>• Core (70-80%)</li><li>• Satellite (20-30%)</li></ul>
@@ -269,7 +278,7 @@
             <div class="card text-center">
               <h3 class="text-blue text-lg mb-1 uppercase tracking-widest">BALANCED</h3>
               <p class="text-xs text-muted mb-6">Moderate risk | Balance of growth & stability</p>
-              <div class="chart-box chart-bal" style="background: conic-gradient(var(--status-green) 60%, var(--status-gold) 0);"><div class="chart-inner"><span class="font-mono text-2xl font-bold">60%</span><small class="text-xs text-muted">GROWTH<br>ASSETS</small></div></div>
+              <div class="chart-box" style="--donut-target: 60%; --donut-color: var(--primary-navy);"><div class="chart-inner"><span class="font-mono text-2xl font-bold">60%</span><small class="text-xs text-muted">GROWTH<br>ASSETS</small></div></div>
               <div class="inner-box text-left mt-auto">
                 <div class="flex justify-between mb-1 text-sm"><strong class="text-green">Growth Assets</strong><span class="font-mono font-bold">60%</span></div>
                 <ul class="plain-list text-xs text-muted ml-4 mb-2"><li>• Core (70-80%)</li><li>• Satellite (20-30%)</li></ul>
@@ -283,7 +292,7 @@
             <div class="card text-center">
               <h3 class="text-purple text-lg mb-1 uppercase tracking-widest">AGGRESSIVE</h3>
               <p class="text-xs text-muted mb-6">Higher risk | Long-term growth</p>
-              <div class="chart-box chart-agg" style="background: conic-gradient(var(--status-green) 80%, var(--status-gold) 0);"><div class="chart-inner"><span class="font-mono text-2xl font-bold">80%</span><small class="text-xs text-muted">GROWTH<br>ASSETS</small></div></div>
+              <div class="chart-box" style="--donut-target: 80%; --donut-color: var(--status-green);"><div class="chart-inner"><span class="font-mono text-2xl font-bold">80%</span><small class="text-xs text-muted">GROWTH<br>ASSETS</small></div></div>
               <div class="inner-box text-left mt-auto">
                 <div class="flex justify-between mb-1 text-sm"><strong class="text-green">Growth Assets</strong><span class="font-mono font-bold">80%</span></div>
                 <ul class="plain-list text-xs text-muted ml-4 mb-2"><li>• Core (70-80%)</li><li>• Satellite (20-30%)</li></ul>
@@ -669,18 +678,58 @@
 
     <script type="module" src="/src/main.js"></script>
     <script>
-      // Mobile Menu Logic
+      // === 1. SCROLL PROGRESS BAR ===
+      const progressBar = document.getElementById('scrollProgress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = progress + '%';
+      }, { passive: true });
+
+      // === 2. MOBILE MENU LOGIC + AUTO-CLOSE ===
       const btn = document.querySelector('.mobile-menu-btn');
       const links = document.querySelector('.nav-links');
       btn.addEventListener('click', () => {
         links.classList.toggle('active');
       });
-      
-      // Exclusive Accordions
+      // Auto-close mobile nav when a link is clicked
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          links.classList.remove('active');
+        });
+      });
+
+      // === 3. ACTIVE NAV HIGHLIGHTING (SCROLL SPY) ===
+      const sections = document.querySelectorAll('section[id], header[id]');
+      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+      const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(section => spyObserver.observe(section));
+
+      // === 4. EXCLUSIVE ACCORDIONS (scoped per parent column) ===
       const details = document.querySelectorAll("details");
       details.forEach((targetDetail) => {
         targetDetail.addEventListener("click", () => {
-          details.forEach((detail) => {
+          // Only close siblings within the same parent container
+          const parent = targetDetail.parentElement;
+          parent.querySelectorAll("details").forEach((detail) => {
             if (detail !== targetDetail) {
               detail.removeAttribute("open");
             }
@@ -688,7 +737,21 @@
         });
       });
 
-      // SVG Icon Injection
+      // === 5. DONUT CHART SCROLL ANIMATION ===
+      const donutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            donutObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('.chart-box').forEach(chart => {
+        donutObserver.observe(chart);
+      });
+
+      // === 6. SVG ICON INJECTION ===
       document.querySelectorAll('.icon-wrapper:not(button .icon-wrapper)').forEach(el => {
         const text = el.innerText.trim();
         let svg = '';
