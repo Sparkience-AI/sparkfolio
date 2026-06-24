@@ -329,28 +329,18 @@ tr:last-child td { border-bottom: none; }
   --donut-pct: var(--donut-target);
 }
 
-/* === SCROLL-DRIVEN TEXT HIGHLIGHT === */
-.scroll-highlight {
-  background-image: linear-gradient(90deg, rgba(212, 163, 115, 0.22), rgba(212, 163, 115, 0.22));
-  background-repeat: no-repeat;
-  background-size: 0% 100%;
-  background-position: left center;
-  padding: 2px 4px;
-  border-radius: 2px;
+/* === STAGGERED TEXT REVEAL (Key Takeaway) === */
+.reveal-phrase {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(4px);
+  transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
 }
-@supports (animation-timeline: view()) {
-  .scroll-highlight {
-    animation: highlight-sweep linear forwards;
-    animation-timeline: view();
-    animation-range: entry 70% cover 40%;
-  }
-}
-@keyframes highlight-sweep {
-  to { background-size: 100% 100%; }
-}
-/* Fallback: just show the highlight */
-@supports not (animation-timeline: view()) {
-  .scroll-highlight { background-size: 100% 100%; }
+.reveal-phrase.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
 
 /* === CSS TOOLTIPS FOR FINANCIAL JARGON === */

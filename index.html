@@ -671,7 +671,12 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
           <strong class="uppercase text-navy font-bold tracking-widest text-sm">KEY TAKEAWAY</strong>
         </div>
-        <p class="text-lg font-heading text-navy mb-4"><mark class="scroll-highlight">Build a strong core.</mark> <mark class="scroll-highlight">Use satellites sparingly.</mark> <mark class="scroll-highlight">Rebalance tax-aware.</mark> <mark class="scroll-highlight">Stay diversified.</mark></p>
+        <p class="text-lg font-heading text-navy mb-4" id="takeaway-text">
+          <span class="reveal-phrase" style="transition-delay: 0s">Build a strong core.</span>
+          <span class="reveal-phrase" style="transition-delay: 0.15s">Use satellites sparingly.</span>
+          <span class="reveal-phrase" style="transition-delay: 0.3s">Rebalance tax-aware.</span>
+          <span class="reveal-phrase" style="transition-delay: 0.45s">Stay diversified.</span>
+        </p>
         <p class="text-xs text-muted font-bold tracking-widest uppercase font-mono mt-4 pt-4 border-t border-subtle w-full max-w-md mx-auto">Sparkfolio Framework v2.0</p>
       </div>
     </footer>
@@ -792,6 +797,20 @@
         });
       }, { threshold: 0.8 });
       document.querySelectorAll('.timeline-dot').forEach(dot => dotObserver.observe(dot));
+
+      // === 7b. STAGGERED TEXT REVEAL (Key Takeaway) ===
+      const takeaway = document.getElementById('takeaway-text');
+      if (takeaway) {
+        const phraseObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll('.reveal-phrase').forEach(p => p.classList.add('visible'));
+              phraseObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        phraseObserver.observe(takeaway);
+      }
 
       // === 8. SVG ICON INJECTION ===
       document.querySelectorAll('.icon-wrapper:not(button .icon-wrapper)').forEach(el => {
