@@ -136,13 +136,20 @@
           </div>
         </div>
 
-        <div class="card mt-8 p-4 bg-surface text-center font-mono text-sm border-0">
-          <ul class="flex flex-col md-flex-row justify-center gap-4 plain-list mb-0" style="flex-direction:row;flex-wrap:wrap;">
-            <li class="flex items-center gap-1"><span style="color:var(--status-green)" aria-hidden="true">●</span> <span class="jargon" data-tip="Excess return generated above the benchmark" tabindex="0"><strong>Alpha</strong></span> = excess return versus benchmark</li>
-            <li class="flex items-center gap-1"><span style="color:var(--primary-blue)" aria-hidden="true">●</span> <span class="jargon" data-tip="Sensitivity of fund returns to market movements" tabindex="0"><strong>Beta</strong></span> = sensitivity to benchmark movements</li>
-            <li class="flex items-center gap-1"><span style="color:var(--primary-navy)" aria-hidden="true">●</span> <span class="jargon" data-tip="Broad, diversified, low-cost foundation" tabindex="0"><strong>Core</strong></span> = broad market exposure</li>
-            <li class="flex items-center gap-1"><span style="color:var(--status-gold)" aria-hidden="true">●</span> <span class="jargon" data-tip="Focused investments to enhance returns" tabindex="0"><strong>Satellite</strong></span> = intentional tilt away from core exposure</li>
-          </ul>
+        <div class="card mt-8 p-6 bg-surface font-mono text-sm border-0 max-w-lg mx-auto w-full">
+          <div class="grid" style="grid-template-columns: max-content 1fr; gap: 0.75rem 1rem; align-items: start; text-align: left;">
+            <div class="flex items-center gap-2" style="white-space: nowrap;"><span style="color:var(--status-green)" aria-hidden="true">●</span> <span class="jargon" data-tip="Excess return generated above the benchmark" tabindex="0"><strong>Alpha</strong></span></div>
+            <div><span class="text-muted mr-2">=</span> excess return versus benchmark</div>
+
+            <div class="flex items-center gap-2" style="white-space: nowrap;"><span style="color:var(--primary-blue)" aria-hidden="true">●</span> <span class="jargon" data-tip="Sensitivity of fund returns to market movements" tabindex="0"><strong>Beta</strong></span></div>
+            <div><span class="text-muted mr-2">=</span> sensitivity to benchmark movements</div>
+
+            <div class="flex items-center gap-2" style="white-space: nowrap;"><span style="color:var(--primary-navy)" aria-hidden="true">●</span> <span class="jargon" data-tip="Broad, diversified, low-cost foundation" tabindex="0"><strong>Core</strong></span></div>
+            <div><span class="text-muted mr-2">=</span> broad market exposure</div>
+
+            <div class="flex items-center gap-2" style="white-space: nowrap;"><span style="color:var(--status-gold)" aria-hidden="true">●</span> <span class="jargon" data-tip="Focused investments to enhance returns" tabindex="0"><strong>Satellite</strong></span></div>
+            <div><span class="text-muted mr-2">=</span> intentional tilt away from core exposure</div>
+          </div>
         </div>
       </div>
     </header>
@@ -610,24 +617,24 @@
                 <div class="details-content">
                   <div class="grid grid-cols-1 md-grid-cols-2 gap-2 text-xs">
                     <ul class="plain-list text-navy space-y-1">
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Emergency fund available</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Asset allocation on target</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Rebalanced if required</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Core ≥ 70%</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Satellites ≤ 30%</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Expense ratio reviewed</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tax implications reviewed</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Goals still aligned</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Emergency fund available</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Asset allocation on target</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Rebalanced if required</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Core ≥ 70%</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Satellites ≤ 30%</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Expense ratio reviewed</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tax implications reviewed</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Goals still aligned</li>
                     </ul>
                     <ul class="plain-list text-navy space-y-1">
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> No duplicate fund overlap</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> International diversification present</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tracking error within acceptable range</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Maximum drawdown understood</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tax impact reviewed before selling</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Gold allocation ≤ 15%</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Debt duration matches goal horizon</li>
-                      <li class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Exit decisions based on rolling returns</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> No duplicate fund overlap</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> International diversification present</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tracking error within acceptable range</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Maximum drawdown understood</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tax impact reviewed before selling</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Gold allocation ≤ 15%</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Debt duration matches goal horizon</li>
+                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Exit decisions based on rolling returns</li>
                     </ul>
                   </div>
                 </div>
@@ -689,12 +696,12 @@
                 <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> 7. KEY TERMS GLOSSARY</summary>
                 <div class="details-content">
                   <div class="grid grid-cols-1 gap-3 text-sm">
-                    <div><strong class="text-navy flex items-center gap-1 text-xs uppercase"><span style="color:var(--status-green)">●</span> Alpha</strong><p class="text-xs text-muted">Excess return generated above the benchmark.</p></div>
-                    <div><strong class="text-navy flex items-center gap-1 text-xs uppercase"><span style="color:var(--primary-blue)">●</span> Beta</strong><p class="text-xs text-muted">Sensitivity of fund returns to market movements.</p></div>
-                    <div><strong class="text-navy flex items-center gap-1 text-xs uppercase"><span style="color:var(--primary-navy)">●</span> Core</strong><p class="text-xs text-muted">Broad, diversified, low-cost investments that form the foundation of the portfolio.</p></div>
-                    <div><strong class="text-navy flex items-center gap-1 text-xs uppercase"><span style="color:var(--status-gold)">●</span> Satellite</strong><p class="text-xs text-muted">Focused or specialized investments used to enhance returns or target specific exposures.</p></div>
-                    <div><strong class="text-navy flex items-center gap-1 text-xs uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 1 0-9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path></svg> Rebalancing</strong><p class="text-xs text-muted">Realigning portfolio back to target asset allocation.</p></div>
-                    <div><strong class="text-navy flex items-center gap-1 text-xs uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> Tracking Error</strong><p class="text-xs text-muted">Deviation of fund returns from the benchmark.</p></div>
+                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><span style="color:var(--status-green)">●</span> Alpha</strong><p class="text-xs text-muted">Excess return generated above the benchmark.</p></div>
+                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><span style="color:var(--primary-blue)">●</span> Beta</strong><p class="text-xs text-muted">Sensitivity of fund returns to market movements.</p></div>
+                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><span style="color:var(--primary-navy)">●</span> Core</strong><p class="text-xs text-muted">Broad, diversified, low-cost investments that form the foundation of the portfolio.</p></div>
+                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><span style="color:var(--status-gold)">●</span> Satellite</strong><p class="text-xs text-muted">Focused or specialized investments used to enhance returns or target specific exposures.</p></div>
+                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 1 0-9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path></svg> Rebalancing</strong><p class="text-xs text-muted">Realigning portfolio back to target asset allocation.</p></div>
+                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> Tracking Error</strong><p class="text-xs text-muted">Deviation of fund returns from the benchmark.</p></div>
                   </div>
                 </div>
               </details>
