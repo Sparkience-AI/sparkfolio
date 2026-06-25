@@ -2,22 +2,21 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 
+// No external font imports – use system fonts to avoid network timeouts
 const htmlContent = `
 <!DOCTYPE html>
 <html>
 <head>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
-    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
-      padding: 0;
       width: 1200px;
       height: 630px;
       background-color: #0C2340;
-      background-image: radial-gradient(circle at top right, rgba(42, 157, 143, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at bottom left, rgba(212, 163, 115, 0.15) 0%, transparent 50%);
-      font-family: 'Inter', sans-serif;
+      background-image:
+        radial-gradient(ellipse at 80% 20%, rgba(42,157,143,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(212,163,115,0.2) 0%, transparent 55%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -26,102 +25,137 @@ const htmlContent = `
       position: relative;
       overflow: hidden;
     }
-    
-    .grid-bg {
+
+    /* subtle grid */
+    body::before {
+      content: '';
       position: absolute;
       inset: 0;
-      background-size: 40px 40px;
-      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      z-index: 0;
+      background-size: 48px 48px;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
     }
 
     .content {
+      position: relative;
       z-index: 1;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
+      padding: 0 80px;
     }
 
     .badge {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 12px 24px;
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 10px 28px;
       border-radius: 100px;
-      font-size: 20px;
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #D4A373;
-      backdrop-filter: blur(10px);
-      margin-bottom: 20px;
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 80px;
-      margin: 0;
+      font-size: 72px;
+      font-weight: 800;
       line-height: 1.1;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      letter-spacing: -0.01em;
+      color: #ffffff;
     }
+
+    h1 span { color: #2A9D8F; }
 
     .subtitle {
-      font-size: 32px;
-      color: rgba(255, 255, 255, 0.8);
+      font-size: 24px;
+      color: rgba(255,255,255,0.7);
       font-weight: 400;
-      max-width: 900px;
-      line-height: 1.4;
-      margin-top: 10px;
+      max-width: 780px;
+      line-height: 1.5;
     }
 
-    .logo-container {
+    .footer {
       position: absolute;
       bottom: 40px;
+      left: 60px;
+      right: 60px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      z-index: 1;
     }
 
-    .logo-mark {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, #2A9D8F 0%, #0C2340 100%);
-      border-radius: 12px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-box {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #2A9D8F, #0C5280);
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.15);
     }
-    
-    .logo-text {
+
+    .brand-name {
+      font-size: 20px;
       font-weight: 700;
-      font-size: 28px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .url-pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.04em;
+    }
+
+    /* decorative accent bar */
+    .accent-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2A9D8F 0%, #D4A373 50%, #0C2340 100%);
     }
   </style>
 </head>
 <body>
-  <div class="grid-bg"></div>
-  
+  <div class="accent-bar"></div>
+
   <div class="content">
-    <div class="badge">V2.0 Framework</div>
-    <h1>The Sparkfolio<br>Investment Framework</h1>
-    <div class="subtitle">Strategic Asset Allocation for Modern Wealth Resilience.</div>
+    <div class="badge">Investment Framework</div>
+    <h1>The <span>Sparkfolio</span><br>Framework</h1>
+    <p class="subtitle">Strategic Asset Allocation for Modern Wealth Resilience.</p>
   </div>
 
-  <div class="logo-container">
-    <div class="logo-mark">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-      </svg>
+  <div class="footer">
+    <div class="brand">
+      <div class="logo-box">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+      </div>
+      <div class="brand-name">SPARKIENCE AI</div>
     </div>
-    <div class="logo-text">SPARKIENCE AI</div>
+    <div class="url-pill">sparkience-ai.github.io/sparkfolio</div>
   </div>
 </body>
 </html>
@@ -129,24 +163,26 @@ const htmlContent = `
 
 async function generate() {
   console.log('Launching browser...');
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   const page = await browser.newPage();
-  
-  await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 2 }); // High-res
-  
+
+  // Exactly 1200x630 — no deviceScaleFactor scaling that bloats the file
+  await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 });
+
   console.log('Rendering HTML...');
-  await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
-  
+  // No networkidle — fonts are system fonts, no network needed
+  await page.setContent(htmlContent, { waitUntil: 'domcontentloaded' });
+
   const publicDir = path.resolve('public');
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir);
-  }
-  
+  if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir);
+
+  // Output: og-image.jpg — clean name, no query strings needed
   const outputPath = path.resolve('public/og-image.jpg');
   console.log('Taking screenshot...');
-  await page.screenshot({ path: outputPath, type: 'jpeg', quality: 75 });
-  
-  console.log('Successfully generated OG image at ' + outputPath);
+  await page.screenshot({ path: outputPath, type: 'jpeg', quality: 85 });
+
+  const stats = fs.statSync(outputPath);
+  console.log('Generated: ' + outputPath + ' (' + Math.round(stats.size / 1024) + ' KB)');
   await browser.close();
 }
 
