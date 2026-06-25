@@ -301,7 +301,7 @@ details[open] summary::after { content: '−'; }
   }
   .diamond-node::after { background: var(--primary-navy); }
   
-  .tree-branch { padding-top: 0; width: 100%; align-items: flex-start; margin-bottom: 8px; margin-left: 48px; position: relative; }
+  .tree-branch { padding-top: 0; width: calc(100% - 48px); align-items: flex-start; margin-bottom: 8px; margin-left: 48px; position: relative; }
   .tree-branch:first-child > .branch-header::after { background: var(--status-green); }
   .tree-branch:last-child > .branch-header::after { background: var(--status-gold); }
   
@@ -313,14 +313,14 @@ details[open] summary::after { content: '−'; }
   .tree-branch:last-child::before { background: var(--status-gold); }
   
   /* Nested branch items */
-  .tree-branch .tree-node:not(.branch-header) { margin-left: 48px; max-width: 240px; }
+  .tree-branch .tree-node:not(.branch-header) { margin-left: 48px; width: calc(100% - 48px); max-width: 240px; }
   .tree-branch .tree-node:not(.branch-header)::after {
     content: ''; position: absolute; left: -28px; top: 50%; width: 28px; height: 2px; z-index: 0;
   }
   .tree-branch:first-child .tree-node:not(.branch-header)::after { background: var(--status-green); }
   .tree-branch:last-child .tree-node:not(.branch-header)::after { background: var(--status-gold); }
   
-  .tree-footer-note { margin-top: 16px; margin-left: 48px; max-width: 280px; position: relative; }
+  .tree-footer-note { margin-top: 16px; margin-left: 48px; width: calc(100% - 48px); max-width: 280px; position: relative; }
   .tree-footer-note::before { content: ''; position: absolute; left: -28px; top: 50%; width: 28px; height: 2px; background: var(--primary-navy); }
 }
 
