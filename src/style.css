@@ -442,26 +442,9 @@ tr:last-child td { border-bottom: none; }
   .lg-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
 }
 
-/* Donut Chart Scroll Animation */
-@property --donut-pct {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 0%;
-}
+/* Donut Chart Initial State */
 .chart-box {
-  --donut-pct: 0%;
-  background: conic-gradient(var(--donut-color, var(--primary-blue)) var(--donut-pct), var(--bg-surface) 0) !important;
-  transition: --donut-pct 1s ease-out;
-}
-.chart-box.animated {
-  --donut-pct: var(--donut-target);
-}
-
-/* Fallback for browsers that do not support @property */
-@supports not (@property --test { syntax: '<percentage>'; initial-value: 0%; inherits: false; }) {
-  .chart-box.animated {
-    background: conic-gradient(var(--donut-color, var(--primary-blue)) var(--donut-target), var(--bg-surface) 0) !important;
-  }
+  background: conic-gradient(var(--donut-color, var(--primary-blue)) 0%, var(--bg-surface) 0);
 }
 
 /* === STAGGERED TEXT REVEAL (Key Takeaway) === */

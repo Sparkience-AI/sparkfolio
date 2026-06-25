@@ -797,13 +797,19 @@
       });
 
       // === 5. DONUT CHART ANIMATION + NUMBER COUNTER ===
-      function animateCounter(el, target, duration) {
+      function animateCounter(el, target, duration, chartBox) {
         const start = performance.now();
         const update = (now) => {
           const elapsed = now - start;
           const progress = Math.min(elapsed / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-          el.textContent = Math.round(eased * target) + '%';
+          const currentVal = Math.round(eased * target);
+          el.textContent = currentVal + '%';
+          
+          if (chartBox) {
+            chartBox.style.background = `conic-gradient(var(--donut-color, var(--primary-blue)) ${eased * target}%, var(--bg-surface) 0)`;
+          }
+
           if (progress < 1) requestAnimationFrame(update);
         };
         requestAnimationFrame(update);
@@ -817,7 +823,7 @@
             const numEl = entry.target.querySelector('.font-mono.text-2xl');
             if (numEl) {
               const target = parseInt(numEl.textContent);
-              animateCounter(numEl, target, 1000);
+              animateCounter(numEl, target, 1000, entry.target);
             }
             donutObserver.unobserve(entry.target);
           }
