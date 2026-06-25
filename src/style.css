@@ -274,14 +274,54 @@ details[open] summary::after { content: '−'; }
 .tree-line-corner.right { background: var(--primary-navy); left: 50%; transform: translateX(-50%); }
 .tree-line-corner.right::after { content: ''; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); border-width: 6px 5px 0 5px; border-style: solid; border-color: var(--primary-navy) transparent transparent transparent; }
 
-/* Responsive Mobile */
+/* Responsive Mobile Directory Tree */
 @media (max-width: 768px) {
-  .tree-split { flex-direction: column; gap: 40px; margin-top: 0; }
-  .tree-split::before { display: none; }
-  .tree-branch { padding-top: 24px; }
-  .tree-line-corner { display: none; }
-  .tree-branch::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 24px; background: var(--primary-navy); }
-  .tree-branch::after { content: ''; position: absolute; top: 22px; left: 50%; transform: translateX(-50%); border-width: 6px 5px 0 5px; border-style: solid; border-color: var(--primary-navy) transparent transparent transparent; }
+  .css-tree-container { align-items: flex-start; padding-left: 16px; position: relative; padding-bottom: 16px; }
+  
+  /* Reset center alignments and desktop lines */
+  .tree-split { flex-direction: column; gap: 0; margin-top: 0; width: 100%; align-items: flex-start; }
+  .tree-split::before, .tree-line, .tree-line-corner, .tree-branch::before, .tree-branch::after { display: none !important; }
+  
+  /* Main Trunk Line */
+  .css-tree-container::before {
+    content: ''; position: absolute; left: 36px; top: 46px; bottom: 50px; width: 2px; background: var(--primary-navy); z-index: 0;
+  }
+  
+  .tree-node { width: 100%; max-width: 280px; text-align: left; margin: 10px 0; position: relative; min-width: 0; }
+  .tree-node.root-node { margin-top: 0; }
+  
+  /* Diamond reset */
+  .diamond-node { width: fit-content; height: auto; padding: 12px 20px; margin: 10px 0 10px 48px; border: 2px solid var(--primary-navy); border-radius: var(--radius-sm); background: var(--bg-card); justify-content: flex-start; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+  .diamond-node::before { display: none; }
+  .diamond-node span { text-align: left; font-size: 0.85rem; font-weight: 700; }
+  
+  /* Draw horizontal connectors (├──) */
+  .diamond-node::after, .tree-branch > .branch-header::after {
+    content: ''; position: absolute; left: -28px; top: 50%; width: 28px; height: 2px; z-index: 0;
+  }
+  .diamond-node::after { background: var(--primary-navy); }
+  
+  .tree-branch { padding-top: 0; width: 100%; align-items: flex-start; margin-bottom: 8px; margin-left: 48px; position: relative; }
+  .tree-branch:first-child > .branch-header::after { background: var(--status-green); }
+  .tree-branch:last-child > .branch-header::after { background: var(--status-gold); }
+  
+  /* Nested branch vertical lines */
+  .tree-branch::before {
+    content: ''; display: block !important; position: absolute; left: 20px; top: 40px; bottom: 20px; width: 2px;
+  }
+  .tree-branch:first-child::before { background: var(--status-green); }
+  .tree-branch:last-child::before { background: var(--status-gold); }
+  
+  /* Nested branch items */
+  .tree-branch .tree-node:not(.branch-header) { margin-left: 48px; max-width: 240px; }
+  .tree-branch .tree-node:not(.branch-header)::after {
+    content: ''; position: absolute; left: -28px; top: 50%; width: 28px; height: 2px; z-index: 0;
+  }
+  .tree-branch:first-child .tree-node:not(.branch-header)::after { background: var(--status-green); }
+  .tree-branch:last-child .tree-node:not(.branch-header)::after { background: var(--status-gold); }
+  
+  .tree-footer-note { margin-top: 16px; margin-left: 48px; max-width: 280px; position: relative; }
+  .tree-footer-note::before { content: ''; position: absolute; left: -28px; top: 50%; width: 28px; height: 2px; background: var(--primary-navy); }
 }
 
 /* Institutional Tables */
