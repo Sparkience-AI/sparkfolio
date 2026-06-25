@@ -142,9 +142,9 @@ async function generate() {
     fs.mkdirSync(publicDir);
   }
   
-  const outputPath = path.resolve('public/og-image.png');
+  const outputPath = path.resolve('public/og-image.jpg');
   console.log('Taking screenshot...');
-  await page.screenshot({ path: outputPath, type: 'png' });
+  await page.screenshot({ path: outputPath, type: 'jpeg', quality: 75 });
   
   console.log('Successfully generated OG image at ' + outputPath);
   await browser.close();
