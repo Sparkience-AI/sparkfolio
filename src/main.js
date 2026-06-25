@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, observerOptions);
 
   // Apply to sections and cards
-  const animatedElements = document.querySelectorAll('.section, .concept-card, .timeline-step, .template-card, .cat-card, .inner-box, .factor-item, .r-step, .flowchart-card');
+  const animatedElements = document.querySelectorAll('.section, .card, .inner-box');
 
   
   animatedElements.forEach(el => {
