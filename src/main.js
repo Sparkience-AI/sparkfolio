@@ -2,8 +2,32 @@ import './style.css'
 
 // Add scroll-based animations (fade-in)
 document.addEventListener("DOMContentLoaded", () => {
-  // IntersectionObserver animations have been removed to ensure flawless LLM and SEO crawler compatibility.
-  // Crawlers that execute JS but don't scroll were missing content hidden behind opacity: 0.
+  // U4: Add .js-loaded class to body
+  document.body.classList.add('js-loaded');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // U4: Add .animated to elements when they enter the viewport
+        entry.target.classList.add('animated');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Apply to sections and cards
+  const animatedElements = document.querySelectorAll('.section, .card, .inner-box');
+  
+  animatedElements.forEach(el => {
+    // U4: Removed inline opacity/transform logic
+    observer.observe(el);
+  });
 
   // Smooth scrolling for navigation links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

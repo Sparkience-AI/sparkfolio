@@ -111,6 +111,22 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; lin
 .container { width: 100%; padding: 0 var(--space-4); margin: 0 auto; }
 .section { padding: var(--space-12) 0; position: relative; }
 
+/* Animation Initial State (Only when JS is enabled) */
+body.js-loaded .section,
+body.js-loaded .card,
+body.js-loaded .inner-box {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation Final State */
+body.js-loaded .section.animated,
+body.js-loaded .card.animated,
+body.js-loaded .inner-box.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
 .section-header { margin-bottom: var(--space-8); border-bottom: 1px solid var(--border-subtle); padding-bottom: var(--space-4); }
 .section-header.bg-navy { border-bottom: none; }
 .section-title { font-size: 1.75rem; letter-spacing: -0.02em; margin-bottom: var(--space-2); }
