@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "rules": {
+    "no-inline-style": "off",
+    "require-sri": "off",
+    "no-trailing-whitespace": "off",
+    "void-style": "off",
+    "svg-focusable": "off",
+    "element-permitted-content": "off",
+    "meta-refresh": "off",
+    "no-raw-characters": "off",
+    "no-implicit-button-type": "off",
+    "unrecognized-char-ref": "off"
+  }
+}
