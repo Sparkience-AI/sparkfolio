@@ -11,7 +11,7 @@ The Sparkfolio Investment Framework is a comprehensive guide to strategic asset 
 - **The Retirement Playbook:** Deep dive into India's 3% Safe Withdrawal Rate, the Bucket Strategy, and Sequence of Returns Risk mitigation.
 - **Behavioral Guardrails:** Science-backed strategies to prevent panic selling and emotional investing.
 - **Tax-Aware Investing:** Explore strategies like Tax-Gain Harvesting, Asset Location (Tax Alpha), and NPS Tax Efficiency.
-- **SEO & AI-Optimized:** Built with comprehensive JSON-LD structured data so AI assistants and search engines can expose high-value financial Q&As.
+- **SEO & AI-Optimized:** Built with comprehensive JSON-LD structured data and a crawler-friendly architecture (non-JS bots can read all content without being blocked by scroll animations) so AI assistants and search engines can perfectly expose high-value financial Q&As.
 
 ## Development
 This project is built using HTML, CSS (Vanilla), and JavaScript, and bundled with Vite.
