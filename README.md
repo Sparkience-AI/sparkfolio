@@ -28,5 +28,13 @@ npm run build
 ```
 The site is built and pushed to GitHub Pages.
 
+## Legal Disclaimer & Research Integrity
+
+**Not Financial Advice:** Sparkfolio is an independent educational framework provided for informational purposes only. The content, frameworks, asset allocation models, and methodologies presented within this repository and on the live website do not constitute personalized investment, financial, legal, or tax advice. All investment strategies involve risk of loss, and past performance is no guarantee of future results. You should consult with a qualified SEBI-registered investment advisor (RIA) or financial professional before making any investment decisions.
+
+**No Warranties & Limitation of Liability:** This framework is provided "as is" without any representations or warranties, express or implied. The author(s) and contributors shall not be held liable for any direct, indirect, incidental, or consequential damages, or financial losses arising out of the use of, or reliance on, any information contained in this repository.
+
+**Research Integrity:** Sparkfolio synthesizes concepts from multiple independent sources (such as Vanguard, Morningstar, BlackRock, SPIVA, DALBAR, etc.) into a unified educational resource. Sparkfolio is not affiliated with, endorsed by, or sponsored by any of these organizations. All trademarks belong to their respective owners. External sources are cited solely for educational, analytical, and attribution purposes. Portfolio allocation examples and decision frameworks represent the author's synthesis of publicly available research and should not be construed as institutional endorsements or professional recommendations.
+
 ## License
 MIT License
