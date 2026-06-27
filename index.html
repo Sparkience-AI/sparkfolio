@@ -1049,13 +1049,7 @@
           if (detail.open) {
             // Animate open
             content.style.maxHeight = content.scrollHeight + 'px';
-            // Close siblings within same parent
-            const parent = detail.parentElement;
-            parent.querySelectorAll('details').forEach(sibling => {
-              if (sibling !== detail && sibling.open) {
-                sibling.removeAttribute('open');
-              }
-            });
+            // Auto-closing siblings removed per user request
           } else {
             content.style.maxHeight = '0';
           }
