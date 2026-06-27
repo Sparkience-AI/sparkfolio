@@ -35,118 +35,191 @@
 
     <!-- GEO / LLM Optimization (JSON-LD Structured Data) -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "Article",
+      "headline": "Sparkfolio Portfolio Construction Framework",
+      "description": "An institutional framework designed to optimize growth, manage risk, and streamline financial journeys through a Core and Satellite approach.",
+      "author": {
+        "@type": "Organization",
+        "name": "Sparkfolio"
+      },
+      "about": [
         {
-          "@type": "Article",
-          "headline": "Sparkfolio Portfolio Construction Framework",
-          "description": "An institutional framework designed to optimize growth, manage risk, and streamline financial journeys through a Core and Satellite approach.",
-          "author": {
-            "@type": "Organization",
-            "name": "Sparkfolio"
-          },
-          "about": [
-            {"@type": "Thing", "name": "Asset Allocation"},
-            {"@type": "Thing", "name": "Portfolio Management"},
-            {"@type": "Thing", "name": "Investment Strategy"}
-          ]
+          "@type": "Thing",
+          "name": "Asset Allocation"
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is the Sparkfolio portfolio building order?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "1. Build Emergency Fund. 2. Build Active or Passive Core. 3. Add Remaining Core Exposure. 4. Add High-Conviction Active. 5. Add Factor/Smart-Beta Tilt. 6. Add Defensive Assets (Debt and Cash). Note: This is a structural priority order reflecting weight and importance, not a strict sequential capital deployment plan."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is a Conservative Allocation?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "40% Growth Assets (Core 70-80%, Satellite 20-30%) and 60% Defensive Assets (Debt, Gold, Cash). Suitable for lower risk tolerance."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "When should I exit a mutual fund?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Exit if it underperforms the category median on 3-year rolling returns for 3+ consecutive years. Never panic sell during market crashes."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Should I use Active or Passive funds?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "SPIVA India Scorecards show passive index funds are statistically better for Large Cap, while the Mid/Small Cap space is where active managers historically shine."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do I need to calculate risk metrics manually?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. Platforms like Value Research and Morningstar pre-calculate metrics like Alpha and Beta. A consistent 4 or 5-star rating automatically accounts for risk-adjusted returns."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How often should I rebalance?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Vanguard research shows rebalancing just once a year is optimal for most retail investors."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is Tax-Gain Harvesting?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Because up to ₹1.25 Lakhs of LTCG on equity mutual funds is tax-free every year under the new 2024 tax rules, investors can strategically sell and immediately re-buy equity funds to book this gain. This permanently resets your cost basis, saving up to ₹15,625 in taxes annually."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How can I avoid behavioral mistakes in investing?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "DALBAR research shows investors underperform the market due to panic selling. To avoid this: Never check your portfolio during a market crash >2%, automate your SIPs to remove emotional friction, and filter out financial noise if it causes anxiety."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How can I accelerate wealth creation?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Using a Step-Up SIP (increasing your SIP by 10% annually) is the single biggest driver of terminal wealth outside of asset allocation. It matches your income growth and combats inflation, potentially doubling a 20-year corpus compared to a static SIP."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What are Arbitrage Funds good for?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "For investors in the 30% tax bracket, traditional debt funds are tax-inefficient. Arbitrage Funds offer similar low-risk returns but are taxed as equity (12.5% LTCG / 20% STCG), acting as a highly efficient tax loophole for short-term cash."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is Asset Location?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Asset location involves placing tax-inefficient assets (like Debt) in tax-free wrappers (like PPF/EPF) while keeping tax-efficient assets (like Equity) in taxable accounts. This generates 'Tax Alpha'."
-              }
-            }
-          ]
+          "@type": "Thing",
+          "name": "Portfolio Management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Investment Strategy"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Sparkfolio portfolio building order?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "1. Build Emergency Fund. 2. Build Active or Passive Core. 3. Add Remaining Core Exposure. 4. Add High-Conviction Active. 5. Add Factor/Smart-Beta Tilt. 6. Add Defensive Assets (Debt and Cash). Note: This is a structural priority order reflecting weight and importance, not a strict sequential capital deployment plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Conservative Allocation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "40% Growth Assets (Core 70-80%, Satellite 20-30%) and 60% Defensive Assets (Debt, Gold, Cash). Suitable for lower risk tolerance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I exit a mutual fund?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Exit if it underperforms the category median on 3-year rolling returns for 3+ consecutive years. Never panic sell during market crashes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use Active or Passive funds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SPIVA India Scorecards show passive index funds are statistically better for Large Cap, while the Mid/Small Cap space is where active managers historically shine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to calculate risk metrics manually?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Platforms like Value Research and Morningstar pre-calculate metrics like Alpha and Beta. A consistent 4 or 5-star rating automatically accounts for risk-adjusted returns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I rebalance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vanguard research shows rebalancing just once a year is optimal for most retail investors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Tax-Gain Harvesting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because up to \u20b91.25 Lakhs of LTCG on equity mutual funds is tax-free every year under the new 2024 tax rules, investors can strategically sell and immediately re-buy equity funds to book this gain. This permanently resets your cost basis, saving up to \u20b915,625 in taxes annually."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I avoid behavioral mistakes in investing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DALBAR research shows investors underperform the market due to panic selling. To avoid this: Never check your portfolio during a market crash >2%, automate your SIPs to remove emotional friction, and filter out financial noise if it causes anxiety."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I accelerate wealth creation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Using a Step-Up SIP (increasing your SIP by 10% annually) is the single biggest driver of terminal wealth outside of asset allocation. It matches your income growth and combats inflation, potentially doubling a 20-year corpus compared to a static SIP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Arbitrage Funds good for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For investors in the 30% tax bracket, traditional debt funds are tax-inefficient. Arbitrage Funds offer similar low-risk returns but are taxed as equity (12.5% LTCG / 20% STCG), acting as a highly efficient tax loophole for short-term cash."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Asset Location?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Asset location involves placing tax-inefficient assets (like Debt) in tax-free wrappers (like PPF/EPF) while keeping tax-efficient assets (like Equity) in taxable accounts. This generates 'Tax Alpha'."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I choose Direct Mutual Fund plans over Regular plans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Regular plans charge a 1-1.5% extra commission every year. Over 20 years, this 1% fee drag compounds, potentially eating away 20-30% of your total wealth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Lump Sum investing better than SIP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Statistically, Vanguard found that Lump Sum investing beats SIP about 67% of the time because markets rise more than they fall. However, SIPs are highly recommended for peace of mind and discipline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How big should my emergency fund be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Salaried individuals should keep 3-6 months of expenses, families with dependents should keep 6-9 months, and freelancers or business owners should target 9-12 months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Safe Withdrawal Rate for retirement in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Due to higher inflation in India, a Safe Withdrawal Rate (SWR) of 3% to 3.5% is recommended instead of the US 4% rule. A Bucket Strategy is also advised to mitigate Sequence of Returns Risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I invest in international markets from India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, to avoid home bias and hedge against currency depreciation, a 15-30% allocation to international indices like the S&P 500 or Nasdaq 100 is recommended."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should I allocate my investments based on time horizon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For goals under 3 years, use Debt funds or FDs. For 3-7 years, use Hybrid funds. For long-term goals over 7 years, invest primarily in Equity funds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the tax benefits of NPS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NPS provides an exclusive tax deduction of up to \u20b950,000 under section 80CCD(1B), which is in addition to the standard \u20b91.5 Lakh limit under 80C."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I buy endowment policies for investment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Endowment policies usually offer low returns of 4-6%. The best approach is to buy pure Term Insurance for protection and invest the remainder in mutual funds."
+          }
         }
       ]
     }
+  ]
+}
     </script>
   </head>
   <body>
@@ -179,7 +252,7 @@
         
         <div class="grid grid-cols-1 md-grid-cols-2 lg-grid-cols-4 mt-8 gap-6">
           <div class="card card-hover items-center text-center">
-            <div class="icon-wrapper icon-primary mb-4">PieChart</div>
+            <div class="icon-wrapper icon-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>
             <h3 class="mb-2 text-base uppercase">ASSET ALLOCATION</h3>
             <p class="text-muted text-sm">comes first.</p>
           </div>
@@ -439,6 +512,32 @@
         </div>
       </section>
 
+    <section id="goal-based" class="section">
+      <div class="container">
+        <h2 class="section-title">GOAL-BASED INVESTING</h2>
+        <div class="card p-6 border-t-4" style="border-top-color: var(--primary-blue)">
+          <p class="text-sm text-muted mb-4">Your asset allocation should strictly follow your investment time horizon:</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-navy">
+            <div class="bg-surface p-4 rounded border-l-2 border-red-500">
+              <strong class="block mb-2">&lt; 3 Years</strong>
+              <p class="text-xs text-muted mb-2">Focus on capital protection.</p>
+              <span class="font-bold">Debt funds, FDs, Liquid funds</span>
+            </div>
+            <div class="bg-surface p-4 rounded border-l-2 border-yellow-500">
+              <strong class="block mb-2">3 - 7 Years</strong>
+              <p class="text-xs text-muted mb-2">Balance of growth and stability.</p>
+              <span class="font-bold">Aggressive Hybrid, BAF</span>
+            </div>
+            <div class="bg-surface p-4 rounded border-l-2 border-green-500">
+              <strong class="block mb-2">&gt; 7 Years</strong>
+              <p class="text-xs text-muted mb-2">Focus on wealth creation.</p>
+              <span class="font-bold">Index funds, Flexi-cap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
       <!-- INSTITUTIONAL ACCORDIONS MODULE -->
       <section id="implementation" class="section bg-surface border-t border-subtle">
         <div class="container">
@@ -446,7 +545,7 @@
             <h2 class="section-title text-inverse m-0">IMPLEMENTATION & REVIEW GUIDE</h2>
             <p class="section-subtitle text-inverse mt-1">INVESTMENT CATEGORIES & EXAMPLES</p>
           </div>
-          <div class="mt-4 p-3 rounded text-left max-w-2xl mx-auto border-l-4" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy);">
+          <div class="mt-4 p-3 rounded text-left max-w-2xl mx-auto border-l-4 callout-tip">
             <strong>💡 Structural Priority Note:</strong> The sequence below is a <strong>structural priority order</strong>, not a capital deployment plan. Build all buckets simultaneously; this sequence reflects weight and importance, not funding order.
           </div>
           
@@ -472,6 +571,14 @@
                   </ul>
                 </div>
               </details>
+
+              <details>
+                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> INTERNATIONAL DIVERSIFICATION</summary>
+                <div class="details-content">
+                  <p class="text-sm text-muted mb-2">Indian investors suffer from massive "Home Bias," keeping roughly 98% of wealth in domestic assets. However, India represents only a fraction of global market cap.</p>
+                  <p class="text-sm text-muted">To hedge against country-specific risks and currency depreciation, we recommend a <strong>15% to 30% allocation</strong> of your equity portfolio to the US market (e.g., S&P 500 or Nasdaq 100).</p>
+                </div>
+              </details>
               
               <details>
                 <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> CORE → PASSIVE</summary>
@@ -492,7 +599,7 @@
                     <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Index Funds</li>
                     <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> Index ETFs</li>
                   </ul>
-                  <div class="mt-4 p-3 rounded text-left border-l-4" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy); line-height: 1.4;">
+                  <div class="mt-4 p-3 rounded text-left border-l-4 callout-tip">
                     <strong>💡 Beginner Shortcut (SPIVA Data):</strong> SPIVA India Scorecards consistently show that most active large-cap funds fail to beat the market over the long term. For your Large Cap exposure, low-cost Passive Index funds (like Nifty 50 or Nifty LargeMidcap 250) are statistically the better choice.
                   </div>
                 </div>
@@ -512,7 +619,7 @@
                     <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Smaller allocation</li>
                     <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> Higher expected alpha</li>
                   </ul>
-                  <div class="mt-4 p-3 rounded text-left border-l-4" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy); line-height: 1.4;">
+                  <div class="mt-4 p-3 rounded text-left border-l-4 callout-tip">
                     <strong>💡 Beginner Shortcut (SPIVA Data):</strong> Unlike Large Caps, the Mid and Small-cap space in India is where active managers historically shine. If you want to use active funds to beat the market, this is the place to do it.
                   </div>
                 </div>
@@ -569,7 +676,7 @@
                     </table>
                   </div>
                   <p class="text-xs text-navy p-4 border-t font-medium">Match the fund's Macaulay duration to your goal's time horizon. Do not hold gilt or long-duration funds for goals under 5 years.</p>
-                  <div class="p-3 rounded text-left border-l-4 m-4 mt-0" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy); line-height: 1.4;">
+                  <div class="p-3 rounded text-left border-l-4 m-4 mt-0 callout-tip">
                     <strong>💡 Beginner Shortcut (30% Tax Bracket):</strong> If you are in the 30% tax slab, traditional debt funds are highly tax-inefficient (taxed at slab rate). <strong>Arbitrage Funds</strong> offer similar low-risk, debt-like returns but are taxed as equity (12.5% LTCG / 20% STCG). They are the ultimate tax loophole for parking short-term cash.
                   </div>
                 </div>
@@ -662,6 +769,13 @@
                     <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Automate everything (SIPs).</strong> Friction prevents emotional tinkering.</li>
                     <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy mt-1"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> <strong>Filter the noise.</strong> If financial news causes anxiety, tune it out. Your strategy is built for decades, not days.</li>
                   </ul>
+
+                  <div class="callout-tip flex gap-3 mt-4">
+                    <div>
+                      <strong class="block mb-1">💡 Lump Sum vs SIP</strong>
+                      <p class="text-xs m-0">Vanguard studies show that investing a Lump Sum immediately beats spreading it out (SIP) about 67% of the time because markets rise more than they fall. However, SIPs are highly recommended for the peace of mind they provide.</p>
+                    </div>
+                  </div>
                 </div>
               </details>
 
@@ -680,7 +794,7 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--status-gold)" stroke-width="2" class="flex-shrink-0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     Never exit based on 1-year underperformance. Use 3-year rolling returns vs. category median as your trigger, not point-to-point returns.
                   </div>
-                  <div class="p-3 rounded text-left border-l-4" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy); line-height: 1.4;">
+                  <div class="p-3 rounded text-left border-l-4 callout-tip">
                     <strong>💡 Beginner Shortcut:</strong> The golden rule for selling active funds: If a fund underperforms its benchmark for <strong>3 straight years</strong>, sell it. Never panic sell just because the broader market is down.
                   </div>
                 </div>
@@ -707,7 +821,7 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2" class="flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     In taxable accounts, prefer cash flows and dividends first; sell only when needed.
                   </div>
-                  <div class="p-3 rounded text-left border-l-4" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy); line-height: 1.4;">
+                  <div class="p-3 rounded text-left border-l-4 callout-tip">
                     <strong>💡 Beginner Shortcut (Vanguard Data):</strong> Vanguard research shows that rebalancing just <strong>once a year</strong> is optimal for most retail investors. Pick a memorable date (like your birthday or Diwali) and reset your equity/debt mix back to your target percentage. Don't overthink it.
                   </div>
                 </div>
@@ -727,11 +841,18 @@
                       <span class="text-muted pl-5">Taxed at your applicable <strong>income tax slab rate</strong>. Indexation benefits have been completely removed.</span>
                     </li>
                   </ul>
-                  <div class="p-3 rounded text-left border-l-4" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy); line-height: 1.4;">
+                  <div class="p-3 rounded text-left border-l-4 callout-tip">
                     <strong>💡 High-ROI Strategy (Tax-Gain Harvesting):</strong> Because up to ₹1.25 Lakhs of LTCG is completely tax-free every year, investors strategically sell and immediately re-buy equity funds to book this gain. This permanently resets your cost basis, saving up to ₹15,625 in taxes annually.
                   </div>
-                  <div class="p-3 rounded text-left border-l-4 mt-3" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy); line-height: 1.4;">
+                  <div class="p-3 rounded text-left border-l-4 mt-3 callout-tip">
                     <strong>💡 Asset Location (Tax Alpha):</strong> Where you put your assets matters. Place tax-inefficient assets (like Debt) in tax-free wrappers (like PPF or EPF) where interest is tax-free. Keep your Equity in standard taxable accounts to benefit from the lower 12.5% LTCG rate.
+                  </div>
+
+                  <div class="callout-tip flex gap-3 mt-4">
+                    <div>
+                      <strong class="block mb-1">💡 NPS Tax Efficiency</strong>
+                      <p class="text-xs m-0">The National Pension System (NPS) offers an exclusive ₹50,000 tax deduction under section 80CCD(1B). This is over and above the standard ₹1.5L limit of 80C.</p>
+                    </div>
                   </div>
                 </div>
               </details>
@@ -760,9 +881,20 @@
                       <p class="text-xs text-muted mt-3 italic">*Assumes 20 years at 11% CAGR.</p>
                     </div>
                   </div>
-                  <div class="p-3 rounded text-left border-l-4" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy); line-height: 1.4;">
+                  <div class="p-3 rounded text-left border-l-4 callout-tip">
                     <strong>💡 Beginner Shortcut:</strong> Almost all brokers and AMCs offer an automated "Step-Up" or "Top-Up" SIP feature. Turn this on once, set it to 10% annually, and let automation build your wealth without any manual intervention.
                   </div>
+                </div>
+              </details>
+
+              <details>
+                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> THE RETIREMENT PLAYBOOK</summary>
+                <div class="details-content">
+                  <ul class="plain-list bullet-list text-sm text-navy space-y-2">
+                    <li><strong>The 3% Rule:</strong> Unlike the US 4% rule, India's higher inflation makes a Safe Withdrawal Rate (SWR) of 3-3.5% more sustainable for a 30-year retirement.</li>
+                    <li><strong>The Bucket Strategy:</strong> Divide your corpus. Immediate (0-3 yrs) stays in liquid/cash. Medium (3-7 yrs) in hybrid/debt. Long-term (7+ yrs) in equity.</li>
+                    <li><strong>Sequence of Returns Risk:</strong> Experiencing a market crash early in retirement can permanently deplete your portfolio. The bucket strategy mitigates this by securing early years in debt.</li>
+                  </ul>
                 </div>
               </details>
 
@@ -819,7 +951,7 @@
                       </tbody>
                     </table>
                   </div>
-                  <div class="mt-4 p-3 rounded text-left border-l-4" style="background: rgba(14, 116, 144, 0.05); border-color: var(--primary-blue); font-size: 0.85rem; color: var(--primary-navy); line-height: 1.4;">
+                  <div class="mt-4 p-3 rounded text-left border-l-4 callout-tip">
                     <strong>💡 Beginner Shortcut:</strong> Don't want to calculate risk metrics manually? You don't have to. Look for active funds with a consistent <strong>4 or 5-star rating on Value Research</strong> or Morningstar. These platforms pre-calculate all these metrics, and their star ratings automatically account for risk-adjusted returns.
                   </div>
                 </div>
@@ -863,6 +995,14 @@
                   </div>
                 </div>
               </details>
+            </div>
+
+            <div class="card p-6 mt-4 border border-red-100 bg-red-50 rounded-lg">
+              <h3 class="font-bold text-lg mb-2 text-navy flex items-center gap-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-red-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                The Compounding Tax on Wealth (Direct vs Regular)
+              </h3>
+              <p class="text-sm text-gray-700">Regular mutual fund plans charge an extra 1-1.5% in distributor commissions every year compared to Direct plans. Over a 20-year period, this seemingly small 1% fee drag compounds, potentially eating away 20-30% of your total wealth. Always invest in Direct plans to keep your returns yours.</p>
             </div>
             
           </div>
