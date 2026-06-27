@@ -102,7 +102,6 @@ body {
 
 /* Institutional Typography */
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; color: var(--primary-navy); }
-.font-sans, .font-main { font-family: var(--font-main); }
 .font-mono { font-family: var(--font-mono); }
 .font-heading { font-family: var(--font-heading); }
 .mono-data { font-family: var(--font-mono); font-size: 0.9em; font-weight: 500; letter-spacing: -0.02em; }
@@ -140,7 +139,6 @@ body.js-loaded .inner-box.animated {
 .mt-4 { margin-top: var(--space-4); } .mb-4 { margin-bottom: var(--space-4); }
 .mt-6 { margin-top: var(--space-6); } .mb-6 { margin-bottom: var(--space-6); }
 .mt-8 { margin-top: var(--space-8); } .mb-8 { margin-bottom: var(--space-8); }
-.mt-12 { margin-top: var(--space-12); } .mb-12 { margin-bottom: var(--space-12); }
 .mt-auto { margin-top: auto; }
 .ml-1 { margin-left: var(--space-1); } .mr-1 { margin-right: var(--space-1); }
 .ml-2 { margin-left: var(--space-2); } .mr-2 { margin-right: var(--space-2); }
@@ -255,7 +253,6 @@ body.js-loaded .inner-box.animated {
 .icon-primary { background: var(--primary-navy); color: var(--text-inverse); }
 
 /* Semantic Borders */
-.border-l-green { border-left: 3px solid var(--status-green); }
 .border-l-blue { border-left: 3px solid var(--primary-blue); }
 .border-l-navy { border-left: 3px solid var(--primary-navy); }
 .border-l-gold { border-left: 3px solid var(--status-gold); }
@@ -407,9 +404,6 @@ tr:last-child td { border-bottom: none; }
 
 /* Donut Charts / Allocation Visuals */
 .chart-box { width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4) auto; border: 1px solid var(--border-subtle); }
-.chart-con { background: conic-gradient(var(--primary-blue) 40%, var(--bg-surface) 0); }
-.chart-bal { background: conic-gradient(var(--primary-navy) 60%, var(--bg-surface) 0); }
-.chart-agg { background: conic-gradient(var(--status-green) 80%, var(--bg-surface) 0); }
 .chart-inner { width: 90px; height: 90px; background: var(--bg-card); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card); }
 
 /* Timeline (Process) */
@@ -428,16 +422,12 @@ tr:last-child td { border-bottom: none; }
   
   .md-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
   .md-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-  .md-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
   .md-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
   
-  .md-flex-row { flex-direction: row; }
   .md-text-center { text-align: center; }
   .md-justify-center { justify-content: center; }
   .text-right-md { text-align: right; }
   
-  .flow-split-mobile { flex-direction: row; border-top: 2px solid var(--border-subtle); padding-top: var(--space-8); }
-  .flow-split-mobile::before { content: ''; position: absolute; top: -2px; left: 25%; right: 25%; height: 2px; background: var(--primary-navy); }
   
   .mobile-menu-btn { display: none; }
   .nav-links { display: flex; gap: var(--space-6); }
@@ -456,7 +446,6 @@ tr:last-child td { border-bottom: none; }
   .section-title { font-size: 2.5rem; }
   .lg-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
   .lg-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-  .lg-grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
 }
 
 /* Donut Chart Initial State */
@@ -544,7 +533,6 @@ tr:last-child td { border-bottom: none; }
 }
 
 /* === STAGGER ENTRANCE SUPPORT === */
-.stagger-item {
   transition-delay: calc(var(--i, 0) * 80ms);
 }
 

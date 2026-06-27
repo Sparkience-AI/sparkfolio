@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node tests/dom.test.js && npx html-validate index.html"
   },
   "devDependencies": {
-    "vite": "^6.0.0",
-    "puppeteer": "^25.2.1"
-  },
-  "dependencies": {}
+    "html-validate": "^10.9.0",
+    "node-html-parser": "^8.0.3",
+    "puppeteer": "^25.2.1",
+    "vite": "^6.0.0"
+  }
 }
