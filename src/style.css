@@ -617,3 +617,13 @@ details[open] .details-content {
 .no-scroll {
   overflow: hidden;
 }
+
+/* JS Accordion Support */
+.js-details { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); margin-bottom: var(--space-2); overflow: hidden; }
+.js-summary { padding: var(--space-4); cursor: pointer; display: flex; align-items: center; font-weight: 600; color: var(--primary-navy); font-family: var(--font-main); font-size: 0.95rem; user-select: none; transition: var(--transition); background: var(--bg-card); }
+.js-summary:hover { background: var(--bg-hover); }
+.js-summary::after { content: '+'; margin-left: auto; font-family: var(--font-mono); font-weight: bold; color: var(--text-muted); font-size: 1.2rem; }
+.js-details.is-open .js-summary { border-bottom: 1px solid var(--border-subtle); background: var(--bg-surface); }
+.js-details.is-open .js-summary::after { content: '\2212'; }
+/* For the content to be hidden when NOT open */
+.js-details:not(.is-open) .details-content { display: none; }
