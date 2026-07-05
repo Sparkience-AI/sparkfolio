@@ -33,6 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
+      
+      // Close mobile menu if it's open
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      if (mobileMenuBtn && mobileMenuBtn.getAttribute('aria-expanded') === 'true') {
+        mobileMenuBtn.click();
+      }
+
       const href = this.getAttribute('href');
       // B4: Handle logo link with just '#'
       if (href === '#') {
