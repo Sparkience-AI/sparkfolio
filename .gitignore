@@ -26,3 +26,11 @@ dist-ssr
 # Local Tests
 tests/
 .htmlvalidate.json
+
+# Utility and plan files
+fix_gaps.cjs
+restore_bottom.cjs
+test_reorg.cjs
+old_plan.txt
+old_plan_full.txt
+old_plan_search.txt
