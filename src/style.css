@@ -668,10 +668,19 @@ details[open] .details-content {
   position: relative;
   text-decoration-line: underline;
   text-decoration-style: dotted;
-  text-decoration-color: var(--border-strong);
-  text-underline-offset: 3px;
+  text-decoration-color: var(--primary-blue);
+  text-underline-offset: 4px;
   cursor: help;
   font-weight: 600;
+  color: var(--primary-navy);
+  background-color: rgba(69, 123, 157, 0.08);
+  padding: 0 3px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+.jargon:hover {
+  background-color: rgba(69, 123, 157, 0.15);
+  text-decoration-color: var(--primary-navy);
 }
 .jargon::after {
   content: attr(data-tip);
