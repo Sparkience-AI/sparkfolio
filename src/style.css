@@ -818,6 +818,7 @@ details[open] .details-content {
 }
 /* Segmented Controls Refined */
 .segmented-control {
+  display: flex;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
 }
 .segment-btn {
@@ -826,10 +827,14 @@ details[open] .details-content {
   cursor: pointer;
   user-select: none;
   color: var(--text-muted);
+  flex: 1;
+  padding: 0.75rem 0.5rem;
+  margin: 2px;
 }
 .segment-btn.active {
   background: var(--bg-card);
   color: var(--primary-navy);
+  border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
 }
 .amount-input-wrapper input:focus {

@@ -264,14 +264,24 @@
               </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-4 mb-8" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               <div>
                 <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">
                   Debt >9%?
                 </label>
                 <div class="segmented-control bg-main p-1 rounded-lg">
-                  <button class="segment-btn flex-1 py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="debt" data-val="yes">Yes</button>
-                  <button class="segment-btn flex-1 py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="debt" data-val="no">No</button>
+                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="debt" data-val="yes">Yes</button>
+                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition active" data-group="debt" data-val="no">No</button>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase text-center md:text-left">
+                  Corp PF Maxed?
+                </label>
+                <div class="segmented-control bg-main p-1 rounded-lg">
+                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition active" data-group="corpPf" data-val="yes">Yes</button>
+                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="corpPf" data-val="no">No</button>
                 </div>
               </div>
 
@@ -280,8 +290,8 @@
                   PPF Maxed?
                 </label>
                 <div class="segmented-control bg-main p-1 rounded-lg">
-                  <button class="segment-btn flex-1 py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="tax" data-val="yes">Yes</button>
-                  <button class="segment-btn flex-1 py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="tax" data-val="no">No</button>
+                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="tax" data-val="yes">Yes</button>
+                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition active" data-group="tax" data-val="no">No</button>
                 </div>
               </div>
             </div>
@@ -1416,6 +1426,7 @@
         age: '20s',
         ef: '<3',
         debt: 'no',
+        corpPf: 'yes',
         tax: 'no'
       };
 
@@ -1433,6 +1444,14 @@
             rationale: "Before investing a single rupee in equity, you need an absolute baseline of ₹50K-₹1L to prevent taking on new debt during a minor emergency.",
             milestone: "Accumulate 1 month of expenses in a Liquid Fund.",
             mapping: "Defensive Assets → Cash Equivalents"
+          };
+        } else if (deState.corpPf === 'no') {
+          result = {
+            step: 2, stepName: "Employer Match", color: "var(--status-green)",
+            action: `Use the <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> to substitute income while you opt-in for Corporate NPS / max out your EPF match.`,
+            rationale: "Corporate PF/NPS matching is literally free money and 100% guaranteed return. Maximize this 80CCD(2) benefit before anything else.",
+            milestone: "Employer contribution fully matched up to 10% (Private) or 14% (Govt).",
+            mapping: "Core Accumulation"
           };
         } else if (deState.debt === 'yes') {
           result = {
