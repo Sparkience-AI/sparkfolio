@@ -90,4 +90,82 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Dynamic high-quality viewport-aware tooltips
+  const jargonElements = document.querySelectorAll('.jargon');
+  if (jargonElements.length > 0) {
+    // Create shared tooltip bubble element
+    const bubble = document.createElement('div');
+    bubble.className = 'tooltip-bubble';
+    bubble.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bubble);
+
+    function showTooltip(el) {
+      const tipText = el.getAttribute('data-tip');
+      if (!tipText) return;
+
+      bubble.textContent = tipText;
+      bubble.classList.add('visible');
+
+      // Measure dimensions
+      const elRect = el.getBoundingClientRect();
+      const bubbleRect = bubble.getBoundingClientRect();
+
+      // Horizontal positioning (centered by default)
+      let left = elRect.left + (elRect.width - bubbleRect.width) / 2;
+      
+      // Keep tooltip within screen boundaries (with a 12px margin)
+      const margin = 12;
+      const minLeft = margin;
+      const maxLeft = window.innerWidth - bubbleRect.width - margin;
+
+      if (left < minLeft) {
+        left = minLeft;
+      } else if (left > maxLeft) {
+        left = maxLeft;
+      }
+
+      // Vertical positioning (above the element by default)
+      let top = elRect.top - bubbleRect.height - 8;
+      
+      // Fallback: if it overflows the top of the viewport, show it below
+      let positionBelow = false;
+      if (top < margin) {
+        top = elRect.bottom + 8;
+        positionBelow = true;
+      }
+
+      // Apply coordinates
+      bubble.style.left = `${left}px`;
+      bubble.style.top = `${top}px`;
+
+      // Position the arrow pointing exactly to the jargon element
+      const jargonCenter = elRect.left + elRect.width / 2;
+      const arrowLeft = jargonCenter - left;
+      bubble.style.setProperty('--arrow-left', `${arrowLeft}px`);
+      
+      if (positionBelow) {
+        bubble.classList.add('below');
+      } else {
+        bubble.classList.remove('below');
+      }
+    }
+
+    function hideTooltip() {
+      bubble.classList.remove('visible');
+    }
+
+    jargonElements.forEach(el => {
+      // Event listeners
+      el.addEventListener('mouseenter', () => showTooltip(el));
+      el.addEventListener('focus', () => showTooltip(el));
+      
+      el.addEventListener('mouseleave', hideTooltip);
+      el.addEventListener('blur', hideTooltip);
+    });
+
+    // Also close on scroll/resize
+    window.addEventListener('scroll', hideTooltip, { passive: true });
+    window.addEventListener('resize', hideTooltip, { passive: true });
+  }
 });

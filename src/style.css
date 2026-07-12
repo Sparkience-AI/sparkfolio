@@ -510,49 +510,43 @@ tr:last-child td { border-bottom: none; }
   background-color: rgba(69, 123, 157, 0.15);
   text-decoration-color: var(--primary-navy);
 }
-.jargon::after {
-  content: attr(data-tip);
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 0;
-  transform: translateY(5px);
+.tooltip-bubble {
+  position: fixed;
   background: var(--primary-navy);
   color: var(--text-inverse);
-  padding: 6px 12px;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-family: var(--font-main);
   font-weight: 400;
-  font-style: normal;
-  text-decoration: none;
-  width: max-content;
-  max-width: 250px;
+  max-width: 260px;
   white-space: normal;
   line-height: 1.4;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  z-index: 100;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10000;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(5px);
 }
-.jargon::before {
-  content: '';
-  position: absolute;
-  bottom: calc(100% + 2px);
-  left: 15px;
-  border: 5px solid transparent;
-  border-top-color: var(--primary-navy);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 100;
-}
-.jargon:hover::after, .jargon:focus::after {
+.tooltip-bubble.visible {
   opacity: 1;
   transform: translateY(0);
 }
-.jargon:hover::before, .jargon:focus::before {
-  opacity: 1;
+.tooltip-bubble::after {
+  content: '';
+  position: absolute;
+  left: var(--arrow-left, 50%);
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+}
+.tooltip-bubble:not(.below)::after {
+  top: 100%;
+  border-top-color: var(--primary-navy);
+}
+.tooltip-bubble.below::after {
+  bottom: 100%;
+  border-bottom-color: var(--primary-navy);
 }
 
 /* === TIMELINE DOT PULSE === */
