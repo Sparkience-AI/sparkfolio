@@ -46,7 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
-      const target = document.querySelector(href);
+      
+      let target = null;
+      try {
+        target = document.querySelector(href);
+      } catch (err) {
+        // Ignore invalid query selectors
+      }
+      
       if (target) {
         target.scrollIntoView({
           behavior: 'smooth'
