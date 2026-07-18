@@ -326,7 +326,7 @@
       <div class="container text-center">
         <div class="section-header bg-navy text-inverse p-6 rounded-t-lg mb-0" style="border-bottom: none;">
           <h2 class="section-title text-inverse m-0">WHERE SHOULD YOUR NEXT RUPEE GO?</h2>
-          <p class="section-subtitle text-inverse opacity-70 mt-2">Answer 4 quick questions. Get a definitive next step based on the Sparkfolio Framework.</p>
+          <p class="section-subtitle text-inverse opacity-70 mt-2">Answer a few quick questions. Get a definitive next step based on the Sparkfolio Framework.</p>
         </div>
         
         <div class="grid grid-cols-1 md-grid-cols-2 gap-0 items-stretch text-left max-w-4xl mx-auto border border-subtle border-t-0 rounded-b-lg overflow-hidden bg-main shadow-card">
@@ -339,6 +339,14 @@
               <div class="amount-input-wrapper relative">
                 <span class="absolute" style="left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-family: var(--font-mono); font-weight: bold; font-size: 1.125rem;">₹</span>
                 <input type="number" id="de-amount" class="w-full font-mono text-xl p-4 border border-subtle rounded-lg bg-main focus:outline-none transition" style="padding-left: 2.5rem;" placeholder="10000" inputmode="numeric" value="10000" min="0">
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Tax Regime</label>
+              <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="Tax Regime">
+                <button class="segment-btn active flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="regime" data-val="ntr" role="radio" aria-checked="true">New Tax Regime (NTR)</button>
+                <button class="segment-btn flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="regime" data-val="otr" role="radio" aria-checked="false">Old Tax Regime (OTR)</button>
               </div>
             </div>
 
@@ -1830,6 +1838,7 @@
       
       let deState = {
         amount: 10000,
+        regime: 'ntr',
         age: '20s',
         ef: '<3',
         debt: 'no',
@@ -1850,16 +1859,16 @@
             step: 1, stepName: "Safety Net Cushion", color: "#D4A373", textColor: "#0C2340",
             action: `Deploy the entire <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> into a Liquid Fund immediately.`,
             rationale: "Before investing a single rupee in equity, you need an absolute baseline of ₹50K-₹1L to prevent taking on new debt during a minor emergency.",
-            milestone: "Accumulate 1 month of expenses in a Liquid Fund.",
+            milestone: "Accumulate 1 month of essential expenses in a Liquid Fund.",
             mapping: "Defensive Assets → Cash Equivalents"
           };
         } else if (deState.corpPf === 'no') {
           result = {
             step: 2, stepName: "Employer Match", color: "#1A8276", textColor: "#ffffff",
             action: `Use the <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> to substitute income while you opt-in for Corporate NPS / max out your EPF match.`,
-            rationale: "Corporate PF/NPS matching is literally free money and 100% guaranteed return. Maximize this 80CCD(2) benefit before anything else.",
-            milestone: "Employer contribution fully matched up to 10% (Private) or 14% (Govt).",
-            mapping: "Core Accumulation"
+            rationale: "Corporate PF/NPS matching (Sec 80CCD2) is literally free money and 100% guaranteed return under both New and Old Tax Regimes. Maximize this before anything else.",
+            milestone: "Employer contribution fully matched (10% Private / 14% Govt).",
+            mapping: "Core Accumulation → Retirement Sovereign"
           };
         } else if (deState.debt === 'yes') {
           result = {
@@ -1871,33 +1880,41 @@
           };
         } else if (deState.ef === '<3') {
           result = {
-            step: 4, stepName: "Full Emergency Fund", color: "#D4A373", textColor: "#0C2340",
+            step: 4, stepName: "Full Emergency Cushion", color: "#D4A373", textColor: "#0C2340",
             action: `Direct the <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> to your Liquid or Arbitrage Fund.`,
-            rationale: "You have the cushion, but you need 3-6 months of essential expenses fully funded before exposing capital to market volatility.",
+            rationale: "You have a basic cushion, but you need 3-6 months of essential expenses fully funded before exposing capital to market volatility.",
             milestone: "3-6 months of expenses secured in Liquid/Arbitrage Funds.",
             mapping: "Defensive Assets → Cash/Arbitrage"
           };
-        } else if (deState.tax === 'no') {
+        } else if (deState.regime === 'otr' && deState.tax === 'no') {
           result = {
-            step: 5, stepName: "Triple Tax Break", color: "#2C5E7A", textColor: "#ffffff",
-            action: `Deploy <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> to max out PPF (₹1.5L) or VPF. (Also ensure you are capturing your EPF match - Step 2).`,
-            rationale: "These are EEE (Exempt-Exempt-Exempt) instruments. Maximize tax-free guaranteed compounding before entering taxable equity markets.",
-            milestone: "PPF maxed at ₹1.5L/year.",
+            step: 5, stepName: "Triple Tax Break (80C)", color: "#2C5E7A", textColor: "#ffffff",
+            action: `Deploy <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> to max out PPF (₹1.5L cap) or VPF under Old Tax Regime.`,
+            rationale: "Under Old Tax Regime, PPF provides a 30% upfront Sec 80C deduction + 7.1% tax-free EEE yield, producing an unbeatable 10.32% pre-tax equivalent yield.",
+            milestone: "PPF maxed at ₹1.5L/year under Old Tax Regime.",
             mapping: "Defensive Assets → Debt (Tax-Free)"
           };
-        } else if (deState.age === '30s+') {
+        } else if (deState.regime === 'ntr' && deState.age === '30s+' && deState.tax === 'no') {
+          result = {
+            step: 5, stepName: "Tax-Free Sovereign Debt Floor", color: "#2C5E7A", textColor: "#ffffff",
+            action: `Deploy <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> to PPF (or VPF) to build your long-term Debt allocation floor.`,
+            rationale: "Under New Tax Regime, Debt MFs/FDs are taxed at your 31.2% slab rate (yielding 5.16% net). PPF's 7.1% EEE tax-free yield is the highest sovereign tax-free debt return available for your 30s+ debt bucket.",
+            milestone: "Long-term Debt bucket target funded tax-free.",
+            mapping: "Defensive Assets → Sovereign Debt Floor"
+          };
+        } else if (deState.age === '30s+' && deState.tax === 'yes') {
           result = {
             step: 7, stepName: "Advanced Defensives & Core", color: "#0C2340", textColor: "#ffffff",
             action: `Split the <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> between Core Equity (Index/Flexicap) and Advanced Defensives (SGBs, Tax-Free Bonds).`,
             rationale: "In your 30s+, wealth fortification is as important as growth. SGBs provide inflation-hedged gold exposure, while Core Equity drives long-term compounding.",
-            milestone: "Balanced 60-70% Equity / 30-40% Debt target achieved.",
+            milestone: "Target 60:40 or 70:30 Equity:Debt asset allocation achieved.",
             mapping: "Core Equity + Defensive Assets (Gold/Bonds)"
           };
         } else {
           result = {
-            step: 6, stepName: "The Long Game (Taxable Equity)", color: "#1A8276", textColor: "#ffffff",
+            step: 6, stepName: "The Long Game (Core Equity Growth)", color: "#1A8276", textColor: "#ffffff",
             action: `Deploy the <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> into Core Equity (Nifty 50 Index Fund or Flexicap Fund).`,
-            rationale: "Your defenses are perfect. It's time to build wealth. In your 20s, you can afford an 80-100% equity allocation for long-term goals.",
+            rationale: "Your defenses are secure. Under New Tax Regime in your 20s, locking capital in 7.1% PPF creates long-term equity return drag. Prioritize 80-100% equity compounding.",
             milestone: "Consistent SIPs into Core Equity.",
             mapping: "Growth Assets → Core Passive/Active"
           };
