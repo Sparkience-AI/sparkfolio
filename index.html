@@ -261,7 +261,7 @@
       <div class="container nav-content">
         <a href="#" class="logo">Sparkfolio</a>
         <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-links">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
         <div class="nav-links" id="nav-links">
           <a href="#overview">Overview</a>
@@ -273,7 +273,7 @@
       </div>
     </nav>
 
-    <header class="hero" id="overview">
+    <header class="hero" id="overview" tabindex="-1">
       <div class="container text-center">
         <h1 class="hero-title text-navy">
           THE SPARKFOLIO<br>INVESTMENT FRAMEWORK
@@ -282,7 +282,7 @@
         
         <div class="grid grid-cols-1 md-grid-cols-2 lg-grid-cols-4 mt-8 gap-6">
           <div class="card card-hover items-center text-center">
-            <div class="icon-wrapper icon-primary mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg></div>
+            <div class="icon-wrapper icon-primary mb-4"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg></div>
             <h3 class="mb-2 text-base uppercase">ASSET ALLOCATION</h3>
             <p class="text-muted text-sm">comes first.</p>
           </div>
@@ -338,7 +338,7 @@
               <label for="de-amount" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Amount to Invest (₹)</label>
               <div class="amount-input-wrapper relative">
                 <span class="absolute" style="left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-family: var(--font-mono); font-weight: bold; font-size: 1.125rem;">₹</span>
-                <input type="number" id="de-amount" class="w-full font-mono text-xl p-4 border border-subtle rounded-lg bg-main focus:outline-none transition" style="padding-left: 2.5rem;" placeholder="10000" inputmode="numeric" value="10000">
+                <input type="number" id="de-amount" class="w-full font-mono text-xl p-4 border border-subtle rounded-lg bg-main focus:outline-none transition" style="padding-left: 2.5rem;" placeholder="10000" inputmode="numeric" value="10000" min="0">
               </div>
             </div>
 
@@ -403,7 +403,7 @@
             
             <div id="de-empty-state" class="text-center w-full flex flex-col items-center justify-center transition absolute inset-0 p-6 md-p-10" style="opacity: 1; pointer-events: none;">
               <div class="mb-4 text-muted opacity-50">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
               </div>
               <h3 class="text-lg text-navy font-heading mb-2">Ready for your strategy?</h3>
               <p class="text-sm text-muted max-w-xs mx-auto">Fill out the parameters on the left and click "Generate Strategy" to see your personalized next step.</p>
@@ -461,14 +461,14 @@
               </div>
               <div class="grid grid-cols-1 md-grid-cols-2 gap-4 h-full">
                 <div class="inner-box border-l-navy flex-col">
-                  <h4 class="mb-3 text-base flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> CORE</h4>
+                  <h4 class="mb-3 text-base flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> CORE</h4>
                   <ul class="plain-list bullet-list text-sm">
                     <li>ACTIVE CORE</li>
                     <li>PASSIVE CORE</li>
                   </ul>
                 </div>
                 <div class="inner-box border-l-navy flex-col">
-                  <h4 class="mb-3 text-base flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> SATELLITE</h4>
+                  <h4 class="mb-3 text-base flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> SATELLITE</h4>
                   <ul class="plain-list bullet-list text-sm">
                     <li>HIGH-CONVICTION ACTIVE</li>
                     <li>FACTOR / SMART-BETA TILT</li>
@@ -570,7 +570,7 @@
                 
                 <div class="tree-footer-note card mt-8 p-3 text-left md-text-center text-xs font-semibold text-navy bg-surface border-subtle w-full max-w-lg">
                   <div class="flex justify-start md-justify-center items-center gap-2">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
                     <span>Also measure active risk with tracking error and information ratio.</span>
                   </div>
                 </div>
@@ -599,7 +599,7 @@
                 <div class="flex justify-between text-sm mb-1"><strong class="text-gold">Defensive Assets</strong><span class="font-mono font-bold">60%</span></div>
                 <ul class="plain-list text-xs text-muted ml-4"><li>• Debt</li><li>• Gold (Optional)</li><li>• Cash</li></ul>
               </div>
-              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Suitable for investors with lower risk tolerance or shorter time horizon.</p>
+              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Suitable for investors with lower risk tolerance or shorter time horizon.</p>
             </div>
 
             
@@ -613,7 +613,7 @@
                 <div class="flex justify-between text-sm mb-1"><strong class="text-gold">Defensive Assets</strong><span class="font-mono font-bold">40%</span></div>
                 <ul class="plain-list text-xs text-muted ml-4"><li>• Debt</li><li>• Gold (Optional)</li><li>• Cash</li></ul>
               </div>
-              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2a2 2 0 0 1 2 2v2"></path><path d="M17 7h2a2 2 0 0 1 2 2v2"></path></svg> Suitable for investors with moderate risk tolerance and medium time horizon.</p>
+              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2a2 2 0 0 1 2 2v2"></path><path d="M17 7h2a2 2 0 0 1 2 2v2"></path></svg> Suitable for investors with moderate risk tolerance and medium time horizon.</p>
             </div>
 
             
@@ -627,7 +627,7 @@
                 <div class="flex justify-between text-sm mb-1"><strong class="text-gold">Defensive Assets</strong><span class="font-mono font-bold">20%</span></div>
                 <ul class="plain-list text-xs text-muted ml-4"><li>• Debt</li><li>• Gold (Optional)</li><li>• Cash</li></ul>
               </div>
-              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M13.5 2.5a8.5 8.5 0 0 0-11 11l.5.5-2.5 4a2 2 0 0 0 2.5 2.5l4-2.5.5.5a8.5 8.5 0 0 0 11-11c.4-3.1-2.4-5.9-5.5-5.5Z"></path><path d="m14 10-2.5 2.5"></path></svg> Suitable for investors with high risk tolerance and long time horizon.</p>
+              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M13.5 2.5a8.5 8.5 0 0 0-11 11l.5.5-2.5 4a2 2 0 0 0 2.5 2.5l4-2.5.5.5a8.5 8.5 0 0 0 11-11c.4-3.1-2.4-5.9-5.5-5.5Z"></path><path d="m14 10-2.5 2.5"></path></svg> Suitable for investors with high risk tolerance and long time horizon.</p>
             </div>
           </div>
           
@@ -635,23 +635,23 @@
             <h3 class="text-center text-lg text-navy uppercase font-bold mb-6 border-b pb-2">KEY FACTORS THAT INFLUENCE YOUR ALLOCATION</h3>
             <div class="grid grid-cols-1 md-grid-cols-5 gap-4">
               <div class="card flex items-start gap-3">
-                <div class="text-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
                 <div><strong class="text-xs uppercase block text-navy">AGE</strong><p class="text-xs text-muted">Younger investors can take more risk.</p></div>
               </div>
               <div class="card flex items-start gap-3">
-                <div class="text-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
                 <div><strong class="text-xs uppercase block text-navy">TIME HORIZON</strong><p class="text-xs text-muted">Longer horizon allows more growth exposure.</p></div>
               </div>
               <div class="card flex items-start gap-3">
-                <div class="text-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg></div>
+                <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg></div>
                 <div><strong class="text-xs uppercase block text-navy">RISK TOLERANCE</strong><p class="text-xs text-muted">Comfort with volatility should guide allocation.</p></div>
               </div>
               <div class="card flex items-start gap-3">
-                <div class="text-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+                <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
                 <div><strong class="text-xs uppercase block text-navy">FINANCIAL GOALS</strong><p class="text-xs text-muted">Match allocation to your specific goals.</p></div>
               </div>
               <div class="card flex items-start gap-3">
-                <div class="text-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></div>
+                <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></div>
                 <div><strong class="text-xs uppercase block text-navy">TAX SITUATION</strong><p class="text-xs text-muted">Tax efficiency can impact asset mix and vehicles.</p></div>
               </div>
             </div>
@@ -660,7 +660,7 @@
 
           
           <div class="mt-8 p-6 rounded text-left" style="background: rgba(12, 35, 64, 0.03); border: 1px solid var(--border-subtle); border-left: 4px solid var(--primary-navy);">
-            <h3 class="text-navy text-sm font-bold uppercase tracking-widest mb-2 flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> LIFECYCLE TRANSITION (GLIDE PATH)</h3>
+            <h3 class="text-navy text-sm font-bold uppercase tracking-widest mb-2 flex items-center gap-2"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> LIFECYCLE TRANSITION (GLIDE PATH)</h3>
             <p class="text-sm text-muted mb-0"><strong>Golden Rule:</strong> Start systematically shifting your equity allocation into safe debt/liquid funds <strong class="text-navy">3 years</strong> before your financial goal. For goals &lt;3 years away, your equity exposure should be <strong>0%</strong> to protect your accumulated capital from sudden market volatility.</p>
           </div>
       </section>
@@ -702,7 +702,7 @@
             <strong>💡 Structural Priority Note:</strong> The sequence below is a <strong>structural priority order</strong>, not a capital deployment plan. Build all buckets simultaneously; this sequence reflects weight and importance, not funding order.
           </div>
           <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> THE HYBRID SEQUENCE (ORDER OF OPERATIONS)</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> THE HYBRID SEQUENCE (ORDER OF OPERATIONS)</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4">This sequence maps the globally recognized "Order of Operations" (advocated by financial educators like Nischa and Nick Invests) to the Indian ecosystem, mathematically minimizing risk and capturing "free money" before exposing capital to market volatility.</p>
                   
@@ -717,7 +717,7 @@
                     </div>
                     <div class="p-3 bg-surface rounded border-l-4" style="border-left-color: var(--status-red);">
                       <strong class="text-navy block mb-1">Step 3: Say Bye to High (Eradicate Toxic Debt)</strong>
-                      <span class="text-muted">>Aggressively eliminate debt 9-10% (credit cards, personal loans). Paying off a 15% loan is mathematically identical to earning a guaranteed, risk-free 15% post-tax return.</span>
+                      <span class="text-muted">Aggressively eliminate debt 9-10% (credit cards, personal loans). Paying off a 15% loan is mathematically identical to earning a guaranteed, risk-free 15% post-tax return.</span>
                     </div>
                     <div class="p-3 bg-surface rounded border-l-4" style="border-left-color: var(--status-gold);">
                       <strong class="text-navy block mb-1">Step 4: The Full Emergency Fund (Sparkfolio Step 1)</strong>
@@ -740,18 +740,18 @@
               </details>
 
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> NON-TAXABLE INVESTMENT OPTIONS (NEW TAX REGIME)</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> NON-TAXABLE INVESTMENT OPTIONS (NEW TAX REGIME)</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4">Under the New Tax Regime (Section 115BAC), identifying assets that generate completely tax-free interest and maturity proceeds is paramount as most 80C upfront deductions are eliminated.</p>
                   
                   <strong class="text-xs uppercase text-navy block mb-1">EEE INSTRUMENTS (<span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> & <span class="jargon" data-tip="Sukanya Samriddhi Yojana" tabindex="0">SSY</span>)</strong>
-                  <p class="text-xs text-muted mb-4"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium mb-1 border border-subtle">Global Equivalent: Roth IRA / UK ISA</span><br>>The Exempt-Exempt-Exempt (EEE) status remains universally valid across both regimes. <span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> offers a sovereign-backed 7.1% interest rate, which for a 30% tax bracket investor is mathematically equivalent to a pre-tax <span class="jargon" data-tip="Fixed Deposit" tabindex="0">FD</span> return of 10%. (Annual cap: ₹1.5 Lakh).</p>
+                  <p class="text-xs text-muted mb-4"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium mb-1 border border-subtle">Global Equivalent: Roth IRA / UK ISA</span><br>The Exempt-Exempt-Exempt (EEE) status remains universally valid across both regimes. <span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> offers a sovereign-backed 7.1% interest rate, which for a 30% tax bracket investor is mathematically equivalent to a pre-tax <span class="jargon" data-tip="Fixed Deposit" tabindex="0">FD</span> return of 10%. (Annual cap: ₹1.5 Lakh).</p>
 
                   <strong class="text-xs uppercase text-navy block mb-1">PROVIDENT FUNDS (<span class="jargon" data-tip="Employee Provident Fund" tabindex="0">EPF</span> & <span class="jargon" data-tip="Voluntary Provident Fund" tabindex="0">VPF</span>) CEILINGS</strong>
                   <p class="text-xs text-muted mb-4"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium mb-1 border border-subtle">Global Equivalent: 401(k) / Superannuation</span><br>Maturity proceeds are tax-free if you maintain 5 years of continuous service. However, interest accrued on the employee's contribution exceeding <strong>₹2.5 Lakh</strong> in a single financial year is fully taxable at slab rate (this threshold increases to <strong>₹5 Lakh</strong> if the employer does not contribute to the fund).</p>
 
                   <strong class="text-xs uppercase text-navy block mb-1">SECONDARY MARKET TAX-FREE BONDS</strong>
-                  <p class="text-xs text-muted mb-4"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium mb-1 border border-subtle">Global Equivalent: US Municipal Bonds</span><br>Govt-backed <span class="jargon" data-tip="Public Sector Undertaking" tabindex="0">PSU</span> bonds (<span class="jargon" data-tip="National Highways Authority of India" tabindex="0">NHAI</span>, <span class="jargon" data-tip="Rural Electrification Corporation" tabindex="0">REC</span>, <span class="jargon" data-tip="Power Finance Corporation" tabindex="0">PFC</span>, <span class="jargon" data-tip="Indian Railway Finance Corporation" tabindex="0">IRFC</span>) pay 100% tax-free annual coupons (exempt under <strong>Section 10(15)(iv)(h)</strong> of the IT Act). <strong>The Catch:</strong>> Selling them on the secondary market prior to maturity triggers capital gains (12.5% <span class="jargon" data-tip="Long-Term Capital Gains" tabindex="0">LTCG</span> without indexation if held  12 months).</p>
+                  <p class="text-xs text-muted mb-4"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium mb-1 border border-subtle">Global Equivalent: US Municipal Bonds</span><br>Govt-backed <span class="jargon" data-tip="Public Sector Undertaking" tabindex="0">PSU</span> bonds (<span class="jargon" data-tip="National Highways Authority of India" tabindex="0">NHAI</span>, <span class="jargon" data-tip="Rural Electrification Corporation" tabindex="0">REC</span>, <span class="jargon" data-tip="Power Finance Corporation" tabindex="0">PFC</span>, <span class="jargon" data-tip="Indian Railway Finance Corporation" tabindex="0">IRFC</span>) pay 100% tax-free annual coupons (exempt under <strong>Section 10(15)(iv)(h)</strong> of the IT Act). <strong>The Catch:</strong> Selling them on the secondary market prior to maturity triggers capital gains (12.5% <span class="jargon" data-tip="Long-Term Capital Gains" tabindex="0">LTCG</span> without indexation if held  12 months).</p>
 
                   <strong class="text-xs uppercase text-navy block mb-1">LIFE INSURANCE & ULIPS (SECTION 10(10D) LIMITS)</strong>
                   <div class="text-xs text-muted mb-2"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium border border-subtle">Global Equivalent: Permanent/Whole Life Wrappers</span></div>
@@ -773,13 +773,13 @@
               </details>
 
           <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> TAX-AWARE INVESTING & PASS-THROUGH ENTITIES (2026)</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> TAX-AWARE INVESTING & PASS-THROUGH ENTITIES (2026)</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4"><strong>Crucial Update:</strong> Taxes are the largest unacknowledged drag on returns. Following the July 2024 Indian Budget, understanding these rules is critical.</p>
                   <ul class="plain-list text-sm text-navy space-y-3 mb-4">
                     <li class="flex flex-col gap-1">
                       <div class="flex items-center gap-2 font-bold"><span class="text-gold">●</span> Equity Mutual Funds</div>
-                      <span class="text-muted pl-5">><span class="jargon" data-tip="Long-Term Capital Gains" tabindex="0">LTCG</span> (holding  12 months) is taxed at <strong>12.5%</strong>. Exemption limit is <strong>₹1.25 Lakh</strong> per year. <span class="jargon" data-tip="Short-Term Capital Gains" tabindex="0">STCG</span> is taxed at <strong>20%</strong>.</span>
+                      <span class="text-muted pl-5"><span class="jargon" data-tip="Long-Term Capital Gains" tabindex="0">LTCG</span> (holding &gt;12 months) is taxed at <strong>12.5%</strong>. Exemption limit is <strong>₹1.25 Lakh</strong> per year. <span class="jargon" data-tip="Short-Term Capital Gains" tabindex="0">STCG</span> is taxed at <strong>20%</strong>.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="flex items-center gap-2 font-bold"><span class="text-blue">●</span> Debt Mutual Funds</div>
@@ -787,7 +787,7 @@
                     </li>
                     <li class="flex flex-col gap-1 mt-2">
                       <div class="flex items-center gap-2 font-bold"><span class="text-navy">●</span> International Mutual Funds</div>
-                      <span class="text-muted pl-5">><span class="jargon" data-tip="Long-Term Capital Gains" tabindex="0">LTCG</span> (holding  24 months) is taxed at <strong>12.5%</strong> without the ₹1.25L exemption. <span class="jargon" data-tip="Short-Term Capital Gains" tabindex="0">STCG</span> (≤ 24 months) is taxed at your <strong>slab rate</strong>.</span>
+                      <span class="text-muted pl-5"><span class="jargon" data-tip="Long-Term Capital Gains" tabindex="0">LTCG</span> (holding &gt;24 months) is taxed at <strong>12.5%</strong> without the ₹1.25L exemption. <span class="jargon" data-tip="Short-Term Capital Gains" tabindex="0">STCG</span> (≤ 24 months) is taxed at your <strong>slab rate</strong>.</span>
                     </li>
                     <li class="flex flex-col gap-1 mt-2">
                       <div class="flex items-center gap-2 font-bold"><span class="text-red">●</span> Share Buybacks (Post April 1, 2026)</div>
@@ -845,9 +845,9 @@
             
             
             <div class="flex-col">
-              <h3 class="text-lg uppercase text-muted mb-4 border-b pb-2 text-sm flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> GROWTH ASSETS</h3>
+              <h3 class="text-lg uppercase text-muted mb-4 border-b pb-2 text-sm flex items-center gap-2"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> GROWTH ASSETS</h3>
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> CORE → ACTIVE</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> CORE → ACTIVE</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4"><strong>Purpose:</strong> Long-term foundation, broad diversification, active management</p>
                   <strong class="text-xs uppercase text-navy">EXAMPLES</strong>
@@ -856,13 +856,13 @@
                   </ul>
                   <strong class="text-xs uppercase text-navy">CHARACTERISTICS</strong>
                   <ul class="plain-list text-sm mt-1 text-green space-y-2">
-                    <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> High conviction</li>
-                    <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Long holding period</li>
-                    <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg> Lower turnover</li>
+                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> High conviction</li>
+                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Long holding period</li>
+                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg> Lower turnover</li>
                   </ul>
                 </div>
               </details><details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> INTERNATIONAL DIVERSIFICATION</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> INTERNATIONAL DIVERSIFICATION</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-2">Indian investors suffer from massive "Home Bias," keeping roughly 98% of wealth in domestic assets. However, India represents only a fraction of global market cap.</p>
                   <p class="text-sm text-muted mb-4">To hedge against country-specific risks and currency depreciation, we recommend a <strong>15% to 30% allocation</strong> of your equity portfolio to the US market (e.g., S&P 500 or Nasdaq 100).</p>
@@ -873,7 +873,7 @@
               </details>
               
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> CORE → PASSIVE</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> CORE → PASSIVE</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4"><strong>Purpose:</strong> Capture market return, low cost, broad diversification</p>
                   <div class="grid grid-cols-2 gap-4">
@@ -888,8 +888,8 @@
                   </div>
                   <strong class="text-xs uppercase text-navy">VEHICLES</strong>
                   <ul class="plain-list text-sm mt-1 text-blue space-y-2 mb-4">
-                    <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Index Funds (Preferred for <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span> - executed at End-of-Day NAV)</li>
-                    <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> Index ETFs</li>
+                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Index Funds (Preferred for <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span> - executed at End-of-Day NAV)</li>
+                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> Index ETFs</li>
                   </ul>
                   <div class="callout-tip flex gap-3 mb-4 border-l-4" style="border-left-color: var(--status-red);">
                     <div>
@@ -904,7 +904,7 @@
               </details>
               
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> SATELLITE → HIGH-CONVICTION ACTIVE</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> SATELLITE → HIGH-CONVICTION ACTIVE</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4"><strong>Purpose:</strong> Seek excess return (alpha), concentrated conviction, higher risk</p>
                   <strong class="text-xs uppercase text-navy">EXAMPLES</strong>
@@ -913,9 +913,9 @@
                   </ul>
                   <strong class="text-xs uppercase text-navy">CHARACTERISTICS</strong>
                   <ul class="plain-list text-sm mt-1 text-navy space-y-2 mb-4">
-                    <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg> Higher volatility</li>
-                    <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Smaller allocation</li>
-                    <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> Higher expected alpha</li>
+                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg> Higher volatility</li>
+                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Smaller allocation</li>
+                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> Higher expected alpha</li>
                   </ul>
                   <div class="callout-tip flex gap-3 mb-4 border-l-4" style="border-left-color: var(--status-red);">
                     <div>
@@ -930,7 +930,7 @@
               </details>
 
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> SATELLITE → FACTOR / SMART-BETA TILT</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> SATELLITE → FACTOR / SMART-BETA TILT</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4"><strong>Purpose:</strong> Targeted exposure, rules-based tilts, specialized market segments</p>
                   <div class="grid grid-cols-2 gap-4">
@@ -945,9 +945,9 @@
                     <div>
                       <strong class="text-xs uppercase text-navy">VEHICLES</strong>
                       <ul class="plain-list text-sm mt-1 text-blue space-y-2">
-                        <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Factor ETFs</li>
-                        <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Factor Index Funds</li>
-                        <li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Smart Beta ETFs</li>
+                        <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Factor ETFs</li>
+                        <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Factor Index Funds</li>
+                        <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg> Smart Beta ETFs</li>
                       </ul>
                     </div>
                   </div>
@@ -958,7 +958,7 @@
 
 
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> ALTERNATIVE ASSETS & REAL ESTATE RISK PROFILING</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> ALTERNATIVE ASSETS & REAL ESTATE RISK PROFILING</summary>
                 <div class="details-content">
                   <strong class="text-sm text-navy block mb-2 border-b pb-1">The Contraction of P2P Lending</strong>
                   <p class="text-xs text-muted mb-4">The Reserve Bank of India has systematically tightened regulations for NBFC-P2P platforms to protect retail investors. The RBI explicitly prohibits platforms from offering credit enhancements or guarantees; lenders must bear 100% of the principal and interest loss risk. Furthermore, a single lender's aggregate exposure across all P2P platforms is rigidly capped at <strong>₹50 lakh</strong>, and investing over ₹10 lakh strictly requires a <strong>net worth certificate of at least ₹50 lakh from a Chartered Accountant</strong>. Consequently, P2P allocations must be viewed as high-risk, unsecured credit rather than safe fixed-income proxies.</p>
@@ -973,10 +973,10 @@
 
             
             <div class="flex-col">
-              <h3 class="text-lg uppercase text-muted mb-4 border-b pb-2 text-sm flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> DEFENSIVE ASSETS</h3>
+              <h3 class="text-lg uppercase text-muted mb-4 border-b pb-2 text-sm flex items-center gap-2"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> DEFENSIVE ASSETS</h3>
               
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M4 10v12h16V10l-8-6z"></path></svg> DEBT & HYBRID</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M4 10v12h16V10l-8-6z"></path></svg> DEBT & HYBRID</summary>
                 <div class="details-content p-0">
                   <div class="p-4 bg-surface text-sm text-muted"><strong>Purpose:</strong> Stability, capital preservation, liquidity<br><br>
                   <strong class="text-xs text-navy uppercase">EXAMPLES</strong>
@@ -1006,7 +1006,7 @@
               </details>
 
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="M16.71 13.88l-1.42 1.42"></path></svg> GOLD (OPTIONAL)</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="M16.71 13.88l-1.42 1.42"></path></svg> GOLD (OPTIONAL)</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4"><strong>Purpose:</strong> Inflation hedge, crisis hedge, diversifier</p>
                   <strong class="text-xs uppercase text-navy">EXAMPLES</strong>
@@ -1015,10 +1015,10 @@
                   </ul>
                   <div class="text-center bg-gold text-inverse text-xs font-bold uppercase p-1 mb-2">GOLD GUARDRAILS</div>
                   <ul class="plain-list text-sm text-navy space-y-2 mb-4">
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-green"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <div><strong>Recommended Allocation: 5-10%</strong><br>(Hard Ceiling: 15%)</div></li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <div><strong>Minimum Holding Horizon: 7-10 years</strong></div></li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> <div><strong>Preferred Vehicles:</strong> Gold ETF, Sovereign Gold Bond (SGB)</div></li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-blue"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg> <div><strong>Purpose:</strong> Permanent diversifier, inflation hedge</div></li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-green"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <div><strong>Recommended Allocation: 5-10%</strong><br>(Hard Ceiling: 15%)</div></li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <div><strong>Minimum Holding Horizon: 7-10 years</strong></div></li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> <div><strong>Preferred Vehicles:</strong> Gold ETF, Sovereign Gold Bond (SGB)</div></li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-blue"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg> <div><strong>Purpose:</strong> Permanent diversifier, inflation hedge</div></li>
                   </ul>
                   <div class="callout-tip flex gap-3 mb-4 border-l-4" style="border-left-color: var(--status-red);">
                     <div>
@@ -1030,7 +1030,7 @@
               </details>
 
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"></path><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"></path><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"></path></svg> CASH</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"></path><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"></path><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"></path></svg> CASH</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4"><strong>Purpose:</strong> Liquidity, emergency reserves</p>
                   <strong class="text-xs uppercase text-navy">EXAMPLES</strong>
@@ -1039,9 +1039,9 @@
                   </ul>
                   <div class="text-center bg-gold text-inverse text-xs font-bold uppercase p-1 mb-2">EMERGENCY FUND TIERS</div>
                   <ul class="plain-list text-sm text-navy space-y-2 mb-4">
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> <div><strong>3 Months:</strong> Stable govt/corporate job, dual income.</div></li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> <div><strong>6 Months:</strong> Private sector, single income, dependents.</div></li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> <div><strong>12 Months:</strong> Business owner, freelancer, variable income.</div></li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> <div><strong>3 Months:</strong> Stable govt/corporate job, dual income.</div></li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> <div><strong>6 Months:</strong> Private sector, single income, dependents.</div></li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> <div><strong>12 Months:</strong> Business owner, freelancer, variable income.</div></li>
                   </ul>
                   <div class="p-3 rounded text-left border-l-4 callout-tip">
                     <strong>💡 Reminder:</strong> Keep this in liquid & low-risk instruments for quick access.
@@ -1055,10 +1055,10 @@
           <div class="grid grid-cols-1 md-grid-cols-2 gap-8 mt-12">
             
             <div class="flex-col">
-              <h3 class="text-lg uppercase text-muted mb-4 border-b pb-2 text-sm flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> PORTFOLIO MANAGEMENT</h3>
+              <h3 class="text-lg uppercase text-muted mb-4 border-b pb-2 text-sm flex items-center gap-2"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> PORTFOLIO MANAGEMENT</h3>
               
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> WEALTH ACCELERATION (STEP-UP <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span>)</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> <span>WEALTH ACCELERATION (STEP-UP <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span>)</span></summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4"><strong>The Compounding Multiplier:</strong> A static <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> loses purchasing power to inflation over a 20-year horizon. Increasing your SIP amount annually is the single biggest driver of terminal wealth outside of asset allocation.</p>
                   <div class="grid grid-cols-1 gap-4 mb-4">
@@ -1107,55 +1107,55 @@
                 </div>
               </details>
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><polyline points="20 6 9 17 4 12"></polyline></svg> PORTFOLIO HEALTH CHECKLIST</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><polyline points="20 6 9 17 4 12"></polyline></svg> PORTFOLIO HEALTH CHECKLIST</summary>
                 <div class="details-content">
                   <div class="grid grid-cols-1 md-grid-cols-2 gap-2 text-xs">
                     <ul class="plain-list text-navy space-y-1">
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Emergency fund available</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>Insurance separated from investments (Buy Term Life)</strong></li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Asset allocation on target</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Rebalanced if required</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span class="jargon" data-tip="Provides stability, minimizes tracking error, and keeps aggregate costs low" tabindex="0">Core ≥ 70%</span></li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Satellites ≤ 30%</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Invested in Direct Plans only (saves 0.5-1.0% p.a.)</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Expense ratio reviewed</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tax implications reviewed</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Emergency fund available</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>Insurance separated from investments (Buy Term Life)</strong></li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Asset allocation on target</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Rebalanced if required</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span class="jargon" data-tip="Provides stability, minimizes tracking error, and keeps aggregate costs low" tabindex="0">Core ≥ 70%</span></li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Satellites ≤ 30%</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Invested in Direct Plans only (saves 0.5-1.0% p.a.)</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Expense ratio reviewed</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tax implications reviewed</li>
                     </ul>
                     <ul class="plain-list text-navy space-y-1">
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Goals still aligned</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Goals still aligned</li>
                       <li class="flex flex-col gap-1">
-                        <div class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> No duplicate fund overlap</div>
+                        <div class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> No duplicate fund overlap</div>
                         <span class="text-xs text-muted pl-5" style="margin-top: -4px;">Verify real stock-level overlap using tools like <a href="https://www.advisorkhoj.com/mutual-funds-research/mutual-fund-portfolio-overlap" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: underline;">Advisorkhoj</a> or <a href="https://www.thefundoo.com/Tools/PortfolioOverlap" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: underline;">theFundoo</a> to avoid redundant concentration.</span>
                       </li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> International diversification present</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tracking error within acceptable range</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Maximum drawdown understood</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tax impact reviewed before selling</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Gold allocation ≤ 15%</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Debt duration matches goal horizon</li>
-                      <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Exit decisions based on rolling returns</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> International diversification present</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tracking error within acceptable range</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Maximum drawdown understood</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tax impact reviewed before selling</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Gold allocation ≤ 15%</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Debt duration matches goal horizon</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Exit decisions based on rolling returns</li>
                     </ul>
                   </div>
                 </div>
               </details>
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> PORTFOLIO REVIEW CYCLE</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> PORTFOLIO REVIEW CYCLE</summary>
                 <div class="details-content">
                   <div class="grid grid-cols-1 gap-4">
                     <div class="flex items-start gap-3">
-                      <div class="icon-wrapper small"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+                      <div class="icon-wrapper small"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
                       <div><strong class="text-xs uppercase block text-navy">QUARTERLY</strong><ul class="plain-list bullet-list text-xs text-muted"><li>Review performance vs specific category benchmark (not just Nifty 50)</li><li>Review allocation drift</li></ul></div>
                     </div>
                     <div class="flex items-start gap-3">
-                      <div class="icon-wrapper small"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+                      <div class="icon-wrapper small"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
                       <div><strong class="text-xs uppercase block text-navy">HALF-YEARLY</strong><ul class="plain-list bullet-list text-xs text-muted"><li>Risk assessment</li><li>Goal tracking</li></ul></div>
                     </div>
                     <div class="flex items-start gap-3">
-                      <div class="icon-wrapper small"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+                      <div class="icon-wrapper small"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
                       <div><strong class="text-xs uppercase block text-navy">ANNUALLY</strong><ul class="plain-list bullet-list text-xs text-muted"><li>Full portfolio review</li><li>Rebalance if required</li><li>Check Portfolio Overlap (Ensure active funds don't hold the exact same stocks)</li></ul></div>
                     </div>
                     <div class="flex items-start gap-3">
-                      <div class="icon-wrapper small"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                      <div class="icon-wrapper small"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
                       <div><strong class="text-xs uppercase block text-navy">LIFE EVENTS</strong><ul class="plain-list bullet-list text-xs text-muted"><li>Marriage</li><li>Home purchase</li><li>Children</li><li>Retirement planning</li><li>Job change / Income change</li></ul></div>
                     </div>
                   </div>
@@ -1165,13 +1165,13 @@
                   </div>
                 </div>
               </details><details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> BEHAVIORAL GUARDRAILS</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> BEHAVIORAL GUARDRAILS</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4"><strong>The Behavior Gap:</strong> Studies (like DALBAR) consistently show that average investors underperform the market by simply reacting to news and panic selling. Protect your portfolio from yourself.</p>
                   <ul class="plain-list text-sm text-navy space-y-2">
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-red mt-1"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> <strong>Never check your portfolio during a market crash >2%.</strong></li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Automate everything (<span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span>).</strong> Friction prevents emotional tinkering.</li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy mt-1"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> <strong>Filter the noise.</strong> If financial news causes anxiety, tune it out. Your strategy is built for decades, not days.</li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-red mt-1"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> <strong>Never check your portfolio during a market crash >2%.</strong></li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Automate everything (<span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span>).</strong> Friction prevents emotional tinkering.</li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy mt-1"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> <strong>Filter the noise.</strong> If financial news causes anxiety, tune it out. Your strategy is built for decades, not days.</li>
                   </ul>
 
                   <div class="callout-tip flex gap-3 mt-4">
@@ -1184,18 +1184,18 @@
               </details>
 
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> FUND EXIT CHECKLIST</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> FUND EXIT CHECKLIST</summary>
                 <div class="details-content">
                   <p class="text-xs text-navy font-bold mb-3 uppercase">Review / Consider Exit if ANY apply:</p>
                   <ul class="plain-list text-sm text-navy space-y-2">
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> Underperforms category median on 3-year rolling returns for 3+ consecutive years</li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> Fund manager change or strategy drift from stated mandate</li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> Expense ratio increases significantly without performance justification</li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> AUM growth causes the fund to deviate from its stated mandate (e.g., a midcap fund becoming large-cap heavy due to scale)</li>
-                    <li class="flex items-start gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> Better risk-adjusted alternative exists with materially lower tracking error to category</li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> Underperforms category median on 3-year rolling returns for 3+ consecutive years</li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> Fund manager change or strategy drift from stated mandate</li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> Expense ratio increases significantly without performance justification</li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> AUM growth causes the fund to deviate from its stated mandate (e.g., a midcap fund becoming large-cap heavy due to scale)</li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> Better risk-adjusted alternative exists with materially lower tracking error to category</li>
                   </ul>
                   <div class="flex gap-2 items-start text-xs text-muted mt-4 border-t pt-4 mb-4">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--status-gold)" stroke-width="2" class="flex-shrink-0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--status-gold)" stroke-width="2" class="flex-shrink-0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                     Never exit based on 1-year underperformance. Use 3-year rolling returns vs. category median as your trigger, not point-to-point returns.
                   </div>
                   <div class="p-3 rounded text-left border-l-4 callout-tip">
@@ -1205,16 +1205,16 @@
               </details>
 
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-10.37l5.25-1"></path></svg> REBALANCING RULES</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-10.37l5.25-1"></path></svg> REBALANCING RULES</summary>
                 <div class="details-content">
                   <div class="grid grid-cols-2 gap-4">
                     <div class="inner-box text-center">
-                      <div class="icon-wrapper small mx-auto mb-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+                      <div class="icon-wrapper small mx-auto mb-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
                       <strong class="text-xs uppercase block mb-2 text-navy">CALENDAR BASED</strong>
                       <ul class="plain-list bullet-list text-sm text-muted text-left"><li>Quarterly</li><li>Semi-Annual</li><li>Annual</li></ul>
                     </div>
                     <div class="inner-box text-center">
-                      <div class="icon-wrapper small mx-auto mb-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2a2 2 0 0 1 2 2v2"></path><path d="M17 7h2a2 2 0 0 1 2 2v2"></path></svg></div>
+                      <div class="icon-wrapper small mx-auto mb-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2a2 2 0 0 1 2 2v2"></path><path d="M17 7h2a2 2 0 0 1 2 2v2"></path></svg></div>
                       <strong class="text-xs uppercase block mb-2 text-navy">THRESHOLD BASED</strong>
                       <p class="text-xs text-navy mb-1">Trigger rebalance when allocation drifts</p>
                       <span class="mono-data text-blue text-xl font-bold">5% / 10%</span>
@@ -1222,7 +1222,7 @@
                     </div>
                   </div>
                   <div class="flex gap-2 items-start text-xs text-muted mt-4 border-t pt-4 mb-4">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2" class="flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2" class="flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                     <strong>Tax-Free Inflow Rebalancing:</strong> Instead of selling outperforming assets (which triggers capital gains tax), redirect your fresh monthly <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> inflows into the underperforming asset class until target allocation is restored.
                   </div>
                   <div class="p-3 rounded text-left border-l-4 callout-tip">
@@ -1236,9 +1236,9 @@
 
             
             <div class="flex-col">
-              <h3 class="text-lg uppercase text-muted mb-4 border-b pb-2 text-sm flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> QUANTITATIVE ANALYSIS</h3>
+              <h3 class="text-lg uppercase text-muted mb-4 border-b pb-2 text-sm flex items-center gap-2"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> QUANTITATIVE ANALYSIS</h3>
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> FUND EVALUATION METRICS</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> FUND EVALUATION METRICS</summary>
                 <div class="details-content p-0">
                   <div class="table-container border-0">
                     <table class="responsive-table text-xs">
@@ -1265,11 +1265,11 @@
               </details>
 
               <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> CAPTURE RATIOS</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> CAPTURE RATIOS</summary>
                 <div class="details-content">
                   <div class="grid grid-cols-1 gap-4">
                     <div class="flex items-start gap-3">
-                      <div class="icon-wrapper small text-green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
+                      <div class="icon-wrapper small text-green"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
                       <div>
                         <strong class="text-xs uppercase block text-navy">UPSIDE CAPTURE RATIO</strong>
                         <p class="text-xs text-muted mb-1">How much of market gains a fund captures.</p>
@@ -1277,7 +1277,7 @@
                       </div>
                     </div>
                     <div class="flex items-start gap-3">
-                      <div class="icon-wrapper small text-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--status-red)" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg></div>
+                      <div class="icon-wrapper small text-red"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--status-red)" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg></div>
                       <div>
                         <strong class="text-xs uppercase block text-navy">DOWNSIDE CAPTURE RATIO</strong>
                         <p class="text-xs text-muted mb-1">How much of market declines a fund captures.</p>
@@ -1299,11 +1299,11 @@
 
             
             <h3 class="text-lg uppercase text-muted mt-8 mb-4 border-b pb-2 text-sm flex items-center gap-2">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               LIFECYCLE & FINANCIAL PLANNING
             </h3>
                 <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> AGE-SPECIFIC LIFECYCLE GUIDANCE</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> AGE-SPECIFIC LIFECYCLE GUIDANCE</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4">Static asset allocation models critically ignore changing human capital and fixed liabilities across different life stages. Note: <span class="jargon" data-tip="Securities and Exchange Board of India" tabindex="0">SEBI</span> replaced solution-oriented schemes with "Life Cycle Funds" in 2026 to automatically calibrate this shift.</p>
                   
@@ -1341,7 +1341,7 @@
                 </div>
               </details>
                 <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> THE RETIREMENT PLAYBOOK</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> THE RETIREMENT PLAYBOOK</summary>
                 <div class="details-content">
                   <ul class="plain-list bullet-list text-sm text-navy space-y-2">
                     <li><span><strong>The 3% Rule:</strong> Unlike the US 4% rule, India's higher inflation makes a Safe Withdrawal Rate (<span class="jargon" data-tip="Safe Withdrawal Rate" tabindex="0">SWR</span>) of 3-3.5% more sustainable for a 30-year retirement.</span></li>
@@ -1351,7 +1351,7 @@
                 </div>
               </details>
                 <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> HEALTHCARE LIABILITY INSULATION</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> HEALTHCARE LIABILITY INSULATION</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-4">Purchasing massive primary health insurance policies (e.g., ₹50L base plans) is highly capital-inefficient. The optimized approach utilizes a dual-layer strategy.</p>
                   <ul class="plain-list text-sm text-navy space-y-3 mb-4">
@@ -1370,7 +1370,7 @@
                 </div>
               </details>
                 <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> ESTATE PLANNING: THE SUPREME COURT MANDATE</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> ESTATE PLANNING: THE SUPREME COURT MANDATE</summary>
                 <div class="details-content">
                   <p class="text-sm text-muted mb-3">A critical failure point in conventional planning is assuming that designating a "Nominee" transfers absolute legal ownership of an asset.</p>
                   <div class="p-3 rounded text-left border-l-4 mb-3 callout-tip" style="border-left-color: var(--status-red);">
@@ -1392,21 +1392,21 @@
           </div>
 <div class="card p-6 mt-4 border border-red-100 bg-red-50 rounded-lg">
               <h3 class="font-bold text-lg mb-2 text-navy flex items-center gap-2">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-red-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-red-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                 The Compounding Tax on Wealth (Direct vs Regular)
               </h3>
               <p class="text-sm text-gray-700">Regular mutual fund plans charge an extra 1-1.5% in distributor commissions every year compared to Direct plans. Over a 20-year period, this seemingly small 1% fee drag compounds, potentially eating away 20-30% of your total wealth. Always invest in Direct plans to keep your returns yours.</p>
             </div>
 <details>
-                <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> KEY TERMS GLOSSARY</summary>
+                <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> KEY TERMS GLOSSARY</summary>
                 <div class="details-content">
                   <div class="grid grid-cols-1 gap-3 text-sm">
                     <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><span style="color:var(--status-green)">●</span> Alpha</strong><p class="text-xs text-muted">Excess return generated above the benchmark.</p></div>
                     <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><span style="color:var(--primary-blue)">●</span> Beta</strong><p class="text-xs text-muted">Sensitivity of fund returns to market movements.</p></div>
                     <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><span style="color:var(--primary-navy)">●</span> Core</strong><p class="text-xs text-muted">Broad, diversified, low-cost investments that form the foundation of the portfolio.</p></div>
                     <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><span style="color:var(--status-gold)">●</span> Satellite</strong><p class="text-xs text-muted">Focused or specialized investments used to enhance returns or target specific exposures.</p></div>
-                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 1 0-9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path></svg> Rebalancing</strong><p class="text-xs text-muted">Realigning portfolio back to target asset allocation.</p></div>
-                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> Tracking Error</strong><p class="text-xs text-muted">Deviation of fund returns from the benchmark.</p></div>
+                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 1 0-9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path></svg> Rebalancing</strong><p class="text-xs text-muted">Realigning portfolio back to target asset allocation.</p></div>
+                    <div><strong class="text-navy flex items-center gap-2 text-xs uppercase"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> Tracking Error</strong><p class="text-xs text-muted">Deviation of fund returns from the benchmark.</p></div>
                   </div>
                 </div>
               </details>
@@ -1653,7 +1653,7 @@
     <footer class="section border-t border-subtle bg-surface" style="padding: 3rem 0;">
       <div class="container text-center flex-col items-center justify-center">
         <div class="flex items-center justify-center gap-2 mb-2 text-gold">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
           <strong class="uppercase text-navy font-bold tracking-widest text-sm">KEY TAKEAWAY</strong>
         </div>
         <p class="text-lg font-heading text-navy mb-4" id="takeaway-text">
@@ -1709,17 +1709,31 @@
 
         detail.addEventListener('toggle', () => {
           if (detail.open) {
-            // Animate open
-            content.style.maxHeight = content.scrollHeight + 'px';
-            // Auto-closing siblings removed per user request
+            // Animate open with generous height buffer for padding & dynamic text wraps
+            content.style.maxHeight = (content.scrollHeight + 60) + 'px';
+            
+            const onEnd = (e) => {
+              if (e.propertyName === 'max-height' && detail.open) {
+                // Remove max-height constraint once open animation finishes to prevent any text cutoff
+                content.style.maxHeight = 'none';
+                content.removeEventListener('transitionend', onEnd);
+              }
+            };
+            content.addEventListener('transitionend', onEnd);
           } else {
-            content.style.maxHeight = '0';
+            // Prepare for smooth collapse
+            content.style.maxHeight = content.scrollHeight + 'px';
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                content.style.maxHeight = '0';
+              });
+            });
           }
         });
 
-        // Initialize: if already open on load, set max-height
+        // Initialize: if open on load, allow full auto height
         if (detail.open) {
-          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.maxHeight = 'none';
         }
       });
 
@@ -1796,14 +1810,14 @@
       document.querySelectorAll('.icon-wrapper:not(button .icon-wrapper)').forEach(el => {
         const text = el.innerText.trim();
         let svg = '';
-        if(text === 'PieChart') svg = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>`;
-        else if(text === 'Shield') svg = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`;
-        else if(text === 'Target') svg = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>`;
-        else if(text === 'Scale') svg = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2a2 2 0 0 1 2 2v2"></path><path d="M17 7h2a2 2 0 0 1 2 2v2"></path></svg>`;
-        else if(text === 'TrendingUp') svg = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>`;
-        else if(text === 'Building') svg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v12h16V10l-8-6z"></path></svg>`;
-        else if(text === 'Coins') svg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="M16.71 13.88l-1.42 1.42"></path></svg>`;
-        else if(text === 'Wallet') svg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"></path><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"></path><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"></path></svg>`;
+        if(text === 'PieChart') svg = `<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>`;
+        else if(text === 'Shield') svg = `<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`;
+        else if(text === 'Target') svg = `<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>`;
+        else if(text === 'Scale') svg = `<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2a2 2 0 0 1 2 2v2"></path><path d="M17 7h2a2 2 0 0 1 2 2v2"></path></svg>`;
+        else if(text === 'TrendingUp') svg = `<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>`;
+        else if(text === 'Building') svg = `<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v12h16V10l-8-6z"></path></svg>`;
+        else if(text === 'Coins') svg = `<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="M16.71 13.88l-1.42 1.42"></path></svg>`;
+        else if(text === 'Wallet') svg = `<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"></path><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"></path><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"></path></svg>`;
         if(svg) el.innerHTML = svg;
       });
 
@@ -1825,7 +1839,8 @@
 
       function updateDecision() {
         const amtStr = deAmount.value || '0';
-        const amount = parseInt(amtStr, 10);
+        const rawAmount = parseInt(amtStr, 10);
+        const amount = (isNaN(rawAmount) || rawAmount < 0) ? 0 : rawAmount;
         const formattedAmount = '₹' + amount.toLocaleString('en-IN');
         
         let result = {};
@@ -1883,7 +1898,7 @@
             step: 6, stepName: "The Long Game (Taxable Equity)", color: "#1A8276", textColor: "#ffffff",
             action: `Deploy the <span class="font-mono bg-main px-1 rounded">${formattedAmount}</span> into Core Equity (Nifty 50 Index Fund or Flexicap Fund).`,
             rationale: "Your defenses are perfect. It's time to build wealth. In your 20s, you can afford an 80-100% equity allocation for long-term goals.",
-            milestone: "Consistent <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span> into Core Equity.",
+            milestone: "Consistent SIPs into Core Equity.",
             mapping: "Growth Assets → Core Passive/Active"
           };
         }

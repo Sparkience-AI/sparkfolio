@@ -176,9 +176,12 @@ body.js-loaded .inner-box.animated {
 .justify-center { justify-content: center; }
 .gap-1 { gap: var(--space-1); }
 .gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
 .gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
 .gap-6 { gap: var(--space-6); }
 .gap-8 { gap: var(--space-8); }
+.gap-10 { gap: var(--space-10); }
 .gap-12 { gap: var(--space-12); }
 .w-full { width: 100%; }
 .h-full { height: 100%; }
@@ -336,9 +339,14 @@ details[open] summary::after { content: '−'; }
 .tree-line-corner.right { background: var(--primary-navy); left: 50%; transform: translateX(-50%); }
 .tree-line-corner.right::after { content: ''; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); border-width: 6px 5px 0 5px; border-style: solid; border-color: var(--primary-navy) transparent transparent transparent; }
 
+/* Section Scroll Offsets for Sticky Header */
+section[id], header[id] {
+  scroll-margin-top: 85px;
+}
+
 /* Responsive Mobile Directory Tree */
 @media (max-width: 768px) {
-  .css-tree-container { align-items: flex-start; padding-left: 16px; position: relative; padding-bottom: 16px; }
+  .css-tree-container { align-items: flex-start; padding-left: 16px; position: relative; padding-top: 16px; padding-bottom: 16px; }
   
   /* Reset center alignments and desktop lines */
   .tree-split { flex-direction: column; gap: 0; margin-top: 0; width: 100%; align-items: flex-start; }
@@ -346,7 +354,7 @@ details[open] summary::after { content: '−'; }
   
   /* Main Trunk Line */
   .css-tree-container::before {
-    content: ''; position: absolute; left: 36px; top: 46px; bottom: 50px; width: 2px; background: var(--primary-navy); z-index: 0;
+    content: ''; position: absolute; left: 36px; top: 62px; bottom: 50px; width: 2px; background: var(--primary-navy); z-index: 0;
   }
   
   .tree-node { width: 100%; max-width: 280px; text-align: left; margin: 10px 0; position: relative; min-width: 0; }
@@ -382,7 +390,7 @@ details[open] summary::after { content: '−'; }
   .tree-branch:first-child .tree-node:not(.branch-header)::after { background: var(--status-green); }
   .tree-branch:last-child .tree-node:not(.branch-header)::after { background: var(--status-gold); }
   
-  .tree-footer-note { margin-top: 16px; margin-left: 48px; width: calc(100% - 48px); max-width: 280px; position: relative; }
+  .tree-footer-note { margin-top: 16px; margin-left: 48px; width: calc(100% - 48px); max-width: 280px; position: relative; background: var(--bg-card) !important; color: var(--primary-navy) !important; opacity: 1 !important; z-index: 2; }
   .tree-footer-note::before { content: ''; position: absolute; left: -28px; top: 50%; width: 28px; height: 2px; background: var(--primary-navy); }
 }
 
@@ -443,26 +451,7 @@ tr:last-child td { border-bottom: none; }
 
 
 
-/* === AGENT PHASE 1: DECISION ENGINE === */
-.decision-section {
-  position: relative;
-  overflow: hidden;
-}
-.amount-input-wrapper input {
-  -moz-appearance: textfield;
-}
-.amount-input-wrapper input::-webkit-outer-spin-button,
-.amount-input-wrapper input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.segmented-control {
-  display: flex;
-}
-.segment-btn {
-  background: transparent;
-  border: none;
-}
+
 
 /* Desktop Large Scaling (min-width: 1024px) */
 @media (min-width: 1024px) {
@@ -509,6 +498,11 @@ tr:last-child td { border-bottom: none; }
 .jargon:hover {
   background-color: rgba(69, 123, 157, 0.15);
   text-decoration-color: var(--primary-navy);
+}
+.jargon:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 .tooltip-bubble {
   position: fixed;
@@ -575,8 +569,8 @@ details .details-content {
 }
 details[open] .details-content {
   opacity: 1;
-  padding-top: var(--space-4);
-  padding-bottom: var(--space-4);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-6);
 }
 
 /* === PROGRESSIVE NAVBAR === */
@@ -717,3 +711,7 @@ details[open] .details-content {
 .border-red-500 { border-color: var(--status-red); }
 .border-yellow-500 { border-color: var(--status-gold); }
 .border-green-500 { border-color: var(--status-green); }
+.border-red-100 { border-color: rgba(220, 38, 38, 0.15); }
+.bg-red-50 { background-color: rgba(254, 242, 242, 0.6); }
+.text-red-500 { color: var(--status-red); }
+.text-gray-700 { color: var(--text-muted); }

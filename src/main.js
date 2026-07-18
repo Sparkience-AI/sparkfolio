@@ -1,7 +1,7 @@
 import './style.css'
 
 // Add scroll-based animations (fade-in)
-document.addEventListener("DOMContentLoaded", () => {
+function init() {
   // U4: Add .js-loaded class to body
   document.body.classList.add('js-loaded');
 
@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
         target.scrollIntoView({
           behavior: 'smooth'
         });
+        // Transfer focus for keyboard accessibility (skip link)
+        if (target.getAttribute('tabindex') === '-1') {
+          target.focus({ preventScroll: true });
+        }
       }
     });
   });
@@ -97,7 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Create shared tooltip bubble element
     const bubble = document.createElement('div');
     bubble.className = 'tooltip-bubble';
-    bubble.setAttribute('aria-hidden', 'true');
+    bubble.id = 'jargon-tooltip';
+    bubble.setAttribute('role', 'tooltip');
     document.body.appendChild(bubble);
 
     function showTooltip(el) {
@@ -158,14 +163,27 @@ document.addEventListener("DOMContentLoaded", () => {
     jargonElements.forEach(el => {
       // Event listeners
       el.addEventListener('mouseenter', () => showTooltip(el));
-      el.addEventListener('focus', () => showTooltip(el));
+      el.addEventListener('focus', () => {
+        showTooltip(el);
+        el.setAttribute('aria-describedby', 'jargon-tooltip');
+      });
       
       el.addEventListener('mouseleave', hideTooltip);
-      el.addEventListener('blur', hideTooltip);
+      el.addEventListener('blur', () => {
+        hideTooltip();
+        el.removeAttribute('aria-describedby');
+      });
     });
 
     // Also close on scroll/resize
     window.addEventListener('scroll', hideTooltip, { passive: true });
     window.addEventListener('resize', hideTooltip, { passive: true });
   }
-});
+}
+
+// Safe initialization: handle both DOMContentLoaded and already-loaded states
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
