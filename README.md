@@ -28,6 +28,14 @@ npm run build
 ```
 The site is built and pushed to GitHub Pages.
 
+### SSoT Facts Governance & Audit
+All financial rates, tax laws, and research citations are managed via a **Single Source of Truth (SSoT)** architecture (`src/data/framework-facts.json`).
+* See [FACTS_GOVERNANCE.md](file:///C:/Users/nitin/Documents/antigravity/mysterious-volta/FACTS_GOVERNANCE.md) for full documentation on Level 1 (Evergreen), Level 2 (Annual Budget), and Level 3 (Quarterly Rates) fact classifications.
+* Run coverage audit test:
+```bash
+node tests/verify_facts_coverage.cjs
+```
+
 ## Legal Disclaimer & Research Integrity
 
 **Not Financial Advice:** Sparkfolio is an independent educational framework provided for informational purposes only. The content, frameworks, asset allocation models, and methodologies presented within this repository and on the live website do not constitute personalized investment, financial, legal, or tax advice. All investment strategies involve risk of loss, and past performance is no guarantee of future results. You should consult with a qualified SEBI-registered investment advisor (RIA) or financial professional before making any investment decisions.

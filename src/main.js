@@ -1,9 +1,31 @@
 import './style.css'
+import frameworkFacts from './data/framework-facts.json'
+
+// Data-Fact Auto-Binding Helper
+function syncFrameworkFacts() {
+  const allFacts = {
+    ...frameworkFacts.L1_evergreen,
+    ...frameworkFacts.L2_annual,
+    ...frameworkFacts.L3_quarterly
+  };
+
+  document.querySelectorAll('[data-fact]').forEach(el => {
+    const key = el.getAttribute('data-fact');
+    if (allFacts[key] && allFacts[key].val) {
+      // Preserve inner HTML structure if jargon/formatting present, else update text
+      if (!el.firstElementChild) {
+        el.textContent = allFacts[key].val;
+      }
+      el.setAttribute('data-last-verified', allFacts[key].last_verified || '2026-Q3');
+    }
+  });
+}
 
 // Add scroll-based animations (fade-in)
 function init() {
   // U4: Add .js-loaded class to body
   document.body.classList.add('js-loaded');
+  syncFrameworkFacts();
 
   const observerOptions = {
     root: null,

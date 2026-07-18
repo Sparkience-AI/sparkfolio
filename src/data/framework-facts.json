@@ -1,0 +1,252 @@
+{
+  "_meta": {
+    "title": "Sparkfolio Framework Single Source of Truth (SSoT) Facts Registry",
+    "version": "1.1.0",
+    "last_updated": "2026-Q3",
+    "description": "Exhaustive, centralized, auditable registry of all numerical, tax, regulatory, legal, and academic facts across the Sparkfolio Framework."
+  },
+  "L3_quarterly": {
+    "rate_ppf_interest": {
+      "val": "7.1%",
+      "label": "PPF Interest Rate",
+      "authority": "Ministry of Finance (Small Savings)",
+      "last_verified": "2026-Q3",
+      "category": "Interest Rates"
+    },
+    "rate_epf_interest": {
+      "val": "8.25%",
+      "label": "EPF Interest Rate",
+      "authority": "EPFO Central Board of Trustees",
+      "last_verified": "2026-Q3",
+      "category": "Interest Rates"
+    },
+    "rate_ssy_interest": {
+      "val": "8.2%",
+      "label": "Sukanya Samriddhi Yojana (SSY) Rate",
+      "authority": "Ministry of Finance (Small Savings)",
+      "last_verified": "2026-Q3",
+      "category": "Interest Rates"
+    },
+    "rate_home_loan_threshold": {
+      "val": "8.5%",
+      "label": "Home Loan Prepay Interest Threshold",
+      "authority": "RBI Benchmark / Market Average",
+      "last_verified": "2026-Q3",
+      "category": "Debt Benchmarks"
+    },
+    "sebi_brokerage_cap_cash": {
+      "val": "6bps",
+      "label": "SEBI Base Expense Brokerage Cap (Cash)",
+      "authority": "SEBI Mutual Fund Regulations 2026",
+      "last_verified": "2026-Q3",
+      "category": "Regulatory Directives"
+    },
+    "sebi_brokerage_cap_derivatives": {
+      "val": "2bps",
+      "label": "SEBI Base Expense Brokerage Cap (Derivatives)",
+      "authority": "SEBI Mutual Fund Regulations 2026",
+      "last_verified": "2026-Q3",
+      "category": "Regulatory Directives"
+    },
+    "sebi_rule_lifecycle_funds": {
+      "val": "SEBI replaced solution-oriented schemes with \"Life Cycle Funds\" in 2026 to automatically calibrate glide paths.",
+      "label": "SEBI 2026 Life Cycle Funds Rule",
+      "authority": "SEBI Circular 2026",
+      "last_verified": "2026-Q3",
+      "category": "Regulatory Directives"
+    },
+    "study_spiva_active_largecap": {
+      "val": "SPIVA India Scorecards consistently show that most active large-cap funds fail to beat the market over the long term.",
+      "label": "SPIVA India Large-Cap Outperformance Scorecard",
+      "authority": "S&P Dow Jones Indices (SPIVA)",
+      "last_verified": "2026-Q3",
+      "category": "Market Scorecards"
+    }
+  },
+  "L2_annual": {
+    "tax_ltcg_rate": {
+      "val": "12.5%",
+      "label": "Long-Term Capital Gains (LTCG) Tax Rate",
+      "authority": "Income Tax Act / Finance Act 2024/2026",
+      "last_verified": "2026-Q3",
+      "category": "Taxation"
+    },
+    "tax_stcg_rate": {
+      "val": "20%",
+      "label": "Short-Term Capital Gains (STCG) Tax Rate",
+      "authority": "Income Tax Act / Finance Act 2024/2026",
+      "last_verified": "2026-Q3",
+      "category": "Taxation"
+    },
+    "cap_sec_80c": {
+      "val": "₹1.5 Lakh",
+      "label": "Section 80C Annual Deduction Cap",
+      "authority": "Income Tax Act Sec 80C",
+      "last_verified": "2026-Q3",
+      "category": "Taxation Caps"
+    },
+    "cap_epf_tax_free_employee": {
+      "val": "₹2.5 Lakh",
+      "label": "EPF/VPF Tax-Free Annual Employee Contribution Ceiling",
+      "authority": "Income Tax Act Sec 10(11)/10(12)",
+      "last_verified": "2026-Q3",
+      "category": "Taxation Caps"
+    },
+    "cap_epf_tax_free_no_employer": {
+      "val": "₹5 Lakh",
+      "label": "EPF Tax-Free Ceiling without Employer Contribution",
+      "authority": "Income Tax Act Sec 10(11)/10(12)",
+      "last_verified": "2026-Q3",
+      "category": "Taxation Caps"
+    },
+    "cap_ulip_tax_free_2_5l": {
+      "val": "₹2.5 Lakh",
+      "label": "ULIP Tax-Free Annual Premium Cap (Issued post Feb 1, 2021)",
+      "authority": "Income Tax Act Sec 10(10D)",
+      "last_verified": "2026-Q3",
+      "category": "Insurance Taxation"
+    },
+    "cap_traditional_life_tax_free_5l": {
+      "val": "₹5 Lakh",
+      "label": "Traditional Life Policy Tax-Free Annual Premium Cap (Issued post Apr 1, 2023)",
+      "authority": "Income Tax Act Sec 10(10D)",
+      "last_verified": "2026-Q3",
+      "category": "Insurance Taxation"
+    },
+    "tax_sec_80ccd2_private": {
+      "val": "10%",
+      "label": "Corporate NPS Employer Deduction Limit (Private)",
+      "authority": "Income Tax Act Sec 80CCD(2)",
+      "last_verified": "2026-Q3",
+      "category": "Taxation Caps"
+    },
+    "tax_sec_80ccd2_govt": {
+      "val": "14%",
+      "label": "Corporate NPS Employer Deduction Limit (Government)",
+      "authority": "Income Tax Act Sec 80CCD(2)",
+      "last_verified": "2026-Q3",
+      "category": "Taxation Caps"
+    },
+    "tax_sgb_secondary_rule": {
+      "val": "SGBs purchased in the secondary market no longer qualify for the capital gains exemption at maturity (taxed at 12.5% LTCG); only original subscribers receive tax-free maturity.",
+      "label": "Secondary SGB Maturity Tax Exemption Rule",
+      "authority": "Finance Act / Income Tax Act Sec 47",
+      "last_verified": "2026-Q3",
+      "category": "Taxation Rules"
+    },
+    "tax_psu_bonds_sec10_15": {
+      "val": "Section 10(15)(iv)(h)",
+      "label": "PSU Tax-Free Bond Coupon Interest Exemption Section",
+      "authority": "Income Tax Act Sec 10(15)",
+      "last_verified": "2026-Q3",
+      "category": "Taxation Rules"
+    },
+    "tax_sec_56_2_xii_reit_repayment": {
+      "val": "Section 56(2)(xii)",
+      "label": "REIT/InvIT Debt Repayment Taxation Section",
+      "authority": "Income Tax Act Sec 56(2)(xii)",
+      "last_verified": "2026-Q3",
+      "category": "Taxation Rules"
+    },
+    "tax_sec_194lba_reit_tds": {
+      "val": "Section 194LBA",
+      "label": "REIT/InvIT Distribution TDS Section",
+      "authority": "Income Tax Act Sec 194LBA",
+      "last_verified": "2026-Q3",
+      "category": "Taxation Rules"
+    },
+    "tax_slab_max_rate": {
+      "val": "31.2%",
+      "label": "Peak Income Tax Slab Rate (including 4% Cess)",
+      "authority": "Income Tax Act",
+      "last_verified": "2026-Q3",
+      "category": "Taxation"
+    }
+  },
+  "L1_evergreen": {
+    "legal_sc_nominee_judgment": {
+      "val": "2023 Supreme Court Judgment (Shakti Yezdani Case)",
+      "label": "Nominee Legal Status Landmark SC Judgment",
+      "authority": "Supreme Court of India",
+      "last_verified": "2026-Q3",
+      "category": "Legal Mandates"
+    },
+    "legal_nominee_fiduciary_rule": {
+      "val": "A nominee is strictly an agent or trustee appointed for administrative convenience. Once they receive the assets, they hold them in a strictly fiduciary capacity until rightful legal heirs establish their claim.",
+      "label": "Fiduciary Nature of Nominees",
+      "authority": "Supreme Court of India",
+      "last_verified": "2026-Q3",
+      "category": "Legal Mandates"
+    },
+    "math_compounding_1st_vs_2nd_crore": {
+      "val": "A ₹20k monthly SIP at 12% takes ~15.5 years for the first ₹1 Crore, but the second ₹1 Crore is generated in just over 5 years.",
+      "label": "Math of Early Action & Compounding",
+      "authority": "Compound Interest Mechanics",
+      "last_verified": "2026-Q3",
+      "category": "Financial Mathematics"
+    },
+    "study_vanguard_lumpsum_vs_sip": {
+      "val": "Vanguard studies show that investing a Lump Sum immediately beats spreading it out (SIP) about 67% of the time because markets rise more than they fall.",
+      "label": "Vanguard Lump Sum vs SIP Research",
+      "authority": "Vanguard Research",
+      "last_verified": "2026-Q3",
+      "category": "Academic Studies"
+    },
+    "study_vanguard_vlcm_crossover": {
+      "val": "Vanguard's VLCM research shows that accumulated financial capital overtakes remaining human capital in your 40s.",
+      "label": "Vanguard Human Capital Crossover",
+      "authority": "Vanguard VLCM Model",
+      "last_verified": "2026-Q3",
+      "category": "Academic Studies"
+    },
+    "study_dalbar_behavior_gap": {
+      "val": "Studies (like DALBAR) consistently show that average investors underperform the market by simply reacting to news and panic selling.",
+      "label": "DALBAR Behaviour Gap Study",
+      "authority": "DALBAR QAIB Research",
+      "last_verified": "2026-Q3",
+      "category": "Behavioral Finance"
+    },
+    "rule_swr_india": {
+      "val": "3-3.5%",
+      "label": "Safe Withdrawal Rate (SWR) for India",
+      "authority": "Indian Inflation Adjusted SWR Model",
+      "last_verified": "2026-Q3",
+      "category": "Retirement Engineering"
+    },
+    "health_base_topup_recommendation": {
+      "val": "Tier-1 city residents should hold a Base Cover of ₹10 Lakh paired with a Super Top-Up of ₹30 Lakh to ₹50 Lakh (carrying a ₹10 Lakh deductible).",
+      "label": "Healthcare Liability Insulation Recommendation",
+      "authority": "Sparkfolio Risk Insulation Model",
+      "last_verified": "2026-Q3",
+      "category": "Healthcare Insulation"
+    },
+    "rule_step_up_sip_10_percent": {
+      "val": "10% Step-Up Rule",
+      "label": "Annual Step-Up SIP Growth Rule",
+      "authority": "Wealth Acceleration Model",
+      "last_verified": "2026-Q3",
+      "category": "Accumulation Engineering"
+    },
+    "rule_home_loan_prepay_emi_30_percent": {
+      "val": "30%",
+      "label": "Home Loan EMI Net Income Ceiling",
+      "authority": "Liability Management Benchmark",
+      "last_verified": "2026-Q3",
+      "category": "Liability Management"
+    },
+    "rule_rebalance_drift_threshold": {
+      "val": "5% / 10%",
+      "label": "Target Allocation Rebalancing Drift Threshold",
+      "authority": "Rebalancing Framework",
+      "last_verified": "2026-Q3",
+      "category": "Portfolio Rebalancing"
+    },
+    "rule_active_fund_underperformance_exit": {
+      "val": "3 consecutive years",
+      "label": "Active Fund Rolling Return Exit Benchmark",
+      "authority": "Fund Exit Framework",
+      "last_verified": "2026-Q3",
+      "category": "Portfolio Governance"
+    }
+  }
+}
