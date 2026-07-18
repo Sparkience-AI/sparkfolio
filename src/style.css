@@ -647,6 +647,18 @@ details[open] .details-content {
   display: flex;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
 }
+.segmented-control.grid {
+  display: grid !important;
+}
+.segmented-control.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+.segmented-control.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+.segmented-control.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
 .segment-btn {
   background: transparent;
   border: none;
@@ -654,8 +666,9 @@ details[open] .details-content {
   user-select: none;
   color: var(--text-muted);
   flex: 1;
-  padding: 0.75rem 0.5rem;
-  margin: 2px;
+  padding: 0.6rem 0.35rem;
+  margin: 1px;
+  white-space: nowrap;
 }
 .segment-btn.active {
   background: var(--bg-card);
