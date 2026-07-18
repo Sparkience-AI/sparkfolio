@@ -268,6 +268,7 @@
           <a href="#hierarchy">Hierarchy</a>
           <a href="#building-order">Process</a>
           <a href="#templates">Templates</a>
+          <a href="#agent">Decision Engine</a>
           <a href="#implementation">Implementation</a>
         </div>
       </div>
@@ -320,137 +321,6 @@
         </div>
       </div>
     </header>
-
-    
-    <section id="agent" class="section decision-section">
-      <div class="container text-center">
-        <div class="section-header bg-navy text-inverse p-6 rounded-t-lg mb-0" style="border-bottom: none;">
-          <h2 class="section-title text-inverse m-0">WHERE SHOULD YOUR NEXT RUPEE GO?</h2>
-          <p class="section-subtitle text-inverse opacity-70 mt-2">Answer a few quick questions. Get a definitive next step based on the Sparkfolio Framework.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md-grid-cols-2 gap-0 items-stretch text-left max-w-4xl mx-auto border border-subtle border-t-0 rounded-b-lg overflow-hidden bg-main shadow-card">
-          
-          
-          <div class="decision-form p-6 md-p-10 bg-card border-b border-r-md border-subtle">
-            
-            <div class="mb-6">
-              <label for="de-amount" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Amount to Invest (₹)</label>
-              <div class="amount-input-wrapper relative">
-                <span class="absolute" style="left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-family: var(--font-mono); font-weight: bold; font-size: 1.125rem;">₹</span>
-                <input type="number" id="de-amount" class="w-full font-mono text-xl p-4 border border-subtle rounded-lg bg-main focus:outline-none transition" style="padding-left: 2.5rem;" placeholder="10000" inputmode="numeric" value="10000" min="0">
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Tax Regime</label>
-              <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="Tax Regime">
-                <button class="segment-btn active flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="regime" data-val="ntr" role="radio" aria-checked="true">New Tax Regime (NTR)</button>
-                <button class="segment-btn flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="regime" data-val="otr" role="radio" aria-checked="false">Old Tax Regime (OTR)</button>
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Age Bracket</label>
-              <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="Age Bracket">
-                <button class="segment-btn active flex-1 py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="age" data-val="20s" role="radio" aria-checked="true">20s</button>
-                <button class="segment-btn flex-1 py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="age" data-val="30s+" role="radio" aria-checked="false">30s & Above</button>
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Emergency Fund Status</label>
-              <div class="segmented-control grid grid-cols-2 md-grid-cols-4 bg-main p-1 rounded-lg gap-1" style="display: grid;" role="radiogroup" aria-label="Emergency Fund Status">
-                <button class="segment-btn flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="ef" data-val="none" role="radio" aria-checked="false">None</button>
-                <button class="segment-btn active flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="ef" data-val="<3" role="radio" aria-checked="true">&lt;3 Mo</button>
-                <button class="segment-btn flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="ef" data-val="3-6" role="radio" aria-checked="false">3-6 Mo</button>
-                <button class="segment-btn flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="ef" data-val="6+" role="radio" aria-checked="false">6+ Mo</button>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div>
-                <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">
-                  Debt >9%?
-                </label>
-                <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="Debt Above 9 Percent">
-                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="debt" data-val="yes" role="radio" aria-checked="false">Yes</button>
-                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition active" data-group="debt" data-val="no" role="radio" aria-checked="true">No</button>
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase text-center md:text-left">
-                  <span class="jargon" data-tip="Have you opted in for Corporate NPS 80CCD(2) or maxed your employer's PF match?" tabindex="0">Corp NPS / EPF match</span>
-                </label>
-                <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="Corporate NPS or EPF Employer Match">
-                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition active" data-group="corpPf" data-val="yes" role="radio" aria-checked="true">Yes</button>
-                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="corpPf" data-val="no" role="radio" aria-checked="false">No</button>
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">
-                  PPF Maxed?
-                </label>
-                <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="PPF Maxed">
-                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="tax" data-val="yes" role="radio" aria-checked="false">Yes</button>
-                  <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition active" data-group="tax" data-val="no" role="radio" aria-checked="true">No</button>
-                </div>
-              </div>
-            </div>
-            
-            <button id="de-generate-btn" class="w-full bg-navy text-inverse py-4 px-6 rounded-lg font-bold text-sm uppercase tracking-widest transition" style="box-shadow: 0 4px 14px rgba(12, 35, 64, 0.25);">Generate Strategy</button>
-
-            <p class="text-xs text-muted mt-6 italic text-center">This is an educational tool. Not personalized financial advice.</p>
-          </div>
-
-          
-          <div class="decision-result bg-main p-6 md-p-10 flex flex-col justify-center relative" style="min-height: 420px;">
-            
-            
-            <div id="de-empty-state" class="text-center w-full flex flex-col items-center justify-center transition absolute inset-0 p-6 md-p-10" style="opacity: 1; pointer-events: none;">
-              <div class="mb-4 text-muted opacity-50">
-                <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
-              </div>
-              <h3 class="text-lg text-navy font-heading mb-2">Ready for your strategy?</h3>
-              <p class="text-sm text-muted max-w-xs mx-auto">Fill out the parameters on the left and click "Generate Strategy" to see your personalized next step.</p>
-            </div>
-
-            
-            <div id="de-result-card" class="card border-l-4 relative shadow-card transition" style="border-left-color: var(--status-gold); display: flex; flex-direction: column; height: 100%; display: none; opacity: 0; transform: translateY(10px);">
-              <div class="mb-4 flex items-center justify-between flex-wrap gap-3">
-                <span id="de-step-badge" class="badge" style="background: var(--status-gold); color: white; border-color: var(--status-gold);">STEP 4</span>
-                <div id="de-progress" class="step-progress flex gap-1">
-                  
-                </div>
-              </div>
-              
-              <h3 id="de-step-name" class="text-xl mb-4 text-navy font-heading">Full Emergency Fund</h3>
-              
-              <div class="bg-surface p-4 rounded mb-4">
-                <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Action</p>
-                <p id="de-action" class="font-medium text-navy text-sm">Direct the ₹10,000 to your Liquid or Arbitrage Fund.</p>
-              </div>
-
-              <div class="mb-4">
-                <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Why?</p>
-                <p id="de-rationale" class="text-sm text-muted">You have the cushion, but you need 3-6 months of essential expenses fully funded before exposing capital to market volatility.</p>
-              </div>
-
-              <div class="mb-4">
-                <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Next Milestone</p>
-                <p id="de-milestone" class="text-sm text-navy font-medium">3-6 months of expenses secured in Liquid/Arbitrage Funds.</p>
-              </div>
-
-              <div class="border-t border-subtle pt-4 mt-auto">
-                <p class="text-xs font-mono uppercase text-muted">Maps to: <span id="de-mapping" class="font-semibold text-navy">Defensive Assets → Cash</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <main>
       <section id="hierarchy" class="section">
@@ -663,41 +533,169 @@
                 <div><strong class="text-xs uppercase block text-navy">TAX SITUATION</strong><p class="text-xs text-muted">Tax efficiency can impact asset mix and vehicles.</p></div>
               </div>
             </div>
+          </div>
+
+          <div class="mt-12 text-left">
+            <h3 class="text-center text-lg text-navy uppercase font-bold mb-6 border-b pb-2">GOAL-BASED HORIZON FRAMEWORK</h3>
+            <div class="card p-6 border-t-4" style="border-top-color: var(--primary-blue)">
+              <p class="text-sm text-muted mb-4">Your asset allocation should strictly follow your investment time horizon:</p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-navy">
+                <div class="bg-surface p-4 rounded border-l-2 border-red-500">
+                  <strong class="block mb-2">&lt; 3 Years</strong>
+                  <p class="text-xs text-muted mb-2">Focus on capital protection.</p>
+                  <span class="font-bold">Debt funds, FDs, Liquid funds</span>
+                </div>
+                <div class="bg-surface p-4 rounded border-l-2 border-yellow-500">
+                  <strong class="block mb-2">3 - 7 Years</strong>
+                  <p class="text-xs text-muted mb-2">Balance of growth and stability.</p>
+                  <span class="font-bold">Aggressive Hybrid, BAF</span>
+                </div>
+                <div class="bg-surface p-4 rounded border-l-2 border-green-500">
+                  <strong class="block mb-2">&gt; 7 Years</strong>
+                  <p class="text-xs text-muted mb-2">Focus on wealth creation.</p>
+                  <span class="font-bold">Index funds, Flexi-cap</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          
           <div class="mt-8 p-6 rounded text-left" style="background: rgba(12, 35, 64, 0.03); border: 1px solid var(--border-subtle); border-left: 4px solid var(--primary-navy);">
             <h3 class="text-navy text-sm font-bold uppercase tracking-widest mb-2 flex items-center gap-2"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> LIFECYCLE TRANSITION (GLIDE PATH)</h3>
             <p class="text-sm text-muted mb-0"><strong>Golden Rule:</strong> Start systematically shifting your equity allocation into safe debt/liquid funds <strong class="text-navy">3 years</strong> before your financial goal. For goals &lt;3 years away, your equity exposure should be <strong>0%</strong> to protect your accumulated capital from sudden market volatility.</p>
           </div>
+        </div>
       </section>
 
-    <section id="goal-based" class="section">
-      <div class="container">
-        <h2 class="section-title">GOAL-BASED INVESTING</h2>
-        <div class="card p-6 border-t-4" style="border-top-color: var(--primary-blue)">
-          <p class="text-sm text-muted mb-4">Your asset allocation should strictly follow your investment time horizon:</p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-navy">
-            <div class="bg-surface p-4 rounded border-l-2 border-red-500">
-              <strong class="block mb-2">&lt; 3 Years</strong>
-              <p class="text-xs text-muted mb-2">Focus on capital protection.</p>
-              <span class="font-bold">Debt funds, FDs, Liquid funds</span>
+      
+      <section id="agent" class="section decision-section">
+        <div class="container text-center">
+          <div class="section-header bg-navy text-inverse p-6 rounded-t-lg mb-0" style="border-bottom: none;">
+            <h2 class="section-title text-inverse m-0">WHERE SHOULD YOUR NEXT RUPEE GO?</h2>
+            <p class="section-subtitle text-inverse opacity-70 mt-2">Answer a few quick questions. Get a definitive next step based on the Sparkfolio Framework.</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md-grid-cols-2 gap-0 items-stretch text-left max-w-4xl mx-auto border border-subtle border-t-0 rounded-b-lg overflow-hidden bg-main shadow-card">
+            
+            
+            <div class="decision-form p-6 md-p-10 bg-card border-b border-r-md border-subtle">
+              
+              <div class="mb-6">
+                <label for="de-amount" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Amount to Invest (₹)</label>
+                <div class="amount-input-wrapper relative">
+                  <span class="absolute" style="left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-family: var(--font-mono); font-weight: bold; font-size: 1.125rem;">₹</span>
+                  <input type="number" id="de-amount" class="w-full font-mono text-xl p-4 border border-subtle rounded-lg bg-main focus:outline-none transition" style="padding-left: 2.5rem;" placeholder="10000" inputmode="numeric" value="10000" min="0">
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Tax Regime</label>
+                <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="Tax Regime">
+                  <button class="segment-btn active flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="regime" data-val="ntr" role="radio" aria-checked="true">New Tax Regime (NTR)</button>
+                  <button class="segment-btn flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="regime" data-val="otr" role="radio" aria-checked="false">Old Tax Regime (OTR)</button>
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Age Bracket</label>
+                <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="Age Bracket">
+                  <button class="segment-btn active flex-1 py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="age" data-val="20s" role="radio" aria-checked="true">20s</button>
+                  <button class="segment-btn flex-1 py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="age" data-val="30s+" role="radio" aria-checked="false">30s &amp; Above</button>
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Emergency Fund Status</label>
+                <div class="segmented-control grid grid-cols-2 md-grid-cols-4 bg-main p-1 rounded-lg gap-1" style="display: grid;" role="radiogroup" aria-label="Emergency Fund Status">
+                  <button class="segment-btn flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="ef" data-val="none" role="radio" aria-checked="false">None</button>
+                  <button class="segment-btn active flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="ef" data-val="<3" role="radio" aria-checked="true">&lt;3 Mo</button>
+                  <button class="segment-btn flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="ef" data-val="3-6" role="radio" aria-checked="false">3-6 Mo</button>
+                  <button class="segment-btn flex-1 py-3 px-2 text-xs font-semibold text-center rounded-md transition" data-group="ef" data-val="6+" role="radio" aria-checked="false">6+ Mo</button>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <div>
+                  <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">
+                    Debt &gt;9%?
+                  </label>
+                  <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="Debt Above 9 Percent">
+                    <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="debt" data-val="yes" role="radio" aria-checked="false">Yes</button>
+                    <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition active" data-group="debt" data-val="no" role="radio" aria-checked="true">No</button>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase text-center md:text-left">
+                    <span class="jargon" data-tip="Have you opted in for Corporate NPS 80CCD(2) or maxed your employer's PF match?" tabindex="0">Corp NPS / EPF match</span>
+                  </label>
+                  <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="Corporate NPS or EPF Employer Match">
+                    <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition active" data-group="corpPf" data-val="yes" role="radio" aria-checked="true">Yes</button>
+                    <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="corpPf" data-val="no" role="radio" aria-checked="false">No</button>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">
+                    PPF Maxed?
+                  </label>
+                  <div class="segmented-control bg-main p-1 rounded-lg" role="radiogroup" aria-label="PPF Maxed">
+                    <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition" data-group="tax" data-val="yes" role="radio" aria-checked="false">Yes</button>
+                    <button class="segment-btn py-3 px-2 text-sm font-semibold text-center rounded-md transition active" data-group="tax" data-val="no" role="radio" aria-checked="true">No</button>
+                  </div>
+                </div>
+              </div>
+              
+              <button id="de-generate-btn" class="w-full bg-navy text-inverse py-4 px-6 rounded-lg font-bold text-sm uppercase tracking-widest transition" style="box-shadow: 0 4px 14px rgba(12, 35, 64, 0.25);">Generate Strategy</button>
+
+              <p class="text-xs text-muted mt-6 italic text-center">This is an educational tool. Not personalized financial advice.</p>
             </div>
-            <div class="bg-surface p-4 rounded border-l-2 border-yellow-500">
-              <strong class="block mb-2">3 - 7 Years</strong>
-              <p class="text-xs text-muted mb-2">Balance of growth and stability.</p>
-              <span class="font-bold">Aggressive Hybrid, BAF</span>
-            </div>
-            <div class="bg-surface p-4 rounded border-l-2 border-green-500">
-              <strong class="block mb-2">&gt; 7 Years</strong>
-              <p class="text-xs text-muted mb-2">Focus on wealth creation.</p>
-              <span class="font-bold">Index funds, Flexi-cap</span>
+
+            
+            <div class="decision-result bg-main p-6 md-p-10 flex flex-col justify-center relative" style="min-height: 420px;">
+              
+              
+              <div id="de-empty-state" class="text-center w-full flex flex-col items-center justify-center transition absolute inset-0 p-6 md-p-10" style="opacity: 1; pointer-events: none;">
+                <div class="mb-4 text-muted opacity-50">
+                  <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                </div>
+                <h3 class="text-lg text-navy font-heading mb-2">Ready for your strategy?</h3>
+                <p class="text-sm text-muted max-w-xs mx-auto">Fill out the parameters on the left and click "Generate Strategy" to see your personalized next step.</p>
+              </div>
+
+              
+              <div id="de-result-card" class="card border-l-4 relative shadow-card transition" style="border-left-color: var(--status-gold); display: flex; flex-direction: column; height: 100%; display: none; opacity: 0; transform: translateY(10px);">
+                <div class="mb-4 flex items-center justify-between flex-wrap gap-3">
+                  <span id="de-step-badge" class="badge" style="background: var(--status-gold); color: white; border-color: var(--status-gold);">STEP 4</span>
+                  <div id="de-progress" class="step-progress flex gap-1">
+                    
+                  </div>
+                </div>
+                
+                <h3 id="de-step-name" class="text-xl mb-4 text-navy font-heading">Full Emergency Fund</h3>
+                
+                <div class="bg-surface p-4 rounded mb-4">
+                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Action</p>
+                  <p id="de-action" class="font-medium text-navy text-sm">Direct the ₹10,000 to your Liquid or Arbitrage Fund.</p>
+                </div>
+
+                <div class="mb-4">
+                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Why?</p>
+                  <p id="de-rationale" class="text-sm text-muted">You have the cushion, but you need 3-6 months of essential expenses fully funded before exposing capital to market volatility.</p>
+                </div>
+
+                <div class="mb-4">
+                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Next Milestone</p>
+                  <p id="de-milestone" class="text-sm text-navy font-medium">3-6 months of expenses secured in Liquid/Arbitrage Funds.</p>
+                </div>
+
+                <div class="border-t border-subtle pt-4 mt-auto">
+                  <p class="text-xs font-mono uppercase text-muted">Maps to: <span id="de-mapping" class="font-semibold text-navy">Defensive Assets → Cash</span></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       
       <section id="implementation" class="section bg-surface border-t border-subtle">
