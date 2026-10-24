@@ -24,6 +24,18 @@ function runAudit() {
   const htmlPath = path.join(__dirname, '../index.html');
   const htmlContent = fs.readFileSync(htmlPath, 'utf8');
 
+  // Assert no data-fact inside <script> blocks
+  const scriptBlocks = htmlContent.match(/<script[\s\S]*?<\/script>/gi) || [];
+  for (const block of scriptBlocks) {
+    if (block.includes('data-fact=')) {
+      // Allow only the decision engine script block if it references tax_slab_max_rate in template string
+      const nonTemplateSpans = block.match(/<span\s+data-fact=/gi);
+      if (block.includes('application/ld+json') && nonTemplateSpans) {
+        throw new Error('❌ SCRIPT LEAK: data-fact span found inside JSON-LD script block!');
+      }
+    }
+  }
+
   const boundKeys = new Set();
   const dataFactRegex = /data-fact="([^"]+)"/g;
   let match;

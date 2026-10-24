@@ -16,7 +16,7 @@ function syncFrameworkFacts() {
       if (!el.firstElementChild) {
         el.textContent = allFacts[key].val;
       }
-      el.setAttribute('data-last-verified', allFacts[key].last_verified || '2026-Q3');
+      el.setAttribute('data-last-verified', allFacts[key].last_verified || '2026-Q4');
     }
   });
 }
