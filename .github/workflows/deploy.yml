@@ -1,24 +1,21 @@
-name: Deploy static content to Pages
+name: Validate and deploy Sparkfolio
 
 on:
   push:
+    branches: ["main"]
+  pull_request:
     branches: ["main"]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,19 +24,38 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: 'npm'
-      - name: Install dependencies
+          cache: npm
+      - name: Install dependencies and browser
         run: npm ci
-      - name: Build
-        run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Validate, build and test the production site
+        run: npm run check
+      - name: Save browser evidence and local timing baseline
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          enablement: true
-      - name: Upload artifact
+          name: browser-audit
+          path: .audit/
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

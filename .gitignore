@@ -23,9 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Local Tests
-tests/
-.htmlvalidate.json
+# Tests and validator configuration are intentionally versioned.
 
 # Utility and plan files
 fix_gaps.cjs
@@ -34,3 +32,6 @@ test_reorg.cjs
 old_plan.txt
 old_plan_full.txt
 old_plan_search.txt
+
+# Generated browser evidence and lab timings
+.audit/
