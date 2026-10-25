@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies and browser
         run: npm ci
       - name: Validate, build and test the production site
+        # Use the runner's AppArmor-supported Chrome installation with its sandbox.
+        env:
+          CHROME_PATH: /opt/google/chrome/chrome
         run: npm run check
       - name: Save browser evidence and local timing baseline
         if: always()
@@ -37,6 +40,7 @@ jobs:
           path: .audit/
           retention-days: 7
           if-no-files-found: ignore
+          include-hidden-files: true
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
