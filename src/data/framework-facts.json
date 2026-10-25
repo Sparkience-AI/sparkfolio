@@ -1,9 +1,9 @@
 {
   "_meta": {
     "title": "Sparkfolio Framework Single Source of Truth (SSoT) Facts Registry",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "last_updated": "2026-10-25",
-    "description": "Claims, calculations and editorial heuristics with explicit provenance and review status. A source link is not itself verification.",
+    "description": "Claims, calculations and editorial heuristics with explicit provenance and review status. A source link is not itself verification. Decision-model assumptions and source-backed tax inputs are maintained in _decision_model.",
     "audit_scope": "Follow-up primary-source audit resolved all 17 pending entries through confirmation, correction or narrower verified scope. EPF circular reproduction inspected and corroborated by official broadcaster. 25 verified, 10 editorial, 3 calculated.",
     "claim_audit": "CLAIM_AUDIT_2026-10-25.md"
   },
@@ -851,6 +851,69 @@
         }
       ],
       "review_due": null
+    }
+  },
+  "_decision_model": {
+    "version": "1.0.0",
+    "reviewed_on": "2026-10-25",
+    "review_due": "2027-02-28",
+    "tax_year": "2026–27",
+    "scope": "Educational review for individuals in the displayed 20s–50s age brackets. Self-selected ordinary-income marginal rates; not a tax-return calculator or full financial plan.",
+    "brackets": {
+      "ntr": [
+        "0",
+        "5",
+        "10",
+        "15",
+        "20",
+        "25",
+        "30",
+        "unknown"
+      ],
+      "otr": [
+        "0",
+        "5",
+        "20",
+        "30",
+        "unknown"
+      ]
+    },
+    "cess_rate": 0.04,
+    "illustrative_income": 10000,
+    "illustration_assumptions": "An additional ₹10,000 of ordinary taxable interest falls entirely within the selected marginal band. Includes 4% health and education cess, assumes no surcharge, rebate, relief, deductions, exemptions or band crossing. It is not a total-income tax calculation, effective tax rate, capital-gains calculation or forecast.",
+    "horizon_bins": {
+      "soon": "Under 3 years",
+      "medium": "3–7 years",
+      "long": "Over 7 years",
+      "unsure": "Not sure yet"
+    },
+    "risk_answers": {
+      "limited": "A loss would affect essential needs",
+      "comfortable": "I can absorb losses without affecting essentials",
+      "unsure": "I have not assessed this"
+    },
+    "policy_note": "Horizon bins, debt screens and readiness ordering are Sparkfolio editorial review conventions, not regulator-prescribed allocations. Loss capacity is self-reported, not a validated risk profile. Age alone never determines an allocation.",
+    "sources": {
+      "tax": {
+        "title": "Income-tax Act, 2025, amended by Finance Act 2026",
+        "url": "https://www.incometaxindia.gov.in/documents/d/guest/income_tax_act_2025_as_amended_by_fa_act_2026-pdf#page=265",
+        "locator": "Section 202: New Regime marginal bands and excluded deductions; section 124 for employer and own NPS deductions; section 156 for resident rebate conditions."
+      },
+      "rates": {
+        "title": "Income Tax Department: individual tax computation",
+        "url": "https://www.incometaxindia.gov.in/w/computation-of-tax-for-individual-1",
+        "locator": "Normal old-regime rates, ordinary versus special income, surcharge and health and education cess. Legacy section labels on this guide require current-Act context; not used to infer a rebate threshold."
+      },
+      "allocation": {
+        "title": "Investor.gov: asset allocation and diversification",
+        "url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation",
+        "locator": "Time horizon and risk tolerance; diversification and rebalancing. General educational principles, not Indian tax/product rules."
+      },
+      "readiness": {
+        "title": "MoneySense: putting together an investment portfolio",
+        "url": "https://www.moneysense.gov.sg/investments/investment-portfolio/",
+        "locator": "Available funds after emergency savings, household expenses, insurance and debt; time horizon, loss capacity and diversification. Singapore product examples are not applied to India."
+      }
     }
   }
 }

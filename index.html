@@ -357,8 +357,8 @@
       <section id="agent" class="section decision-section">
         <div class="container text-center">
           <div class="section-header bg-navy text-inverse p-6 rounded-t-lg mb-0" style="border-bottom: none;">
-            <h2 class="section-title text-inverse m-0">WHERE SHOULD YOUR NEXT RUPEE GO?</h2>
-            <p class="section-subtitle text-inverse opacity-70 mt-2">Explore an educational readiness checkpoint. This tool does not assess suitability or allocate your money.</p>
+            <h2 class="section-title text-inverse m-0">YOUR FINANCIAL READINESS REVIEW</h2>
+            <p class="section-subtitle text-inverse opacity-70 mt-2">Build a self-contained review of financial foundations, goal horizon, loss capacity and tax context. No money is allocated and no personal tax return is calculated.</p>
           </div>
           
           <div class="grid grid-cols-1 md-grid-cols-2 gap-0 items-stretch text-left max-w-4xl mx-auto border border-subtle border-t-0 rounded-b-lg overflow-hidden bg-main shadow-card">
@@ -383,6 +383,16 @@
                 </div>
               </div>
 
+              <div class="mb-6">
+                <label for="de-tax-bracket" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Marginal tax bracket</label>
+                <select id="de-tax-bracket" name="taxBracket" class="engine-select" required aria-describedby="de-bracket-help">
+                  <option value="">Select your base marginal rate</option>
+                  <option value="0">0% — nil marginal slab</option><option value="5">5%</option>
+                  <option value="10">10%</option><option value="15">15%</option><option value="20">20%</option>
+                  <option value="25">25%</option><option value="30">30%</option><option value="unknown">Not sure</option>
+                </select>
+                <p id="de-bracket-help" class="engine-help">Tax year <span data-model-field="tax_year">2026–27</span>, before cess and surcharge. Select your ordinary-income marginal slab, not your average tax rate. A rebate can make tax payable nil even when your marginal slab is higher. Select a regime first; unsupported rates are unavailable.</p>
+              </div>
               <div class="mb-6">
                 <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Age Bracket</label>
                 <div class="segmented-control grid grid-cols-4 bg-main p-1 rounded-lg gap-1" style="display: grid;" role="group" aria-label="Age Bracket">
@@ -468,11 +478,24 @@
                 </div>
               </div>
               
+              <div class="mb-6">
+                <label for="de-horizon" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">When will you need this money?</label>
+                <select id="de-horizon" name="horizon" class="engine-select" required>
+                  <option value="">Select a goal horizon</option><option value="soon">Under 3 years</option><option value="medium">3–7 years</option><option value="long">Over 7 years</option><option value="unsure">Not sure yet</option>
+                </select>
+              </div>
+              <div class="mb-6">
+                <label for="de-capacity" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">How would an investment loss affect you?</label>
+                <select id="de-capacity" name="capacity" class="engine-select" required>
+                  <option value="">Select your loss capacity</option><option value="limited">A loss would affect essential needs</option><option value="comfortable">I can absorb losses without affecting essentials</option><option value="unsure">I have not assessed this</option>
+                </select>
+                <p class="engine-help">Consider housing, dependents, debt payments and goal dates. This is a self-report, not a validated risk profile.</p>
+              </div>
               <p id="de-error" class="form-error" role="alert"></p>
-              <button type="submit" id="de-generate-btn" disabled class="w-full bg-navy text-inverse py-4 px-6 rounded-lg font-bold text-sm uppercase tracking-widest transition" style="box-shadow: 0 4px 14px rgba(12, 35, 64, 0.25);">Show educational checkpoint</button>
+              <button type="submit" id="de-generate-btn" disabled class="w-full bg-navy text-inverse py-4 px-6 rounded-lg font-bold text-sm uppercase tracking-widest transition" style="box-shadow: 0 4px 14px rgba(12, 35, 64, 0.25);">Build my educational review</button>
 
               <p class="text-xs text-muted mt-6 italic text-center">Educational decision-tree model for financial literacy. Does not constitute investment advice or personalized financial planning.</p>
-              <noscript><p>The interactive checkpoint requires JavaScript. All educational topics and source notes remain available below.</p></noscript>
+              <noscript><p>The interactive review requires JavaScript. All educational topics and source notes remain available below.</p></noscript>
             </form>
 
             
@@ -484,8 +507,8 @@
                 <div class="mb-4 text-muted opacity-50">
                   <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
                 </div>
-                <h3 class="text-lg text-navy font-heading mb-2">Explore financial readiness</h3>
-                <p class="text-sm text-muted max-w-xs mx-auto">Answer each question, then select “Show educational checkpoint”. No personal data is sent to a server.</p>
+                <h3 class="text-lg text-navy font-heading mb-2">A review built around your answers</h3>
+                <p class="text-sm text-muted max-w-xs mx-auto">Answer each question, then select “Build my educational review”. No personal data is sent to a server.</p>
               </div>
 
               
@@ -497,10 +520,10 @@
                   </div>
                 </div>
                 
-                <h3 id="de-step-name" class="text-xl mb-4 text-navy font-heading">Framework checkpoint</h3>
+                <h3 id="de-step-name" class="text-xl mb-4 text-navy font-heading">Priority review</h3>
                 
                 <div class="bg-surface p-4 rounded mb-4">
-                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Framework checkpoint</p>
+                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Priority review</p>
                   <p id="de-action" class="font-medium text-navy text-sm"></p>
                 </div>
 
@@ -519,6 +542,11 @@
 
               </div>
             </div>
+          </div>
+          <div id="de-additional" class="engine-output" hidden>
+            <div class="engine-output-heading"><span class="editorial-eyebrow">YOUR COMPLETE REVIEW</span><h3>Other areas to review</h3><p>These cards complement the priority above. Financial foundations can require attention together; the order is an educational convention, not a recommendation to buy or fund a product.</p></div>
+            <div id="de-output-cards" class="engine-card-grid"></div>
+            <p id="de-model-note" class="engine-model-note"></p>
           </div>
         </div>
       </section>
@@ -539,11 +567,12 @@
             <p id="topic-empty" hidden>No matching topics. Try another term or clear the search.</p>
           </div>
 <details id="topic-financial-readiness"><summary>THE SEVEN FINANCIAL-READINESS CHECKPOINTS</summary><div class="details-content">
-            <ol class="readiness-list">
+            <!-- html-validate-disable-next no-redundant-role -->
+            <ol class="readiness-list" role="list">
               <li><strong>Baseline cash access.</strong> Review readily accessible cash for immediate needs. <span data-fact="rule_baseline_cash_cushion">₹50,000 to ₹1,00,000</span> is an editorial illustration, not a universal target.</li>
               <li><strong>Health protection.</strong> Review independent cover, exclusions and deductibles; see the healthcare topic.</li>
               <li><strong>Dependent protection.</strong> If others depend on income, review liabilities, resources and income-replacement needs.</li>
-              <li><strong>Applicable employer benefits.</strong> Confirm actual EPF/NPS terms with payroll. EPF and EPS share the employer contribution under applicable rules. A deduction cap is not a promised employer match or guaranteed return. Section 124 (legacy 80CCD(2)) employer NPS deduction ceilings include <span data-fact="tax_sec_80ccd2_private">14%</span> for private-sector New Regime deductions and <span data-fact="tax_sec_80ccd2_govt">14%</span> for Central/State Government employers. Other employers have a 10% ceiling outside the New Regime. Defined salary and eligibility conditions apply; this is not a promised employer match.</li>
+              <li><strong>Applicable employer benefits.</strong> Confirm EPF/NPS terms and eligibility with payroll. Employer NPS deduction ceilings are <span data-fact="tax_sec_80ccd2_private">14%</span> for non-government New Regime contributions and <span data-fact="tax_sec_80ccd2_govt">14%</span> for Central/State Government contributions; the non-government ceiling is 10% outside the New Regime. These are tax limits, not promised employer matches. EPF/EPS contribution treatment is separate.</li>
               <li><strong>Expensive debt.</strong> Review effective rates, prepayment charges and liquidity; the tool's 9% screen is an editorial heuristic.</li>
               <li><strong>Emergency reserve.</strong> Review expense-based needs, income stability, settlement time and capital risk. Immediate cash and invested reserves serve different roles.</li>
               <li><strong>Investment planning.</strong> Review goals, dates, tax eligibility, liquidity and capacity for loss. Compare the allocation illustrations only after this review; satellites are optional.</li>

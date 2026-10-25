@@ -7,7 +7,7 @@ Production: https://sparkience-ai.github.io/sparkfolio/
 ## Architecture
 
 - Static HTML, custom utility CSS and vanilla JavaScript, built with Vite for `/sparkfolio/` and deployed on GitHub Pages.
-- `src/decision.js` is a pure educational checkpoint evaluator. It does not allocate money or assess investment suitability.
+- `src/decision.js` is a pure, independent educational review evaluator. It combines concurrent foundation gaps with goal, loss-capacity and regime-specific tax cards. It does not allocate money or assess investment suitability.
 - `src/calculations.js` contains reproducible illustrations: effective annual return converted to monthly growth, month-end deposits and annual step-ups after each completed year.
 - `scripts/content.js` resolves registered claims, glossary markup, calculations, source notes and stable topic links during Vite's HTML transformation. It does not rewrite the source page during development or build.
 - `src/ui.js` handles accessible form interactions, stale results, navigation, local topic search and glossary explanations.
@@ -29,6 +29,10 @@ npm run preview
 `validate` checks the decision matrix, amount validation, calculations, provenance, DOM structure, source HTML, production build and built HTML. `test:browser` tests the built site at 320, 390, 768 and 1280px and writes screenshots, a print PDF and lab timings to ignored `.audit/`. Run `validate` before browser tests to avoid testing an outdated build. `check` runs both in order. The legacy `node tests/verify_facts_coverage.cjs` entry point runs full validation.
 
 The HTML validator configuration and all tests are versioned. Validation does not certify financial accuracy or full WCAG conformance. Source checking is an editorial task; automated tests prevent inconsistent display and invalid provenance claims.
+
+## Decision engine
+
+See [DECISION_ENGINE_MODEL.md](DECISION_ENGINE_MODEL.md) for primary research, all 18 output families, assumptions and exhaustive coverage of 239,616 valid combinations. `_decision_model` in the shared registry controls marginal brackets, cess, example amounts, question choices and source metadata. A selected bracket changes conditional tax illustrations, never an inferred personal annual tax bill.
 
 ## Content change history
 

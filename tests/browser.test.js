@@ -55,8 +55,11 @@ try {
   await page.focus('input[name="regime"][value="ntr"]');
   await page.keyboard.press('ArrowRight');
   assert.equal(await page.$eval('input[name="regime"][value="otr"]', e => e.checked), true);
-  const ready = { regime: 'otr', age: '30s', dependents: 'no', health: 'yes', term: 'yes', ef: '6+', debt: 'no', corpPf: 'na', tax: 'yes' };
-  for (const [key, value] of Object.entries(ready)) await page.click(`input[name="${key}"][value="${value}"] + span`);
+  const ready = { regime: 'otr', age: '30s', dependents: 'no', health: 'yes', term: 'yes', ef: '6+', debt: 'no', corpPf: 'na', tax: 'yes', taxBracket: '30', horizon: 'long', capacity: 'comfortable' };
+  for (const [key, value] of Object.entries(ready)) {
+    if (['taxBracket', 'horizon', 'capacity'].includes(key)) await page.select(`select[name="${key}"]`, value);
+    else await page.click(`input[name="${key}"][value="${value}"] + span`);
+  }
   await page.type('#de-amount', '1e6');
   await page.click('#de-generate-btn');
   assert.equal(await page.$eval('#de-amount', e => e.getAttribute('aria-invalid')), 'true');
@@ -64,7 +67,7 @@ try {
   await page.type('#de-amount', '10000.50');
   await page.click('#de-generate-btn');
   assert.equal(await page.$eval('#de-result-card', e => e.hidden), false, await page.$eval('#de-form', e => JSON.stringify({ error: document.getElementById('de-error').textContent, answers: Object.fromEntries(new FormData(e)) })));
-  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Investment planning review');
+  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Build a diversified long-term plan');
   assert.match(await page.$eval('#de-rationale', e => e.textContent), /30s.*Old/);
   assert.match(await page.$eval('#de-context', e => e.textContent), /10,000.5/);
   await page.click('input[name="health"][value="no"] + span');
@@ -72,6 +75,33 @@ try {
   assert.match(await page.$eval('#de-status', e => e.textContent), /outdated/);
   await page.click('#de-generate-btn');
   assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Health protection review');
+  assert.equal(await page.$$eval('#de-output-cards article', els => els.length), 4);
+  assert.match(await page.$eval('[data-card-id="tax-illustration"]', e => e.textContent), /6,880/);
+  assert.match(await page.$eval('[data-card-id="old-regime"]', e => e.textContent), /3,120/);
+  await page.click('input[name="regime"][value="ntr"] + span');
+  assert.equal(await page.$eval('#de-tax-bracket', e => e.value), '');
+  await page.select('#de-tax-bracket', '25');
+  await page.click('#de-generate-btn');
+  assert.match(await page.$eval('[data-card-id="tax-illustration"]', e => e.textContent), /7,400/);
+  assert.equal(await page.$('[data-card-id="old-regime"]'), null);
+  assert.ok(await page.$('[data-card-id="new-regime"]'));
+  await page.click('input[name="regime"][value="otr"] + span');
+  assert.equal(await page.$eval('#de-tax-bracket option[value="25"]', e => e.disabled && e.hidden), true);
+  await page.select('#de-tax-bracket', 'unknown');
+  await page.select('#de-horizon', 'soon');
+  await page.select('#de-capacity', 'limited');
+  await page.click('#de-generate-btn');
+  assert.ok(await page.$('[data-card-id="tax-unknown"]'));
+  assert.equal(await page.$('[data-card-id="tax-illustration"]'), null);
+  assert.ok(await page.$('[data-card-id="near-term"]'));
+  assert.ok(await page.$('[data-card-id="protect-essentials"]'));
+  assert.equal(await page.$eval('#de-additional', e => e.dataset.stale), 'false');
+  for (const width of [320, 390, 768, 1280]) {
+    await page.setViewport({ width, height: 844 });
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `Result overflow at ${width}`);
+  }
+  assert.equal(await page.$eval('.readiness-list', e => getComputedStyle(e).display), 'grid');
+  assert.equal(await page.$eval('#de-rationale', e => getComputedStyle(e).textAlign), 'justify');
   // Search, no-results state and direct fragment navigation restore hidden topics.
   await page.type('#topic-search', 'zzzz-no-such-topic');
   assert.equal(await page.$eval('#topic-empty', e => e.hidden), false);
