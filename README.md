@@ -1,80 +1,59 @@
-# 🏛️ Sparkfolio Investment Framework
+# Sparkfolio Investment Framework
 
-The **Sparkfolio Investment Framework** is an independent, institutional-grade, yet beginner-friendly guide to strategic asset allocation, risk insulation, tax-aware investing, and long-term wealth resilience tailored for the Indian ecosystem.
+An independent educational resource for Indian readers learning about financial readiness, portfolio composition, investment risks and tax-year context.
 
-🔗 **Live Website:** [https://sparkience-ai.github.io/sparkfolio/](https://sparkience-ai.github.io/sparkfolio/)
+Production: https://sparkience-ai.github.io/sparkfolio/
 
----
+## Architecture
 
-## ✨ Features & Architecture
+- Static HTML, custom utility CSS and vanilla JavaScript, built with Vite for `/sparkfolio/` and deployed on GitHub Pages.
+- `src/decision.js` is a pure educational checkpoint evaluator. It does not allocate money or assess investment suitability.
+- `src/calculations.js` contains reproducible illustrations: effective annual return converted to monthly growth, month-end deposits and annual step-ups after each completed year.
+- `scripts/content.js` resolves registered claims, glossary markup, calculations, source notes and stable topic links during Vite's HTML transformation. It does not rewrite the source page during development or build.
+- `src/ui.js` handles accessible form interactions, stale results, navigation, local topic search and glossary explanations.
+- Fonts are self-hosted in `public/fonts/` with their original SIL Open Font Licenses. There are no remote font requests or analytics integrations.
 
-### 1. 🤖 "Where Should Your Next Rupee Go?" Decision Engine (`#agent`)
-An interactive, deterministic 7-step decision engine that inputs:
-* **Capital Amount (₹)**
-* **Tax Regime:** New Tax Regime (`NTR`) vs. Old Tax Regime (`OTR`)
-* **Age Bracket:** `20s`, `30s`, `40s`, `50s`
-* **Dependents:** `Yes` | `No`
-* **Personal Health Cover:** `Personal (Base + Top-Up)` | `Corp Only / None`
-* **Pure Term Life Cover:** `Active` | `None`
-* **Emergency Fund Status & High-Interest Debt (>9%)**
-* **Corporate NPS / EPF Employer Match & PPF Status**
+## Develop and verify
 
-Outputs a definitive next step mapped directly to **Section 3 (Portfolio Hierarchy)** and **Section 7 (Implementation Guide)**.
+Use Node 24, matching CI. Install with `npm ci`; the existing Puppeteer dependency installs its supported Chromium browser. If browser provisioning is unavailable locally, set `CHROME_PATH` to an already installed compatible browser executable.
 
-### 2. 📚 5-Stage Pedagogical Flow
-* **Stage 1 — Hero & Framework Principles (`#overview`)**
-* **Stage 2 — Portfolio Hierarchy (`#hierarchy`):** Growth vs. Defensive asset classification.
-* **Stage 3 — Order of Operations (`#building-order`):** Step-by-step portfolio building sequence.
-* **Stage 4 — Templates & Goal Horizons (`#templates`):** Conservative, Moderate, Aggressive, and Glide Path allocations.
-* **Stage 5 — Implementation & Review Guide (`#implementation`):** 24 technical accordions covering tax harvesting, SGB secondary market rules, REITs Sec 115UA, Supreme Court nominee rulings, and decumulation strategies.
-
-### 3. 📜 Single Source of Truth (SSoT) Facts Governance
-All 34 time-sensitive rates, tax laws, deduction caps, and research citations are cataloged in a central registry: [`src/data/framework-facts.json`](src/data/framework-facts.json).
-* **Level 1 (`L1_evergreen`):** Structural math, legal precedents (*Shakti Yezdani Case*), academic research.
-* **Level 2 (`L2_annual`):** Tax laws, LTCG/STCG, 80C caps, Sec 80CCD(2) limits (Reviewed post-Union Budget in February).
-* **Level 3 (`L3_quarterly`):** Sovereign rates (PPF 7.1%, EPF 8.25%, SSY 8.2%), home loan threshold (8.5%), SEBI circulars (Reviewed end of Q1, Q2, Q3, Q4).
-* See [FACTS_GOVERNANCE.md](FACTS_GOVERNANCE.md) for full documentation.
-
----
-
-## 🌿 Git Branching & Revert Options
-
-For maximum flexibility, the repository maintains dedicated branches:
-
-| Branch Name | Description | Link / Commit |
-|:---|:---|:---|
-| `main` | **Production Branch.** Contains full SSoT data binding, 34 tagged facts, and verified decision engine. | [`main`](https://github.com/Sparkience-AI/sparkfolio) |
-| `feat/ssot-facts-registry` | **SSoT Feature Branch.** Active development branch for SSoT registry features. | [`feat/ssot-facts-registry`](https://github.com/Sparkience-AI/sparkfolio/tree/feat/ssot-facts-registry) |
-| `pre-ssot-spans` | **Pre-Tagging Revert Branch.** Clean snapshot of the website prior to adding `<span data-fact="...">` markup wrappers. Use this branch if you ever want to revert or compare without spans. | [`pre-ssot-spans`](https://github.com/Sparkience-AI/sparkfolio/tree/pre-ssot-spans) |
-
----
-
-## 🛠️ Development & Testing Commands
-
-```bash
-# 1. Install dependencies
-npm install
-
-# 2. Run local development server
+```sh
 npm run dev
-
-# 3. Build for production
-npm run build
-
-# 4. Validate HTML syntax
-npx html-validate index.html
-
-# 5. Run SSoT 100% Coverage & Build Integrity Test
-node tests/verify_facts_coverage.cjs
+npm test
+npm run validate
+npm run test:browser
+npm run check
+npm run preview
 ```
 
----
+`validate` checks the decision matrix, amount validation, calculations, provenance, DOM structure, source HTML, production build and built HTML. `test:browser` tests the built site at 320, 390, 768 and 1280px and writes screenshots, a print PDF and lab timings to ignored `.audit/`. Run `validate` before browser tests to avoid testing an outdated build. `check` runs both in order. The legacy `node tests/verify_facts_coverage.cjs` entry point runs full validation.
 
-## ⚖️ Legal Disclaimer & Research Integrity
+The HTML validator configuration and all tests are versioned. Validation does not certify financial accuracy or full WCAG conformance. Source checking is an editorial task; automated tests prevent inconsistent display and invalid provenance claims.
 
-**Not Financial Advice:** Sparkfolio is an independent educational framework provided for informational purposes only. The content, frameworks, asset allocation models, and methodologies presented within this repository and on the live website do not constitute personalized investment, financial, legal, or tax advice. All investment strategies involve risk of loss, and past performance is no guarantee of future results. You should consult with a qualified SEBI-registered investment advisor (RIA) or financial professional before making any investment decisions.
+## Claims, sources and methodology
 
-**Research Integrity:** Sparkfolio synthesizes concepts from multiple independent sources (such as Vanguard, Morningstar, BlackRock, SPIVA, DALBAR, etc.) into a unified educational resource. Sparkfolio is not affiliated with, endorsed by, or sponsored by any of these organizations. All trademarks belong to their respective owners.
+There are 38 registered claims, including legislation, research, rates, calculated illustrations and editorial heuristics. See [FACTS_GOVERNANCE.md](FACTS_GOVERNANCE.md) for statuses and review rules. A linked source does not automatically mean that a claim is verified. The 17 formerly pending entries were checked against primary sources on 25 October 2026: 25 entries are now verified within recorded scope, 10 editorial and 3 calculated. EPF uses the FY 2025–26 declared rate: the July circular reproduction was inspected and corroborated by the government broadcaster, with its hosting limitation disclosed. See [the claim audit](CLAIM_AUDIT_2026-10-25.md) for findings, conditions and evidence limits. The legacy quarter labels are historical metadata only.
 
-## 📄 License
-MIT License
+The 20-year SIP example uses â‚¹20,000 monthly at 11% effective annual growth. It produces approximately â‚¹1.62 crore with fixed contributions and â‚¹3.36 crore with a 10% annual contribution increase, before fees, tax and inflation. These are constant-return models, not forecasts. Readiness checkpoints and allocation examples are editorial educational illustrations, not personal financial advice.
+
+## Release checks
+
+Pull requests run validation and browser checks. A push to `main` deploys only after those checks pass. CI stores browser evidence separately from the Pages artifact. No backend, chat widget, accounts, portfolio uploads or analytics are included.
+
+The canonical URL and sitemap remain under `/sparkfolio/`. A robots file at that subpath does not control the domain; root-level crawler policy belongs to the GitHub Pages host. Search Console submission and field Core Web Vitals require owner access and are not performed by the build.
+
+## Working conventions
+
+Keep edits focused and preserve existing CRLF line endings. Retain the regulatory and educational notice and illustrative-scheme qualifiers. `main` is the production branch; `pre-ssot-spans` is a historical rollback reference. The existing `feat/ssot-facts-registry` branch can be synchronized only as part of an explicitly authorized release. Local implementation does not push or deploy automatically.
+
+## Publisher, corrections and privacy
+
+Sparkfolio is the editorial identity; no professional credentials, institutional endorsement or external expert review are claimed. Report corrections at https://github.com/Sparkience-AI/sparkfolio/issues with the topic and evidence, without private financial information.
+
+Answers, amounts and search terms remain in browser memory. Sparkfolio does not transmit or persist them. GitHub Pages processes hosting requests under its own policies, and external destinations have separate policies. There are no affiliate or paid-placement integrations in this release.
+
+## Educational notice
+
+Sparkfolio and its authors are not registered with SEBI as an Investment Adviser, Research Analyst, Portfolio Manager or Broker-Dealer. Content is for financial literacy and does not constitute financial, investment, insurance, legal or tax advice. Investments may lose value; consult qualified professionals about personal decisions. No disclaimer is represented as a legal exemption or safe harbor.
+
+License: MIT (third-party font files retain their accompanying licenses).
