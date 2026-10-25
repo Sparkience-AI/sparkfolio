@@ -9,6 +9,13 @@ export const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({ '&'
 export const topicId = text => 'topic-' + text.toLowerCase().replace(/â†’/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 export function validateRegistry(data = registry) {
+  const policy = data._decision_model;
+  if (!policy || !policy.tax_year || !/^\d{4}-\d{2}-\d{2}$/.test(policy.reviewed_on) || !policy.review_due || !(policy.cess_rate >= 0 && policy.cess_rate < 1) || !(policy.illustrative_income > 0)) throw new Error('Invalid decision-model provenance or numeric inputs');
+  for (const regime of ['ntr', 'otr']) {
+    const rates = policy.brackets[regime];
+    if (!Array.isArray(rates) || !rates.includes('unknown') || rates.some(rate => rate !== 'unknown' && (!/^\d+$/.test(rate) || Number(rate) > 100)) || new Set(rates).size !== rates.length) throw new Error('Invalid marginal-rate options');
+  }
+  for (const source of Object.values(policy.sources)) if (!source.title || !source.locator || !/^https:\/\//.test(source.url)) throw new Error('Missing decision-model source');
   const seen = new Set();
   for (const group of ['L1_evergreen', 'L2_annual', 'L3_quarterly']) {
     for (const [id, entry] of Object.entries(data[group])) {
@@ -39,7 +46,19 @@ function renderGlossary(text, glossary) {
 
 export function transformContent(html) {
   validateRegistry();
-  const root = parse(html);
+  // Keep narrowly scoped validator annotations (e.g. custom-list accessibility).
+  const root = parse(html, { comment: true });
+  const policy = registry._decision_model;
+  for (const element of root.querySelectorAll('[data-model-field]')) {
+    const key = element.getAttribute('data-model-field');
+    if (!['tax_year', 'reviewed_on', 'review_due'].includes(key)) throw new Error(`Unknown model field: ${key}`);
+    element.set_content(escapeHtml(policy[key]));
+  }
+  const rates = [...new Set(Object.values(policy.brackets).flat())];
+  root.querySelector('#de-tax-bracket')?.set_content('<option value="">Select your base marginal rate</option>' + rates.map(rate => `<option value="${escapeHtml(rate)}">${rate === 'unknown' ? 'Not sure' : rate === '0' ? '0% — nil marginal slab' : escapeHtml(rate) + '%'}</option>`).join(''));
+  for (const [id, options, placeholder] of [['de-horizon', policy.horizon_bins, 'Select a goal horizon'], ['de-capacity', policy.risk_answers, 'Select your loss capacity']]) {
+    root.querySelector('#' + id)?.set_content(`<option value="">${placeholder}</option>` + Object.entries(options).map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join(''));
+  }
   const glossary = new Map(root.querySelectorAll('.jargon[data-tip]').map(el => [el.textContent.trim(), el.getAttribute('data-tip')]));
   const sourceNumbers = new Map(Object.keys(facts).map((id, index) => [id, index + 1]));
   for (const el of root.querySelectorAll('[data-fact]')) {

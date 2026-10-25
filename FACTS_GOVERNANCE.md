@@ -51,3 +51,7 @@ Each entry's full audit trail is in the registry and public source notes. No nam
 ## Follow-up audit closure
 
 The SSoT now records 25 verified entries, 10 editorial entries and 3 calculated illustrations. All 17 original pending entries have dated source inspection, provision locators, verification scope and conditions. Verified means the specific recorded statement is supported. EPF’s original circular was inspected as a third-party-hosted reproduction and corroborated by the government broadcaster; its hosting limitation remains explicit. See `CLAIM_AUDIT_2026-10-25.md`.
+
+## Independent decision-model data
+
+`_decision_model` is the shared source for tax-year context, valid marginal brackets, cess, a fixed illustrative interest amount, model assumptions, question labels and primary source references. It is configuration alongside the existing 38 registered claims, not an extra set of verified claims. See `DECISION_ENGINE_MODEL.md` for all 18 card families and exhaustive coverage of 239,616 valid answer combinations. Horizon bins, ordering and loss-capacity interpretation remain bounded editorial rules. Never infer a personal tax bill, deduction entitlement or optimal regime from a bracket alone.

@@ -1,5 +1,5 @@
 import registry from './data/framework-facts.json';
-import { answerOptions, evaluateDecision } from './decision.js';
+import { answerOptions, evaluateDecision, decisionPolicy, validBrackets } from './decision.js';
 import { reviewStatus } from './facts.js';
 
 const facts = Object.assign({}, registry.L1_evergreen, registry.L2_annual, registry.L3_quarterly);
@@ -89,13 +89,27 @@ function initDecision() {
   const status = byId('de-status');
   byId('de-generate-btn').disabled = false;
   let generated = false;
-  const labels = { regime: 'tax regime', age: 'age bracket', dependents: 'financial dependents', health: 'personal health cover', term: 'term cover', ef: 'emergency reserve', debt: 'expensive debt', corpPf: 'employer benefits', tax: 'long-term tax-advantaged review' };
+  const bracket = byId('de-tax-bracket');
+  function syncBrackets() {
+    const regime = form.querySelector('input[name="regime"]:checked')?.value;
+    const allowed = validBrackets(regime);
+    for (const option of bracket.options) {
+      if (!option.value) continue;
+      option.disabled = !allowed.includes(option.value);
+      option.hidden = option.disabled;
+    }
+    if (bracket.value && !allowed.includes(bracket.value)) bracket.value = '';
+  }
+  syncBrackets();
+  form.addEventListener('change', event => { if (event.target.name === 'regime') { bracket.value = ''; syncBrackets(); } });
+  const labels = { regime: 'tax regime', age: 'age bracket', dependents: 'financial dependents', health: 'personal health cover', term: 'term cover', ef: 'emergency reserve', debt: 'expensive debt', corpPf: 'employer benefits', tax: 'long-term tax-advantaged review', taxBracket: 'marginal tax bracket', horizon: 'goal horizon', capacity: 'loss capacity' };
   form.addEventListener('input', () => {
     error.textContent = '';
     byId('de-amount').removeAttribute('aria-invalid');
     if (generated) {
       card.dataset.stale = 'true';
-      status.textContent = 'Answers changed. The previous result is outdated. Generate a new checkpoint.';
+      byId('de-additional').dataset.stale = 'true';
+      status.textContent = 'Answers changed. The previous result is outdated. Build a new review.';
     }
   });
   form.addEventListener('submit', event => {
@@ -105,7 +119,7 @@ function initDecision() {
     for (const key of Object.keys(answerOptions)) {
       if (!data.has(key)) {
         error.textContent = `Please answer the question about ${labels[key]}.`;
-        form.querySelector(`input[name="${key}"]`).focus();
+        form.querySelector(`[name="${key}"]`).focus();
         return;
       }
     }
@@ -119,25 +133,66 @@ function initDecision() {
     }
     generated = true;
     card.dataset.stale = 'false';
+    byId('de-additional').dataset.stale = 'false';
     byId('de-empty-state').hidden = true;
     card.hidden = false;
-    byId('de-step-badge').textContent = `CHECKPOINT ${result.step} OF 7`;
+    byId('de-step-badge').textContent = result.step ? `FOUNDATION · CHECKPOINT ${result.step}` : 'GOAL & LIQUIDITY';
     byId('de-step-name').textContent = result.title;
     byId('de-action').textContent = result.explanation;
     byId('de-rationale').textContent = result.assumptions;
     byId('de-milestone').textContent = result.milestone;
     byId('de-context').textContent = result.context;
+    const primary = result.cards.find(c => c.id === result.id);
     const notes = byId('de-fact-notes');
     notes.replaceChildren();
-    for (const id of result.factIds) {
-      const fact = facts[id], item = document.createElement('li'), link = document.createElement('a');
-      link.href = '#source-' + id;
-      link.className = 'result-source';
-      link.textContent = fact.label;
-      link.setAttribute('aria-label', `${fact.label}: ${reviewStatus(fact).replaceAll('_', ' ')} source notes`);
-      item.append(link); notes.append(item);
+    appendSources(notes, primary);
+    const output = byId('de-output-cards');
+    output.replaceChildren();
+    for (const review of result.cards.filter(c => c.id !== result.id)) {
+      const article = document.createElement('article');
+      article.className = 'engine-review-card';
+      article.dataset.cardId = review.id;
+      const category = document.createElement('span');
+      category.className = 'engine-card-category';
+      category.textContent = review.checkpoint ? `${review.category} · checkpoint ${review.checkpoint}` : review.category;
+      const title = document.createElement('h4'); title.textContent = review.title;
+      const explanation = document.createElement('p'); explanation.textContent = review.explanation;
+      article.append(category, title, explanation);
+      if (review.metrics.length) {
+        const metrics = document.createElement('dl'); metrics.className = 'engine-tax-metrics';
+        for (const metric of review.metrics) {
+          const pair = document.createElement('div'), label = document.createElement('dt'), value = document.createElement('dd');
+          label.textContent = metric.label; value.textContent = metric.value;
+          pair.append(label, value); metrics.append(pair);
+        }
+        article.append(metrics);
+      }
+      const action = document.createElement('p'); action.className = 'engine-card-action';
+      const actionLabel = document.createElement('strong'); actionLabel.textContent = 'Review next: ';
+      action.append(actionLabel, document.createTextNode(review.action)); article.append(action);
+      if (review.category === 'Tax context' && result.illustration) {
+        const assumptions = document.createElement('p'); assumptions.className = 'engine-help';
+        assumptions.textContent = decisionPolicy.illustration_assumptions; article.append(assumptions);
+      }
+      const sources = document.createElement('ul'); sources.className = 'engine-card-sources';
+      appendSources(sources, review); article.append(sources); output.append(article);
     }
-    status.textContent = `Checkpoint ${result.step}: ${result.title}. Result updated.`;
+    byId('de-model-note').textContent = `Tax year ${decisionPolicy.tax_year} · source review ${decisionPolicy.reviewed_on} · next review ${decisionPolicy.review_due}. ${decisionPolicy.policy_note} The illustration excludes rebate and surcharge; it does not compare total annual tax under both regimes.`;
+    byId('de-additional').hidden = false;
+    status.textContent = `Review updated. ${result.gapCount} foundation ${result.gapCount === 1 ? 'gap' : 'gaps'} flagged; ${result.cards.length} review cards including the priority above.`;
+    function appendSources(list, review) {
+      for (const id of review.sourceIds) {
+        const source = decisionPolicy.sources[id], item = document.createElement('li'), link = document.createElement('a');
+        link.href = source.url; link.textContent = source.title; link.className = 'result-source';
+        link.rel = 'noopener noreferrer'; item.append(link); list.append(item);
+      }
+      for (const id of review.factIds) {
+        const fact = facts[id], item = document.createElement('li'), link = document.createElement('a');
+        link.href = '#source-' + id; link.className = 'result-source'; link.textContent = fact.label;
+        link.setAttribute('aria-label', `${fact.label}: ${reviewStatus(fact).replaceAll('_', ' ')} source notes`);
+        item.append(link); list.append(item);
+      }
+    }
   });
 }
 
