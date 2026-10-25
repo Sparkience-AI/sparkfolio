@@ -30,6 +30,10 @@ npm run preview
 
 The HTML validator configuration and all tests are versioned. Validation does not certify financial accuracy or full WCAG conformance. Source checking is an editorial task; automated tests prevent inconsistent display and invalid provenance claims.
 
+## Content change history
+
+See [CONTENT_CHANGES_REPORT.md](CONTENT_CHANGES_REPORT.md) for the complete session change report, and [CONTENT_CHANGES_APPENDIX.md](CONTENT_CHANGES_APPENDIX.md) for the before/after page-text comparison and all 38 registry values.
+
 ## Claims, sources and methodology
 
 There are 38 registered claims, including legislation, research, rates, calculated illustrations and editorial heuristics. See [FACTS_GOVERNANCE.md](FACTS_GOVERNANCE.md) for statuses and review rules. A linked source does not automatically mean that a claim is verified. The 17 formerly pending entries were checked against primary sources on 25 October 2026: 25 entries are now verified within recorded scope, 10 editorial and 3 calculated. EPF uses the FY 2025–26 declared rate: the July circular reproduction was inspected and corroborated by the government broadcaster, with its hosting limitation disclosed. See [the claim audit](CLAIM_AUDIT_2026-10-25.md) for findings, conditions and evidence limits. The legacy quarter labels are historical metadata only.

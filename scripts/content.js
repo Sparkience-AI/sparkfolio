@@ -41,6 +41,7 @@ export function transformContent(html) {
   validateRegistry();
   const root = parse(html);
   const glossary = new Map(root.querySelectorAll('.jargon[data-tip]').map(el => [el.textContent.trim(), el.getAttribute('data-tip')]));
+  const sourceNumbers = new Map(Object.keys(facts).map((id, index) => [id, index + 1]));
   for (const el of root.querySelectorAll('[data-fact]')) {
     const id = el.getAttribute('data-fact'), fact = facts[id];
     if (!fact) throw new Error(`Unknown fact: ${id}`);
@@ -49,24 +50,23 @@ export function transformContent(html) {
     el.setAttribute('data-review-status', status);
     if (fact.reviewed_on) el.setAttribute('data-reviewed-on', fact.reviewed_on);
     el.setAttribute('title', `${fact.label}: ${status === 'verified' ? 'source checked ' + fact.reviewed_on : status.replaceAll('_', ' ')}. See source notes.`);
-    el.insertAdjacentHTML('afterend', `<a class="fact-source" href="#source-${id}" aria-label="Source and ${escapeHtml(status.replaceAll('_', ' '))} status for ${escapeHtml(fact.label)}">[source${status === 'needs_review' ? ': review pending' : ''}]</a>`);
+    el.insertAdjacentHTML('afterend', `<sup class="fact-reference"><a class="fact-source" href="#source-${id}" aria-label="Reference ${sourceNumbers.get(id)}: ${escapeHtml(fact.label)}, ${escapeHtml(status.replaceAll('_', ' '))}">${sourceNumbers.get(id)}</a></sup>`);
   }
   for (const el of root.querySelectorAll('[data-calculation]')) {
     const id = el.getAttribute('data-calculation');
     if (!(id in illustrations)) throw new Error(`Unknown calculation: ${id}`);
     el.set_content(escapeHtml(illustrations[id]));
   }
-  const topics = [];
-  for (const detail of root.querySelectorAll('#implementation details:not(.topic-directory)')) {
+  for (const detail of root.querySelectorAll('#implementation details')) {
     const summary = detail.querySelector('summary');
     const title = summary.textContent.replace(/\s+/g, ' ').trim();
     const id = detail.id || topicId(title);
     detail.setAttribute('id', id);
-    topics.push({ id, title });
-    const body = detail.querySelector('.details-content');
-    body.insertAdjacentHTML('afterbegin', `<a class="topic-permalink" href="#${id}">Link to this topic</a>`);
   }
-  root.querySelector('#topic-index')?.set_content(topics.map(t => `<li><a href="#${t.id}">${escapeHtml(t.title)}</a></li>`).join('\n'));
-  root.querySelector('#source-notes-list')?.set_content(Object.entries(facts).map(([id, f]) => `<li id="source-${id}"><h4>${escapeHtml(f.label)}</h4><p><strong>${escapeHtml(f.claim_type)}</strong> Â· ${escapeHtml(reviewStatus(f).replaceAll('_', ' '))}${f.reviewed_on ? ' Â· source checked ' + escapeHtml(f.reviewed_on) : ''}${f.review_due ? ' Â· review due ' + escapeHtml(f.review_due) : ''}</p><p>${escapeHtml(f.val)}</p>${f.legal_reference ? `<p>Provision: ${escapeHtml(f.legal_reference)}</p>` : ''}${f.verification_scope ? `<p>Verification scope: ${escapeHtml(f.verification_scope)}</p>` : ''}<p>${escapeHtml(f.effective_period)}. ${escapeHtml(f.assumptions)}</p><ul>${f.sources.map(s => `<li><a href="${escapeHtml(s.url)}" rel="noopener noreferrer">${escapeHtml(s.title)}</a> â€” ${escapeHtml(s.locator)}</li>`).join('')}</ul></li>`).join('\n'));
+  root.querySelector('#source-notes-list')?.set_content(Object.entries(facts).map(([id, f]) => {
+    const status = reviewStatus(f);
+    const label = { verified: 'Source checked', editorial: 'Editorial', calculated: 'Calculated', needs_review: 'Needs review' }[status];
+    return `<li id="source-${id}"><details class="source-entry"><summary><span class="source-number">${sourceNumbers.get(id).toString().padStart(2, '0')}</span><span class="source-heading">${escapeHtml(f.label)}</span><span class="source-status" data-status="${status}">${label}</span></summary><div class="details-content"><p class="source-value">${escapeHtml(f.val)}</p><p class="source-period">${escapeHtml(f.effective_period)}</p>${f.verification_scope ? `<p>${escapeHtml(f.verification_scope)}</p>` : ''}<p>${escapeHtml(f.assumptions)}</p>${f.legal_reference ? `<p class="source-provision">${escapeHtml(f.legal_reference)}</p>` : ''}<ul class="source-links">${f.sources.map(s => `<li><a href="${escapeHtml(s.url)}" rel="noopener noreferrer">${escapeHtml(s.title)} <span aria-hidden="true">↗</span></a><span class="source-locator">${escapeHtml(s.locator)}</span></li>`).join('')}</ul>${f.reviewed_on ? `<p class="source-review">Checked ${escapeHtml(f.reviewed_on)}${f.review_due ? ' · next review ' + escapeHtml(f.review_due) : ''}</p>` : ''}</div></details></li>`;
+  }).join('\n'));
   return root.toString();
 }

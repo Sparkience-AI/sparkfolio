@@ -54,6 +54,7 @@ function revealFragment(hash) {
     byId('topic-search').value = '';
     filterTopics();
   }
+  if (target.id.startsWith('source-')) target.querySelector('details')?.setAttribute('open', '');
   let detail = target.closest('details');
   while (detail) { detail.open = true; detail = detail.parentElement.closest('details'); }
   if (target.matches('[tabindex="-1"]')) target.focus({ preventScroll: true });
@@ -62,14 +63,13 @@ function revealFragment(hash) {
 
 function filterTopics() {
   const query = byId('topic-search').value.trim().toLocaleLowerCase('en-IN');
-  const topics = [...document.querySelectorAll('#implementation details:not(.topic-directory)')];
+  const topics = [...document.querySelectorAll('#implementation details')];
   let count = 0;
   for (const detail of topics) {
     const match = detail.textContent.toLocaleLowerCase('en-IN').includes(query);
     detail.hidden = !match;
     if (match) count++;
   }
-  for (const link of byId('topic-index').querySelectorAll('a')) link.parentElement.hidden = byId(link.hash.slice(1)).hidden;
   byId('topic-count').textContent = `${count} of ${topics.length} topics${query ? ' match your search' : ' available'}.`;
   byId('topic-empty').hidden = count !== 0;
 }
@@ -127,18 +127,14 @@ function initDecision() {
     byId('de-rationale').textContent = result.assumptions;
     byId('de-milestone').textContent = result.milestone;
     byId('de-context').textContent = result.context;
-    const mapping = byId('de-mapping');
-    mapping.replaceChildren();
-    const guide = document.createElement('a');
-    guide.href = '#' + result.guide;
-    guide.textContent = 'Read the related framework topic';
-    mapping.append(guide);
     const notes = byId('de-fact-notes');
     notes.replaceChildren();
     for (const id of result.factIds) {
       const fact = facts[id], item = document.createElement('li'), link = document.createElement('a');
       link.href = '#source-' + id;
-      link.textContent = `${fact.label}: ${fact.val} (${reviewStatus(fact).replaceAll('_', ' ')})`;
+      link.className = 'result-source';
+      link.textContent = fact.label;
+      link.setAttribute('aria-label', `${fact.label}: ${reviewStatus(fact).replaceAll('_', ' ')} source notes`);
       item.append(link); notes.append(item);
     }
     status.textContent = `Checkpoint ${result.step}: ${result.title}. Result updated.`;

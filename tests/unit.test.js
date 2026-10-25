@@ -93,6 +93,14 @@ test('build resolves nested facts, calculation values, source links and topic ID
   assert.equal(new Set(ids).size, ids.length, 'Duplicate IDs');
   assert.ok(root.querySelector('#goal-based'));
   assert.ok(root.querySelector('#topic-cash'));
+  assert.equal(root.querySelectorAll('.topic-permalink, #topic-index, #start-here').length, 0);
+  assert.equal(root.querySelectorAll('#about-framework h2').length, 1);
+  assert.equal(root.querySelectorAll('.source-entry').length, 38);
+  for (const reference of root.querySelectorAll('.fact-source')) {
+    assert.match(reference.textContent, /^\d+$/);
+    const note = root.querySelector(reference.getAttribute('href'));
+    assert.ok(note.querySelector('.source-entry'), 'Every citation opens a compact evidence note');
+  }
   assert.equal(root.querySelectorAll('script:not([src]):not([type="application/ld+json"])').length, 0);
   assert.equal(root.querySelectorAll('input[type="radio"][checked]').length, 0);
   const structured = JSON.parse(root.querySelector('script[type="application/ld+json"]').textContent);
