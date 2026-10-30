@@ -237,7 +237,14 @@ function initGlossary() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') hide(); });
   document.addEventListener('click', e => { if (!bubble.contains(e.target)) hide(); });
   addEventListener('resize', hide);
-  addEventListener('scroll', hide, { passive: true });
+  addEventListener('scroll', () => {
+    if (!active) return;
+    const rect = active.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > innerHeight) return hide();
+    // Focusing a term may scroll it into view. Keep its explanation available.
+    if (active === document.activeElement || active.contains(document.activeElement) || active.matches(':hover') || bubble.matches(':hover')) show(active);
+    else hide();
+  }, { passive: true });
 }
 
 function initDecorations() {

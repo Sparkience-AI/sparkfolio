@@ -96,3 +96,7 @@ These clarify existing limitations; they do not introduce new financial rates, n
 - Passed: browser tests at 320, 390, 768 and 1280px, including tax-regime changes, unknown answers, validation focus, stale results, keyboard controls, source notes, no-JavaScript content and print.
 - Visually checked the desktop result grid, mobile tax example and readiness cards. Detailed tax assumptions remain expandable rather than filling the main card.
 - The review was completed locally before release approval. The approved footer now reads “Framework updated: 30 October 2026”; financial source dates remain separate.
+
+## Release validation follow-up
+
+GitHub’s browser run exposed an existing glossary timing issue: scrolling a focused term into view could dismiss its explanation. The release keeps that explanation visible and correctly positioned while the term remains focused or hovered, and hides it when the term leaves the viewport. This interaction fix does not affect decision rules, financial copy or the requested footer label.
