@@ -118,12 +118,20 @@ try {
   assert.match(await page.$eval('#topic-count', e => e.textContent), /match your search/);
   await page.click('#topic-reset');
   // Touch/keyboard glossary and Escape dismissal.
+  // Start this component check without the preceding topic fragment/filter state.
+  await page.goto(base, { waitUntil: 'networkidle0' });
+  await page.evaluate(async () => { await document.fonts.ready; document.documentElement.style.scrollBehavior = 'auto'; });
   const jargon = await page.$('.jargon');
   await jargon.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
   // Let the resulting scroll event dismiss any old explanation before clicking.
   await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   await jargon.click();
-  assert.equal(await page.$eval('#jargon-tooltip', e => e.classList.contains('visible')), true);
+  await page.waitForFunction(() => document.getElementById('jargon-tooltip').classList.contains('visible'));
+  await page.keyboard.press('Escape');
+  assert.equal(await page.$eval('#jargon-tooltip', e => e.classList.contains('visible')), false);
+  await jargon.evaluate(el => el.blur());
+  await jargon.focus();
+  await page.waitForFunction(() => document.getElementById('jargon-tooltip').classList.contains('visible'));
   await page.keyboard.press('Escape');
   assert.equal(await page.$eval('#jargon-tooltip', e => e.classList.contains('visible')), false);
   // Content is available without JavaScript, including open accordions and source notes.
