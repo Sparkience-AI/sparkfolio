@@ -348,7 +348,7 @@
 
           <div class="mt-8 p-6 rounded text-left" style="background: rgba(12, 35, 64, 0.03); border: 1px solid var(--border-subtle); border-left: 4px solid var(--primary-navy);">
             <h3 class="text-navy text-sm font-bold uppercase tracking-widest mb-2 flex items-center gap-2"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> LIFECYCLE TRANSITION (GLIDE PATH)</h3>
-            <p class="text-sm text-muted mb-0"><strong>Goal-horizon review:</strong> As a goal approaches, consider reducing exposure to losses that cannot be recovered before the money is needed. A three-year horizon is an editorial screening point, not a guarantee of safety. Debt and liquid funds also have credit, interest-rate and liquidity risks; immediate needs require reliable cash access.</p>
+            <p class="text-sm text-muted mb-0"><strong>Goal-horizon review:</strong> As the date for a goal gets closer, ask whether you could afford a loss or wait for markets to recover. Three years is a guide used here, not a promise that an investment is safe. Debt and liquid funds can also lose value or take time to sell; keep money for immediate bills accessible.</p>
           </div>
         </div>
       </section>
@@ -357,8 +357,8 @@
       <section id="agent" class="section decision-section">
         <div class="container text-center">
           <div class="section-header bg-navy text-inverse p-6 rounded-t-lg mb-0" style="border-bottom: none;">
-            <h2 class="section-title text-inverse m-0">YOUR FINANCIAL READINESS REVIEW</h2>
-            <p class="section-subtitle text-inverse opacity-70 mt-2">Build a self-contained review of financial foundations, goal horizon, loss capacity and tax context. No money is allocated and no personal tax return is calculated.</p>
+            <h2 class="section-title text-inverse m-0">YOUR MONEY: WHAT TO CHECK NEXT</h2>
+            <p class="section-subtitle text-inverse opacity-70 mt-2">Answer a few questions about your savings, insurance, goals and tax bracket. You’ll see what needs attention and what to check next. The tool does not invest your money or calculate your tax bill.</p>
           </div>
           
           <div class="grid grid-cols-1 md-grid-cols-2 gap-0 items-stretch text-left max-w-4xl mx-auto border border-subtle border-t-0 rounded-b-lg overflow-hidden bg-main shadow-card">
@@ -367,12 +367,12 @@
             <form id="de-form" class="decision-form p-6 md-p-10 bg-card border-b border-r-md border-subtle" novalidate>
               
               <div class="mb-6">
-                <label for="de-amount" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Illustrative amount (₹, optional)</label>
+                <label for="de-amount" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Amount you have in mind (₹, optional)</label>
                 <div class="amount-input-wrapper relative">
                   <span class="absolute" style="left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-family: var(--font-mono); font-weight: bold; font-size: 1.125rem;">₹</span>
                   <input type="text" id="de-amount" name="amount" class="w-full font-mono text-xl p-4 border border-subtle rounded-lg bg-main" style="padding-left: 2.5rem;" placeholder="e.g. 10000.50" inputmode="decimal" maxlength="30" aria-describedby="de-amount-help de-error">
                 </div>
-                  <span id="de-amount-help" class="text-sm block">Optional context only. Use a positive amount with up to two decimal places; no commas or exponents.</span>
+                  <span id="de-amount-help" class="text-sm block">You can leave this blank. If you enter an amount, use a number such as 10000.50. It will not be treated as your income or allocated to investments.</span>
               </div>
 
               <div class="mb-6">
@@ -384,14 +384,14 @@
               </div>
 
               <div class="mb-6">
-                <label for="de-tax-bracket" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Marginal tax bracket</label>
+                <label for="de-tax-bracket" class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Your tax bracket</label>
                 <select id="de-tax-bracket" name="taxBracket" class="engine-select" required aria-describedby="de-bracket-help">
-                  <option value="">Select your base marginal rate</option>
-                  <option value="0">0% — nil marginal slab</option><option value="5">5%</option>
+                  <option value="">Choose your slab rate</option>
+                  <option value="0">0% — nil slab before any rebate</option><option value="5">5%</option>
                   <option value="10">10%</option><option value="15">15%</option><option value="20">20%</option>
                   <option value="25">25%</option><option value="30">30%</option><option value="unknown">Not sure</option>
                 </select>
-                <p id="de-bracket-help" class="engine-help">Tax year <span data-model-field="tax_year">2026–27</span>, before cess and surcharge. Select your ordinary-income marginal slab, not your average tax rate. A rebate can make tax payable nil even when your marginal slab is higher. Select a regime first; unsupported rates are unavailable.</p>
+                <p id="de-bracket-help" class="engine-help">Tax year <span data-model-field="tax_year">2026–27</span>. Choose the rate on the top part of your ordinary taxable income, before cess and surcharge. A rebate can reduce your tax bill to zero without changing your slab. Choose a regime first. If you are unsure of the rate, select “Not sure”.</p>
               </div>
               <div class="mb-6">
                 <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">Age Bracket</label>
@@ -406,7 +406,7 @@
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div>
                   <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase text-center md:text-left">
-                    <span class="jargon" data-tip="Do you have financial dependents relying on your income?" tabindex="0">Dependents?</span>
+                    <span class="jargon" data-tip="Does anyone rely on your income to meet their expenses?" tabindex="0">Dependents?</span>
                   </label>
                   <div class="segmented-control bg-main p-1 rounded-lg" role="group" aria-label="Financial Dependents">
                     <label class="segment-option"><input type="radio" name="dependents" value="yes" required><span>Yes</span></label>
@@ -416,17 +416,17 @@
 
                 <div>
                   <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase text-center md:text-left">
-                    <span class="jargon" data-tip="Do you hold an active independent personal health insurance policy outside of corporate cover?" tabindex="0">Health Cover?</span>
+                    <span class="jargon" data-tip="Do you have health insurance of your own, separate from any cover through work?" tabindex="0">Health Cover?</span>
                   </label>
                   <div class="segmented-control bg-main p-1 rounded-lg" role="group" aria-label="Personal Health Cover">
                     <label class="segment-option"><input type="radio" name="health" value="yes" required><span>Personal</span></label>
-                    <label class="segment-option"><input type="radio" name="health" value="no" required><span>Corp/None</span></label>
+                    <label class="segment-option"><input type="radio" name="health" value="no" required><span>Work/None</span></label>
                   </div>
                 </div>
 
                 <div>
                   <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase text-center md:text-left">
-                    <span class="jargon" data-tip="Do you hold a pure term life insurance policy (10x-20x annual income)?" tabindex="0">Term Cover?</span>
+                    <span class="jargon" data-tip="Do you have an active term life insurance policy? The amount of cover needed depends on your family’s needs, not a fixed income multiple." tabindex="0">Term Cover?</span>
                   </label>
                   <div class="segmented-control bg-main p-1 rounded-lg" role="group" aria-label="Pure Term Cover">
                     <label class="segment-option"><input type="radio" name="term" value="yes" required><span>Active</span></label>
@@ -458,7 +458,7 @@
 
                 <div>
                   <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase text-center md:text-left">
-                    <span class="jargon" data-tip="Have you checked actual employer contribution terms and eligibility with payroll? Select Not applicable if no employer scheme is available." tabindex="0">Employer benefits reviewed?</span>
+                    <span class="jargon" data-tip="Have you checked your EPF or NPS benefits with payroll? Select Not applicable if no employer scheme is available." tabindex="0">Employer benefits reviewed?</span>
                   </label>
                   <div class="segmented-control bg-main p-1 rounded-lg" role="group" aria-label="Applicable employer benefits reviewed">
                     <label class="segment-option"><input type="radio" name="corpPf" value="yes" required><span>Yes</span></label>
@@ -469,7 +469,7 @@
 
                 <div>
                   <label class="block text-xs font-semibold mb-2 text-navy tracking-wider uppercase">
-                    Long-term tax-advantaged allocation reviewed?
+                    Checked tax-saving options for your long-term goals?
                   </label>
                   <div class="segmented-control bg-main p-1 rounded-lg" role="group" aria-label="Long-term tax-advantaged allocation reviewed">
                     <label class="segment-option"><input type="radio" name="tax" value="yes" required><span>Yes</span></label>
@@ -489,12 +489,12 @@
                 <select id="de-capacity" name="capacity" class="engine-select" required>
                   <option value="">Select your loss capacity</option><option value="limited">A loss would affect essential needs</option><option value="comfortable">I can absorb losses without affecting essentials</option><option value="unsure">I have not assessed this</option>
                 </select>
-                <p class="engine-help">Consider housing, dependents, debt payments and goal dates. This is a self-report, not a validated risk profile.</p>
+                <p class="engine-help">Think about home payments, family expenses, loans and goal dates. This answer helps us explain the risks; it is not a full assessment of what investments would suit you.</p>
               </div>
               <p id="de-error" class="form-error" role="alert"></p>
-              <button type="submit" id="de-generate-btn" disabled class="w-full bg-navy text-inverse py-4 px-6 rounded-lg font-bold text-sm uppercase tracking-widest transition" style="box-shadow: 0 4px 14px rgba(12, 35, 64, 0.25);">Build my educational review</button>
+              <button type="submit" id="de-generate-btn" disabled class="w-full bg-navy text-inverse py-4 px-6 rounded-lg font-bold text-sm uppercase tracking-widest transition" style="box-shadow: 0 4px 14px rgba(12, 35, 64, 0.25);">Show my next steps</button>
 
-              <p class="text-xs text-muted mt-6 italic text-center">Educational decision-tree model for financial literacy. Does not constitute investment advice or personalized financial planning.</p>
+              <p class="text-xs text-muted mt-6 italic text-center">A guide to the questions worth asking. It does not replace advice based on your full financial situation.</p>
               <noscript><p>The interactive review requires JavaScript. All educational topics and source notes remain available below.</p></noscript>
             </form>
 
@@ -508,7 +508,7 @@
                   <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
                 </div>
                 <h3 class="text-lg text-navy font-heading mb-2">A review built around your answers</h3>
-                <p class="text-sm text-muted max-w-xs mx-auto">Answer each question, then select “Build my educational review”. No personal data is sent to a server.</p>
+                <p class="text-sm text-muted max-w-xs mx-auto">Answer each question, then select “Show my next steps”. Your answers stay in this browser.</p>
               </div>
 
               
@@ -520,20 +520,20 @@
                   </div>
                 </div>
                 
-                <h3 id="de-step-name" class="text-xl mb-4 text-navy font-heading">Priority review</h3>
+                <h3 id="de-step-name" class="text-xl mb-4 text-navy font-heading">Where to start</h3>
                 
                 <div class="bg-surface p-4 rounded mb-4">
-                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Priority review</p>
+                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Where to start</p>
                   <p id="de-action" class="font-medium text-navy text-sm"></p>
                 </div>
 
                 <div class="mb-4">
-                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Assumptions and limits</p>
+                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Keep in mind</p>
                   <p id="de-rationale" class="text-sm text-muted"></p>
                 </div>
 
                 <div class="mb-4">
-                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">Next Milestone</p>
+                  <p class="text-xs font-semibold uppercase text-muted mb-1 tracking-wider">What to do next</p>
                   <p id="de-milestone" class="text-sm text-navy font-medium"></p>
                 </div>
 
@@ -544,7 +544,7 @@
             </div>
           </div>
           <div id="de-additional" class="engine-output" hidden>
-            <div class="engine-output-heading"><span class="editorial-eyebrow">YOUR COMPLETE REVIEW</span><h3>Other areas to review</h3><p>These cards complement the priority above. Financial foundations can require attention together; the order is an educational convention, not a recommendation to buy or fund a product.</p></div>
+            <div class="engine-output-heading"><span class="editorial-eyebrow">BASED ON YOUR ANSWERS</span><h3>A few more things to check</h3><p>Start with the step above, then work through the other cards. Several things may need attention at the same time. These are checks to make before buying an investment.</p></div>
             <div id="de-output-cards" class="engine-card-grid"></div>
             <p id="de-model-note" class="engine-model-note"></p>
           </div>
@@ -569,45 +569,45 @@
 <details id="topic-financial-readiness"><summary>THE SEVEN FINANCIAL-READINESS CHECKPOINTS</summary><div class="details-content">
             <!-- html-validate-disable-next no-redundant-role -->
             <ol class="readiness-list" role="list">
-              <li><strong>Baseline cash access.</strong> Review readily accessible cash for immediate needs. <span data-fact="rule_baseline_cash_cushion">₹50,000 to ₹1,00,000</span> is an editorial illustration, not a universal target.</li>
-              <li><strong>Health protection.</strong> Review independent cover, exclusions and deductibles; see the healthcare topic.</li>
-              <li><strong>Dependent protection.</strong> If others depend on income, review liabilities, resources and income-replacement needs.</li>
-              <li><strong>Applicable employer benefits.</strong> Confirm EPF/NPS terms and eligibility with payroll. Employer NPS deduction ceilings are <span data-fact="tax_sec_80ccd2_private">14%</span> for non-government New Regime contributions and <span data-fact="tax_sec_80ccd2_govt">14%</span> for Central/State Government contributions; the non-government ceiling is 10% outside the New Regime. These are tax limits, not promised employer matches. EPF/EPS contribution treatment is separate.</li>
-              <li><strong>Expensive debt.</strong> Review effective rates, prepayment charges and liquidity; the tool's 9% screen is an editorial heuristic.</li>
-              <li><strong>Emergency reserve.</strong> Review expense-based needs, income stability, settlement time and capital risk. Immediate cash and invested reserves serve different roles.</li>
-              <li><strong>Investment planning.</strong> Review goals, dates, tax eligibility, liquidity and capacity for loss. Compare the allocation illustrations only after this review; satellites are optional.</li>
+              <li><strong>Baseline cash access.</strong> Keep money available for bills you cannot put off. <span data-fact="rule_baseline_cash_cushion">₹50,000 to ₹1,00,000</span> is an example, not an amount everyone needs.</li>
+              <li><strong>Health protection.</strong> Check whether you need health insurance of your own. Look at what it covers, what it excludes and what you would pay yourself.</li>
+              <li><strong>Dependent protection.</strong> If others rely on your income, work out how their expenses and your loans would be paid without it.</li>
+              <li><strong>Applicable employer benefits.</strong> Ask payroll about your EPF/NPS benefits. Employer NPS deduction limits are <span data-fact="tax_sec_80ccd2_private">14%</span> for non-government New Regime contributions and <span data-fact="tax_sec_80ccd2_govt">14%</span> for Central/State Government contributions; the non-government ceiling is 10% outside the New Regime. These limits do not tell you what your employer will pay. EPF and EPS have separate contribution rules.</li>
+              <li><strong>Expensive debt.</strong> Compare the interest cost, early-payment charges and cash you need to keep. The tool’s 9% threshold is a prompt to check a loan, not a rule to repay every loan above it.</li>
+              <li><strong>Emergency reserve.</strong> Check how many months of essential bills your reserve would cover. Allow for changes in income and delays or losses when selling investments; some money needs to be available immediately.</li>
+              <li><strong>Investment planning.</strong> Before choosing an investment mix, write down your goals, dates, tax position, access needs and how much loss you could afford. Specialist “satellite” investments are optional.</li>
             </ol>
           </div></details>
 
               <details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> NON-TAXABLE INVESTMENT OPTIONS (NEW TAX REGIME)</summary>
                 <div class="details-content">
-                  <p class="callout-tip">Tax-year context: the registered provisions were checked on 25 October 2026 against the Income-tax Act, 2025 as amended by Finance Act, 2026, for tax year 2026–27. Earlier years use their applicable law. Current sections, legacy mappings and eligibility conditions are in the source notes.</p>
-                  <p class="text-sm text-muted mb-4">Under the New Tax Regime (section 202; legacy 115BAC), most personal contribution deductions are unavailable. Compare eligibility, liquidity, costs and tax treatment together; tax exemption alone does not establish suitability.</p>
+                  <p class="callout-tip">Tax year 2026–27: these registered tax references were checked on 25 October 2026 against the Income-tax Act, 2025, as amended by Finance Act, 2026. Earlier tax years use the law that applied then. The source notes explain the conditions and show both current and older section numbers.</p>
+                  <p class="text-sm text-muted mb-4">Under the New Tax Regime (section 202; legacy 115BAC), most deductions for your own contributions are unavailable. Before choosing an investment, check whether you qualify for its tax treatment, when you can withdraw and what it costs. A tax exemption alone does not make it a good fit.</p>
                   
                   <strong class="text-xs uppercase text-navy block mb-1">EEE INSTRUMENTS (<span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> & <span class="jargon" data-tip="Sukanya Samriddhi Yojana" tabindex="0">SSY</span>)</strong>
-                  <p class="text-xs text-muted mb-4"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium mb-1 border border-subtle">Global Equivalent: Roth IRA / UK ISA</span><br>Tax treatment depends on the instrument, eligibility and applicable year; contribution deductions and withdrawal exemptions are distinct. <span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> offers a sovereign-backed rate of <span data-fact="rate_ppf_interest">7.1%</span> (source period and review status below). A taxable-equivalent return depends on the actual marginal tax rate; no personal tax benefit is assumed. (Annual cap: <span data-fact="cap_sec_80c">₹1.5 Lakh</span>).</p>
+                  <p class="text-xs text-muted mb-4"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium mb-1 border border-subtle">Global Equivalent: Roth IRA / UK ISA</span><br>Tax rules depend on the product, your eligibility and the year. A deduction when you pay in and an exemption when you withdraw are different benefits. <span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> offers a sovereign-backed rate of <span data-fact="rate_ppf_interest">7.1%</span> (source period and review status below). To compare this with a taxable investment, use the tax rate that would actually apply to you. No personal saving is assumed here. (Annual cap: <span data-fact="cap_sec_80c">₹1.5 Lakh</span>).</p>
 
                   <strong class="text-xs uppercase text-navy block mb-1">PROVIDENT FUNDS (<span class="jargon" data-tip="Employee Provident Fund" tabindex="0">EPF</span> <span data-fact="rate_epf_interest">8.25% (FY 2025–26 declared rate)</span> & <span class="jargon" data-tip="Voluntary Provident Fund" tabindex="0">VPF</span>) CEILINGS</strong>
-                  <p class="text-xs text-muted mb-4"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium mb-1 border border-subtle">Global Equivalent: 401(k) / Superannuation</span><br>Withdrawal exemptions have their own service and other conditions. For employee contributions from 1 April 2021, interest attributable to annual contributions above <strong><span data-fact="cap_epf_tax_free_employee">₹2.5 Lakh</span></strong> is taxable; the entire balance does not become taxable (this threshold increases to <strong><span data-fact="cap_epf_tax_free_no_employer">₹5 Lakh</span></strong> if there is no employer contribution). Separate taxable and non-taxable contribution accounts apply under Rule 277.</p>
+                  <p class="text-xs text-muted mb-4"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium mb-1 border border-subtle">Global Equivalent: 401(k) / Superannuation</span><br>Tax-free withdrawals depend on service and other conditions. For employee contributions from 1 April 2021, interest linked to annual contributions above <strong><span data-fact="cap_epf_tax_free_employee">₹2.5 Lakh</span></strong> is taxable; this does not make the whole balance taxable (this threshold increases to <strong><span data-fact="cap_epf_tax_free_no_employer">₹5 Lakh</span></strong> if there is no employer contribution). Rule 277 requires taxable and non-taxable amounts to be tracked separately.</p>
 
                   <strong class="text-xs uppercase text-navy block mb-1">SECONDARY MARKET TAX-FREE BONDS</strong>
-                  <p class="text-xs text-muted mb-4">Only qualifying notified bond issues receive the preserved coupon exemption under <span data-fact="tax_psu_bonds_sec10_15">Schedule II, item 17 (legacy 10(15)(iv)(h))</span>. Check the specific issue/ISIN and notification conditions. A PSU issuer alone establishes neither exemption nor a sovereign guarantee. Secondary-market sale gains have separate tax and holding-period rules; an exempt coupon does not make sale gains exempt.</p>
+                  <p class="text-xs text-muted mb-4">Interest is exempt only for qualifying notified bond issues under <span data-fact="tax_psu_bonds_sec10_15">Schedule II, item 17 (legacy 10(15)(iv)(h))</span>. Check the bond’s ISIN (identification number) and notification conditions. A PSU issuer alone does not make interest tax-free or guarantee repayment by the government. Sale gains have separate tax and holding-period rules; tax-free interest does not make those gains tax-free.</p>
 
                   <strong class="text-xs uppercase text-navy block mb-1">LIFE INSURANCE & ULIPS (SCHEDULE II, ITEM 2; LEGACY 10(10D))</strong>
                   <div class="text-xs text-muted mb-2"><span class="inline-block bg-surface px-1 py-0.5 rounded text-navy font-medium border border-subtle">Global Equivalent: Permanent/Whole Life Wrappers</span></div>
                   <ul class="plain-list text-xs text-muted space-y-3 mb-2">
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">ULIPs:</div>
-                      <span>For ULIPs issued on or after 1 February 2021, the aggregate annual premium threshold is <span data-fact="cap_ulip_tax_free_2_5l">₹2.5 Lakh</span>.</span>
+                      <span>For ULIPs issued on or after 1 February 2021, the combined annual premium threshold is <span data-fact="cap_ulip_tax_free_2_5l">₹2.5 Lakh</span>.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Traditional Life:</div>
-                      <span>For non-ULIP policies issued on or after 1 April 2023, the aggregate annual premium threshold is <span data-fact="cap_traditional_life_tax_free_5l">₹5 Lakh</span> ; the threshold alone does not establish exemption. Premium-to-sum-assured conditions normally use 10%, with 15% for specified disability/disease cases. Apply aggregation and the statutory notes across relevant policies and premium years.</span>
+                      <span>For non-ULIP policies issued on or after 1 April 2023, the combined annual premium threshold is <span data-fact="cap_traditional_life_tax_free_5l">₹5 Lakh</span>. Staying below this amount does not by itself make a payout tax-free. The premium-to-sum-assured test normally uses 10%, or 15% for specified disability/disease cases. Check the combined premiums across the relevant policies and years, along with the legal notes.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Death Benefits:</div>
-                      <span>Death receipts are excepted from the premium conditions, but exclusions such as Keyman policies and section 127(4) receipts still apply. Qualifying IFSC Insurance Office policies issued from 1 April 2025 have separate exceptions to the aggregate premium conditions. Do not assume every policy receipt is exempt.</span>
+                      <span>Death payouts are excepted from the premium conditions, but exclusions still apply, including Keyman policies and receipts under section 127(4). Qualifying IFSC Insurance Office policies issued from 1 April 2025 have separate exceptions to the combined premium conditions. Check the policy and provision rather than assuming every payout is tax-free.</span>
                     </li>
                   </ul>
                 </div>
@@ -616,7 +616,7 @@
           <details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> TAX-AWARE INVESTING & PASS-THROUGH ENTITIES (2026)</summary>
                 <div class="details-content">
-                  <p class="callout-tip">Tax-year context: the registered provisions were checked on 25 October 2026 against the Income-tax Act, 2025 as amended by Finance Act, 2026, for tax year 2026–27. Earlier years use their applicable law. Current sections, legacy mappings and eligibility conditions are in the source notes.</p>
+                  <p class="callout-tip">Tax year 2026–27: these registered tax references were checked on 25 October 2026 against the Income-tax Act, 2025, as amended by Finance Act, 2026. Earlier tax years use the law that applied then. The source notes explain the conditions and show both current and older section numbers.</p>
                   <p class="text-sm text-muted mb-4"><strong>Crucial Update:</strong> Taxes are the largest unacknowledged drag on returns. Following the July 2024 Indian Budget, understanding these rules is critical.</p>
                   <ul class="plain-list text-sm text-navy space-y-3 mb-4">
                     <li class="flex flex-col gap-1">
@@ -625,7 +625,7 @@
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="flex items-center gap-2 font-bold"><span class="text-blue">●</span> Debt Mutual Funds</div>
-                      <span class="text-muted pl-5">Specified mutual-fund rules can deem gains short-term regardless of holding period. Check the fund’s statutory classification and acquisition date before applying a slab-rate or indexation conclusion.</span>
+                      <span class="text-muted pl-5">Some mutual-fund rules treat gains as short-term even when units have been held for years. Check the fund’s legal category and when you bought the units before deciding which rate or indexation rule applies.</span>
                     </li>
                     <li class="flex flex-col gap-1 mt-2">
                       <div class="flex items-center gap-2 font-bold"><span class="text-navy">●</span> International Mutual Funds</div>
@@ -642,7 +642,7 @@
                         <li>
                           <div class="flex flex-col gap-1">
                             <div class="font-bold text-navy">Dividends:</div>
-                            <span>The SPV’s election under section 200 (legacy 115BAA) affects the exemption for covered dividends; use the trust’s component statement and eligibility conditions.</span>
+                            <span>Whether the SPV chose section 200 (legacy 115BAA) affects the exemption for covered dividends. Check the trust’s breakdown of each payment and the eligibility conditions.</span>
                           </div>
                         </li>
                         <li>
@@ -654,13 +654,13 @@
                         <li>
                           <div class="flex flex-col gap-1">
                             <div class="font-bold text-navy">Debt Repayment:</div>
-                            <span>May trigger tax liabilities under <span data-fact="tax_sec_56_2_xii_reit_repayment">Section 92(2)(k) (legacy 56(2)(xii))</span> using max(A − B − C, 0): cumulative qualifying distributions to current/prior holders, less the unit issue price and amounts already taxed under this provision. Issue price differs from secondary-market purchase cost. Not every repayment is immediately taxable; related cost-basis rules also matter.</span>
+                            <span>May trigger tax liabilities under <span data-fact="tax_sec_56_2_xii_reit_repayment">Section 92(2)(k) (legacy 56(2)(xii))</span> using max(A − B − C, 0): start with qualifying distributions paid so far to current and previous holders, then subtract the unit’s issue price and amounts already taxed under this provision. The issue price is not the price you paid on the secondary market. Not every repayment is immediately taxable; cost-basis rules also matter.</span>
                           </div>
                         </li>
                         <li>
                           <div class="flex flex-col gap-1">
-                            <div class="font-bold text-navy"><span class="jargon" data-tip="Tax Deducted at Source" tabindex="0">TDS</span> Friction:</div>
-                            <span>10% <span class="jargon" data-tip="Tax Deducted at Source" tabindex="0">TDS</span> (<span data-fact="tax_sec_194lba_reit_tds">Section 393(1), Table 4(ii) (legacy 194LBA)</span>) has a nil threshold for covered resident income components, subject to the specified dividend exception where the SPV has not elected section 200. Non-residents have separate rules; withholding is not final tax and does not cover every distribution component uniformly.</span>
+                            <div class="font-bold text-navy"><span class="jargon" data-tip="Tax Deducted at Source" tabindex="0">TDS</span>: tax withheld</div>
+                            <span>10% <span class="jargon" data-tip="Tax Deducted at Source" tabindex="0">TDS</span> (<span data-fact="tax_sec_194lba_reit_tds">Section 393(1), Table 4(ii) (legacy 194LBA)</span>) has no minimum-payment threshold for the covered resident income components. There is a specified dividend exception where the SPV has not chosen section 200. Non-residents have separate rules. TDS is tax withheld in advance, not your final bill, and the same rule does not cover every part of a payment.</span>
                           </div>
                         </li>
                       </ul>
@@ -674,7 +674,7 @@
                   <div class="callout-tip flex gap-3 mt-4">
                     <div>
                       <strong class="block mb-1">💡 <span class="jargon" data-tip="National Pension System" tabindex="0">NPS</span> Tax Efficiency</strong>
-                      <p class="text-xs m-0">The National Pension System (<span class="jargon" data-tip="National Pension System" tabindex="0">NPS</span>) offers an exclusive <span data-fact="cap_sec_80ccd1b_nps">₹50,000</span> additional own-contribution deduction under section 124(3) (legacy 80CCD(1B)) in the Old Regime; it is unavailable under section 202 New Regime. Eligible minor-account contributions share this aggregate ceiling. No double counting with section 123 is allowed; employer deductions are separate.</p>
+                      <p class="text-xs m-0">The National Pension System (<span class="jargon" data-tip="National Pension System" tabindex="0">NPS</span>) offers an <span data-fact="cap_sec_80ccd1b_nps">₹50,000</span> additional deduction for your own contributions under section 124(3) (legacy 80CCD(1B)) in the Old Regime; it is unavailable under section 202 New Regime. Eligible minor-account contributions share this limit. The same contribution cannot also be counted under section 123; employer contributions have a separate deduction.</p>
                     </div>
                   </div>
                 </div>
@@ -734,11 +734,11 @@
                   <div class="callout-tip flex gap-3 mb-4 border-l-4" style="border-left-color: var(--status-red);">
                     <div>
                       <strong class="block mb-1 text-red">⚠️ ETF Liquidity Warning</strong>
-                      <p class="text-xs m-0">ETF liquidity and bid–ask spreads vary by product and market conditions. Market prices can differ from NAV. If you buy ETFs, you <strong>must verify the iNAV (Indicative NAV)</strong> during market hours to ensure you aren't paying a premium. Index funds and ETFs have different trading, liquidity and pricing considerations for retail <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span>.</p>
+                      <p class="text-xs m-0">ETF liquidity and bid–ask spreads vary by product and market conditions. Market prices can differ from NAV. When buying an ETF, compare its quoted price with the <strong>iNAV (indicative net asset value)</strong> during market hours. This helps you assess any premium but does not guarantee the price at which your order will fill. Index funds and ETFs have different trading, liquidity and pricing considerations for retail <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span>.</p>
                     </div>
                   </div>
                   <div class="p-3 rounded text-left border-l-4 callout-tip">
-                    <strong>💡 Beginner Shortcut (SPIVA Data):</strong> <span data-fact="study_spiva_active_largecap">In the SPIVA India Mid-Year 2026 report, 74% of active Indian large-cap funds underperformed their assigned benchmark over the ten years ending June 2026.</span> Compare costs, benchmark fit and risk; category results do not predict which fund will outperform.
+                    <strong>💡 Beginner Shortcut (SPIVA Data):</strong> <span data-fact="study_spiva_active_largecap">SPIVA India’s Mid-Year 2026 report found that 74% of active Indian large-cap funds underperformed their assigned benchmark over the ten years ending June 2026.</span> Compare costs, benchmark fit and risk; category results do not predict which fund will outperform.
                   </div>
                 </div>
               </details>
@@ -760,7 +760,7 @@
                   <div class="callout-tip flex gap-3 mb-4 border-l-4" style="border-left-color: var(--status-red);">
                     <div>
                       <strong class="block mb-1 text-red">⚠️ Direct Stocks (Max 10%)</strong>
-                      <p class="text-xs m-0">Direct stock picking introduces severe <strong>transaction costs and tax considerations</strong>. While mutual funds rebalance internally tax-free, selling direct stocks may trigger <span data-fact="tax_stcg_rate">20%</span> <span class="jargon" data-tip="Short-Term Capital Gains" tabindex="0">STCG</span> or <span data-fact="tax_ltcg_rate">12.5%</span> <span class="jargon" data-tip="Long-Term Capital Gains" tabindex="0">LTCG</span> on every trade. Cap direct stock bets at 10%.</p>
+                      <p class="text-xs m-0">With individual shares, you handle <strong>trading costs and tax</strong> yourself. Tax timing differs from trades made inside a fund. Selling shares at a profit may attract <span data-fact="tax_stcg_rate">20%</span> <span class="jargon" data-tip="Short-Term Capital Gains" tabindex="0">STCG</span> or <span data-fact="tax_ltcg_rate">12.5%</span> <span class="jargon" data-tip="Long-Term Capital Gains" tabindex="0">LTCG</span> where the relevant conditions apply. The framework uses 10% as a guide for discussing direct stock exposure, not a target for everyone.</p>
                     </div>
                   </div>
                   <div class="p-3 rounded text-left border-l-4 callout-tip">
@@ -801,11 +801,11 @@
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> ALTERNATIVE ASSETS & REAL ESTATE RISK PROFILING</summary>
                 <div class="details-content">
                   <strong class="text-sm text-navy block mb-2 border-b pb-1">P2P lending: unsecured credit risk</strong>
-                  <p class="text-xs text-muted mb-4">P2P lending exposes lenders to borrower default, platform and liquidity risks; it is not a substitute for an insured deposit or emergency cash. Verify current RBI NBFC-P2P directions, exposure limits and platform disclosures. Numerical regulatory caps have been removed pending a provision-specific review.</p>
+                  <p class="text-xs text-muted mb-4">With P2P lending, a borrower may not repay, the platform may run into trouble and you may not be able to get your money back quickly. It is not a replacement for an insured deposit or emergency cash. Check current RBI NBFC-P2P rules, limits and platform disclosures. This guide omits numerical regulatory caps that have not been checked against the specific provision.</p>
 
                   <strong class="text-sm text-navy block mb-2 border-b pb-1">Real estate: concentration and liquidity</strong>
-                  <p class="text-xs text-muted mb-2">Property appraisal should distinguish transaction evidence from asking prices. Review rental yields after costs, vacancy, debt service, legal title, concentration and likely time to sell; a local auction price does not establish the value of a different property.</p>
-                  <p class="text-xs text-muted mb-1">Future supply, infrastructure and financing conditions may affect resale demand. No forecast about a particular city or current market cycle is asserted here.</p>
+                  <p class="text-xs text-muted mb-2">Compare completed sales, not just advertised prices. Allow for costs, empty periods, loan payments, ownership documents, how much wealth is tied up in one property and how long a sale might take. An auction price nearby does not establish what another property is worth.</p>
+                  <p class="text-xs text-muted mb-1">New construction, infrastructure and borrowing conditions can affect demand when you sell. This guide does not predict prices in a particular city or market cycle.</p>
                 </div>
               </details>
 
@@ -838,7 +838,7 @@
                   <div class="px-4 py-2 border-t border-subtle bg-main">
                     <p class="text-xs text-muted italic mb-0" style="font-size: 0.875rem;">*Fund scheme names listed above are non-exhaustive, purely illustrative category examples for educational benchmarking and do not constitute an investment recommendation or endorsement.</p>
                   </div>
-                  <p class="text-xs text-navy p-4 border-t font-medium mb-0">Duration is one risk measure, not a guarantee that a fund fits a goal. Review credit quality, interest-rate sensitivity, liquidity, costs and the product mandate. PPF and EPF withdrawal rules differ from open-ended debt funds.</p>
+                  <p class="text-xs text-navy p-4 border-t font-medium mb-0">Duration helps describe a fund’s sensitivity to interest-rate changes; it does not tell you whether the fund suits your goal. Also check borrower quality, access to money, costs and the fund’s rules. PPF and EPF have different withdrawal rules from open-ended debt funds.</p>
                   <div class="p-3 rounded text-left border-l-4 mx-4 mt-0 mb-3 callout-tip" style="border-left-color: var(--status-red);">
                     <strong class="text-red">⚠️ <span class="jargon" data-tip="Real Estate Investment Trusts" tabindex="0">REITs</span> & <span class="jargon" data-tip="Infrastructure Investment Trusts" tabindex="0">InvITs</span> Warning:</strong> While listed <span class="jargon" data-tip="Real Estate Investment Trusts" tabindex="0">REITs</span> are taxed at <span data-fact="tax_ltcg_rate">12.5%</span> <span class="jargon" data-tip="Long-Term Capital Gains" tabindex="0">LTCG</span> on capital appreciation (>12 months), their regular interest/rent distributions are taxed at your <strong>marginal slab rate</strong>. Treat listed trusts as market-risk investments, not cash equivalents. Allocation depends on the wider portfolio; distribution components have different tax treatments.
                   </div>
@@ -858,15 +858,15 @@
                   </ul>
                   <div class="text-center bg-gold text-inverse text-xs font-bold uppercase p-1 mb-2">GOLD GUARDRAILS</div>
                   <ul class="plain-list text-sm text-navy space-y-2 mb-4">
-                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-green"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <div><strong>Illustrative allocation discussion: 5-10%</strong><br>(Hard Ceiling: 15%)</div></li>
+                    <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-green"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <div><strong>Example allocation to discuss: 5–10%</strong><br>(The framework’s upper guide is 15%, not a limit set by a regulator.)</div></li>
                     <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <div><strong>Minimum Holding Horizon: 7-10 years</strong></div></li>
                     <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> <div><strong>Preferred Vehicles:</strong> Gold ETF, Sovereign Gold Bond (SGB)</div></li>
                     <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-blue"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg> <div><strong>Purpose:</strong> Permanent diversifier, inflation hedge</div></li>
                   </ul>
                   <div class="callout-tip flex gap-3 mb-4 border-l-4" style="border-left-color: var(--status-red);">
                     <div>
-                      <strong class="block mb-1 text-red">⚠️ SGB Secondary Market Tax Trap</strong>
-                      <p class="text-xs m-0"><span data-fact="tax_sgb_secondary_rule">SGB redemption exclusion requires an individual to hold from original issue until maturity</span>. This is enacted section 70(1)(x), amended from 1 April 2026. Secondary purchases do not qualify for that exclusion. Coupon interest, sales and other redemptions require separate tax treatment; a universal 12.5% assumption is inappropriate.</p>
+                      <strong class="block mb-1 text-red">⚠️ SGBs: check who qualifies for the exemption</strong>
+                      <p class="text-xs m-0"><span data-fact="tax_sgb_secondary_rule">To qualify for this SGB redemption exemption, an individual must hold the bond from its original issue until maturity</span>. This comes from section 70(1)(x), amended from 1 April 2026. Secondary-market purchases do not qualify for this exemption. Interest payments, sales and other redemptions have their own tax treatment; 12.5% is not a rate to assume for every case.</p>
                     </div>
                   </div>
                 </div>
@@ -906,7 +906,7 @@
                   <p class="text-sm text-muted mb-4"><strong>The Compounding Multiplier:</strong> A static <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> loses purchasing power to inflation over a 20-year horizon. Increasing your SIP amount annually is the single biggest driver of terminal wealth outside of asset allocation.</p>
                   <div class="grid grid-cols-1 gap-4 mb-4">
                     <div class="inner-box text-center">
-                      <strong class="text-xs uppercase block mb-2 text-navy">THE <span data-fact="rule_step_up_sip_10_percent">10% annual step-up illustration</span></strong>
+                      <strong class="text-xs uppercase block mb-2 text-navy">THE <span data-fact="rule_step_up_sip_10_percent">10% yearly contribution increase — an example</span></strong>
                       <p class="text-xs text-muted mb-3">Increase your <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> contribution by 10% every year to match your income growth and combat lifestyle creep.</p>
                       <div class="flex items-center justify-center gap-4 text-xs">
                         <div class="text-center">
@@ -1010,7 +1010,7 @@
               </details><details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> BEHAVIORAL GUARDRAILS</summary>
                 <div class="details-content">
-                  <p class="text-sm text-muted mb-4"><strong>The Behavior Gap:</strong> <span data-fact="study_dalbar_behavior_gap">Reacting to headlines and trading without a plan can undermine long-term investing. Investor-return studies are sensitive to methodology and do not prove a single cause of underperformance.</span> Protect your portfolio from yourself.</p>
+                  <p class="text-sm text-muted mb-4"><strong>The Behavior Gap:</strong> <span data-fact="study_dalbar_behavior_gap">Reacting to headlines and trading without a plan can hurt long-term results. Studies of investor returns depend on how they are measured and do not show that one behaviour causes every shortfall.</span> Protect your portfolio from yourself.</p>
                   <ul class="plain-list text-sm text-navy space-y-2">
                     <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-red mt-1"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> <strong>Avoid impulsive decisions during market volatility.</strong></li>
                     <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy mt-1"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <strong>Review automation (<span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span>).</strong> Automation can support a plan, but affordability and goals still need review.</li>
@@ -1020,7 +1020,7 @@
                   <div class="callout-tip flex gap-3 mt-4">
                     <div>
                       <strong class="block mb-1">💡 Lump Sum vs <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span></strong>
-                      <p class="text-xs m-0"><span data-fact="study_vanguard_lumpsum_vs_sip">Vanguard’s 2023 research found that immediate lump-sum investing outperformed common staged-investment strategies roughly two-thirds of the time in the historical and simulated comparisons studied.</span> <span class="text-xs text-muted" style="font-weight:normal">(Note: this study is based on developed markets like the US/UK/Australia and may not perfectly mirror Indian market dynamics)</span>. Regular contributions from income and staging an already available lump sum are different decisions; affordability and risk preferences matter.</p>
+                      <p class="text-xs m-0"><span data-fact="study_vanguard_lumpsum_vs_sip">In Vanguard’s 2023 study, investing an available lump sum at once beat spreading it over time in roughly two-thirds of the historical and simulated comparisons studied.</span> <span class="text-xs text-muted" style="font-weight:normal">(Note: this study is based on developed markets like the US/UK/Australia and may not perfectly mirror Indian market dynamics)</span>. Investing each month from salary is different from spreading out money you already have. Choose an approach you can afford and whose risks you understand.</p>
                     </div>
                   </div>
                 </div>
@@ -1154,11 +1154,11 @@
                   <ul class="plain-list text-xs text-muted space-y-3 mb-4">
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">The Math of Early Action:</div>
-                      <span><span data-fact="math_compounding_1st_vs_2nd_crore">Illustration: ₹20,000 deposited at each month-end at 12% effective annual growth reaches ₹1 crore after 15.5 years and ₹2 crore about 5.25 years later.</span></span>
+                      <span><span data-fact="math_compounding_1st_vs_2nd_crore">In this example, ₹20,000 invested at each month-end with a constant 12% effective annual return reaches ₹1 crore in 15.5 years, then ₹2 crore about 5.25 years later.</span></span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Allocation:</div>
-                      <span>Illustrative baseline is 70% Equity, 25% Debt, 5% Gold. Aggressive investors can stomach 80-equity only after considering goals, liquidity and capacity for loss.</span>
+                      <span>Illustrative baseline is 70% Equity, 25% Debt, 5% Gold. An 80% equity mix needs a separate check of your goals, access needs and ability to bear losses; it is not a default for this age group.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Priorities:</div>
@@ -1174,11 +1174,11 @@
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Allocation:</div>
-                      <span>Illustrative growth-with-stability discussion: diversification may reduce some risks, but drawdown depends on the assets and period. Select allocation by goal horizon and loss capacity, not age alone.</span>
+                      <span>Spreading investments can reduce some risks, but losses depend on what you hold and when. Choose the mix around your goal date and what you could afford to lose, not age alone.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Priorities:</div>
-                      <span>Expand emergency fund to 6-9 months. Review income-replacement protection where financial dependents exist. Strict adherence to the <strong>50/30/20 budgeting rule</strong> (50% needs, 30% wants, 20% savings) is vital to ensure peak-earning salary hikes do not simply vanish into lifestyle creep.</span>
+                      <span>Expand emergency fund to 6-9 months. Review income-replacement protection where financial dependents exist. One possible starting point is the <strong>50/30/20 budgeting rule</strong> (50% needs, 30% wants, 20% savings). Adjust it to your expenses and commitments rather than treating it as a fixed rule.</span>
                     </li>
                   </ul>
 
@@ -1186,15 +1186,15 @@
                   <ul class="plain-list text-xs text-muted space-y-3 mb-4">
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">The Human Capital Crossover:</div>
-                      <span><span data-fact="study_vanguard_vlcm_crossover">As retirement approaches, remaining earning capacity may shrink relative to accumulated assets. The crossover age depends on earnings, savings, liabilities and market outcomes.</span> Portfolio drawdowns become harder to offset through future salary alone.</span>
+                      <span><span data-fact="study_vanguard_vlcm_crossover">Near retirement, you may have fewer future earnings to make up for investment losses. When your investments become larger than your remaining earning capacity depends on income, savings, debts and market returns.</span> Portfolio drawdowns become harder to offset through future salary alone.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Allocation:</div>
-                      <span>Balanced Glide Path (50–60% Equity, 30–40% Debt, 5–10% Gold). <span data-fact="sebi_rule_lifecycle_funds">SEBI introduced Life Cycle Funds and discontinued the solution-oriented scheme category in February 2026. This regulates scheme categories; it does not prescribe an individual investor’s allocation.</span></span>
+                      <span>Balanced Glide Path (50–60% Equity, 30–40% Debt, 5–10% Gold). <span data-fact="sebi_rule_lifecycle_funds">SEBI introduced Life Cycle Funds and ended the solution-oriented scheme category in February 2026. This changes fund categories; it does not set an investment mix for every person.</span></span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Priorities:</div>
-                      <span>Bucket isolation for upcoming goals (e.g. children's higher education in 3–5 yrs shifted to Debt/Arbitrage). Review prepayment costs and liquidity when assessing interest above <span data-fact="rate_home_loan_threshold">8.5%</span> or <span class="jargon" data-tip="Equated Monthly Installment" tabindex="0">EMI</span> exceeds <span data-fact="rule_home_loan_prepay_emi_30_percent">30%</span> net income. These are editorial screening points, not repayment mandates. Review personal cover and <span class="jargon" data-tip="Pre-Existing Disease" tabindex="0">PED</span> waiting period traps.</span>
+                      <span>Bucket isolation for upcoming goals (e.g. children's higher education in 3–5 yrs shifted to Debt/Arbitrage). Review prepayment costs and liquidity when assessing interest above <span data-fact="rate_home_loan_threshold">8.5%</span> or <span class="jargon" data-tip="Equated Monthly Installment" tabindex="0">EMI</span> exceeds <span data-fact="rule_home_loan_prepay_emi_30_percent">30%</span> net income. These are prompts to check the loan, not instructions to repay it. Also check your personal insurance and <span class="jargon" data-tip="Pre-Existing Disease" tabindex="0">PED</span> waiting periods.</span>
                     </li>
                   </ul>
 
@@ -1202,7 +1202,7 @@
                   <ul class="plain-list text-xs text-muted space-y-3 mb-2">
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">The Retirement Danger Zone:</div>
-                      <span>Market losses near the start of withdrawals can increase <span class="jargon" data-tip="Sequence of Returns Risk" tabindex="0">SRR</span> if forced to sell equity units at depressed <span class="jargon" data-tip="Net Asset Value" tabindex="0">NAVs</span>.</span>
+                      <span>Losses just as withdrawals begin can increase <span class="jargon" data-tip="Sequence of Returns Risk" tabindex="0">SRR</span> if you have to sell equity investments at lower <span class="jargon" data-tip="Net Asset Value" tabindex="0">NAVs</span>.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Allocation:</div>
@@ -1210,7 +1210,7 @@
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Priorities:</div>
-                      <span>Structure a 3-Bucket Decumulation Engine (Bucket 1: 0–3 yrs Liquid/Overnight; Bucket 2: 3–7 yrs Arbitrage/Short Debt; Bucket 3: 7+ yrs Core Equity). Extend matured 15-year <span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> accounts only after reviewing the applicable extension, withdrawal and tax rules. Conduct a 100% nomination audit across all Demat, Mutual Fund, <span class="jargon" data-tip="Employees Provident Fund" tabindex="0">EPF</span>, and property assets.</span>
+                      <span>One way to organise retirement withdrawals is to separate money into three time buckets (Bucket 1: 0–3 yrs Liquid/Overnight; Bucket 2: 3–7 yrs Arbitrage/Short Debt; Bucket 3: 7+ yrs Core Equity). Before extending a matured 15-year <span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> account, check its extension, withdrawal and tax rules. Check the nominee details on every demat account, mutual fund, <span class="jargon" data-tip="Employees Provident Fund" tabindex="0">EPF</span>, and property holding.</span>
                     </li>
                   </ul>
                 </div>
@@ -1219,16 +1219,16 @@
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> THE RETIREMENT PLAYBOOK</summary>
                 <div class="details-content">
                   <ul class="plain-list bullet-list text-sm text-navy space-y-2">
-                    <li><span><strong>Withdrawal-rate illustration:</strong> Retirement outcomes depend on returns, inflation, fees, longevity and spending flexibility. A modelled withdrawal rate (<span class="jargon" data-tip="Safe Withdrawal Rate" tabindex="0">SWR</span>) of <span data-fact="rule_swr_india">3-3.5%</span> is an illustrative planning range, not an empirically guaranteed safe rate.</span></li>
+                    <li><span><strong>Withdrawal-rate illustration:</strong> How long your retirement money lasts depends on returns, inflation, fees, lifespan and whether you can adjust spending. A withdrawal rate used in a model (<span class="jargon" data-tip="Safe Withdrawal Rate" tabindex="0">SWR</span>) of <span data-fact="rule_swr_india">3-3.5%</span> is a planning example, not a proven safe rate.</span></li>
                     <li><span><strong>The Bucket Strategy:</strong> Divide your corpus. Immediate (0-3 yrs) stays in liquid/cash. Medium (3-7 yrs) in hybrid/debt. Long-term (7+ yrs) in equity.</span></li>
-                    <li><span><strong>Sequence of Returns Risk:</strong> Experiencing a market crash early in retirement can permanently deplete your portfolio. The bucket strategy mitigates this by securing early years in debt.</span></li>
+                    <li><span><strong>Sequence of Returns Risk:</strong> A market fall early in retirement can do lasting damage if you must sell investments to cover spending. Keeping near-term spending money separate can reduce that pressure; debt investments still carry risk.</span></li>
                   </ul>
                 </div>
               </details>
                 <details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> HEALTHCARE LIABILITY INSULATION</summary>
                 <div class="details-content">
-                  <p class="text-sm text-muted mb-4">Base cover and top-up structures have different premiums, exclusions and deductibles. Compare total protection and claims conditions; a larger base policy is not inherently inefficient for every household.</p>
+                  <p class="text-sm text-muted mb-4">Compare the total premium, exclusions, deductibles and claim conditions of base and top-up policies. A larger base policy is not automatically poor value for every household.</p>
                   <ul class="plain-list text-sm text-navy space-y-3 mb-4">
                     <li class="flex flex-col gap-1">
                       <div class="flex items-center gap-2 font-bold"><span class="text-blue">●</span> Regular Top-Up</div>
@@ -1236,29 +1236,29 @@
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="flex items-center gap-2 font-bold"><span class="text-green">●</span> Super Top-Up</div>
-                      <span class="text-muted pl-5 text-xs">Operates on an <strong>aggregate deductible</strong> over the entire policy year. Eligible claims may be aggregated within the policy year, subject to the deductible, exclusions, limits and wording. It does not necessarily cover every subsequent medical expense.</span>
+                      <span class="text-muted pl-5 text-xs">Operates on an <strong>aggregate deductible</strong> over the entire policy year. Eligible claims can count together during that policy year. The deductible, exclusions, limits and policy wording still apply; this does not mean every later medical bill will be paid.</span>
                     </li>
                   </ul>
                   <div class="p-3 rounded text-left border-l-4 callout-tip" style="border-left-color: var(--primary-navy);">
-                    <strong>Illustrative example:</strong> <span data-fact="health_base_topup_recommendation">An illustrative health-cover structure is ₹10 lakh base cover plus a ₹30–50 lakh super top-up with a ₹10 lakh deductible. Suitable cover depends on household needs, location, exclusions and policy terms.</span>
+                    <strong>Illustrative example:</strong> <span data-fact="health_base_topup_recommendation">One example is ₹10 lakh of base health cover plus a ₹30–50 lakh super top-up with a ₹10 lakh deductible. The right cover depends on your household, location, exclusions and policy terms.</span>
                   </div>
                 </div>
               </details>
                 <details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> ESTATE PLANNING: NOMINATION AND SUCCESSION</summary>
                 <div class="details-content">
-                  <p class="text-sm text-muted mb-3">A critical failure point in conventional planning is assuming that designating a "Nominee" transfers absolute legal ownership of an asset.</p>
+                  <p class="text-sm text-muted mb-3">Naming a nominee does not always settle who legally inherits an asset. Check the rules for the asset involved.</p>
                   <div class="p-3 rounded text-left border-l-4 mb-3 callout-tip" style="border-left-color: var(--status-red);">
                     <span data-fact="legal_sc_nominee_judgment">2023 Supreme Court Judgment (Shakti Yezdani Case)</span>
                   </div>
                   <ul class="plain-list text-xs text-navy space-y-3">
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Scope of the judgment:</div>
-                      <span class="text-muted" data-fact="legal_nominee_fiduciary_rule">In the shares/securities provisions considered in Shakti Yezdani, nomination did not create a separate mode of succession overriding succession law. Asset-specific nomination rules must be reviewed separately.</span>
+                      <span class="text-muted" data-fact="legal_nominee_fiduciary_rule">For the shares and securities covered by Shakti Yezdani, naming a nominee did not override succession law—the rules on who inherits. Other assets have their own nomination rules.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Estate documentation:</div>
-                      <span class="text-muted">Review nominations, ownership and succession documents with a qualified legal professional. Requirements for a valid will, registration and asset transfer depend on applicable law; this guide does not impose a universal registration requirement.</span>
+                      <span class="text-muted">Ask a qualified legal professional to check nominee details, ownership and inheritance documents. The rules for wills, registration and transfers depend on the law that applies; registration is not a blanket requirement for every document.</span>
                     </li>
                   </ul>
                 </div>
@@ -1270,7 +1270,7 @@
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-red-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                 The Compounding Tax on Wealth (Direct vs Regular)
               </h3>
-              <p class="text-sm text-gray-700">Regular plans generally include distribution expenses that differ from direct plans. Compare the actual expense ratios of the same scheme and assess any services provided; the cost difference and compounding impact are not fixed percentages for every fund or investor.</p>
+              <p class="text-sm text-gray-700">Regular plans generally include distribution costs that direct plans do not. Compare the expenses of the same scheme’s direct and regular plans, along with any service you receive. The cost difference and its effect over time vary; there is no single percentage that applies to every fund.</p>
             </div>
 <details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> KEY TERMS GLOSSARY</summary>
@@ -1300,30 +1300,30 @@
           <div class="section-header text-center">
             <span class="editorial-eyebrow">THE SPARKFOLIO STANDARD</span>
             <h2 class="section-title">Methodology &amp; sources</h2>
-            <p class="section-subtitle">Independent thinking. Traceable evidence.</p>
+            <p class="section-subtitle">How we put the guide together, and where the information comes from.</p>
           </div>
           <div class="editorial-panel">
             <div class="editorial-intro">
               <span class="editorial-eyebrow">HOW THIS FRAMEWORK IS BUILT</span>
-              <h3>Research, with context.</h3>
-              <p>Sparkfolio brings together portfolio research, Indian regulatory guidance and transparent calculations for financial education. Allocation examples are editorial illustrations, not assessments of what is suitable for you.</p>
-              <p>We distinguish legal provisions, published research, calculations and planning heuristics. Each numbered reference records the evidence, applicable period and conditions. Institutions cited do not endorse Sparkfolio.</p>
-              <span class="editorial-date">Reviewed 25 October 2026</span>
+              <h3>How we build the guide</h3>
+              <p>Sparkfolio brings together investment research, Indian rules and worked examples to explain how a portfolio fits together. The investment mixes are examples; they do not tell you what is suitable for your own circumstances.</p>
+              <p>We separate what the law says, what research found, what we calculated and the planning guides we chose. Each numbered reference gives the source, date and conditions. Citing an institution does not mean it endorses Sparkfolio.</p>
+              <span class="editorial-date">Financial sources checked 25 October 2026</span>
             </div>
             <div class="editorial-principles">
-              <div><span class="editorial-index">01</span><h4>Evidence before certainty</h4><p>Primary sources come first. A source check supports the specific statement and period recorded; it is not a guarantee of future returns or universal tax eligibility.</p></div>
-              <div><span class="editorial-index">02</span><h4>Assumptions in the open</h4><p>Calculations show their conventions. Current tax references use the 2025 Act, effective from 1 April 2026; older section labels are identified as legacy references. Earlier years use their applicable law.</p></div>
-              <div><span class="editorial-index">03</span><h4>Independent editorial responsibility</h4><p>Published and maintained by Sparkfolio. No external expert review, institutional affiliation, paid placement or affiliate relationship is claimed.</p></div>
+              <div><span class="editorial-index">01</span><h4>Check the source</h4><p>We use original documents where possible. A source check supports the statement for the period shown. It does not guarantee future returns or mean a tax benefit applies to everyone.</p></div>
+              <div><span class="editorial-index">02</span><h4>See what an example assumes</h4><p>Worked examples explain how they were calculated. Current tax references use the 2025 Act, effective from 1 April 2026. We label older section numbers as legacy references; earlier tax years use the law that applied then.</p></div>
+              <div><span class="editorial-index">03</span><h4>Who is responsible</h4><p>Sparkfolio publishes and maintains this guide. We do not claim outside expert approval, institutional backing, paid placements or affiliate relationships.</p></div>
             </div>
           </div>
           <div class="editorial-disclosures">
             <details id="source-notes"><summary>Evidence &amp; claim notes <span class="disclosure-caption">Sources, dates &amp; conditions</span></summary><div class="details-content">
-              <p class="source-intro">Source checked: evidence supports the recorded statement. Editorial: a planning illustration. Calculated: a reproducible model. Needs review: current applicability has not been established. Read the conditions alongside each value.</p>
+              <p class="source-intro">“Source checked” means we checked the evidence for the statement shown. “Editorial” marks a planning example or guide, and “Calculated” marks a worked example. “Needs review” means we have not confirmed that it still applies. Read the conditions as well as the number.</p>
               <ul id="source-notes-list" class="source-notes"></ul>
             </div></details>
             <details><summary>Privacy &amp; corrections <span class="disclosure-caption">Your data stays in your browser</span></summary><div class="details-content disclosure-grid">
-              <div><h4>Private by design</h4><p>Answers, searches and illustrative amounts stay in this browser session. Sparkfolio does not store them or send them to an application server. Fonts are self-hosted and no analytics are installed. GitHub Pages handles hosting requests; external websites apply their own privacy policies.</p></div>
-              <div><h4>Help keep the guide accurate</h4><p>Found an error? Include the topic and supporting evidence when reporting it. Never include account numbers, identity documents or other personal financial information.</p><a class="editorial-link" href="https://github.com/Sparkience-AI/sparkfolio/issues">Report a correction <span aria-hidden="true">↗</span></a></div>
+              <div><h4>Private by design</h4><p>Your answers, searches and example amounts stay in this browser session. Sparkfolio does not save them or send them to an application server. The site serves its own fonts and uses no analytics. GitHub Pages handles hosting requests; any external site you visit has its own privacy policy.</p></div>
+              <div><h4>Help keep the guide accurate</h4><p>If something looks wrong, tell us which topic it concerns and include a source we can check. Do not post account numbers, identity documents or private financial information.</p><a class="editorial-link" href="https://github.com/Sparkience-AI/sparkfolio/issues">Report a correction <span aria-hidden="true">↗</span></a></div>
             </div></details>
           </div>
         </div>
@@ -1359,7 +1359,7 @@
             </p>
           </div>
         </div>
-        <p class="text-xs text-muted font-bold tracking-widest uppercase font-mono mt-6 w-full max-w-md mx-auto">Sparkfolio Framework v2.2<br><span class="opacity-70 mt-1 block">Editorial update: 25 October 2026 · Individual claim status in source notes</span></p>
+        <p class="text-xs text-muted font-bold tracking-widest uppercase font-mono mt-6 w-full max-w-md mx-auto">Sparkfolio Framework v2.2<br><span class="opacity-70 mt-1 block">Framework updated: 30 October 2026 · Financial source dates in the notes</span></p>
       </div>
     </footer>
 

@@ -55,7 +55,7 @@ export function transformContent(html) {
     element.set_content(escapeHtml(policy[key]));
   }
   const rates = [...new Set(Object.values(policy.brackets).flat())];
-  root.querySelector('#de-tax-bracket')?.set_content('<option value="">Select your base marginal rate</option>' + rates.map(rate => `<option value="${escapeHtml(rate)}">${rate === 'unknown' ? 'Not sure' : rate === '0' ? '0% — nil marginal slab' : escapeHtml(rate) + '%'}</option>`).join(''));
+  root.querySelector('#de-tax-bracket')?.set_content('<option value="">Choose your slab rate</option>' + rates.map(rate => `<option value="${escapeHtml(rate)}">${rate === 'unknown' ? 'Not sure' : rate === '0' ? '0% — nil slab before any rebate' : escapeHtml(rate) + '%'}</option>`).join(''));
   for (const [id, options, placeholder] of [['de-horizon', policy.horizon_bins, 'Select a goal horizon'], ['de-capacity', policy.risk_answers, 'Select your loss capacity']]) {
     root.querySelector('#' + id)?.set_content(`<option value="">${placeholder}</option>` + Object.entries(options).map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join(''));
   }

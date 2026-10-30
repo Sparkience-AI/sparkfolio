@@ -102,14 +102,14 @@ function initDecision() {
   }
   syncBrackets();
   form.addEventListener('change', event => { if (event.target.name === 'regime') { bracket.value = ''; syncBrackets(); } });
-  const labels = { regime: 'tax regime', age: 'age bracket', dependents: 'financial dependents', health: 'personal health cover', term: 'term cover', ef: 'emergency reserve', debt: 'expensive debt', corpPf: 'employer benefits', tax: 'long-term tax-advantaged review', taxBracket: 'marginal tax bracket', horizon: 'goal horizon', capacity: 'loss capacity' };
+  const labels = { regime: 'tax regime', age: 'age bracket', dependents: 'financial dependents', health: 'personal health cover', term: 'term cover', ef: 'emergency reserve', debt: 'expensive debt', corpPf: 'employer benefits', tax: 'tax-saving options for your long-term goals', taxBracket: 'your tax bracket', horizon: 'when you need the money', capacity: 'how a loss would affect your bills' };
   form.addEventListener('input', () => {
     error.textContent = '';
     byId('de-amount').removeAttribute('aria-invalid');
     if (generated) {
       card.dataset.stale = 'true';
       byId('de-additional').dataset.stale = 'true';
-      status.textContent = 'Answers changed. The previous result is outdated. Build a new review.';
+      status.textContent = 'You changed an answer. Build your review again to update these results.';
     }
   });
   form.addEventListener('submit', event => {
@@ -117,7 +117,7 @@ function initDecision() {
     const data = new FormData(form), answers = Object.fromEntries(data);
     error.textContent = '';
     for (const key of Object.keys(answerOptions)) {
-      if (!data.has(key)) {
+      if (!answerOptions[key].includes(data.get(key))) {
         error.textContent = `Please answer the question about ${labels[key]}.`;
         form.querySelector(`[name="${key}"]`).focus();
         return;
@@ -136,7 +136,7 @@ function initDecision() {
     byId('de-additional').dataset.stale = 'false';
     byId('de-empty-state').hidden = true;
     card.hidden = false;
-    byId('de-step-badge').textContent = result.step ? `FOUNDATION · CHECKPOINT ${result.step}` : 'GOAL & LIQUIDITY';
+    byId('de-step-badge').textContent = result.step ? `START HERE · STEP ${result.step}` : 'YOUR GOAL';
     byId('de-step-name').textContent = result.title;
     byId('de-action').textContent = result.explanation;
     byId('de-rationale').textContent = result.assumptions;
@@ -154,7 +154,8 @@ function initDecision() {
       article.dataset.cardId = review.id;
       const category = document.createElement('span');
       category.className = 'engine-card-category';
-      category.textContent = review.checkpoint ? `${review.category} · checkpoint ${review.checkpoint}` : review.category;
+      const names = { Foundation: 'Money basics', Maintenance: 'Keeping things up to date', 'Goal & liquidity': 'Your goal', 'Loss capacity': 'Handling losses', 'Tax context': 'Your tax bracket', 'Regime review': 'Tax rules' };
+      category.textContent = review.checkpoint ? `${names[review.category]} · step ${review.checkpoint}` : names[review.category];
       const title = document.createElement('h4'); title.textContent = review.title;
       const explanation = document.createElement('p'); explanation.textContent = review.explanation;
       article.append(category, title, explanation);
@@ -168,18 +169,20 @@ function initDecision() {
         article.append(metrics);
       }
       const action = document.createElement('p'); action.className = 'engine-card-action';
-      const actionLabel = document.createElement('strong'); actionLabel.textContent = 'Review next: ';
+      const actionLabel = document.createElement('strong'); actionLabel.textContent = 'What to do next: ';
       action.append(actionLabel, document.createTextNode(review.action)); article.append(action);
       if (review.category === 'Tax context' && result.illustration) {
+        const details = document.createElement('details'); details.className = 'engine-example-notes';
+        const heading = document.createElement('summary'); heading.textContent = 'How this tax example works';
         const assumptions = document.createElement('p'); assumptions.className = 'engine-help';
-        assumptions.textContent = decisionPolicy.illustration_assumptions; article.append(assumptions);
+        assumptions.textContent = decisionPolicy.illustration_assumptions; details.append(heading, assumptions); article.append(details);
       }
       const sources = document.createElement('ul'); sources.className = 'engine-card-sources';
       appendSources(sources, review); article.append(sources); output.append(article);
     }
-    byId('de-model-note').textContent = `Tax year ${decisionPolicy.tax_year} · source review ${decisionPolicy.reviewed_on} · next review ${decisionPolicy.review_due}. ${decisionPolicy.policy_note} The illustration excludes rebate and surcharge; it does not compare total annual tax under both regimes.`;
+    byId('de-model-note').textContent = `Tax year ${decisionPolicy.tax_year}. Financial sources last checked ${decisionPolicy.reviewed_on}; next check due ${decisionPolicy.review_due}. ${decisionPolicy.policy_note} To choose a tax regime, compare your full-year tax under both; the examples here do not do that.`;
     byId('de-additional').hidden = false;
-    status.textContent = `Review updated. ${result.gapCount} foundation ${result.gapCount === 1 ? 'gap' : 'gaps'} flagged; ${result.cards.length} review cards including the priority above.`;
+    status.textContent = `Your review is ready. ${result.gapCount === 0 ? 'Your answers did not flag a missing step in the basic checks. You still need to check the amounts and policy details.' : result.gapCount + ' areas need a closer look.'} There are ${result.cards.length} cards, including the first step above.`;
     function appendSources(list, review) {
       for (const id of review.sourceIds) {
         const source = decisionPolicy.sources[id], item = document.createElement('li'), link = document.createElement('a');
@@ -234,7 +237,14 @@ function initGlossary() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') hide(); });
   document.addEventListener('click', e => { if (!bubble.contains(e.target)) hide(); });
   addEventListener('resize', hide);
-  addEventListener('scroll', hide, { passive: true });
+  addEventListener('scroll', () => {
+    if (!active) return;
+    const rect = active.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > innerHeight) return hide();
+    // Focusing a term may scroll it into view. Keep its explanation available.
+    if (active === document.activeElement || active.contains(document.activeElement) || active.matches(':hover') || bubble.matches(':hover')) show(active);
+    else hide();
+  }, { passive: true });
 }
 
 function initDecorations() {

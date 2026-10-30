@@ -2,10 +2,11 @@
   "_meta": {
     "title": "Sparkfolio Framework Single Source of Truth (SSoT) Facts Registry",
     "version": "2.2.0",
-    "last_updated": "2026-10-25",
+    "last_updated": "2026-10-30",
     "description": "Claims, calculations and editorial heuristics with explicit provenance and review status. A source link is not itself verification. Decision-model assumptions and source-backed tax inputs are maintained in _decision_model.",
     "audit_scope": "Follow-up primary-source audit resolved all 17 pending entries through confirmation, correction or narrower verified scope. EPF circular reproduction inspected and corroborated by official broadcaster. 25 verified, 10 editorial, 3 calculated.",
-    "claim_audit": "CLAIM_AUDIT_2026-10-25.md"
+    "claim_audit": "CLAIM_AUDIT_2026-10-25.md",
+    "copy_review": "Plain-language edit on 30 October 2026. Financial review dates, source locators, numerical values and eligibility conditions are retained; this is not a fresh legal or rate verification."
   },
   "L3_quarterly": {
     "rate_ppf_interest": {
@@ -18,7 +19,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Provider listing observed 25 October 2026; confirm the notification for the investment quarter",
-      "assumptions": "Rate can change. The listing is evidence of the displayed rate, not a guarantee for future quarters.",
+      "assumptions": "The rate can change. The source shows the rate listed when checked; it does not guarantee the rate for later quarters.",
       "sources": [
         {
           "title": "India Post: saving schemes",
@@ -27,7 +28,8 @@
         }
       ],
       "numeric_value": 0.071,
-      "review_due": "2026-12-31"
+      "review_due": "2026-12-31",
+      "copy_edited_on": "2026-10-30"
     },
     "rate_epf_interest": {
       "val": "8.25% (FY 2025–26 declared rate)",
@@ -62,7 +64,8 @@
       "legal_reference": "EPFO circular INV-11/2/2021-INV/E-41960/2519, dated 1 July 2026; paragraph 60(1)",
       "verification_scope": "Declared FY 2025–26 rate: inspected EPFO circular reproduction, corroborated by the government broadcaster. This is not a FY 2026–27 declaration.",
       "audit_outcome": "Confirmed with the scope and conditions recorded here",
-      "numeric_value": 0.0825
+      "numeric_value": 0.0825,
+      "copy_edited_on": "2026-10-30"
     },
     "rate_ssy_interest": {
       "val": "8.2%",
@@ -74,7 +77,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Provider listing observed 25 October 2026; confirm the notification for the investment quarter",
-      "assumptions": "Rate can change. The listing is evidence of the displayed rate, not a guarantee for future quarters.",
+      "assumptions": "The rate can change. The source shows the rate listed when checked; it does not guarantee the rate for later quarters.",
       "sources": [
         {
           "title": "India Post: saving schemes",
@@ -83,7 +86,8 @@
         }
       ],
       "numeric_value": 0.082,
-      "review_due": "2026-12-31"
+      "review_due": "2026-12-31",
+      "copy_edited_on": "2026-10-30"
     },
     "rate_home_loan_threshold": {
       "val": "8.5%",
@@ -95,7 +99,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "An illustrative screening threshold; compare effective debt cost, penalties, liquidity and risk rather than a universal market or RBI rule.",
+      "assumptions": "This is a prompt to compare loan costs, early-payment charges, available cash and risk. It is not a universal market threshold or an RBI rule.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -103,7 +107,8 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": "2026-12-31"
+      "review_due": "2026-12-31",
+      "copy_edited_on": "2026-10-30"
     },
     "sebi_brokerage_cap_cash": {
       "val": "6bps",
@@ -115,7 +120,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "2026 Regulations effective 1 April 2026; consolidated amendments through 10 October 2026",
-      "assumptions": "6 bps cash / 2 bps derivatives of trade value may be charged outside BER. Excess brokerage falls within BER. Transaction costs and statutory levies are separate; these are not caps on every trading cost or the entire TER.",
+      "assumptions": "Brokerage up to 6 bps for cash trades or 2 bps for derivatives, measured against trade value, may sit outside the base expense ratio (BER). Extra brokerage must fit within BER. Transaction costs and statutory levies are separate. These are not limits on every trading cost or the entire total expense ratio (TER).",
       "sources": [
         {
           "title": "SEBI Mutual Funds Regulations, 2026, amended up to 10 October 2026",
@@ -126,7 +131,8 @@
       "review_due": "2026-12-31",
       "legal_reference": "SEBI (Mutual Funds) Regulations, 2026: regulations 66(9)–(10), 67",
       "verification_scope": "Brokerage allowance outside the base expense ratio for cash trades.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "sebi_brokerage_cap_derivatives": {
       "val": "2bps",
@@ -138,7 +144,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "2026 Regulations effective 1 April 2026; consolidated amendments through 10 October 2026",
-      "assumptions": "6 bps cash / 2 bps derivatives of trade value may be charged outside BER. Excess brokerage falls within BER. Transaction costs and statutory levies are separate; these are not caps on every trading cost or the entire TER.",
+      "assumptions": "Brokerage up to 6 bps for cash trades or 2 bps for derivatives, measured against trade value, may sit outside the base expense ratio (BER). Extra brokerage must fit within BER. Transaction costs and statutory levies are separate. These are not limits on every trading cost or the entire total expense ratio (TER).",
       "sources": [
         {
           "title": "SEBI Mutual Funds Regulations, 2026, amended up to 10 October 2026",
@@ -149,10 +155,11 @@
       "review_due": "2026-12-31",
       "legal_reference": "SEBI (Mutual Funds) Regulations, 2026: regulations 66(9)–(10), 67",
       "verification_scope": "Brokerage allowance outside the base expense ratio for derivatives trades.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "sebi_rule_lifecycle_funds": {
-      "val": "SEBI introduced Life Cycle Funds and discontinued the solution-oriented scheme category in February 2026. This regulates scheme categories; it does not prescribe an individual investor’s allocation.",
+      "val": "SEBI introduced Life Cycle Funds and ended the solution-oriented scheme category in February 2026. This changes fund categories; it does not set an investment mix for every person.",
       "label": "SEBI 2026 Life Cycle Funds Rule",
       "authority": "SEBI Circular 2026",
       "category": "Regulatory Directives",
@@ -161,7 +168,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Circular dated 26 February 2026",
-      "assumptions": "Scheme implementation, mandate and risks must be checked in its current documents.",
+      "assumptions": "Read the fund’s current documents for its rules, risks and how it will put the strategy into practice.",
       "sources": [
         {
           "title": "SEBI: Categorization and Rationalization of Mutual Fund Schemes",
@@ -169,10 +176,11 @@
           "locator": "26 February 2026, clauses 2.6.3.16 and category D"
         }
       ],
-      "review_due": "2026-12-31"
+      "review_due": "2026-12-31",
+      "copy_edited_on": "2026-10-30"
     },
     "study_spiva_active_largecap": {
-      "val": "In the SPIVA India Mid-Year 2026 report, 74% of active Indian large-cap funds underperformed their assigned benchmark over the ten years ending June 2026.",
+      "val": "SPIVA India’s Mid-Year 2026 report found that 74% of active Indian large-cap funds underperformed their assigned benchmark over the ten years ending June 2026.",
       "label": "SPIVA India Large-Cap Outperformance Scorecard",
       "authority": "S&P Dow Jones Indices (SPIVA)",
       "category": "Market Scorecards",
@@ -181,7 +189,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Ten years ending 30 June 2026",
-      "assumptions": "Historical category results depend on benchmark, costs and measurement period; they do not identify future winning funds.",
+      "assumptions": "These are historical results for a category. The benchmark, costs and period affect the comparison; it does not tell you which fund will win in future.",
       "sources": [
         {
           "title": "S&P Dow Jones Indices: SPIVA India Mid-Year 2026",
@@ -189,7 +197,8 @@
           "locator": "Indian Equity Large-Cap Funds; ten-year underperformance"
         }
       ],
-      "review_due": "2026-12-31"
+      "review_due": "2026-12-31",
+      "copy_edited_on": "2026-10-30"
     }
   },
   "L2_annual": {
@@ -203,7 +212,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "Qualifying equity gains under section 198 use the aggregate annual threshold. STT conditions and statutory exceptions apply. Surcharge and cess are additional; land/building transitional relief and other special rules require separate assessment.",
+      "assumptions": "Section 198 applies the annual threshold to qualifying equity gains in total. Securities Transaction Tax (STT) conditions and legal exceptions apply. Surcharge and cess are extra; transitional relief for land/buildings and other special rules need separate checks.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -214,7 +223,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Sections 197(1)(b) and 198(2)(a); legacy 112/112A",
       "verification_scope": "12.5% base rate within these provisions, not a universal rate for every receipt.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "tax_stcg_rate": {
       "val": "20%",
@@ -226,7 +236,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "Applies to specified equity shares, equity-oriented fund units and business-trust units subject to STT conditions and exceptions. Not the rate for all short-term gains; surcharge and cess are additional.",
+      "assumptions": "This applies to specified equity shares, equity-oriented fund units and business-trust units, subject to STT conditions and exceptions. It is not the rate for every short-term gain. Surcharge and cess are extra.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -237,7 +247,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 196; legacy 111A",
       "verification_scope": "20% base rate for qualifying short-term equity-related gains.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "cap_sec_80c": {
       "val": "₹1.5 Lakh",
@@ -249,7 +260,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Income-tax Act, 2025, tax years beginning from 1 April 2026",
-      "assumptions": "Aggregate deduction subject to eligibility and the chosen regime; not an additional deduction for every instrument. Legacy 80C/80CCE maps to section 123 and Schedule XV.",
+      "assumptions": "This is a shared deduction limit, subject to eligibility and your tax regime—not a fresh allowance for each investment. Legacy sections 80C/80CCE map to section 123 and Schedule XV.",
       "sources": [
         {
           "title": "Income Tax Department: section 123",
@@ -258,7 +269,8 @@
         }
       ],
       "numeric_value": 150000,
-      "review_due": "2027-02-28"
+      "review_due": "2027-02-28",
+      "copy_edited_on": "2026-10-30"
     },
     "cap_epf_tax_free_employee": {
       "val": "₹2.5 Lakh",
@@ -270,7 +282,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "Interest attributable to employee contributions above this threshold, made from 1 April 2021, is taxable. It is not a tax on the entire balance or a ban on further contributions. Separate taxable/non-taxable accounts apply; withdrawal exemption has separate conditions.",
+      "assumptions": "For employee contributions made from 1 April 2021, interest linked to contributions above the threshold is taxable. The whole balance does not become taxable, and further contributions are not banned. Taxable and non-taxable amounts are tracked separately; withdrawal exemptions have their own conditions.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -286,7 +298,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 11, Schedule II, Table items 3–4, column C; Rule 277",
       "verification_scope": "Annual employee-contribution threshold where employer contributes.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "cap_epf_tax_free_no_employer": {
       "val": "₹5 Lakh",
@@ -298,7 +311,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "Interest attributable to employee contributions above this threshold, made from 1 April 2021, is taxable. It is not a tax on the entire balance or a ban on further contributions. Separate taxable/non-taxable accounts apply; withdrawal exemption has separate conditions.",
+      "assumptions": "For employee contributions made from 1 April 2021, interest linked to contributions above the threshold is taxable. The whole balance does not become taxable, and further contributions are not banned. Taxable and non-taxable amounts are tracked separately; withdrawal exemptions have their own conditions.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -314,7 +327,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 11, Schedule II, Table items 3–4, column C; Rule 277",
       "verification_scope": "Annual employee-contribution threshold where there is no employer contribution.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "cap_ulip_tax_free_2_5l": {
       "val": "₹2.5 Lakh",
@@ -337,7 +351,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 11, Schedule II, Table item 2, column C and Note 1; legacy 10(10D)",
       "verification_scope": "Aggregate annual premium threshold for relevant ULIPs issued on or after 1 February 2021.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "cap_traditional_life_tax_free_5l": {
       "val": "₹5 Lakh",
@@ -360,7 +375,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 11, Schedule II, Table item 2, column C and Note 1; legacy 10(10D)",
       "verification_scope": "Aggregate annual premium threshold for relevant non-ULIP life policies issued on or after 1 April 2023.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "tax_sec_80ccd2_private": {
       "val": "14%",
@@ -372,7 +388,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "14% of defined salary where section 202 applies; otherwise the non-government ceiling is 10%. Salary includes qualifying DA but excludes other allowances/perquisites. This is a deduction ceiling, not an obligation for an employer to match contributions.",
+      "assumptions": "The limit is 14% of the salary defined for this purpose where section 202 applies; otherwise the non-government limit is 10%. Qualifying dearness allowance (DA) counts, but other allowances and perquisites do not. This is a deduction limit, not a promise that your employer will match contributions.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -384,7 +400,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 124(1)(b), (2), (13)(b), and section 202; legacy 80CCD(2)",
       "verification_scope": "Employer NPS deduction ceiling for non-government employees in the New Regime.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "tax_sec_80ccd2_govt": {
       "val": "14%",
@@ -396,7 +413,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "14% of defined salary. Salary includes DA if employment terms provide, excluding other allowances/perquisites. Not a promised employer contribution or investment return.",
+      "assumptions": "The limit is 14% of the salary defined for this purpose. DA counts if the employment terms provide for it; other allowances and perquisites do not. The limit is not a promised contribution or investment return.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -408,10 +425,11 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 124(1)(a), (13)(b); legacy 80CCD(2)",
       "verification_scope": "Central/State Government employer NPS deduction ceiling.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "tax_sgb_secondary_rule": {
-      "val": "SGB redemption exclusion requires an individual to hold from original issue until maturity",
+      "val": "To qualify for this SGB redemption exemption, an individual must hold the bond from its original issue until maturity",
       "label": "Secondary SGB Maturity Tax Exemption Rule",
       "authority": "Finance Act / Income Tax Act Sec 47",
       "category": "Taxation Rules",
@@ -420,7 +438,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "An individual must hold the RBI-issued SGB from original issue until maturity. Secondary purchasers do not meet this exclusion. Sales, other redemptions and coupon interest need their own tax treatment; do not assume every transaction attracts 12.5%.",
+      "assumptions": "The individual must hold the RBI-issued bond from original issue until maturity. A secondary-market buyer does not meet that condition. Sales, other redemptions and interest payments have their own tax treatment; do not assume every transaction is taxed at 12.5%.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -431,7 +449,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 70(1)(x), substituted by Finance Act, 2026 from 1 April 2026",
       "verification_scope": "Enacted original-issue-to-maturity condition for an individual’s SGB redemption exclusion.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "tax_psu_bonds_sec10_15": {
       "val": "Schedule II, item 17 (legacy 10(15)(iv)(h))",
@@ -443,7 +462,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "Only eligible notified issues and income meeting the preserved conditions qualify. Verify the specific ISIN/notification. A PSU issuer alone does not establish tax exemption or a sovereign guarantee. Sale gains are separate.",
+      "assumptions": "Only eligible notified issues and income meeting the exemption’s conditions qualify. Check the bond’s ISIN (identification number) and notification. A PSU issuer alone does not make interest tax-free or give a sovereign guarantee. Tax on sale gains is separate.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -454,7 +473,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 11, Schedule II, Table item 17; legacy 10(15)(iv)(h)",
       "verification_scope": "Continuation of exemption for qualifying notified bond income.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "tax_sec_56_2_xii_reit_repayment": {
       "val": "Section 92(2)(k) (legacy 56(2)(xii))",
@@ -466,7 +486,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "Taxable specified sum is max(A − B − C, 0): A is cumulative qualifying distributions to current/prior holders; B is unit issue price, not secondary purchase cost; C is sums already taxed under this clause. Excluded pass-through components and related cost-basis rules must be considered. Not every debt repayment is immediately taxable.",
+      "assumptions": "The taxable specified sum is max(A − B − C, 0). A is qualifying distributions paid so far to current and previous holders; B is the unit’s issue price, not its secondary-market purchase price; C is amounts already taxed under this clause. Some pass-through components are excluded, and cost-basis rules also matter. Not every debt repayment is immediately taxable.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -477,7 +497,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 92(2)(k), read with section 223(4); legacy 56(2)(xii)",
       "verification_scope": "Specified business-trust distributions use a cumulative statutory calculation.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "tax_sec_194lba_reit_tds": {
       "val": "Section 393(1), Table 4(ii) (legacy 194LBA)",
@@ -489,7 +510,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "Applies to covered section 223 distributions of Schedule V items 3/4 character; specified dividends where the SPV has not opted for section 200 are excepted. Non-residents have separate rules. TDS is not the final tax liability, and is not a universal 10% on every distribution.",
+      "assumptions": "This covers the relevant section 223 distributions with the character described in Schedule V items 3/4. Specified dividends are excepted where the SPV has not opted for section 200. Non-residents have separate rules. TDS is tax withheld in advance, not the final tax bill; 10% does not apply to every distribution.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -500,7 +521,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 393(1), Table 4(ii), and 393(4), Table 5; legacy 194LBA",
       "verification_scope": "10% resident TDS with nil threshold on covered business-trust income components.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "tax_slab_max_rate": {
       "val": "31.2%",
@@ -512,7 +534,7 @@
       "review_status": "calculated",
       "reviewed_on": null,
       "effective_period": "Legacy reference; current-year application requires review",
-      "assumptions": "31.2% is 30% multiplied by 1.04. It is not the maximum possible effective rate and is not the rate for every investor.",
+      "assumptions": "This is 30% multiplied by 1.04. It is not the highest possible effective tax rate or the rate every investor pays.",
       "sources": [
         {
           "title": "Income Tax Department: legacy Act and tax-year context",
@@ -521,7 +543,8 @@
         }
       ],
       "numeric_value": 0.312,
-      "review_due": "2027-02-28"
+      "review_due": "2027-02-28",
+      "copy_edited_on": "2026-10-30"
     },
     "cap_sec_112a_ltcg_exemption": {
       "val": "₹1.25 Lakh",
@@ -533,7 +556,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "₹1.25 lakh across qualifying gains in the tax year, not per scheme or account. STT conditions and exceptions apply; other capital-gain categories do not inherit this threshold.",
+      "assumptions": "The ₹1.25 lakh threshold applies to qualifying gains across the tax year, not separately to each fund or account. STT conditions and exceptions apply; other types of gain do not automatically get this threshold.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -544,7 +567,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 198(1)–(3); legacy 112A",
       "verification_scope": "Aggregate annual threshold for gains qualifying under section 198.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     },
     "tax_gain_harvesting_annual_savings": {
       "val": "₹15,625",
@@ -556,7 +580,7 @@
       "review_status": "calculated",
       "reviewed_on": null,
       "effective_period": "Legacy reference; current-year application requires review",
-      "assumptions": "Arithmetic: ₹125,000 × 12.5% = ₹15,625 base tax, before cess, surcharge, transaction costs and future tax effects. This is an illustration, not a guaranteed annual saving. Requires unused aggregate section 198 threshold and qualifying gains.",
+      "assumptions": "The arithmetic is ₹125,000 × 12.5% = ₹15,625 of base tax. Cess, surcharge, dealing costs and future tax effects are excluded. This is not a guaranteed yearly saving: it requires qualifying gains and an unused section 198 threshold.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -565,7 +589,8 @@
         }
       ],
       "numeric_value": 15625,
-      "review_due": "2027-02-28"
+      "review_due": "2027-02-28",
+      "copy_edited_on": "2026-10-30"
     },
     "cap_sec_80ccd1b_nps": {
       "val": "₹50,000",
@@ -577,7 +602,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Tax year 2026–27; Income-tax Act, 2025 as amended by Finance Act, 2026",
-      "assumptions": "Aggregate ₹50,000 ceiling also covers eligible minor-account contributions under section 124(4); no double counting with section 123. Not available under section 202 New Regime. Employer-contribution deduction is separate.",
+      "assumptions": "The shared ₹50,000 limit also covers eligible minor-account contributions under section 124(4). The same contribution cannot also be counted under section 123. This deduction is unavailable under section 202 New Regime. Employer contributions have a separate deduction.",
       "sources": [
         {
           "title": "Income-tax Act, 2025, as amended by Finance Act, 2026",
@@ -588,7 +613,8 @@
       "review_due": "2027-02-28",
       "legal_reference": "Section 124(3)–(5), (10), and section 202(2)(a)(xii); legacy 80CCD(1B)",
       "verification_scope": "Additional own-contribution NPS deduction under the Old Regime.",
-      "audit_outcome": "Confirmed with the scope and conditions recorded here"
+      "audit_outcome": "Confirmed with the scope and conditions recorded here",
+      "copy_edited_on": "2026-10-30"
     }
   },
   "L1_evergreen": {
@@ -602,7 +628,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Judgment dated 14 December 2023",
-      "assumptions": "Concerns the statutory nomination provisions considered in the judgment. Do not generalize to every insurance, pension or property arrangement; obtain asset-specific legal advice.",
+      "assumptions": "This judgment concerns the nomination rules for the shares and securities it considered. Insurance, pensions and property can have different rules; check the law for the asset involved.",
       "sources": [
         {
           "title": "Supreme Court: Shakti Yezdani, 2023 INSC 1076",
@@ -610,10 +636,11 @@
           "locator": "Judgment dated 14 December 2023; nomination of shares/securities and succession"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "legal_nominee_fiduciary_rule": {
-      "val": "In the shares/securities provisions considered in Shakti Yezdani, nomination did not create a separate mode of succession overriding succession law. Asset-specific nomination rules must be reviewed separately.",
+      "val": "For the shares and securities covered by Shakti Yezdani, naming a nominee did not override succession law—the rules on who inherits. Other assets have their own nomination rules.",
       "label": "Fiduciary Nature of Nominees",
       "authority": "Supreme Court of India",
       "category": "Legal Mandates",
@@ -622,7 +649,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Judgment dated 14 December 2023",
-      "assumptions": "Concerns the statutory nomination provisions considered in the judgment. Do not generalize to every insurance, pension or property arrangement; obtain asset-specific legal advice.",
+      "assumptions": "This judgment concerns the nomination rules for the shares and securities it considered. Insurance, pensions and property can have different rules; check the law for the asset involved.",
       "sources": [
         {
           "title": "Supreme Court: Shakti Yezdani, 2023 INSC 1076",
@@ -630,10 +657,11 @@
           "locator": "Judgment dated 14 December 2023; nomination of shares/securities and succession"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "math_compounding_1st_vs_2nd_crore": {
-      "val": "Illustration: ₹20,000 deposited at each month-end at 12% effective annual growth reaches ₹1 crore after 15.5 years and ₹2 crore about 5.25 years later.",
+      "val": "In this example, ₹20,000 invested at each month-end with a constant 12% effective annual return reaches ₹1 crore in 15.5 years, then ₹2 crore about 5.25 years later.",
       "label": "Math of Early Action & Compounding",
       "authority": "Compound Interest Mechanics",
       "category": "Financial Mathematics",
@@ -642,7 +670,7 @@
       "review_status": "calculated",
       "reviewed_on": null,
       "effective_period": "Mathematical illustration, not a forecast",
-      "assumptions": "12% effective annual return converted to monthly growth; no fees, taxes or inflation; constant return assumed.",
+      "assumptions": "The example converts a 12% effective annual return into a monthly rate and assumes the same return throughout. Fees, tax and inflation are excluded.",
       "sources": [
         {
           "title": "Sparkfolio: reproducible calculation convention",
@@ -650,10 +678,11 @@
           "locator": "yearsToTarget; future-value recurrence, tested locally"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "study_vanguard_lumpsum_vs_sip": {
-      "val": "Vanguard’s 2023 research found that immediate lump-sum investing outperformed common staged-investment strategies roughly two-thirds of the time in the historical and simulated comparisons studied.",
+      "val": "In Vanguard’s 2023 study, investing an available lump sum at once beat spreading it over time in roughly two-thirds of the historical and simulated comparisons studied.",
       "label": "Vanguard Lump Sum vs SIP Research",
       "authority": "Vanguard Research",
       "category": "Academic Studies",
@@ -662,7 +691,7 @@
       "review_status": "verified",
       "reviewed_on": "2026-10-25",
       "effective_period": "Research published February 2023",
-      "assumptions": "Concerns cash already available to invest, not ordinary salary-funded monthly SIPs. Results depend on market, period and staging method; no India-specific probability or future result is promised.",
+      "assumptions": "The study concerns money already available to invest, not monthly investing from salary. Results depend on the market, period and method used to spread payments. It does not give an India-specific probability or predict future results.",
       "sources": [
         {
           "title": "Vanguard: Cost averaging, February 2023",
@@ -670,10 +699,11 @@
           "locator": "Pages 1–3; comparison of investing an available lump sum with staging it over time"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "study_vanguard_vlcm_crossover": {
-      "val": "As retirement approaches, remaining earning capacity may shrink relative to accumulated assets. The crossover age depends on earnings, savings, liabilities and market outcomes.",
+      "val": "Near retirement, you may have fewer future earnings to make up for investment losses. When your investments become larger than your remaining earning capacity depends on income, savings, debts and market returns.",
       "label": "Vanguard Human Capital Crossover",
       "authority": "Sparkfolio lifecycle explanation",
       "category": "Academic Studies",
@@ -682,7 +712,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "A conceptual explanation, not a verified claim that a Vanguard model places every crossover in the 40s.",
+      "assumptions": "This explains a planning idea. It does not claim that a Vanguard model places everyone’s crossover in their 40s.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -690,10 +720,11 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "study_dalbar_behavior_gap": {
-      "val": "Reacting to headlines and trading without a plan can undermine long-term investing. Investor-return studies are sensitive to methodology and do not prove a single cause of underperformance.",
+      "val": "Reacting to headlines and trading without a plan can hurt long-term results. Studies of investor returns depend on how they are measured and do not show that one behaviour causes every shortfall.",
       "label": "DALBAR Behaviour Gap Study",
       "authority": "Sparkfolio behavioural-finance explanation",
       "category": "Behavioral Finance",
@@ -702,7 +733,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "No quantitative DALBAR result or universal causal claim is asserted.",
+      "assumptions": "No specific DALBAR percentage or single explanation for every investor’s shortfall is claimed.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -710,7 +741,8 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "rule_swr_india": {
       "val": "3-3.5%",
@@ -722,7 +754,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "3–3.5% is an editorial stress-test starting range, not a verified safe rate for India. Returns, inflation, fees, longevity and spending flexibility affect depletion risk.",
+      "assumptions": "The 3–3.5% range is a starting point for testing a retirement plan, not a proven safe withdrawal rate for India. Returns, inflation, fees, lifespan and flexibility in spending affect how long money lasts.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -730,10 +762,11 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "health_base_topup_recommendation": {
-      "val": "An illustrative health-cover structure is ₹10 lakh base cover plus a ₹30–50 lakh super top-up with a ₹10 lakh deductible. Suitable cover depends on household needs, location, exclusions and policy terms.",
+      "val": "One example is ₹10 lakh of base health cover plus a ₹30–50 lakh super top-up with a ₹10 lakh deductible. The right cover depends on your household, location, exclusions and policy terms.",
       "label": "Healthcare Liability Insulation Recommendation",
       "authority": "Sparkfolio Risk Insulation Model",
       "category": "Healthcare Insulation",
@@ -742,7 +775,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "An editorial example, not a minimum cover requirement or an insurance recommendation. Check waiting periods, co-payments and deductibles.",
+      "assumptions": "This is an example, not a minimum cover requirement or a recommendation to buy a policy. Check waiting periods, co-payments and deductibles.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -750,10 +783,11 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "rule_step_up_sip_10_percent": {
-      "val": "10% annual step-up illustration",
+      "val": "10% yearly contribution increase — an example",
       "label": "Annual Step-Up SIP Growth Rule",
       "authority": "Wealth Acceleration Model",
       "category": "Accumulation Engineering",
@@ -762,7 +796,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "A hypothetical contribution increase; affordability and income growth are not assumed.",
+      "assumptions": "This assumes contributions rise each year. It does not assume your income will rise or that the increase will be affordable.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -770,7 +804,8 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "rule_home_loan_prepay_emi_30_percent": {
       "val": "30%",
@@ -782,7 +817,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "An editorial budgeting screen, not a regulated maximum or mandate to prepay. Consider total obligations, liquidity and household circumstances.",
+      "assumptions": "This is a budgeting prompt, not a legal maximum or an instruction to repay a loan early. Consider all payments, available cash and household needs.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -790,7 +825,8 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "rule_rebalance_drift_threshold": {
       "val": "5 / 10 percentage points",
@@ -802,7 +838,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "Illustrative absolute percentage-point drift, not relative percentage change. For a 60% target, a 5-point band means 55–65%. Costs, taxes and goals determine whether action is appropriate.",
+      "assumptions": "These are percentage-point changes, not relative percentage changes. With a 60% target, a 5-point band means 55–65%. Check costs, tax and goals before changing the mix.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -810,7 +846,8 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "rule_active_fund_underperformance_exit": {
       "val": "3 consecutive years",
@@ -822,7 +859,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "Use a consistent benchmark and rolling-return method; review mandate, risk, manager changes, taxes and exit loads. Three years is a review trigger, not an automatic sell rule.",
+      "assumptions": "Use a consistent benchmark and rolling-return method. Check the fund’s objective, risk, manager changes, tax and exit charges. Three years prompts a review; it is not an automatic instruction to sell.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -830,7 +867,8 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     },
     "rule_baseline_cash_cushion": {
       "val": "₹50,000 to ₹1,00,000",
@@ -842,7 +880,7 @@
       "review_status": "editorial",
       "reviewed_on": null,
       "effective_period": "Illustrative framework; not a universal rule",
-      "assumptions": "An editorial amount illustration only. Essential expenses, access needs and income stability determine the actual reserve; immediate-access cash differs from fund units.",
+      "assumptions": "This amount is only an example. Essential bills, access needs and income stability determine the reserve you need. Money in a fund is different from cash you can use immediately.",
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
@@ -850,11 +888,12 @@
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
-      "review_due": null
+      "review_due": null,
+      "copy_edited_on": "2026-10-30"
     }
   },
   "_decision_model": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "reviewed_on": "2026-10-25",
     "review_due": "2027-02-28",
     "tax_year": "2026–27",
@@ -880,7 +919,7 @@
     },
     "cess_rate": 0.04,
     "illustrative_income": 10000,
-    "illustration_assumptions": "An additional ₹10,000 of ordinary taxable interest falls entirely within the selected marginal band. Includes 4% health and education cess, assumes no surcharge, rebate, relief, deductions, exemptions or band crossing. It is not a total-income tax calculation, effective tax rate, capital-gains calculation or forecast.",
+    "illustration_assumptions": "This example puts all the extra interest in one tax band and adds 4% health and education cess. It assumes no surcharge, rebate, tax relief, deductions or exemptions. It does not cover capital gains or income that crosses tax bands. It is not your total tax bill or a forecast of returns.",
     "horizon_bins": {
       "soon": "Under 3 years",
       "medium": "3–7 years",
@@ -888,11 +927,11 @@
       "unsure": "Not sure yet"
     },
     "risk_answers": {
-      "limited": "A loss would affect essential needs",
-      "comfortable": "I can absorb losses without affecting essentials",
-      "unsure": "I have not assessed this"
+      "limited": "A loss would make it harder to pay essential bills",
+      "comfortable": "I could handle a loss without missing essential bills",
+      "unsure": "I have not worked this out yet"
     },
-    "policy_note": "Horizon bins, debt screens and readiness ordering are Sparkfolio editorial review conventions, not regulator-prescribed allocations. Loss capacity is self-reported, not a validated risk profile. Age alone never determines an allocation.",
+    "policy_note": "The time ranges, debt threshold and order of checks are Sparkfolio’s guides, not rules set by a regulator. Your age alone does not decide an investment mix, and your answers have not been independently checked. These answers are not a full assessment of how much investment risk you can take.",
     "sources": {
       "tax": {
         "title": "Income-tax Act, 2025, amended by Finance Act 2026",
@@ -914,6 +953,7 @@
         "url": "https://www.moneysense.gov.sg/investments/investment-portfolio/",
         "locator": "Available funds after emergency savings, household expenses, insurance and debt; time horizon, loss capacity and diversification. Singapore product examples are not applied to India."
       }
-    }
+    },
+    "copy_edited_on": "2026-10-30"
   }
 }

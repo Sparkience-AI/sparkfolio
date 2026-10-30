@@ -898,6 +898,9 @@ h1, h2, h3, h4, summary, label, button, select, input, .badge, .source-status, .
   .engine-tax-metrics dd { font-size: 0.9rem; }
 }
 
+.engine-example-notes { margin-top: 1rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); }
+.engine-example-notes > summary { padding: 0.65rem 0.75rem; font-size: 0.8rem; }
+.engine-example-notes > .engine-help { padding: 0.75rem; margin: 0; }
 @media print {
   @page { size: A4; margin: 14mm; }
   *, *::before, *::after { color: black !important; background: transparent !important; text-shadow: none !important; box-shadow: none !important; }

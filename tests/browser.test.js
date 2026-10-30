@@ -60,6 +60,11 @@ try {
     if (['taxBracket', 'horizon', 'capacity'].includes(key)) await page.select(`select[name="${key}"]`, value);
     else await page.click(`input[name="${key}"][value="${value}"] + span`);
   }
+  await page.select('#de-horizon', '');
+  await page.click('#de-generate-btn');
+  assert.match(await page.$eval('#de-error', e => e.textContent), /when you need the money/);
+  assert.equal(await page.evaluate(() => document.activeElement.id), 'de-horizon');
+  await page.select('#de-horizon', 'long');
   await page.type('#de-amount', '1e6');
   await page.click('#de-generate-btn');
   assert.equal(await page.$eval('#de-amount', e => e.getAttribute('aria-invalid')), 'true');
@@ -67,14 +72,14 @@ try {
   await page.type('#de-amount', '10000.50');
   await page.click('#de-generate-btn');
   assert.equal(await page.$eval('#de-result-card', e => e.hidden), false, await page.$eval('#de-form', e => JSON.stringify({ error: document.getElementById('de-error').textContent, answers: Object.fromEntries(new FormData(e)) })));
-  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Build a diversified long-term plan');
+  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Make a plan for your longer-term goal');
   assert.match(await page.$eval('#de-rationale', e => e.textContent), /30s.*Old/);
   assert.match(await page.$eval('#de-context', e => e.textContent), /10,000.5/);
   await page.click('input[name="health"][value="no"] + span');
   assert.equal(await page.$eval('#de-result-card', e => e.dataset.stale), 'true');
-  assert.match(await page.$eval('#de-status', e => e.textContent), /outdated/);
+  assert.match(await page.$eval('#de-status', e => e.textContent), /changed an answer/);
   await page.click('#de-generate-btn');
-  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Health protection review');
+  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Check your health insurance');
   assert.equal(await page.$$eval('#de-output-cards article', els => els.length), 4);
   assert.match(await page.$eval('[data-card-id="tax-illustration"]', e => e.textContent), /6,880/);
   assert.match(await page.$eval('[data-card-id="old-regime"]', e => e.textContent), /3,120/);
@@ -113,12 +118,20 @@ try {
   assert.match(await page.$eval('#topic-count', e => e.textContent), /match your search/);
   await page.click('#topic-reset');
   // Touch/keyboard glossary and Escape dismissal.
+  // Start this component check without the preceding topic fragment/filter state.
+  await page.goto(base, { waitUntil: 'networkidle0' });
+  await page.evaluate(async () => { await document.fonts.ready; document.documentElement.style.scrollBehavior = 'auto'; });
   const jargon = await page.$('.jargon');
   await jargon.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
   // Let the resulting scroll event dismiss any old explanation before clicking.
   await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   await jargon.click();
-  assert.equal(await page.$eval('#jargon-tooltip', e => e.classList.contains('visible')), true);
+  await page.waitForFunction(() => document.getElementById('jargon-tooltip').classList.contains('visible'));
+  await page.keyboard.press('Escape');
+  assert.equal(await page.$eval('#jargon-tooltip', e => e.classList.contains('visible')), false);
+  await jargon.evaluate(el => el.blur());
+  await jargon.focus();
+  await page.waitForFunction(() => document.getElementById('jargon-tooltip').classList.contains('visible'));
   await page.keyboard.press('Escape');
   assert.equal(await page.$eval('#jargon-tooltip', e => e.classList.contains('visible')), false);
   // Content is available without JavaScript, including open accordions and source notes.
