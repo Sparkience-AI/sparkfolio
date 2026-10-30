@@ -1,6 +1,6 @@
 # Sparkfolio independent educational review model
 
-Source review: 25 October 2026. Tax context: tax year 2026–27. Model version: 1.0.0.
+Source review: 25 October 2026. Tax context: tax year 2026–27. Model version: 1.0.1.
 
 ## Purpose and boundary
 
@@ -86,3 +86,7 @@ Browser tests cover real form selections, clearing and filtering brackets after 
 `src/data/framework-facts.json` now includes `_decision_model` alongside the existing 38 registered claims. It supplies supported brackets, cess, the illustrative base, assumptions, question labels, source URLs, tax year and review dates. This model configuration is not counted as additional verified registry entries. `src/decision.js` contains pure composition rules; rendering uses DOM text rather than HTML strings. The optional amount is safely formatted independently.
 
 Any law change requires checking the sources and updating both model data and affected explanations. Registry validation checks policy provenance, numeric inputs and option integrity; exhaustive tests guard against losing outcome families. Review dates are actual source-review metadata, not scheduled future verification. The model does not fetch laws automatically.
+
+## Plain-language wording update
+
+Version 1.0.1 rewrites the 18 card families, result labels and summary in everyday language. Detailed tax assumptions remain available in an expandable note. Card IDs, triggers, mathematical inputs and source conditions are unchanged.

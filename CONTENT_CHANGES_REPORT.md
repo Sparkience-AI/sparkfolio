@@ -130,3 +130,7 @@ Validation includes all 3,072 decision combinations, amount handling, calculatio
 ## Subsequent release: independent decision engine
 
 The later decision-engine extension adds an explicit marginal tax bracket, goal horizon and loss-capacity questions; supports all concurrent foundation gaps and 18 self-contained output families; and tests 239,616 valid combinations. Tax illustrations use a fixed ₹10,000 example with explicit cess/rebate/surcharge conditions, separate from the optional amount. New/Old Regime cards explain distinct eligibility rather than inferring personal tax benefits. The seven-readiness list uses numbered visual cards; reading copy is justified while controls and labels retain usable alignment. See `DECISION_ENGINE_MODEL.md` for primary research, formulas, outcome triggers and limits. The earlier appendix remains a historical comparison through the UI-cleanup release, not a regenerated comparison for this extension.
+
+## Follow-up: plain-language engine results
+
+Rewrote all 18 output families with everyday explanations and concrete next steps. Replaced technical result labels, simplified the summary and completion message, and placed the full tax-example assumptions in an expandable note. The SSoT model wording is updated to version 1.0.1. No branching rules, supported rates, calculations or source conditions changed.

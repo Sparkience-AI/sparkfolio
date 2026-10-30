@@ -60,6 +60,11 @@ try {
     if (['taxBracket', 'horizon', 'capacity'].includes(key)) await page.select(`select[name="${key}"]`, value);
     else await page.click(`input[name="${key}"][value="${value}"] + span`);
   }
+  await page.select('#de-horizon', '');
+  await page.click('#de-generate-btn');
+  assert.match(await page.$eval('#de-error', e => e.textContent), /when you need the money/);
+  assert.equal(await page.evaluate(() => document.activeElement.id), 'de-horizon');
+  await page.select('#de-horizon', 'long');
   await page.type('#de-amount', '1e6');
   await page.click('#de-generate-btn');
   assert.equal(await page.$eval('#de-amount', e => e.getAttribute('aria-invalid')), 'true');
@@ -67,14 +72,14 @@ try {
   await page.type('#de-amount', '10000.50');
   await page.click('#de-generate-btn');
   assert.equal(await page.$eval('#de-result-card', e => e.hidden), false, await page.$eval('#de-form', e => JSON.stringify({ error: document.getElementById('de-error').textContent, answers: Object.fromEntries(new FormData(e)) })));
-  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Build a diversified long-term plan');
+  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Make a plan for your longer-term goal');
   assert.match(await page.$eval('#de-rationale', e => e.textContent), /30s.*Old/);
   assert.match(await page.$eval('#de-context', e => e.textContent), /10,000.5/);
   await page.click('input[name="health"][value="no"] + span');
   assert.equal(await page.$eval('#de-result-card', e => e.dataset.stale), 'true');
-  assert.match(await page.$eval('#de-status', e => e.textContent), /outdated/);
+  assert.match(await page.$eval('#de-status', e => e.textContent), /changed an answer/);
   await page.click('#de-generate-btn');
-  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Health protection review');
+  assert.equal(await page.$eval('#de-step-name', e => e.textContent), 'Check your health insurance');
   assert.equal(await page.$$eval('#de-output-cards article', els => els.length), 4);
   assert.match(await page.$eval('[data-card-id="tax-illustration"]', e => e.textContent), /6,880/);
   assert.match(await page.$eval('[data-card-id="old-regime"]', e => e.textContent), /3,120/);

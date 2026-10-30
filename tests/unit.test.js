@@ -20,9 +20,9 @@ test('17-claim follow-up keeps checked scope and material qualifications visible
   assert.match(facts.rate_epf_interest.val, /FY 2025–26 declared rate/);
   assert.match(facts.rate_epf_interest.assumptions, /third-party-hosted reproduction/);
   assert.match(facts.tax_sec_80ccd2_private.assumptions, /otherwise.*10%/);
-  assert.match(facts.cap_sec_80ccd1b_nps.assumptions, /Not available.*New Regime/);
+  assert.match(facts.cap_sec_80ccd1b_nps.assumptions, /unavailable.*New Regime/);
   assert.match(facts.tax_sec_56_2_xii_reit_repayment.assumptions, /max\(A − B − C, 0\)/);
-  assert.match(facts.sebi_brokerage_cap_cash.assumptions, /Excess brokerage falls within BER/);
+  assert.match(facts.sebi_brokerage_cap_cash.assumptions, /Extra brokerage must fit within BER/);
   const source = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
   const root = parse(transformContent(source));
   for (const [id, fact] of Object.entries(facts).filter(([, f]) => f.verification_scope)) {
@@ -94,10 +94,10 @@ test('tax illustrations respect the selected band, regime and explicit exclusion
   const first = evaluateDecision(ready, '100');
   const second = evaluateDecision(ready, '999999');
   assert.deepEqual(first.illustration, second.illustration, 'Optional amount never becomes taxable income');
-  assert.match(first.context, /not used as taxable income or an eligible deduction/);
+  assert.match(first.context, /not treated as taxable income or a tax deduction/);
   const old = evaluateDecision({ ...ready, regime: 'otr', tax: 'no' });
-  assert.match(old.cards.find(c => c.id === 'old-regime').explanation, /fully eligible, unused/);
-  assert.match(first.cards.find(c => c.id === 'new-regime').explanation, /unavailable/);
+  assert.match(old.cards.find(c => c.id === 'old-regime').explanation, /claim another.*deduction limit left/);
+  assert.match(first.cards.find(c => c.id === 'new-regime').explanation, /not available/);
   assert.match(decisionPolicy.illustration_assumptions, /no surcharge, rebate/);
   const gaps = evaluateDecision({ ...ready, ef: 'none', health: 'no', dependents: 'yes', term: 'no', debt: 'yes', corpPf: 'no' });
   assert.equal(gaps.gapCount, 5, 'Concurrent gaps must not be suppressed by the first checkpoint');
