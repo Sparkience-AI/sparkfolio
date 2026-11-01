@@ -25,13 +25,12 @@ dist-ssr
 
 # Tests and validator configuration are intentionally versioned.
 
-# Utility and plan files
-fix_gaps.cjs
-restore_bottom.cjs
-test_reorg.cjs
-old_plan.txt
-old_plan_full.txt
-old_plan_search.txt
+# Local tools, research, reports, generated evidence and release payloads
+/local/
+# Legacy output location: keep old checkouts from exposing generated files
+/.audit/
 
-# Generated browser evidence and lab timings
-.audit/
+# Local environment settings; a documented example may be versioned
+.env
+.env.*
+!.env.example

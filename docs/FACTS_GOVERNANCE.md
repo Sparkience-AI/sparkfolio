@@ -35,7 +35,7 @@ All 38 entries were classified and reviewed for scope. Source-checked entries ar
 - SPIVA: the inspected Mid-Year 2026 page reports 74% ten-year large-cap underperformance; category and period are explicit.
 - Vanguard: the 2023 available-lump-sum comparison is distinct from salary-funded monthly SIPs.
 - Shakti Yezdani: scope is shares/securities under the provisions considered; no universal statement about every nominee or asset.
-- Tax follow-up: all 17 formerly pending entries were confirmed, corrected or narrowed against primary sources. The current Act as amended by Finance Act 2026 provides the checked statutory mappings and conditions. See [the full claim audit](CLAIM_AUDIT_2026-10-25.md).
+- Tax follow-up: all 17 formerly pending entries were confirmed, corrected or narrowed against primary sources. The current Act as amended by Finance Act 2026 provides the checked statutory mappings and conditions. See [the full claim audit](history/CLAIM_AUDIT_2026-10-25.md).
 - SGB: the official consolidated Act supplies enacted section 70(1)(x), including the Finance Act 2026 amendment. The individual must hold from original issue until maturity for the exclusion. No uniform tax rate is asserted for all other SGB receipts. Separate Gazette retrieval was unsuccessful; consolidated-law inspection is the evidence used.
 - Withdrawal rates, cash buffers, cover amounts, debt screens, rebalancing bands and exit intervals are editorial illustrations with limits, not universal mandates.
 - Unregistered property-price forecasts, drawdown claims, star-rating shortcuts and unsupported retirement-income comparisons were removed or replaced with qualified explanations.
@@ -46,11 +46,11 @@ Each entry's full audit trail is in the registry and public source notes. No nam
 
 `npm run check` runs unit/decision/calculation/provenance tests, DOM checks, source and built HTML validation, production build and browser regressions. CI blocks deployment on failure. Browser checks include mobile reflow, keyboard controls, amount errors, stale results, topic filtering, fragments, glossary dismissal, no-JavaScript reading, reduced motion, print and absence of third-party requests.
 
-`.audit/performance.json` is a local lab baseline, not 75th-percentile field Core Web Vitals. Field targets are LCP <= 2.5 s, INP <= 200 ms and CLS <= 0.1, evaluated with real-user data when available. Search Console submission and production smoke checks require a release and owner access; they are not fabricated by local tests.
+`local/artifacts/performance.json` is a local lab baseline, not 75th-percentile field Core Web Vitals. Field targets are LCP <= 2.5 s, INP <= 200 ms and CLS <= 0.1, evaluated with real-user data when available. Search Console submission and production smoke checks require a release and owner access; they are not fabricated by local tests.
 
 ## Follow-up audit closure
 
-The SSoT now records 25 verified entries, 10 editorial entries and 3 calculated illustrations. All 17 original pending entries have dated source inspection, provision locators, verification scope and conditions. Verified means the specific recorded statement is supported. EPF’s original circular was inspected as a third-party-hosted reproduction and corroborated by the government broadcaster; its hosting limitation remains explicit. See `CLAIM_AUDIT_2026-10-25.md`.
+The SSoT now records 25 verified entries, 10 editorial entries and 3 calculated illustrations. All 17 original pending entries have dated source inspection, provision locators, verification scope and conditions. Verified means the specific recorded statement is supported. EPF’s original circular was inspected as a third-party-hosted reproduction and corroborated by the government broadcaster; its hosting limitation remains explicit. See `history/CLAIM_AUDIT_2026-10-25.md`.
 
 ## Independent decision-model data
 

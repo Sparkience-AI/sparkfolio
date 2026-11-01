@@ -4,6 +4,17 @@ An independent educational resource for Indian readers learning about financial 
 
 Production: https://sparkience-ai.github.io/sparkfolio/
 
+## Repository layout
+
+- `src/`: application logic, styles and the SSoT registry.
+- `public/`: assets shipped with the site, including font licenses.
+- `assets/source/`: editable design source files, such as the social-preview SVG.
+- `scripts/` and `tests/`: versioned build, validation and regression checks.
+- [docs/](docs/README.md): model/governance documentation and historical audit/review reports.
+- `local/`: ignored personal tools, archived utilities, research downloads, release payloads, logs and generated evidence.
+
+Use `local/tools/` for reusable personal helpers, `local/archive/` for historical scripts, `local/research/` for source downloads, `local/releases/` for PR/merge payloads, and `local/logs/` for preview logs. Browser checks write only to `local/artifacts/`, the folder uploaded by CI. Local folders are created as needed and are not part of a fresh clone. Keep reusable project checks in `scripts/` or `tests/` so everyone can run them.
+
 ## Architecture
 
 - Static HTML, custom utility CSS and vanilla JavaScript, built with Vite for `/sparkfolio/` and deployed on GitHub Pages.
@@ -26,21 +37,21 @@ npm run check
 npm run preview
 ```
 
-`validate` checks the decision matrix, amount validation, calculations, provenance, DOM structure, source HTML, production build and built HTML. `test:browser` tests the built site at 320, 390, 768 and 1280px and writes screenshots, a print PDF and lab timings to ignored `.audit/`. Run `validate` before browser tests to avoid testing an outdated build. `check` runs both in order. The legacy `node tests/verify_facts_coverage.cjs` entry point runs full validation.
+`validate` checks the decision matrix, amount validation, calculations, provenance, DOM structure, source HTML, production build and built HTML. `test:browser` tests the built site at 320, 390, 768 and 1280px and writes screenshots, a print PDF and lab timings to ignored `local/artifacts/`. Run `validate` before browser tests to avoid testing an outdated build. `check` runs both in order.
 
 The HTML validator configuration and all tests are versioned. Validation does not certify financial accuracy or full WCAG conformance. Source checking is an editorial task; automated tests prevent inconsistent display and invalid provenance claims.
 
 ## Decision engine
 
-See [DECISION_ENGINE_MODEL.md](DECISION_ENGINE_MODEL.md) for primary research, all 18 output families, assumptions and exhaustive coverage of 239,616 valid combinations. `_decision_model` in the shared registry controls marginal brackets, cess, example amounts, question choices and source metadata. A selected bracket changes conditional tax illustrations, never an inferred personal annual tax bill.
+See [DECISION_ENGINE_MODEL.md](docs/DECISION_ENGINE_MODEL.md) for primary research, all 18 output families, assumptions and exhaustive coverage of 239,616 valid combinations. `_decision_model` in the shared registry controls marginal brackets, cess, example amounts, question choices and source metadata. A selected bracket changes conditional tax illustrations, never an inferred personal annual tax bill.
 
 ## Content change history
 
-See [CONTENT_CHANGES_REPORT.md](CONTENT_CHANGES_REPORT.md) for the complete session change report, and [CONTENT_CHANGES_APPENDIX.md](CONTENT_CHANGES_APPENDIX.md) for the before/after page-text comparison and all 38 registry values.
+See [CONTENT_CHANGES_REPORT.md](docs/history/CONTENT_CHANGES_REPORT.md) for the complete session change report, and [CONTENT_CHANGES_APPENDIX.md](docs/history/CONTENT_CHANGES_APPENDIX.md) for the before/after page-text comparison and all 38 registry values.
 
 ## Claims, sources and methodology
 
-There are 38 registered claims, including legislation, research, rates, calculated illustrations and editorial heuristics. See [FACTS_GOVERNANCE.md](FACTS_GOVERNANCE.md) for statuses and review rules. A linked source does not automatically mean that a claim is verified. The 17 formerly pending entries were checked against primary sources on 25 October 2026: 25 entries are now verified within recorded scope, 10 editorial and 3 calculated. EPF uses the FY 2025–26 declared rate: the July circular reproduction was inspected and corroborated by the government broadcaster, with its hosting limitation disclosed. See [the claim audit](CLAIM_AUDIT_2026-10-25.md) for findings, conditions and evidence limits. The legacy quarter labels are historical metadata only.
+There are 38 registered claims, including legislation, research, rates, calculated illustrations and editorial heuristics. See [FACTS_GOVERNANCE.md](docs/FACTS_GOVERNANCE.md) for statuses and review rules. A linked source does not automatically mean that a claim is verified. The 17 formerly pending entries were checked against primary sources on 25 October 2026: 25 entries are now verified within recorded scope, 10 editorial and 3 calculated. EPF uses the FY 2025–26 declared rate: the July circular reproduction was inspected and corroborated by the government broadcaster, with its hosting limitation disclosed. See [the claim audit](docs/history/CLAIM_AUDIT_2026-10-25.md) for findings, conditions and evidence limits. The legacy quarter labels are historical metadata only.
 
 The 20-year SIP example uses â‚¹20,000 monthly at 11% effective annual growth. It produces approximately â‚¹1.62 crore with fixed contributions and â‚¹3.36 crore with a 10% annual contribution increase, before fees, tax and inflation. These are constant-return models, not forecasts. Readiness checkpoints and allocation examples are editorial educational illustrations, not personal financial advice.
 

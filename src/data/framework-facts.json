@@ -5,7 +5,7 @@
     "last_updated": "2026-10-30",
     "description": "Claims, calculations and editorial heuristics with explicit provenance and review status. A source link is not itself verification. Decision-model assumptions and source-backed tax inputs are maintained in _decision_model.",
     "audit_scope": "Follow-up primary-source audit resolved all 17 pending entries through confirmation, correction or narrower verified scope. EPF circular reproduction inspected and corroborated by official broadcaster. 25 verified, 10 editorial, 3 calculated.",
-    "claim_audit": "CLAIM_AUDIT_2026-10-25.md",
+    "claim_audit": "docs/history/CLAIM_AUDIT_2026-10-25.md",
     "copy_review": "Plain-language edit on 30 October 2026. Financial review dates, source locators, numerical values and eligibility conditions are retained; this is not a fresh legal or rate verification."
   },
   "L3_quarterly": {
@@ -103,7 +103,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
@@ -716,7 +716,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
@@ -737,7 +737,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
@@ -758,7 +758,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
@@ -779,7 +779,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
@@ -800,7 +800,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
@@ -821,7 +821,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
@@ -842,7 +842,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
@@ -863,7 +863,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
@@ -884,7 +884,7 @@
       "sources": [
         {
           "title": "Sparkfolio editorial methodology",
-          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/FACTS_GOVERNANCE.md",
+          "url": "https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md",
           "locator": "Status rules and audit record: editorial illustrations are not statutory thresholds or individual recommendations"
         }
       ],
