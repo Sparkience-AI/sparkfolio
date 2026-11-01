@@ -148,7 +148,7 @@ try {
   await page.emulateMediaType('print');
   assert.equal(await page.$eval('#de-form', e => getComputedStyle(e).display), 'none');
   assert.equal(await page.$eval('#source-notes .details-content', e => getComputedStyle(e).display), 'block');
-  const output = process.env.AUDIT_OUTPUT_DIR || '.audit';
+  const output = process.env.AUDIT_OUTPUT_DIR || 'local/artifacts';
   fs.mkdirSync(output, { recursive: true });
   await page.pdf({ path: `${output}/sparkfolio-print.pdf`, format: 'A4', printBackground: false, preferCSSPageSize: true });
   await page.emulateMediaType('screen');
