@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sparkfolio Education"
+  short_description: "Grounded financial-literacy review workflow"
+  default_prompt: "Use $sparkfolio-education to explain educational checks and evidence without giving personal financial advice."

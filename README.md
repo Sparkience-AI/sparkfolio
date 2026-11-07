@@ -33,6 +33,7 @@ npm run dev
 npm test
 npm run validate
 npm run test:browser
+npm run test:mcp
 npm run check
 npm run preview
 ```
@@ -40,6 +41,10 @@ npm run preview
 `validate` checks the decision matrix, amount validation, calculations, provenance, DOM structure, source HTML, production build and built HTML. `test:browser` tests the built site at 320, 390, 768 and 1280px and writes screenshots, a print PDF and lab timings to ignored `local/artifacts/`. Run `validate` before browser tests to avoid testing an outdated build. `check` runs both in order.
 
 The HTML validator configuration and all tests are versioned. Validation does not certify financial accuracy or full WCAG conformance. Source checking is an editorial task; automated tests prevent inconsistent display and invalid provenance claims.
+
+## Local agent workflow
+
+`npm run mcp` starts a local, read-only stdio MCP server for registered-claim lookup and the existing deterministic educational readiness review. The repo-local `sparkfolio-education` skill teaches agents to preserve evidence status and the non-advisory boundary. It does not expose browsing, filesystem paths, accounts, trading, product selection or provider calls. See [the agent-surface contract](docs/AGENT_SURFACE.md).
 
 ## Decision engine
 
@@ -60,6 +65,8 @@ The 20-year SIP example uses â‚¹20,000 monthly at 11% effective annual growt
 Pull requests run validation and browser checks. A push to `main` deploys only after those checks pass. CI stores browser evidence separately from the Pages artifact. No backend, chat widget, accounts, portfolio uploads or analytics are included.
 
 The canonical URL and sitemap remain under `/sparkfolio/`. A robots file at that subpath does not control the domain; root-level crawler policy belongs to the GitHub Pages host. Search Console submission and field Core Web Vitals require owner access and are not performed by the build.
+
+Release candidates additionally produce SHA-256 checksums, a CycloneDX SBOM, a runtime/build manifest and GitHub provenance/SBOM attestations. They are evidence artifacts only and do not bypass the normal Pages deployment gate. See [release and rollback](docs/RELEASE.md) and the [threat model](docs/THREAT_MODEL.md).
 
 ## Working conventions
 
