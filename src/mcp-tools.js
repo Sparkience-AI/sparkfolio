@@ -8,9 +8,16 @@ const claimEntries = Object.entries(registry)
 const claims = Object.fromEntries(claimEntries);
 const MAX_RESULTS = 50;
 
-function asOfDate(value) {
+function asOfDate(value, { required = false } = {}) {
+  if (required && value === undefined) {
+    throw new TypeError('as_of is required for a reproducible readiness review.');
+  }
   const date = value ?? new Date().toISOString().slice(0, 10);
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(`${date}T00:00:00Z`))) {
+  if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    throw new TypeError('as_of must be an ISO date in YYYY-MM-DD format.');
+  }
+  const parsed = new Date(`${date}T00:00:00Z`);
+  if (Number.isNaN(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== date) {
     throw new TypeError('as_of must be an ISO date in YYYY-MM-DD format.');
   }
   return date;
@@ -59,13 +66,14 @@ export function getClaim({ id, as_of: asOfInput } = {}) {
   return { as_of: asOf, claim: publicClaim(id, claims[id], asOf) };
 }
 
-export function reviewReadiness({ answers, amount = '' } = {}) {
+export function reviewReadiness({ answers, amount = '', as_of: asOfInput } = {}) {
   if (!answers || typeof answers !== 'object' || Array.isArray(answers)) {
     throw new TypeError('answers must be the complete Sparkfolio readiness-answer object.');
   }
   const result = evaluateDecision(answers, amount);
-  const asOf = new Date().toISOString().slice(0, 10);
+  const asOf = asOfDate(asOfInput, { required: true });
   return {
+    as_of: asOf,
     purpose: 'Educational readiness review; not financial, investment, insurance, legal, or tax advice.',
     result,
     evidence: result.factIds.map(id => publicClaim(id, claims[id], asOf)),
@@ -103,8 +111,12 @@ export const toolDefinitions = [
     name: 'review_readiness',
     description: 'Run Sparkfolio’s deterministic educational readiness review from complete explicit answers.',
     inputSchema: {
-      type: 'object', additionalProperties: false, required: ['answers'],
-      properties: { answers: { type: 'object' }, amount: { type: 'string', maxLength: 32, default: '' } }
+      type: 'object', additionalProperties: false, required: ['answers', 'as_of'],
+      properties: {
+        answers: { type: 'object' },
+        amount: { type: 'string', maxLength: 32, default: '' },
+        as_of: { type: 'string', pattern: '^\\d{4}-\\d{2}-\\d{2}$' }
+      }
     }
   }
 ];
