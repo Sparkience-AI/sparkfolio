@@ -24,6 +24,7 @@ test('readiness tool is deterministic, non-advisory and requires every answer', 
   assert.match(first.purpose, /not financial/);
   assert.match(first.result.context, /No part of it has been allocated/);
   assert.throws(() => reviewReadiness({ answers: ready }), /as_of is required/);
+  assert.throws(() => reviewReadiness({ answers: ready, as_of: null }), /ISO date/);
   assert.throws(() => reviewReadiness({ answers: ready, as_of: '2026-02-30' }), /ISO date/);
   assert.throws(() => reviewReadiness({ answers: { regime: 'ntr' }, as_of: '2026-11-07' }));
 });

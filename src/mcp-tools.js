@@ -12,7 +12,7 @@ function asOfDate(value, { required = false } = {}) {
   if (required && value === undefined) {
     throw new TypeError('as_of is required for a reproducible readiness review.');
   }
-  const date = value ?? new Date().toISOString().slice(0, 10);
+  const date = value === undefined ? new Date().toISOString().slice(0, 10) : value;
   if (typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     throw new TypeError('as_of must be an ISO date in YYYY-MM-DD format.');
   }
