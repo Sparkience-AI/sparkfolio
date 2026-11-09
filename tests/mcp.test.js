@@ -17,17 +17,31 @@ test('claim tools retain evidence status and reject unregistered claims', () => 
 });
 
 test('readiness tool is deterministic, non-advisory and requires every answer', () => {
-  const first = reviewReadiness({ answers: ready, amount: '10000' });
-  const second = reviewReadiness({ answers: ready, amount: '10000' });
+  const first = reviewReadiness({ answers: ready, amount: '10000', as_of: '2026-11-07' });
+  const second = reviewReadiness({ answers: ready, amount: '10000', as_of: '2026-11-07' });
   assert.deepEqual(first, second);
+  assert.equal(first.as_of, '2026-11-07');
   assert.match(first.purpose, /not financial/);
   assert.match(first.result.context, /No part of it has been allocated/);
-  assert.throws(() => reviewReadiness({ answers: { regime: 'ntr' } }));
+  assert.throws(() => reviewReadiness({ answers: ready }), /as_of is required/);
+  assert.throws(() => reviewReadiness({ answers: ready, as_of: null }), /ISO date/);
+  assert.throws(() => reviewReadiness({ answers: ready, as_of: '2026-02-30' }), /ISO date/);
+  assert.throws(() => reviewReadiness({ answers: { regime: 'ntr' }, as_of: '2026-11-07' }));
+});
+
+test('readiness evidence status uses the explicit evidence clock', () => {
+  const current = reviewReadiness({ answers: ready, as_of: '2026-11-07' });
+  const later = reviewReadiness({ answers: ready, as_of: '2027-03-01' });
+  const currentClaim = current.evidence.find(claim => claim.id === 'cap_sec_80c');
+  const laterClaim = later.evidence.find(claim => claim.id === 'cap_sec_80c');
+  assert.equal(currentClaim.effective_status, 'verified');
+  assert.equal(laterClaim.effective_status, 'needs_review');
 });
 
 test('MCP request boundary lists only three read-only tools', () => {
   const response = handleRequest({ jsonrpc: '2.0', id: 1, method: 'tools/list' });
   assert.deepEqual(response.result.tools.map(tool => tool.name), ['list_claims', 'get_claim', 'review_readiness']);
+  assert.deepEqual(response.result.tools[2].inputSchema.required, ['answers', 'as_of']);
   assert.equal(handleRequest({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: 'unknown' } }).result.isError, true);
 });
 

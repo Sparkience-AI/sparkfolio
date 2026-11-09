@@ -58,7 +58,7 @@ See [CONTENT_CHANGES_REPORT.md](docs/history/CONTENT_CHANGES_REPORT.md) for the 
 
 There are 38 registered claims, including legislation, research, rates, calculated illustrations and editorial heuristics. See [FACTS_GOVERNANCE.md](docs/FACTS_GOVERNANCE.md) for statuses and review rules. A linked source does not automatically mean that a claim is verified. The 17 formerly pending entries were checked against primary sources on 25 October 2026: 25 entries are now verified within recorded scope, 10 editorial and 3 calculated. EPF uses the FY 2025–26 declared rate: the July circular reproduction was inspected and corroborated by the government broadcaster, with its hosting limitation disclosed. See [the claim audit](docs/history/CLAIM_AUDIT_2026-10-25.md) for findings, conditions and evidence limits. The legacy quarter labels are historical metadata only.
 
-The 20-year SIP example uses â‚¹20,000 monthly at 11% effective annual growth. It produces approximately â‚¹1.62 crore with fixed contributions and â‚¹3.36 crore with a 10% annual contribution increase, before fees, tax and inflation. These are constant-return models, not forecasts. Readiness checkpoints and allocation examples are editorial educational illustrations, not personal financial advice.
+The 20-year SIP example uses ₹20,000 monthly at 11% effective annual growth. It produces approximately ₹1.62 crore with fixed contributions and ₹3.36 crore with a 10% annual contribution increase, before fees, tax and inflation. These are constant-return models, not forecasts. Readiness checkpoints and allocation examples are editorial educational illustrations, not personal financial advice.
 
 ## Release checks
 

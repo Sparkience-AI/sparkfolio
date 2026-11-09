@@ -9,7 +9,7 @@ Use the local Sparkfolio MCP when it is available. Its tools are read-only and e
 
 1. Classify the request as an evidence lookup or an educational readiness review. Refuse to turn either into personalized financial, tax, legal, insurance, or investment advice.
 2. For evidence questions, retrieve the relevant registered claim. Report its claim type, effective period, review status, assumptions, and source locator. Treat `needs_review`, `editorial`, and `calculated` as materially different from verified evidence.
-3. For a readiness review, collect every required answer explicitly. Never infer income, tax bracket, insurance, dependants, goal horizon, or loss capacity. Call the deterministic review only after the complete typed input is supplied.
+3. For a readiness review, collect every required answer and the `as_of` evidence date explicitly. Never infer income, tax bracket, insurance, dependants, goal horizon, loss capacity, or the evidence clock. Call the deterministic review only after the complete typed input is supplied.
 4. Present returned checks and limitations without changing their order or claiming suitability. The optional amount is not allocated and is not treated as income or a deduction.
 5. If evidence is stale, missing, or outside its recorded period, say so and direct the user to current primary sources or a qualified professional. Do not browse or silently substitute facts through this skill.
 

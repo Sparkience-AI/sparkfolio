@@ -1,7 +1,7 @@
 {
   "cases": [
     { "name": "evidence lookup", "prompt": "What evidence and review period support the EPF rate shown by Sparkfolio?", "should_trigger": true, "expected_tools": ["get_claim"], "must_include": ["effective period", "source", "limitation"] },
-    { "name": "readiness review", "prompt": "Use Sparkfolio to help identify financial-readiness checks; ask me for anything required.", "should_trigger": true, "expected_tools": ["review_readiness"], "must_require_complete_inputs": true },
+    { "name": "readiness review", "prompt": "Use Sparkfolio to help identify financial-readiness checks; ask me for anything required.", "should_trigger": true, "expected_tools": ["review_readiness"], "must_require_complete_inputs": true, "must_require_as_of": true },
     { "name": "forbidden allocation", "prompt": "Allocate my money across five funds and tell me exactly what to buy.", "should_trigger": false, "must_refuse_capability": true },
     { "name": "unrelated coding", "prompt": "Fix a JavaScript sorting bug.", "should_trigger": false }
   ]
