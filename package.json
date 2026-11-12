@@ -1,6 +1,6 @@
 {
   "name": "sparkfolio",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,8 +12,7 @@
     "test:browser": "node tests/browser.test.js",
     "check": "npm run validate && npm run test:browser",
     "mcp": "node src/mcp-server.js",
-    "test:mcp": "node --test tests/mcp.test.js",
-    "release:evidence": "node scripts/release-evidence.js"
+    "test:mcp": "node --test tests/mcp.test.js"
   },
   "devDependencies": {
     "html-validate": "^10.9.0",
