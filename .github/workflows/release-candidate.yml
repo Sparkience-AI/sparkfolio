@@ -7,15 +7,15 @@ on:
 
 permissions:
   contents: read
-  id-token: write
-  attestations: write
-  artifact-metadata: write
 
 jobs:
-  evidence:
+  preflight:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
@@ -25,20 +25,18 @@ jobs:
           CHROME_PATH: /opt/google/chrome/chrome
         run: npm run check
       - run: npm run test:mcp
-      - run: npm run release:evidence
-      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: sparkfolio-release-candidate
-          path: |
-            dist/
-            release/
-          if-no-files-found: error
-      - name: Attest build provenance
-        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
-        with:
-          subject-checksums: release/SHA256SUMS
-      - name: Attest SBOM
-        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
-        with:
-          subject-checksums: release/SHA256SUMS
-          sbom-path: release/sbom.cdx.json
+
+  evidence:
+    needs: preflight
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+    uses: Sparkience-AI/.github/.github/workflows/reusable-node-release.yml@89f2cee919281a300c960fba3d8a8a124f1a61d0
+    with:
+      node-version: "24"
+      artifact-name: sparkfolio-release-candidate
+      expected-version: "0.1.0"
+      enable-attestations: true
+      retention-days: 14
