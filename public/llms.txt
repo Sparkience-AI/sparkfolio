@@ -1,0 +1,27 @@
+# Sparkfolio
+
+> An independent financial-literacy guide for Indian readers, published under the Sparkfolio editorial identity. The static website and its local tools explain recorded evidence and educational examples; they do not provide personal financial, investment, insurance, legal or tax advice.
+
+The website's decision engine combines financial-readiness checks, goal horizon, capacity for loss and conditional tax illustrations from explicit answers. It does not select products, allocate money, determine suitability or calculate a personal tax bill. Browser answers stay in memory; the site has no accounts, portfolio uploads or analytics integration.
+
+## Guide and evidence
+
+- [Educational guide](https://sparkience-ai.github.io/sparkfolio/): Portfolio concepts, examples, decision engine, methodology and source notes.
+- [Methodology and source notes](https://sparkience-ai.github.io/sparkfolio/#about-framework): Read the visible scope, corrections process and source notes. A source check supports the recorded statement and period, not universal applicability.
+- [Facts registry](https://github.com/Sparkience-AI/sparkfolio/blob/main/src/data/framework-facts.json): Shared claim values, classifications, conditions, source locators and review dates; also contains the separate decision-model configuration.
+- [Evidence governance](https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/FACTS_GOVERNANCE.md): Distinguishes verified, needs-review, editorial and calculated entries. Review status is not a forecast or a finding that a law applies to a particular person.
+- [Decision-model documentation](https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/DECISION_ENGINE_MODEL.md): Input choices, output families, assumptions and calculation limits.
+
+## Local agent interface
+
+- [Agent interface contract](https://github.com/Sparkience-AI/sparkfolio/blob/main/docs/AGENT_SURFACE.md): The local read-only stdio MCP server exposes list_claims, get_claim and review_readiness. This is not a hosted endpoint on GitHub Pages.
+- [Agent skill](https://github.com/Sparkience-AI/sparkfolio/blob/main/.agents/skills/sparkfolio-education/SKILL.md): Evidence-grounded explanation and complete-input educational review workflow.
+- [Repository and setup](https://github.com/Sparkience-AI/sparkfolio): Source, installation, checks and contribution information.
+
+Preserve source locators, effective periods, assumptions and limitations when explaining evidence. Editorial rules and calculated illustrations are not verified financial recommendations. Check each entry's recorded dates; a requested evidence date does not establish legal applicability. Historical or expired model outputs must not be described as current. Unsupported claims need current primary-source checking, not invented registry entries or credentials.
+
+## Corrections
+
+- [Report a correction](https://github.com/Sparkience-AI/sparkfolio/issues): Include the topic and supporting evidence. Do not post account numbers, identity documents or private household information.
+
+This discovery document applies to /sparkfolio/. It is documentation, not crawler authorization or a guarantee of inclusion in search or AI-generated answers. Host-root robots rules are managed separately from this project subpath.

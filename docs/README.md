@@ -7,12 +7,14 @@
 - [Agent interface](AGENT_SURFACE.md): local tools, required inputs and evidence-date limits.
 - [Release and rollback](RELEASE.md): release evidence and production recovery.
 - [Threat model](THREAT_MODEL.md): trust boundaries, controls and remaining risks.
+- [Quality evidence](QUALITY.md): automated coverage, manual review checklist and known evidence limits.
 
 ## Historical audits and reviews
 
 These remain versioned as an audit trail. Dates, quoted before/after text and fenced diffs describe the release reviewed at that time; they are not continuously rewritten to match the latest code.
 
 - [Claim audit — 25 October 2026](history/CLAIM_AUDIT_2026-10-25.md)
+- [SME follow-up — 21 November 2026](history/SME_FOLLOWUP_2026-11-21.md)
 - [Content change report](history/CONTENT_CHANGES_REPORT.md)
 - [Content change appendix](history/CONTENT_CHANGES_APPENDIX.md)
 - [Wording review — 30 October 2026](history/WORDING_REVIEW_2026-10-30.md)

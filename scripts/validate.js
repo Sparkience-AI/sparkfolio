@@ -2,6 +2,7 @@ import { spawnSync } from 'node:child_process';
 
 const commands = [
   ['--test', 'tests/unit.test.js'],
+  ['--test', 'tests/discovery.test.js'],
   ['tests/dom.test.js'],
   ['node_modules/html-validate/bin/html-validate.mjs', 'index.html'],
   ['node_modules/vite/bin/vite.js', 'build'],

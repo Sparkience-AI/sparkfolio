@@ -10,9 +10,10 @@
     "test": "node --test tests/unit.test.js",
     "validate": "node scripts/validate.js",
     "test:browser": "node tests/browser.test.js",
-    "check": "npm run validate && npm run test:mcp && npm run test:browser",
+    "check": "npm run validate && npm run test:mcp && npm run test:agent && npm run test:browser",
     "mcp": "node src/mcp-server.js",
-    "test:mcp": "node --test tests/mcp.test.js"
+    "test:mcp": "node --test tests/mcp.test.js",
+    "test:agent": "node --test tests/agent-evals.test.js"
   },
   "devDependencies": {
     "html-validate": "^10.9.0",

@@ -48,6 +48,33 @@ try {
   // Keep functional checks fast after the controlled cold-load baseline.
   await client.send('Network.emulateNetworkConditions', { offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });
   await client.send('Emulation.setCPUThrottlingRate', { rate: 1 });
+  const output = process.env.AUDIT_OUTPUT_DIR || 'local/artifacts';
+  fs.mkdirSync(output, { recursive: true });
+  // Approximate 200% browser-zoom reflow: 1280 physical pixels / 640 CSS pixels.
+  // Native browser zoom and assistive-technology review remain manual checks.
+  await page.setViewport({ width: 640, height: 400, deviceScaleFactor: 2 });
+  await page.goto(base, { waitUntil: 'networkidle0' });
+  await page.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; });
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, '200% zoom reflow approximation');
+  await page.focus('input[name="regime"][value="ntr"]');
+  await page.keyboard.press('ArrowRight');
+  assert.equal(await page.$eval('input[name="regime"][value="otr"]', e => e.checked), true);
+  await page.screenshot({ path: `${output}/zoom-200-reflow.png` });
+  await client.send('Emulation.setEmulatedMedia', { features: [{ name: 'forced-colors', value: 'active' }, { name: 'prefers-contrast', value: 'more' }] });
+  assert.equal(await page.evaluate(() => matchMedia('(forced-colors: active)').matches), true);
+  await page.keyboard.press('ArrowLeft');
+  assert.equal(await page.$eval('input[name="regime"][value="ntr"]', e => e.checked), true);
+  assert.equal(await page.$eval('input[name="regime"][value="ntr"] + span', e => {
+    const style = getComputedStyle(e);
+    return style.outlineStyle !== 'none' && parseFloat(style.outlineWidth) > 0 && style.color !== style.backgroundColor;
+  }), true, 'Selected keyboard radio retains visible focus and text in forced colors');
+  await page.click('#de-generate-btn');
+  assert.ok((await page.$eval('#de-error', e => e.textContent)).trim());
+  assert.equal(await page.$eval('#de-error', e => getComputedStyle(e).display !== 'none'), true);
+  await page.screenshot({ path: `${output}/forced-colors.png` });
+  await client.send('Emulation.setEmulatedMedia', { features: [] });
+  await page.setViewport({ width: 1280, height: 800, deviceScaleFactor: 1 });
+  await page.goto(base, { waitUntil: 'networkidle0' });
   await page.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; });
   // Real form interactions: missing answers, native keyboard selection, valid and invalid values.
   await page.click('#de-generate-btn');
@@ -148,8 +175,6 @@ try {
   await page.emulateMediaType('print');
   assert.equal(await page.$eval('#de-form', e => getComputedStyle(e).display), 'none');
   assert.equal(await page.$eval('#source-notes .details-content', e => getComputedStyle(e).display), 'block');
-  const output = process.env.AUDIT_OUTPUT_DIR || 'local/artifacts';
-  fs.mkdirSync(output, { recursive: true });
   await page.pdf({ path: `${output}/sparkfolio-print.pdf`, format: 'A4', printBackground: false, preferCSSPageSize: true });
   await page.emulateMediaType('screen');
   await page.goto(base + '#agent', { waitUntil: 'networkidle0' });
@@ -162,7 +187,7 @@ try {
   fs.writeFileSync(`${output}/performance.json`, JSON.stringify({ note: 'Cold-cache Chromium lab runs: 4x CPU slowdown, 150 ms latency, 1.6 Mbps download. LCP/CLS are lab observations, not 75th-percentile field Core Web Vitals. INP requires representative real-user interaction data.', metrics }, null, 2));
   assert.deepEqual(problems, [], 'Console, runtime or asset failures');
   assert.deepEqual(external, [], 'Unexpected third-party requests');
-  console.log('Browser checks passed: four widths, keyboard, validation, stale results, search, fragments, glossary, no-JS, print and local-only assets.');
+  console.log('Browser checks passed: four widths, 200% zoom reflow approximation, forced colors, keyboard, validation, stale results, search, fragments, glossary, no-JS, print and local-only assets.');
 } finally {
   if (browser) await browser.close();
   await new Promise(resolve => server.httpServer.close(resolve));
