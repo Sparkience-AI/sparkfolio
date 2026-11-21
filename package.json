@@ -10,7 +10,7 @@
     "test": "node --test tests/unit.test.js",
     "validate": "node scripts/validate.js",
     "test:browser": "node tests/browser.test.js",
-    "check": "npm run validate && npm run test:browser",
+    "check": "npm run validate && npm run test:mcp && npm run test:browser",
     "mcp": "node src/mcp-server.js",
     "test:mcp": "node --test tests/mcp.test.js"
   },

@@ -24,7 +24,6 @@ jobs:
       - env:
           CHROME_PATH: /opt/google/chrome/chrome
         run: npm run check
-      - run: npm run test:mcp
 
   evidence:
     needs: preflight

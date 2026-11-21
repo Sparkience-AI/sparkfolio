@@ -5,6 +5,14 @@ import { callTool, toolDefinitions } from './mcp-tools.js';
 const SERVER_INFO = { name: 'sparkfolio', version: '1.0.0' };
 
 export function handleRequest(request) {
+  const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+  if (!object(request) || request.jsonrpc !== '2.0' || typeof request.method !== 'string' || !request.method ||
+      (Object.hasOwn(request, 'id') && !(request.id === null || typeof request.id === 'string' || (typeof request.id === 'number' && Number.isFinite(request.id)))) ||
+      (Object.hasOwn(request, 'params') && !object(request.params))) {
+    return { jsonrpc: '2.0', id: null, error: { code: -32600, message: 'Invalid Request.' } };
+  }
+  // Valid notifications have no response, regardless of the method name.
+  if (!Object.hasOwn(request, 'id')) return null;
   const { id, method, params = {} } = request;
   if (method === 'initialize') {
     return { jsonrpc: '2.0', id, result: {
@@ -18,7 +26,7 @@ export function handleRequest(request) {
   if (method === 'tools/list') return { jsonrpc: '2.0', id, result: { tools: toolDefinitions } };
   if (method === 'tools/call') {
     try {
-      const structuredContent = callTool(params.name, params.arguments ?? {});
+      const structuredContent = callTool(params.name, params.arguments === undefined ? {} : params.arguments);
       return { jsonrpc: '2.0', id, result: {
         content: [{ type: 'text', text: JSON.stringify(structuredContent) }],
         structuredContent, isError: false
@@ -41,8 +49,8 @@ export function serve(input = process.stdin, output = process.stdout) {
       output.write(`${JSON.stringify({ jsonrpc: '2.0', id: null, error: { code: -32700, message: 'Parse error.' } })}\n`);
       return;
     }
-    if (request.method?.startsWith('notifications/')) return;
-    output.write(`${JSON.stringify(handleRequest(request))}\n`);
+    const response = handleRequest(request);
+    if (response !== null) output.write(`${JSON.stringify(response)}\n`);
   });
 }
 

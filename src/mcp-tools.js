@@ -1,5 +1,5 @@
 import registry from './data/framework-facts.json' with { type: 'json' };
-import { evaluateDecision } from './decision.js';
+import { evaluateDecision, answerOptions, decisionPolicy } from './decision.js';
 import { reviewStatus } from './facts.js';
 
 const claimEntries = Object.entries(registry)
@@ -7,6 +7,11 @@ const claimEntries = Object.entries(registry)
   .flatMap(([, group]) => Object.entries(group));
 const claims = Object.fromEntries(claimEntries);
 const MAX_RESULTS = 50;
+
+function validateArgs(args, allowed) {
+  if (args === null || typeof args !== 'object' || Array.isArray(args)) throw new TypeError('Arguments must be an object.');
+  for (const key of Object.keys(args)) if (!allowed.includes(key)) throw new TypeError(`Unknown argument: ${key}.`);
+}
 
 function asOfDate(value, { required = false } = {}) {
   if (required && value === undefined) {
@@ -33,6 +38,8 @@ function publicClaim(id, claim, asOf) {
     claim_type: claim.claim_type,
     recorded_status: claim.review_status,
     effective_status: reviewStatus(claim, asOf),
+    evidence_timing: !claim.reviewed_on ? 'no_source_review_date' : asOf < claim.reviewed_on ? 'before_recorded_review' : claim.review_due && asOf > claim.review_due ? 'review_overdue' : 'within_recorded_review_window',
+    applicability: 'Not inferred from the evidence date; check the recorded effective period and conditions.',
     reviewed_on: claim.reviewed_on,
     review_due: claim.review_due,
     effective_period: claim.effective_period,
@@ -47,7 +54,11 @@ function publicClaim(id, claim, asOf) {
   };
 }
 
-export function listClaims({ category, status, as_of: asOfInput, limit = 25 } = {}) {
+export function listClaims(args = {}) {
+  validateArgs(args, ['category', 'status', 'as_of', 'limit']);
+  const { category, status, as_of: asOfInput, limit = 25 } = args;
+  if (category !== undefined && typeof category !== 'string') throw new TypeError('category must be a string.');
+  if (status !== undefined && !['verified', 'needs_review', 'editorial', 'calculated'].includes(status)) throw new TypeError('Choose a supported claim status.');
   const asOf = asOfDate(asOfInput);
   if (!Number.isInteger(limit) || limit < 1 || limit > MAX_RESULTS) {
     throw new RangeError(`limit must be an integer from 1 to ${MAX_RESULTS}.`);
@@ -60,21 +71,34 @@ export function listClaims({ category, status, as_of: asOfInput, limit = 25 } = 
   return { as_of: asOf, count: matches.length, claims: matches };
 }
 
-export function getClaim({ id, as_of: asOfInput } = {}) {
-  if (typeof id !== 'string' || !claims[id]) throw new TypeError('id must name a registered Sparkfolio claim.');
+export function getClaim(args = {}) {
+  validateArgs(args, ['id', 'as_of']);
+  const { id, as_of: asOfInput } = args;
+  if (typeof id !== 'string' || !Object.hasOwn(claims, id)) throw new TypeError('id must name a registered Sparkfolio claim.');
   const asOf = asOfDate(asOfInput);
   return { as_of: asOf, claim: publicClaim(id, claims[id], asOf) };
 }
 
-export function reviewReadiness({ answers, amount = '', as_of: asOfInput } = {}) {
+export function reviewReadiness(args = {}) {
+  validateArgs(args, ['answers', 'amount', 'as_of']);
+  const { answers, amount = '', as_of: asOfInput } = args;
   if (!answers || typeof answers !== 'object' || Array.isArray(answers)) {
     throw new TypeError('answers must be the complete Sparkfolio readiness-answer object.');
   }
+  validateArgs(answers, Object.keys(answerOptions));
+  for (const key of Object.keys(answerOptions)) if (!Object.hasOwn(answers, key)) throw new TypeError(`Please answer: ${key}.`);
+  if (typeof amount !== 'string' || amount.length > 32) throw new TypeError('amount must be a string of at most 32 characters.');
   const result = evaluateDecision(answers, amount);
   const asOf = asOfDate(asOfInput, { required: true });
+  const modelStatus = asOf < decisionPolicy.reviewed_on ? 'before_recorded_review' : asOf > decisionPolicy.review_due ? 'review_overdue' : 'within_recorded_review_window';
+  const warnings = modelStatus === 'within_recorded_review_window' ? [] : [modelStatus === 'before_recorded_review'
+    ? 'This date is before the model’s recorded source review. These outputs do not establish the rules that applied on that date.'
+    : `The model’s source review was due ${decisionPolicy.review_due}. Its ${decisionPolicy.tax_year} tax examples have not been verified for the requested date. Check current primary sources before using them.`];
   return {
     as_of: asOf,
     purpose: 'Educational readiness review; not financial, investment, insurance, legal, or tax advice.',
+    warnings,
+    model: { tax_year: decisionPolicy.tax_year, reviewed_on: decisionPolicy.reviewed_on, review_due: decisionPolicy.review_due, evidence_status: modelStatus, sources: decisionPolicy.sources },
     result,
     evidence: result.factIds.map(id => publicClaim(id, claims[id], asOf)),
     limitations: [
@@ -113,7 +137,7 @@ export const toolDefinitions = [
     inputSchema: {
       type: 'object', additionalProperties: false, required: ['answers', 'as_of'],
       properties: {
-        answers: { type: 'object' },
+        answers: { type: 'object', additionalProperties: false, required: Object.keys(answerOptions), properties: Object.fromEntries(Object.entries(answerOptions).map(([key, values]) => [key, { type: 'string', enum: values }])) },
         amount: { type: 'string', maxLength: 32, default: '' },
         as_of: { type: 'string', pattern: '^\\d{4}-\\d{2}-\\d{2}$' }
       }

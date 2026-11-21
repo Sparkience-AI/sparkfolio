@@ -4,6 +4,9 @@
 
 - [Decision-engine model](DECISION_ENGINE_MODEL.md): sources, assumptions, calculations and output families.
 - [Facts governance](FACTS_GOVERNANCE.md): SSoT classifications, verification scope and maintenance rules.
+- [Agent interface](AGENT_SURFACE.md): local tools, required inputs and evidence-date limits.
+- [Release and rollback](RELEASE.md): release evidence and production recovery.
+- [Threat model](THREAT_MODEL.md): trust boundaries, controls and remaining risks.
 
 ## Historical audits and reviews
 
