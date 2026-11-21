@@ -160,7 +160,8 @@ test('build resolves nested facts, calculation values, source links and topic ID
   assert.equal(root.querySelectorAll('script:not([src]):not([type="application/ld+json"])').length, 0);
   assert.equal(root.querySelectorAll('input[type="radio"][checked]').length, 0);
   const structured = JSON.parse(root.querySelector('script[type="application/ld+json"]').textContent);
-  assert.deepEqual(structured['@graph'].map(x => x['@type']), ['Organization', 'WebPage']);
+  assert.ok(structured['@graph'].some(x => [x['@type']].flat().includes('WebPage')));
+  assert.ok(!structured['@graph'].some(x => [x['@type']].flat().includes('FAQPage')), 'Do not restore separately maintained FAQ claims');
   assert.throws(() => transformContent('<span data-fact="unknown">old</span>'));
   const nested = parse(transformContent('<span data-fact="math_compounding_1st_vs_2nd_crore"><strong>old</strong></span>'));
   assert.equal(nested.querySelector('[data-fact]').textContent, facts.math_compounding_1st_vs_2nd_crore.val);

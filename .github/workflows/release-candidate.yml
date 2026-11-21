@@ -38,4 +38,4 @@ jobs:
       artifact-name: sparkfolio-release-candidate
       expected-version: "0.1.0"
       enable-attestations: true
-      retention-days: 14
+      retention-days: 90

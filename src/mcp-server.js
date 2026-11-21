@@ -1,8 +1,10 @@
 import readline from 'node:readline';
 import { pathToFileURL } from 'node:url';
 import { callTool, toolDefinitions } from './mcp-tools.js';
+import packageInfo from '../package.json' with { type: 'json' };
 
-const SERVER_INFO = { name: 'sparkfolio', version: '1.0.0' };
+const SERVER_INFO = { name: 'sparkfolio', version: packageInfo.version };
+export const SUPPORTED_PROTOCOL_VERSIONS = ['2025-06-18'];
 
 export function handleRequest(request) {
   const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -15,8 +17,13 @@ export function handleRequest(request) {
   if (!Object.hasOwn(request, 'id')) return null;
   const { id, method, params = {} } = request;
   if (method === 'initialize') {
+    if (typeof params.protocolVersion !== 'string' || !params.protocolVersion || !object(params.capabilities) ||
+        !object(params.clientInfo) || typeof params.clientInfo.name !== 'string' || !params.clientInfo.name ||
+        typeof params.clientInfo.version !== 'string' || !params.clientInfo.version) {
+      return { jsonrpc: '2.0', id, error: { code: -32602, message: 'initialize requires protocolVersion, capabilities and clientInfo with name and version.' } };
+    }
     return { jsonrpc: '2.0', id, result: {
-      protocolVersion: params.protocolVersion ?? '2025-06-18',
+      protocolVersion: SUPPORTED_PROTOCOL_VERSIONS.includes(params.protocolVersion) ? params.protocolVersion : SUPPORTED_PROTOCOL_VERSIONS[0],
       capabilities: { tools: { listChanged: false } },
       serverInfo: SERVER_INFO,
       instructions: 'Read-only educational evidence and deterministic readiness review. Never present output as personal advice.'

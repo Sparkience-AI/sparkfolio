@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
-import { handleRequest } from '../src/mcp-server.js';
+import { handleRequest, SUPPORTED_PROTOCOL_VERSIONS } from '../src/mcp-server.js';
+import packageInfo from '../package.json' with { type: 'json' };
 import { callTool, getClaim, listClaims, reviewReadiness } from '../src/mcp-tools.js';
 
 const ready = { regime: 'ntr', age: '20s', dependents: 'no', health: 'yes', term: 'yes', ef: '6+', debt: 'no', corpPf: 'yes', tax: 'yes', taxBracket: '30', horizon: 'long', capacity: 'comfortable' };
@@ -51,15 +52,30 @@ test('stdio server completes initialize and tool-list exchange', async () => {
   child.stdout.setEncoding('utf8'); child.stderr.setEncoding('utf8');
   child.stdout.on('data', chunk => { stdout += chunk; });
   child.stderr.on('data', chunk => { stderr += chunk; });
-  child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-06-18' } })}\n`);
+  child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 'test-client', version: '1' } } })}\n`);
+  child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' })}\n`);
   child.stdin.write(`${JSON.stringify({ jsonrpc: '2.0', id: 2, method: 'tools/list' })}\n`);
   child.stdin.end();
   await once(child, 'exit');
   const lines = stdout.trim().split('\n').map(JSON.parse);
   assert.equal(child.exitCode, 0);
   assert.equal(lines[0].result.serverInfo.name, 'sparkfolio');
+  assert.equal(lines[0].result.serverInfo.version, packageInfo.version);
   assert.equal(lines[1].result.tools.length, 3);
   assert.equal(stderr, '');
+});
+
+test('initialization negotiates only supported legacy versions and validates parameters', () => {
+  const params = { capabilities: {}, clientInfo: { name: 'client', version: '1' } };
+  for (const protocolVersion of [...SUPPORTED_PROTOCOL_VERSIONS, '2099-01-01', '2024-11-05']) {
+    const response = handleRequest({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { ...params, protocolVersion } });
+    assert.equal(response.result.protocolVersion, SUPPORTED_PROTOCOL_VERSIONS[0]);
+    assert.equal(response.result.serverInfo.version, packageInfo.version);
+    assert.deepEqual(response.result.capabilities, { tools: { listChanged: false } });
+  }
+  for (const bad of [{}, { ...params, protocolVersion: 42 }, { protocolVersion: '2025-06-18' }, { ...params, protocolVersion: '2025-06-18', clientInfo: [] }]) {
+    assert.equal(handleRequest({ jsonrpc: '2.0', id: 1, method: 'initialize', params: bad }).error.code, -32602);
+  }
 });
 
 test('historical dates cannot claim a source was already reviewed', () => {

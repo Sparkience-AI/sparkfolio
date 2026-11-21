@@ -10,6 +10,7 @@
     
     <link rel="icon" href="/sparkfolio/favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="https://sparkience-ai.github.io/sparkfolio/">
+    <link rel="describedby" href="/sparkfolio/llms.txt" type="text/plain">
     
     
     <meta name="description" content="Sparkfolio is an independent educational portfolio framework for Indian readers. Learn how to build a strong core, manage asset allocation, and master strategies like Goal-Based Investing, Tax-Gain Harvesting, and the Retirement Playbook." >
@@ -35,7 +36,7 @@
 
     
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://sparkience-ai.github.io/sparkfolio/#publisher","name":"Sparkfolio","url":"https://sparkience-ai.github.io/sparkfolio/"},{"@type":"WebPage","@id":"https://sparkience-ai.github.io/sparkfolio/#webpage","url":"https://sparkience-ai.github.io/sparkfolio/","name":"The Sparkfolio Investment Framework","inLanguage":"en-IN","publisher":{"@id":"https://sparkience-ai.github.io/sparkfolio/#publisher"},"description":"An independent educational framework for understanding asset allocation, financial readiness and investment risks in India."}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://sparkience-ai.github.io/sparkfolio/#publisher","name":"Sparkfolio","url":"https://sparkience-ai.github.io/sparkfolio/","sameAs":"https://github.com/Sparkience-AI/sparkfolio"},{"@type":["WebPage","LearningResource"],"@id":"https://sparkience-ai.github.io/sparkfolio/#webpage","url":"https://sparkience-ai.github.io/sparkfolio/","name":"The Sparkfolio Investment Framework","inLanguage":"en-IN","publisher":{"@id":"https://sparkience-ai.github.io/sparkfolio/#publisher"},"maintainer":{"@id":"https://sparkience-ai.github.io/sparkfolio/#publisher"},"description":"Independent educational explanations of financial readiness, asset allocation and investment risks for Indian readers. Examples are not personal financial, investment, insurance, legal or tax advice.","learningResourceType":"Financial-literacy guide and worked examples","audience":{"@type":"Audience","audienceType":"Indian readers learning about personal finance"},"hasPart":{"@id":"https://sparkience-ai.github.io/sparkfolio/#readiness-tool"}},{"@type":"WebApplication","@id":"https://sparkience-ai.github.io/sparkfolio/#readiness-tool","url":"https://sparkience-ai.github.io/sparkfolio/#agent","name":"Sparkfolio Educational Decision Engine","applicationCategory":"EducationalApplication","operatingSystem":"Any operating system with a modern web browser","browserRequirements":"JavaScript required for the interactive review; the educational guide remains readable without it.","isAccessibleForFree":true,"publisher":{"@id":"https://sparkience-ai.github.io/sparkfolio/#publisher"},"maintainer":{"@id":"https://sparkience-ai.github.io/sparkfolio/#publisher"},"audience":{"@type":"Audience","audienceType":"Adults in the displayed 20s–50s age brackets seeking educational readiness checks"},"description":"Deterministic checks based on explicit answers about financial foundations, goal horizon, capacity for loss and tax context. Does not select products, allocate money, assess suitability or calculate a personal tax bill.","featureList":["Financial-readiness checks","Goal and liquidity questions","Loss-capacity questions","Conditional tax illustrations with recorded assumptions"],"isPartOf":{"@id":"https://sparkience-ai.github.io/sparkfolio/#webpage"}}]}
     </script>
   </head>
   <body>
@@ -194,7 +195,7 @@
                 
                 <div class="tree-node root-node card-hover">
                   NEW INVESTMENT
-                  <div class="text-xs font-normal text-muted mt-1" style="letter-spacing: normal; text-transform: none;">Use this map to understand portfolio components; follow the separate financial-readiness checkpoints before selecting investments.</div>
+                  <div class="text-xs font-normal text-muted mt-1" style="letter-spacing: normal; text-transform: none;">This map explains portfolio components. The separate financial-readiness checkpoints describe the household questions considered before investment choices.</div>
                 </div>
                 <div class="tree-line"></div>
                 
@@ -249,14 +250,14 @@
         <div class="container">
           <div class="section-header bg-navy text-inverse p-3 rounded text-center">
             <h2 class="section-title text-inverse m-0">STRATEGIC ALLOCATION TEMPLATES (ILLUSTRATIVE)</h2>
-            <p class="section-subtitle text-inverse mt-1">Allocation should be based on your individual situation, not a one-size-fits-all rule.</p>
+            <p class="section-subtitle text-inverse mt-1">These mixes illustrate different exposures. None establishes what is suitable for your circumstances.</p>
           </div>
           
           <div class="grid grid-cols-1 md-grid-cols-3 lg-grid-cols-3 gap-6 mt-8">
             
             <div class="card text-center">
               <h3 class="text-green text-lg mb-1 uppercase tracking-widest">CONSERVATIVE</h3>
-              <p class="text-xs text-muted mb-6">Lower risk | Capital preservation</p>
+              <p class="text-xs text-muted mb-6">40% growth | 60% defensive assets</p>
               <div class="chart-box" style="--donut-target: 40%; --donut-color: var(--status-green);"><div class="chart-inner"><span class="font-mono text-2xl font-bold">40%</span><small class="text-xs text-muted">GROWTH<br>ASSETS</small></div></div>
               <div class="inner-box text-left mt-auto">
                 <div class="flex justify-between mb-1 text-sm"><strong class="text-green">Growth Assets</strong><span class="font-mono font-bold">40%</span></div>
@@ -264,13 +265,13 @@
                 <div class="flex justify-between text-sm mb-1"><strong class="text-gold">Defensive Assets</strong><span class="font-mono font-bold">60%</span></div>
                 <ul class="plain-list text-xs text-muted ml-4"><li>• Debt</li><li>• Gold (Optional)</li><li>• Cash</li></ul>
               </div>
-              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Suitable for investors with lower risk tolerance or shorter time horizon.</p>
+              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> This example has the lowest growth exposure of the three. It can still lose value and is not a short-term cash reserve.</p>
             </div>
 
             
             <div class="card text-center">
               <h3 class="text-blue text-lg mb-1 uppercase tracking-widest">BALANCED</h3>
-              <p class="text-xs text-muted mb-6">Moderate risk | Balance of growth & stability</p>
+              <p class="text-xs text-muted mb-6">60% growth | 40% defensive assets</p>
               <div class="chart-box" style="--donut-target: 60%; --donut-color: var(--primary-navy);"><div class="chart-inner"><span class="font-mono text-2xl font-bold">60%</span><small class="text-xs text-muted">GROWTH<br>ASSETS</small></div></div>
               <div class="inner-box text-left mt-auto">
                 <div class="flex justify-between mb-1 text-sm"><strong class="text-green">Growth Assets</strong><span class="font-mono font-bold">60%</span></div>
@@ -278,13 +279,13 @@
                 <div class="flex justify-between text-sm mb-1"><strong class="text-gold">Defensive Assets</strong><span class="font-mono font-bold">40%</span></div>
                 <ul class="plain-list text-xs text-muted ml-4"><li>• Debt</li><li>• Gold (Optional)</li><li>• Cash</li></ul>
               </div>
-              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2a2 2 0 0 1 2 2v2"></path><path d="M17 7h2a2 2 0 0 1 2 2v2"></path></svg> Suitable for investors with moderate risk tolerance and medium time horizon.</p>
+              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2a2 2 0 0 1 2 2v2"></path><path d="M17 7h2a2 2 0 0 1 2 2v2"></path></svg> This example combines growth and defensive assets. The percentages alone do not establish its risk or suitability.</p>
             </div>
 
             
             <div class="card text-center">
               <h3 class="text-purple text-lg mb-1 uppercase tracking-widest">AGGRESSIVE</h3>
-              <p class="text-xs text-muted mb-6">Higher risk | Long-term growth</p>
+              <p class="text-xs text-muted mb-6">80% growth | 20% defensive assets</p>
               <div class="chart-box" style="--donut-target: 80%; --donut-color: var(--status-green);"><div class="chart-inner"><span class="font-mono text-2xl font-bold">80%</span><small class="text-xs text-muted">GROWTH<br>ASSETS</small></div></div>
               <div class="inner-box text-left mt-auto">
                 <div class="flex justify-between mb-1 text-sm"><strong class="text-green">Growth Assets</strong><span class="font-mono font-bold">80%</span></div>
@@ -292,7 +293,7 @@
                 <div class="flex justify-between text-sm mb-1"><strong class="text-gold">Defensive Assets</strong><span class="font-mono font-bold">20%</span></div>
                 <ul class="plain-list text-xs text-muted ml-4"><li>• Debt</li><li>• Gold (Optional)</li><li>• Cash</li></ul>
               </div>
-              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M13.5 2.5a8.5 8.5 0 0 0-11 11l.5.5-2.5 4a2 2 0 0 0 2.5 2.5l4-2.5.5.5a8.5 8.5 0 0 0 11-11c.4-3.1-2.4-5.9-5.5-5.5Z"></path><path d="m14 10-2.5 2.5"></path></svg> Suitable for investors with high risk tolerance and long time horizon.</p>
+              <p class="text-xs text-navy mt-4 border-t pt-4 font-medium"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1"><path d="M13.5 2.5a8.5 8.5 0 0 0-11 11l.5.5-2.5 4a2 2 0 0 0 2.5 2.5l4-2.5.5.5a8.5 8.5 0 0 0 11-11c.4-3.1-2.4-5.9-5.5-5.5Z"></path><path d="m14 10-2.5 2.5"></path></svg> This example has the highest growth exposure of the three. A long horizon does not remove the risk of loss.</p>
             </div>
           </div>
           
@@ -301,19 +302,19 @@
             <div class="grid grid-cols-1 md-grid-cols-5 gap-4">
               <div class="card flex items-start gap-3">
                 <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
-                <div><strong class="text-xs uppercase block text-navy">AGE</strong><p class="text-xs text-muted">Younger investors can take more risk.</p></div>
+                <div><strong class="text-xs uppercase block text-navy">AGE</strong><p class="text-xs text-muted">Age alone does not determine capacity for loss.</p></div>
               </div>
               <div class="card flex items-start gap-3">
                 <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
-                <div><strong class="text-xs uppercase block text-navy">TIME HORIZON</strong><p class="text-xs text-muted">Longer horizon allows more growth exposure.</p></div>
+                <div><strong class="text-xs uppercase block text-navy">TIME HORIZON</strong><p class="text-xs text-muted">More time may help with recovery, but losses can last.</p></div>
               </div>
               <div class="card flex items-start gap-3">
                 <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg></div>
-                <div><strong class="text-xs uppercase block text-navy">RISK TOLERANCE</strong><p class="text-xs text-muted">Comfort with volatility should guide allocation.</p></div>
+                <div><strong class="text-xs uppercase block text-navy">RISK TOLERANCE</strong><p class="text-xs text-muted">Comfort with risk and ability to afford losses can differ.</p></div>
               </div>
               <div class="card flex items-start gap-3">
                 <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
-                <div><strong class="text-xs uppercase block text-navy">FINANCIAL GOALS</strong><p class="text-xs text-muted">Match allocation to your specific goals.</p></div>
+                <div><strong class="text-xs uppercase block text-navy">FINANCIAL GOALS</strong><p class="text-xs text-muted">Goal dates, costs and flexibility affect the choices.</p></div>
               </div>
               <div class="card flex items-start gap-3">
                 <div class="text-green"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></div>
@@ -325,22 +326,22 @@
           <div class="mt-12 text-left">
             <h3 id="goal-based" class="text-center text-lg text-navy uppercase font-bold mb-6 border-b pb-2">GOAL-BASED HORIZON FRAMEWORK</h3>
             <div class="card p-6 border-t-4" style="border-top-color: var(--primary-blue)">
-              <p class="text-sm text-muted mb-4">Your asset allocation should strictly follow your investment time horizon:</p>
+              <p class="text-sm text-muted mb-4">These time ranges illustrate questions to consider, not a product prescription. Access needs and capacity for loss matter alongside the goal date:</p>
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-navy">
                 <div class="bg-surface p-4 rounded border-l-2 border-red-500">
                   <strong class="block mb-2">&lt; 3 Years</strong>
-                  <p class="text-xs text-muted mb-2">Focus on capital protection.</p>
-                  <span class="font-bold">Debt funds, FDs, Liquid funds</span>
+                  <p class="text-xs text-muted mb-2">Could a loss or withdrawal delay disrupt the goal?</p>
+                  <span class="font-bold">Examples to compare: deposits and debt funds; risks and access differ</span>
                 </div>
                 <div class="bg-surface p-4 rounded border-l-2 border-yellow-500">
                   <strong class="block mb-2">3 - 7 Years</strong>
-                  <p class="text-xs text-muted mb-2">Balance of growth and stability.</p>
-                  <span class="font-bold">Aggressive Hybrid, BAF</span>
+                  <p class="text-xs text-muted mb-2">How much could the goal date or amount change?</p>
+                  <span class="font-bold">Hybrid funds illustrate mixed exposures, not assured stability</span>
                 </div>
                 <div class="bg-surface p-4 rounded border-l-2 border-green-500">
                   <strong class="block mb-2">&gt; 7 Years</strong>
-                  <p class="text-xs text-muted mb-2">Focus on wealth creation.</p>
-                  <span class="font-bold">Index funds, Flexi-cap</span>
+                  <p class="text-xs text-muted mb-2">Could you stay invested through a prolonged fall?</p>
+                  <span class="font-bold">Equity funds illustrate growth exposure with risk of loss</span>
                 </div>
               </div>
             </div>
@@ -617,7 +618,7 @@
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> TAX-AWARE INVESTING & PASS-THROUGH ENTITIES (2026)</summary>
                 <div class="details-content">
                   <p class="callout-tip">Tax year 2026–27: these registered tax references were checked on 25 October 2026 against the Income-tax Act, 2025, as amended by Finance Act, 2026. Earlier tax years use the law that applied then. The source notes explain the conditions and show both current and older section numbers.</p>
-                  <p class="text-sm text-muted mb-4"><strong>Crucial Update:</strong> Taxes are the largest unacknowledged drag on returns. Following the July 2024 Indian Budget, understanding these rules is critical.</p>
+                  <p class="text-sm text-muted mb-4"><strong>Crucial Update:</strong> Tax can reduce what you keep from an investment. The applicable year, type of income and your circumstances determine the treatment.</p>
                   <ul class="plain-list text-sm text-navy space-y-3 mb-4">
                     <li class="flex flex-col gap-1">
                       <div class="flex items-center gap-2 font-bold"><span class="text-gold">●</span> Equity Mutual Funds</div>
@@ -692,7 +693,7 @@
                   <p class="text-sm text-muted mb-4"><strong>Purpose:</strong> Long-term foundation, broad diversification, active management</p>
                   <strong class="text-xs uppercase text-navy">EXAMPLES</strong>
                   <ul class="plain-list bullet-list text-sm mt-1 mb-4 text-navy">
-                    <li>Flexicap Funds <span class="text-xs text-muted" style="font-weight:normal">(e.g., Parag Parikh Flexi Cap — illustrative category example)</span></li><li>Multicap Funds</li><li>Large & Midcap Funds</li><li>ELSS Funds <span class="text-xs text-muted" style="font-weight:normal">(Old Tax Regime only. Functions as Flexicap with 3-yr lock-in)</span></li><li>Diversified Equity PMS</li><li>Diversified Stock Portfolio</li>
+                    <li>Flexicap Funds <span class="text-xs text-muted" style="font-weight:normal">(e.g., Parag Parikh Flexi Cap — illustrative category example)</span></li><li>Multicap Funds</li><li>Large & Midcap Funds</li><li>ELSS Funds <span class="text-xs text-muted" style="font-weight:normal">(Tax-saving category with a lock-in; deduction eligibility depends on regime and conditions)</span></li><li>Diversified Equity PMS</li><li>Diversified Stock Portfolio</li>
                   </ul>
                   <strong class="text-xs uppercase text-navy">CHARACTERISTICS</strong>
                   <ul class="plain-list text-sm mt-1 text-green space-y-2">
@@ -704,8 +705,8 @@
               </details><details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> INTERNATIONAL DIVERSIFICATION</summary>
                 <div class="details-content">
-                  <p class="text-sm text-muted mb-2">Indian investors suffer from massive "Home Bias," keeping roughly 98% of wealth in domestic assets. However, India represents only a fraction of global market cap.</p>
-                  <p class="text-sm text-muted mb-4">To hedge against country-specific risks and currency depreciation, we recommend a <strong>15% to 30% allocation</strong> of your equity portfolio to the US market (e.g., S&P 500 or Nasdaq 100).</p>
+                  <p class="text-sm text-muted mb-2">A portfolio concentrated in one country can be exposed to that country’s economic and market risks. International holdings add different exposures, along with currency, cost and regulatory considerations.</p>
+                  <p class="text-sm text-muted mb-4">International equity is one way to diversify country exposure. The US market is one example, not a required destination or allocation. A foreign-market investment can fall in value, and currency movements can help or hurt returns.</p>
                   <div class="p-3 rounded text-left border-l-4 callout-tip" style="border-left-color: var(--primary-blue);">
                     <strong>💡 Tax Update (Budget 2024):</strong> Effective April 1, 2025, International Mutual Funds are no longer permanently taxed at your slab rate. They now qualify for standard non-domestic equity taxation: <strong>12.5% LTCG</strong> (no indexation) if held for <strong>more than 24 months</strong> <span class="text-xs text-muted" style="font-weight:normal">(or 12 months if structured as a listed ETF instead of an unlisted FoF)</span>.
                   </div>
@@ -728,7 +729,7 @@
                   </div>
                   <strong class="text-xs uppercase text-navy">VEHICLES</strong>
                   <ul class="plain-list text-sm mt-1 text-blue space-y-2 mb-4">
-                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Index Funds (Preferred for <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span> - executed at End-of-Day NAV)</li>
+                    <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> Index Funds (one vehicle for <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span> - executed at End-of-Day NAV)</li>
                     <li class="flex items-center gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> Index ETFs</li>
                   </ul>
                   <div class="callout-tip flex gap-3 mb-4 border-l-4" style="border-left-color: var(--status-red);">
@@ -764,7 +765,7 @@
                     </div>
                   </div>
                   <div class="p-3 rounded text-left border-l-4 callout-tip">
-                    <strong>💡 <span class="jargon" data-tip="S&P Indices Versus Active" tabindex="0">SPIVA</span> Nuance (Mid/Small Caps):</strong> While active mid/small cap managers historically outperform in short bursts (like 2025), long-term 10-year SPIVA data shows a majority still underperform the index. Passive indices (Nifty Midcap 150 / Smallcap 250) are robust, rules-based fallbacks to bypass manager capacity constraints.
+                    <strong>Reading <span class="jargon" data-tip="S&P Indices Versus Active" tabindex="0">SPIVA</span> comparisons:</strong> Results depend on the fund category, benchmark and period studied. The large-cap statistic cited elsewhere is not evidence for every mid- or small-cap category. Index products also have market risk, costs and tracking differences; a rules-based method does not make them suitable for everyone.
                   </div>
                 </div>
               </details>
@@ -818,7 +819,7 @@
               <details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M4 10v12h16V10l-8-6z"></path></svg> DEBT & HYBRID</summary>
                 <div class="details-content p-0">
-                  <div class="p-4 bg-surface text-sm text-muted"><strong>Purpose:</strong> Stability, capital preservation, liquidity<br><br>
+                  <div class="p-4 bg-surface text-sm text-muted"><strong>Roles considered:</strong> Income, access and lower volatility; individual products can still lose value<br><br>
                   <strong class="text-xs text-navy uppercase">EXAMPLES</strong>
                   <ul class="plain-list bullet-list text-sm mt-1 text-navy grid grid-cols-2"><li>Liquid / Money Market</li><li>Corporate Bond Funds</li><li>Gilt / Target Maturity</li><li><span class="jargon" data-tip="Real Estate Investment Trusts" tabindex="0">REITs</span> & <span class="jargon" data-tip="Infrastructure Investment Trusts" tabindex="0">InvITs</span></li></ul>
                   </div>
@@ -887,7 +888,7 @@
                     <li class="flex items-start gap-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 text-navy"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> <div><strong>12 Months:</strong> Business owner, freelancer, variable income.</div></li>
                   </ul>
                   <div class="p-3 rounded text-left border-l-4 callout-tip">
-                    <strong>💡 Reminder:</strong> Keep this in liquid & low-risk instruments for quick access.
+                    <strong>Access check:</strong> Emergency savings need to be available when bills arrive. Withdrawal delays, market losses and deposit-protection limits differ by product.
                   </div>
                 </div>
               </details>
@@ -903,11 +904,11 @@
               <details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> <span>WEALTH ACCELERATION (STEP-UP <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span>)</span></summary>
                 <div class="details-content">
-                  <p class="text-sm text-muted mb-4"><strong>The Compounding Multiplier:</strong> A static <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> loses purchasing power to inflation over a 20-year horizon. Increasing your SIP amount annually is the single biggest driver of terminal wealth outside of asset allocation.</p>
+                  <p class="text-sm text-muted mb-4"><strong>Comparing contribution patterns:</strong> Inflation can reduce what a fixed contribution buys over time. This example compares fixed monthly contributions with contributions that rise each year, holding the assumed return constant.</p>
                   <div class="grid grid-cols-1 gap-4 mb-4">
                     <div class="inner-box text-center">
                       <strong class="text-xs uppercase block mb-2 text-navy">THE <span data-fact="rule_step_up_sip_10_percent">10% yearly contribution increase — an example</span></strong>
-                      <p class="text-xs text-muted mb-3">Increase your <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> contribution by 10% every year to match your income growth and combat lifestyle creep.</p>
+                      <p class="text-xs text-muted mb-3">In the stepped example, the monthly <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> contribution rises 10% after each completed year. Real contribution increases depend on income, bills and what remains affordable.</p>
                       <div class="flex items-center justify-center gap-4 text-xs">
                         <div class="text-center">
                           <span class="block text-navy font-bold">Fixed <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span></span>
@@ -933,16 +934,16 @@
                       <p class="text-xs text-muted mb-3">The dilemma of prepaying a home loan vs. investing surplus capital in equity <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span>.</p>
                       <ul class="plain-list text-xs text-left text-navy space-y-3 mt-2">
                         <li class="flex flex-col gap-1">
-                          <div class="font-bold text-navy">When to Prepay:</div>
+                          <div class="font-bold text-navy">Prepayment considerations:</div>
                           <span class="text-muted">Prepayment may be worth reviewing if the loan is in its early phase (Years 1 to 7), the effective post-tax interest rate exceeds 8.5-9.0% (especially under the New Tax Regime, which lacks Section 24b deductions), or if the <span class="jargon" data-tip="Equated Monthly Installment" tabindex="0">EMI</span> consumes over <span data-fact="rule_home_loan_prepay_emi_30_percent">30%</span> of net income.</span>
                         </li>
                         <li class="flex flex-col gap-1">
-                          <div class="font-bold text-navy">When to Invest:</div>
-                          <span class="text-muted">Redirecting capital to equity <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span> is optimal when the loan is mature, the effective cost of debt is low, and you have a 10-to-15-year horizon.</span>
+                          <div class="font-bold text-navy">Investment considerations:</div>
+                          <span class="text-muted">Investing surplus through equity <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIPs</span> involves uncertain returns. Comparing it with prepayment means considering the loan’s actual cost, charges, emergency cash and ability to bear investment losses; a long horizon alone does not settle the choice.</span>
                         </li>
                         <li class="flex flex-col gap-1">
-                          <div class="font-bold text-navy">⚠️ The SWP Fallacy:</div>
-                          <span class="text-muted">Using an equity <span class="jargon" data-tip="Systematic Withdrawal Plan" tabindex="0">SWP</span> to pay a home loan <span class="jargon" data-tip="Equated Monthly Installment" tabindex="0">EMI</span> is highly destructive. A market crash early in the loan tenure forces the liquidation of a massive number of units at depressed NAVs, permanently destroying compounding potential.</span>
+                          <div class="font-bold text-navy">Withdrawal risk:</div>
+                          <span class="text-muted">Using an equity <span class="jargon" data-tip="Systematic Withdrawal Plan" tabindex="0">SWP</span> to pay a home loan <span class="jargon" data-tip="Equated Monthly Installment" tabindex="0">EMI</span> can create a cash-flow mismatch. During a market fall, meeting a fixed payment may require selling more units at lower prices, leaving less invested for a recovery.</span>
                         </li>
                       </ul>
                     </div>
@@ -955,19 +956,19 @@
                   <div class="grid grid-cols-1 md-grid-cols-2 gap-2 text-xs">
                     <ul class="plain-list text-navy space-y-1">
                       <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Emergency fund available</li>
-                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>Insurance separated from investments (Buy Term Life)</strong></li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>Insurance needs, costs and exclusions reviewed separately</strong></li>
                       <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Asset allocation on target</li>
                       <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Rebalanced if required</li>
-                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span class="jargon" data-tip="Provides stability, minimizes tracking error, and keeps aggregate costs low" tabindex="0">Core ≥ 70%</span></li>
-                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Satellites ≤ 30%</li>
-                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Invested in Direct Plans only (saves 0.5-1.0% p.a.)</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span class="jargon" data-tip="Broad holdings can still lose value; costs and benchmark tracking vary" tabindex="0">Core share reviewed against the illustrative mix</span></li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Optional satellite exposure and concentration reviewed</li>
+                      <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct/regular plan costs and any advice or distribution services compared</li>
                       <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Expense ratio reviewed</li>
                       <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tax implications reviewed</li>
                     </ul>
                     <ul class="plain-list text-navy space-y-1">
                       <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Goals still aligned</li>
                       <li class="flex flex-col gap-1">
-                        <div class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> No duplicate fund overlap</div>
+                        <div class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Holding overlap and combined concentration reviewed</div>
                         <span class="text-xs text-muted pl-5" style="margin-top: -4px;">Verify real stock-level overlap using tools like <a href="https://www.advisorkhoj.com/mutual-funds-research/mutual-fund-portfolio-overlap" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: underline;">Advisorkhoj</a> or <a href="https://www.thefundoo.com/Tools/PortfolioOverlap" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: underline;">theFundoo</a> to avoid redundant concentration.</span>
                       </li>
                       <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> International diversification present</li>
@@ -995,7 +996,7 @@
                     </div>
                     <div class="flex items-start gap-3">
                       <div class="icon-wrapper small"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
-                      <div><strong class="text-xs uppercase block text-navy">ANNUALLY</strong><ul class="plain-list bullet-list text-xs text-muted"><li>Full portfolio review</li><li>Rebalance if required</li><li>Check Portfolio Overlap (Ensure active funds don't hold the exact same stocks)</li></ul></div>
+                      <div><strong class="text-xs uppercase block text-navy">ANNUALLY</strong><ul class="plain-list bullet-list text-xs text-muted"><li>Full portfolio review</li><li>Rebalance if required</li><li>Check holding overlap and overall concentration</li></ul></div>
                     </div>
                     <div class="flex items-start gap-3">
                       <div class="icon-wrapper small"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
@@ -1059,17 +1060,17 @@
                     <div class="inner-box text-center">
                       <div class="icon-wrapper small mx-auto mb-2"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2a2 2 0 0 1 2 2v2"></path><path d="M17 7h2a2 2 0 0 1 2 2v2"></path></svg></div>
                       <strong class="text-xs uppercase block mb-2 text-navy">THRESHOLD BASED</strong>
-                      <p class="text-xs text-navy mb-1">Trigger rebalance when allocation drifts</p>
+                      <p class="text-xs text-navy mb-1">Illustrative review bands when allocation drifts</p>
                       <span class="mono-data text-blue text-xl font-bold" data-fact="rule_rebalance_drift_threshold">5 / 10 percentage points</span>
                       <p class="text-xs text-navy mt-1">away from target allocation.</p>
                     </div>
                   </div>
                   <div class="flex gap-2 items-start text-xs text-muted mt-4 border-t pt-4 mb-4">
                     <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--status-green)" stroke-width="2" class="flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    <strong>Tax-Free Inflow Rebalancing:</strong> Instead of selling outperforming assets (which triggers capital gains tax), redirect your fresh monthly <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> inflows into the underperforming asset class until target allocation is restored.
+                    <strong>Rebalancing with new contributions:</strong> One approach is to direct new monthly <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> contributions toward assets below a chosen target. This may reduce the need for sales; tax, fees and the investment’s risks still matter.
                   </div>
                   <div class="p-3 rounded text-left border-l-4 callout-tip">
-                    <strong>💡 Beginner Shortcut (Vanguard Data):</strong> Vanguard research shows that rebalancing just <strong>once a year</strong> is optimal for most retail investors. Pick a memorable date (like your birthday or Diwali) and reset your equity/debt mix back to your target percentage. Don't overthink it.
+                    <strong>A simple review routine:</strong> An annual review is one possible schedule, rather than a universal optimum. A change in goals, cash needs or risk may call for an earlier review. Rebalancing can involve tax and transaction costs; a review does not always require a trade.
                   </div>
                 </div>
               </details>
@@ -1102,7 +1103,7 @@
                     </table>
                   </div>
                   <div class="mt-4 p-3 rounded text-left border-l-4 callout-tip">
-                    <strong>💡 Beginner Shortcut:</strong> Don't want to calculate risk metrics manually? You don't have to. Look for active funds with a consistent <strong>4 or 5-star rating on Value Research</strong> or Morningstar. These platforms pre-calculate all these metrics, and their star ratings automatically account for risk-adjusted returns.
+                    <strong>Reading fund ratings:</strong> A rating summarises a provider’s method and historical data. It is not a guarantee or a suitability assessment. The method, comparison group, fees and risks are worth checking alongside the underlying fund documents.
                   </div>
                 </div>
               </details>
@@ -1128,7 +1129,7 @@
                       </div>
                     </div>
                   </div>
-                  <p class="text-xs text-navy mt-4 border-t pt-2 font-medium">Best read together with tracking error and drawdown.</p>
+                  <p class="text-xs text-navy mt-4 border-t pt-2 font-medium">Read alongside tracking error and drawdown for a fuller picture.</p>
                 </div>
               </details>
 
@@ -1148,7 +1149,7 @@
                 <details>
                 <summary><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2" style="margin-right: 8px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> AGE-SPECIFIC LIFECYCLE GUIDANCE</summary>
                 <div class="details-content">
-                  <p class="text-sm text-muted mb-4">Static asset allocation models critically ignore changing human capital and fixed liabilities across different life stages. Note: <span class="jargon" data-tip="Securities and Exchange Board of India" tabindex="0">SEBI</span> replaced solution-oriented schemes with "Life Cycle Funds" in 2026 to automatically calibrate this shift.</p>
+                  <p class="text-sm text-muted mb-4">Income, debts, dependants and access needs can change at any age. These life-stage examples are discussion prompts, not age-based allocations. The registered Life Cycle Funds note below explains the separate fund-category rule.</p>
                   
                   <strong class="text-sm text-navy block mb-2 border-b pb-1">Initiating in the 20s: The Foundation Phase</strong>
                   <ul class="plain-list text-xs text-muted space-y-3 mb-4">
@@ -1158,19 +1159,19 @@
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Allocation:</div>
-                      <span>Illustrative baseline is 70% Equity, 25% Debt, 5% Gold. An 80% equity mix needs a separate check of your goals, access needs and ability to bear losses; it is not a default for this age group.</span>
+                      <span>The template percentages above are illustrations, not a baseline for people in their 20s. Goals, access needs and capacity for loss can differ greatly within an age group.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Priorities:</div>
-                      <span>Annihilate high-interest unsecured debt. 3-6 month emergency fund. Lock in an individual health policy. (Term life is unnecessary unless supporting dependents).</span>
+                      <span>Common checks include costly debt, emergency cash and health cover beyond the workplace. Life-cover needs depend on who relies on your income, debts and other obligations.</span>
                     </li>
                   </ul>
 
                   <strong class="text-sm text-navy block mb-2 border-b pb-1">Initiating in the 30s: The Fortification Phase</strong>
                   <ul class="plain-list text-xs text-muted space-y-3 mb-4">
                     <li class="flex flex-col gap-1">
-                      <div class="font-bold text-navy">The Catch-Up Penalty:</div>
-                      <span>Starting a ₹10k <span class="jargon" data-tip="Systematic Investment Plan" tabindex="0">SIP</span> at age 30 can generate ~₹41k/mo passive <span class="jargon" data-tip="Systematic Withdrawal Plan" tabindex="0">SWP</span> income by age 50. Delaying to age 45 requires a staggering ₹1.2 Lakh/mo to match it.</span>
+                      <div class="font-bold text-navy">Starting later:</div>
+                      <span>Starting later leaves fewer contribution periods before a fixed goal date. The amount needed depends on contributions, returns, inflation and the goal itself. A <span class="jargon" data-tip="Systematic Withdrawal Plan" tabindex="0">SWP</span> sells investment units; it does not create assured income.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Allocation:</div>
@@ -1178,7 +1179,7 @@
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Priorities:</div>
-                      <span>Expand emergency fund to 6-9 months. Review income-replacement protection where financial dependents exist. One possible starting point is the <strong>50/30/20 budgeting rule</strong> (50% needs, 30% wants, 20% savings). Adjust it to your expenses and commitments rather than treating it as a fixed rule.</span>
+                      <span>Changes in job security, household bills or dependants may justify reviewing emergency cash and income-replacement protection. One possible starting point is the <strong>50/30/20 budgeting rule</strong> (50% needs, 30% wants, 20% savings). Adjust it to your expenses and commitments rather than treating it as a fixed rule.</span>
                     </li>
                   </ul>
 
@@ -1190,11 +1191,11 @@
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Allocation:</div>
-                      <span>Balanced Glide Path (50–60% Equity, 30–40% Debt, 5–10% Gold). <span data-fact="sebi_rule_lifecycle_funds">SEBI introduced Life Cycle Funds and ended the solution-oriented scheme category in February 2026. This changes fund categories; it does not set an investment mix for every person.</span></span>
+                      <span>A move toward lower-risk holdings needs to reflect the actual goal and withdrawal dates, rather than a birthday. <span data-fact="sebi_rule_lifecycle_funds">SEBI introduced Life Cycle Funds and ended the solution-oriented scheme category in February 2026. This changes fund categories; it does not set an investment mix for every person.</span></span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Priorities:</div>
-                      <span>Bucket isolation for upcoming goals (e.g. children's higher education in 3–5 yrs shifted to Debt/Arbitrage). Review prepayment costs and liquidity when assessing interest above <span data-fact="rate_home_loan_threshold">8.5%</span> or <span class="jargon" data-tip="Equated Monthly Installment" tabindex="0">EMI</span> exceeds <span data-fact="rule_home_loan_prepay_emi_30_percent">30%</span> net income. These are prompts to check the loan, not instructions to repay it. Also check your personal insurance and <span class="jargon" data-tip="Pre-Existing Disease" tabindex="0">PED</span> waiting periods.</span>
+                      <span>For an upcoming goal such as education, consider how a loss or withdrawal delay would affect the payment. Debt and arbitrage funds carry risks too. Review prepayment costs and liquidity when assessing interest above <span data-fact="rate_home_loan_threshold">8.5%</span> or <span class="jargon" data-tip="Equated Monthly Installment" tabindex="0">EMI</span> exceeds <span data-fact="rule_home_loan_prepay_emi_30_percent">30%</span> net income. These are prompts to check the loan, not instructions to repay it. Also check your personal insurance and <span class="jargon" data-tip="Pre-Existing Disease" tabindex="0">PED</span> waiting periods.</span>
                     </li>
                   </ul>
 
@@ -1206,11 +1207,11 @@
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Allocation:</div>
-                      <span>Capital Preservation &amp; Income (30–40% Equity, 50–60% Sovereign Debt, 5–10% Gold).</span>
+                      <span>Approaching retirement can change withdrawal needs and capacity for loss. No equity, debt or gold percentage follows from age alone.</span>
                     </li>
                     <li class="flex flex-col gap-1">
                       <div class="font-bold text-navy">Priorities:</div>
-                      <span>One way to organise retirement withdrawals is to separate money into three time buckets (Bucket 1: 0–3 yrs Liquid/Overnight; Bucket 2: 3–7 yrs Arbitrage/Short Debt; Bucket 3: 7+ yrs Core Equity). Before extending a matured 15-year <span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> account, check its extension, withdrawal and tax rules. Check the nominee details on every demat account, mutual fund, <span class="jargon" data-tip="Employees Provident Fund" tabindex="0">EPF</span>, and property holding.</span>
+                      <span>One way to model retirement withdrawals is to separate near-term spending from later needs. Product choice within each time bucket still depends on risk, access, tax and the ability to adjust spending. Before extending a matured 15-year <span class="jargon" data-tip="Public Provident Fund" tabindex="0">PPF</span> account, check its extension, withdrawal and tax rules. Check the nominee details on every demat account, mutual fund, <span class="jargon" data-tip="Employees Provident Fund" tabindex="0">EPF</span>, and property holding.</span>
                     </li>
                   </ul>
                 </div>
@@ -1359,7 +1360,7 @@
             </p>
           </div>
         </div>
-        <p class="text-xs text-muted font-bold tracking-widest uppercase font-mono mt-6 w-full max-w-md mx-auto">Sparkfolio Framework v2.2<br><span class="opacity-70 mt-1 block">Framework updated: 30 October 2026 · Financial source dates in the notes</span></p>
+        <p class="text-xs text-muted font-bold tracking-widest uppercase font-mono mt-6 w-full max-w-md mx-auto">Sparkfolio Framework v2.2<br><span class="opacity-70 mt-1 block">Framework updated: 21 November 2026 · Financial source dates in the notes</span></p>
       </div>
     </footer>
 

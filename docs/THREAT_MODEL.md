@@ -22,3 +22,5 @@ The public site is static. Browser answers remain in memory. The local MCP proce
 | Schema restrictions exist only on paper | Runtime validation rejects unknown fields, invalid types and incomplete answers | MCP argument validation tests |
 
 Residual risks include incorrect source material, legal or rate changes after a review date, and users ignoring the educational notice. Automated validation does not replace independent financial, legal, accessibility or security review.
+
+Report vulnerabilities using [the repository security policy](../SECURITY.md). [Quality evidence](QUALITY.md) distinguishes automated regressions from manual accessibility and field-performance work still requiring real observations. Repository community documents supplement the organization's inherited contribution, support and security guidance.

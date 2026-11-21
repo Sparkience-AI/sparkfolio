@@ -34,11 +34,12 @@ npm test
 npm run validate
 npm run test:browser
 npm run test:mcp
+npm run test:agent
 npm run check
 npm run preview
 ```
 
-`validate` checks the decision matrix, amount validation, calculations, provenance, DOM structure, source HTML, production build and built HTML. `test:browser` tests the built site at 320, 390, 768 and 1280px and writes screenshots, a print PDF and lab timings to ignored `local/artifacts/`. Run `validate` before browser tests to avoid testing an outdated build. `check` runs validation, the MCP contract tests and browser tests in order.
+`validate` checks the decision matrix, amount validation, calculations, provenance, discovery metadata, DOM structure, source HTML, production build and built HTML. `test:browser` tests the built site at 320, 390, 768 and 1280px and writes screenshots, a print PDF and lab timings to ignored `local/artifacts/`. Run `validate` before browser tests to avoid testing an outdated build. `check` runs validation, MCP contract tests, agent-evaluation contract tests and browser tests in order. Scripted agent tests do not establish real model or cross-provider behavior; see [the agent interface](docs/AGENT_SURFACE.md) for recording and reviewing actual traces.
 
 The HTML validator configuration and all tests are versioned. Validation does not certify financial accuracy or full WCAG conformance. Source checking is an editorial task; automated tests prevent inconsistent display and invalid provenance claims.
 
@@ -83,3 +84,5 @@ Answers, amounts and search terms remain in browser memory. Sparkfolio does not 
 Sparkfolio and its authors are not registered with SEBI as an Investment Adviser, Research Analyst, Portfolio Manager or Broker-Dealer. Content is for financial literacy and does not constitute financial, investment, insurance, legal or tax advice. Investments may lose value; consult qualified professionals about personal decisions. No disclaimer is represented as a legal exemption or safe harbor.
 
 License: MIT (third-party font files retain their accompanying licenses).
+
+See [LICENSE](LICENSE), [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) and [SUPPORT.md](SUPPORT.md) for reuse, contributions and reporting. The [quality evidence notes](docs/QUALITY.md) distinguish automated checks from outstanding manual and field reviews. [llms.txt](https://sparkience-ai.github.io/sparkfolio/llms.txt) provides a compact discovery guide; it does not change crawler permissions or guarantee AI visibility.
