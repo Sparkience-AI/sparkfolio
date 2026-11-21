@@ -38,7 +38,7 @@ npm run check
 npm run preview
 ```
 
-`validate` checks the decision matrix, amount validation, calculations, provenance, DOM structure, source HTML, production build and built HTML. `test:browser` tests the built site at 320, 390, 768 and 1280px and writes screenshots, a print PDF and lab timings to ignored `local/artifacts/`. Run `validate` before browser tests to avoid testing an outdated build. `check` runs both in order.
+`validate` checks the decision matrix, amount validation, calculations, provenance, DOM structure, source HTML, production build and built HTML. `test:browser` tests the built site at 320, 390, 768 and 1280px and writes screenshots, a print PDF and lab timings to ignored `local/artifacts/`. Run `validate` before browser tests to avoid testing an outdated build. `check` runs validation, the MCP contract tests and browser tests in order.
 
 The HTML validator configuration and all tests are versioned. Validation does not certify financial accuracy or full WCAG conformance. Source checking is an editorial task; automated tests prevent inconsistent display and invalid provenance claims.
 

@@ -15,6 +15,8 @@ The JSON retains L1/L2/L3 groups for compatibility. Those groups describe editor
 
 Historical `2026-Q4` labels live in `legacy_verification_label`, not `reviewed_on`. They are not converted into precise review dates. Entries with a passed `review_due` date display as needing review both in the built page and dynamic source notes. Review queues are end-of-quarter for L3 and post-Budget for L2; a future law or notification may require earlier review. No scheduled automation is configured.
 
+When an agent requests a date before a verified claim's recorded source review, its effective status is also `needs_review`. This does not rewrite the historical record or determine which law applied on that date. The agent interface exposes evidence timing separately from the claim's effective period. Model timing and warnings are returned separately from the 38 registered claims; no source-review date is advanced by a code change.
+
 Every entry requires `claim_type`, `review_status`, `reviewed_on`, `effective_period`, `assumptions` and sources with `title`, `url` and a passage locator. Numeric inputs are separate where used. Unknown markers, duplicate IDs, missing provenance and fabricated verification dates fail validation.
 
 ## Rendering and calculations

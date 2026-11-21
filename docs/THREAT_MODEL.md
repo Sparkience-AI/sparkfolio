@@ -18,5 +18,7 @@ The public site is static. Browser answers remain in memory. The local MCP proce
 | Incomplete answers produce plausible output | Decision engine validates every enumerated answer | Exhaustive unit suite and MCP negative test |
 | Private answers leak to a provider | No provider client or network capability exists | Dependency and server inspection |
 | Protocol garbage corrupts the process | Parse errors are bounded JSON-RPC errors; no stack traces on stdout | stdio integration test |
+| Historical or expired evidence appears current | Separate evidence timing and applicability notes; model metadata and explicit out-of-window warnings | Historical-date and model-boundary regression tests |
+| Schema restrictions exist only on paper | Runtime validation rejects unknown fields, invalid types and incomplete answers | MCP argument validation tests |
 
 Residual risks include incorrect source material, legal or rate changes after a review date, and users ignoring the educational notice. Automated validation does not replace independent financial, legal, accessibility or security review.
