@@ -39,6 +39,8 @@ flowchart LR
 
 ### Local MCP server
 
+GitHub Pages hosts the web guide. The MCP server runs locally from a checkout and connects to a compatible stdio client.
+
 After `npm ci`, run `npm run mcp` from the repo root. For a client that launches its own server process, configure `node src/mcp-server.js` from the checkout. The server communicates over standard input and output and offers three read-only tools:
 
 | Tool | What it returns |
@@ -47,7 +49,7 @@ After `npm ci`, run `npm run mcp` from the repo root. For a client that launches
 | `get_claim` | Look up one claim, including its sources, applicable period and limits. |
 | `review_readiness` | Run the educational check with complete answers and an explicit evidence date. |
 
-See the [MCP setup and tool reference](docs/AGENT_SURFACE.md) for protocol support, evidence dates and evaluation instructions.
+See the [MCP setup and tool reference](docs/AGENT_SURFACE.md) for protocol support, evidence dates and evaluation instructions. The [Codex CLI pilot](docs/CODEX_MCP_PILOT.md) records the tested setup, outcomes and evaluation limits.
 
 ## Project documentation
 
