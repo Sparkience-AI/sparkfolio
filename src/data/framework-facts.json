@@ -17,10 +17,20 @@
       "legacy_verification_label": "2026-Q4",
       "claim_type": "rate",
       "review_status": "verified",
-      "reviewed_on": "2026-10-25",
-      "effective_period": "Provider listing observed 25 October 2026; confirm the notification for the investment quarter",
-      "assumptions": "The rate can change. The source shows the rate listed when checked; it does not guarantee the rate for later quarters.",
+      "reviewed_on": "2026-11-25",
+      "effective_period": "1 October to 31 December 2026 (Q3 of FY 2026–27)",
+      "assumptions": "The Department of Economic Affairs kept the previous quarter's rates for this period. Check its next notification for later quarters.",
       "sources": [
+        {
+          "title": "Department of Posts SB Order 12/2026 (official Hindi edition)",
+          "url": "https://utilities.cept.gov.in/dop/pdfbind.ashx?id=15716",
+          "locator": "30 September 2026, first paragraph: Q3 FY 2026–27 rates continue from Q2"
+        },
+        {
+          "title": "Department of Posts SB Order 12/2026 with the DEA memorandum (third-party-hosted copy)",
+          "url": "https://postal.digimit.in/wp-content/uploads/2026/09/cept-15533-revision-of-interest-rates-for-small-savings-schemes.pdf#page=2",
+          "locator": "Page 2, DEA memorandum F.No.1/4/2019-NS of 30 September 2026, paragraph 1"
+        },
         {
           "title": "India Post: saving schemes",
           "url": "https://www.indiapost.gov.in/banking-services/savings",
@@ -75,10 +85,20 @@
       "legacy_verification_label": "2026-Q4",
       "claim_type": "rate",
       "review_status": "verified",
-      "reviewed_on": "2026-10-25",
-      "effective_period": "Provider listing observed 25 October 2026; confirm the notification for the investment quarter",
-      "assumptions": "The rate can change. The source shows the rate listed when checked; it does not guarantee the rate for later quarters.",
+      "reviewed_on": "2026-11-25",
+      "effective_period": "1 October to 31 December 2026 (Q3 of FY 2026–27)",
+      "assumptions": "The Department of Economic Affairs kept the previous quarter's rates for this period. Check its next notification for later quarters.",
       "sources": [
+        {
+          "title": "Department of Posts SB Order 12/2026 (official Hindi edition)",
+          "url": "https://utilities.cept.gov.in/dop/pdfbind.ashx?id=15716",
+          "locator": "30 September 2026, first paragraph: Q3 FY 2026–27 rates continue from Q2"
+        },
+        {
+          "title": "Department of Posts SB Order 12/2026 with the DEA memorandum (third-party-hosted copy)",
+          "url": "https://postal.digimit.in/wp-content/uploads/2026/09/cept-15533-revision-of-interest-rates-for-small-savings-schemes.pdf#page=2",
+          "locator": "Page 2, DEA memorandum F.No.1/4/2019-NS of 30 September 2026, paragraph 1"
+        },
         {
           "title": "India Post: saving schemes",
           "url": "https://www.indiapost.gov.in/banking-services/savings",
@@ -180,21 +200,21 @@
       "copy_edited_on": "2026-10-30"
     },
     "study_spiva_active_largecap": {
-      "val": "SPIVA India’s Mid-Year 2026 report found that 74% of active Indian large-cap funds underperformed their assigned benchmark over the ten years ending June 2026.",
+      "val": "SPIVA India's Mid-Year 2026 report found that 74% of active Indian large-cap funds underperformed the S&P India LargeMidCap index over the ten years ending June 2026.",
       "label": "SPIVA India Large-Cap Outperformance Scorecard",
       "authority": "S&P Dow Jones Indices (SPIVA)",
       "category": "Market Scorecards",
       "legacy_verification_label": "2026-Q4",
       "claim_type": "research",
       "review_status": "verified",
-      "reviewed_on": "2026-10-25",
+      "reviewed_on": "2026-11-25",
       "effective_period": "Ten years ending 30 June 2026",
       "assumptions": "These are historical results for a category. The benchmark, costs and period affect the comparison; it does not tell you which fund will win in future.",
       "sources": [
         {
           "title": "S&P Dow Jones Indices: SPIVA India Mid-Year 2026",
-          "url": "https://www.spglobal.com/spdji/en/spiva/article/spiva-india/",
-          "locator": "Indian Equity Large-Cap Funds; ten-year underperformance"
+          "url": "https://www.spglobal.com/spdji/en/documents/spiva/spiva-india-scorecard-mid-year-2026.pdf#page=8",
+          "locator": "Page 8, Report 1a, Indian Equity Large-Cap row, 10-Year column (74.03%, rounded to 74%)"
         }
       ],
       "review_due": "2026-12-31",

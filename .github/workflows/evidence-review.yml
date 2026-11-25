@@ -1,0 +1,51 @@
+name: Maintain Sparkfolio evidence reviews
+
+on:
+  schedule:
+    - cron: '47 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evidence-review-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  checklists:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Maintain review issues
+        run: node scripts/review-maintenance.js issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  badges:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Check deployed source badges
+        run: node scripts/review-maintenance.js badges
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SITE_URL: https://sparkience-ai.github.io/sparkfolio/
