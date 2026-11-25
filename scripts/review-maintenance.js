@@ -37,10 +37,10 @@ function markdownText(value) {
 
 function renderRow(item, checked) {
   const { id, label, val, effective_period: period, sources } = item;
-  const valueText = val ? ' � ' + markdownText(val) : '';
-  const periodText = period ? ' � ' + markdownText(period) : '';
-  const links = sources.map(source => '[' + markdownText(source.title) + '](<' + source.url + '>) � ' + markdownText(source.locator));
-  return '- [' + (checked ? 'x' : ' ') + '] **' + markdownText(label) + '** (' + id + ')' + valueText + periodText + ' � ' + links.join(' � ') + ' ' + rowMarker(id);
+  const valueText = val ? ' · ' + markdownText(val) : '';
+  const periodText = period ? ' · ' + markdownText(period) : '';
+  const links = sources.map(source => '[' + markdownText(source.title) + '](<' + source.url + '>) · ' + markdownText(source.locator));
+  return '- [' + (checked ? 'x' : ' ') + '] **' + markdownText(label) + '** (' + id + ')' + valueText + periodText + ' · ' + links.join(' · ') + ' ' + rowMarker(id);
 }
 
 export function checklistBody(date, items, today, existingBody = '') {

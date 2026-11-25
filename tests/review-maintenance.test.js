@@ -26,7 +26,7 @@ test('checklist preserves checked rows, deferred rows and notes when the deadlin
   const edited = first.replace('- [ ]', '- [x]') + '\nMaintainer notes.\n';
   const next = checklistBody(due, [entry('test_1', 'Revised label'), entry('test_3')], '2027-01-01', edited);
   assert.match(next, /- \[x\] \*\*Revised label\*\*/);
-  assert.match(next, /7\.1% � Current quarter � \[Source\]\(<https:\/\/example\.com>\) � Passage/);
+  assert.match(next, /7\.1% · Current quarter · \[Source\]\(<https:\/\/example\.com>\) · Passage/);
   assert.match(next, /- \[ \] \*\*test\\_2\*\*/);
   assert.match(next, /- \[ \] \*\*test\\_3\*\*/);
   assert.match(next, /Review deadline has passed/);

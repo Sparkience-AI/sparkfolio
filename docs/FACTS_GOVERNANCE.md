@@ -40,7 +40,7 @@ Projection convention: effective annual return converted to monthly rate `(1 + a
 All 38 entries were classified and reviewed for scope. Source-checked entries are limited to the provider listing, court decision, circular, tax mapping or research result actually inspected. No blanket current-law verification is claimed.
 
 - PPF and SSY: provider listing checked; confirm the applicable quarterly notification before use.
-- EPF: the 1 July 2026 circular declares 8.25% for FY 2025-26, following Ministry approval dated 17 June. A third-party-hosted reproduction was visually inspected and corroborated with Akashvani's government news report; unsuccessful EPFO-host retrieval is disclosed. No FY 2026-27 rate is asserted.
+- EPF: the 1 July 2026 circular declares 8.25% for FY 2025–26, following Ministry approval dated 17 June. A third-party-hosted reproduction was visually inspected and corroborated with Akashvani’s government news report; unsuccessful EPFO-host retrieval is disclosed. No FY 2026–27 rate is asserted.
 - Life Cycle Funds: the February 2026 category circular does not prescribe every individual's allocation.
 - SPIVA: the inspected Mid-Year 2026 page reports 74% ten-year large-cap underperformance; category and period are explicit.
 - Vanguard: the 2023 available-lump-sum comparison is distinct from salary-funded monthly SIPs.
@@ -60,7 +60,7 @@ Each entry's full audit trail is in the registry and public source notes. No nam
 
 ## Follow-up audit closure
 
-The SSoT now records 25 verified entries, 10 editorial entries and 3 calculated illustrations. All 17 original pending entries have dated source inspection, provision locators, verification scope and conditions. Verified means the specific recorded statement is supported. EPF's original circular was inspected as a third-party-hosted reproduction and corroborated by the government broadcaster; its hosting limitation remains explicit. See `history/CLAIM_AUDIT_2026-10-25.md`.
+The SSoT now records 25 verified entries, 10 editorial entries and 3 calculated illustrations. All 17 original pending entries have dated source inspection, provision locators, verification scope and conditions. Verified means the specific recorded statement is supported. EPF’s original circular was inspected as a third-party-hosted reproduction and corroborated by the government broadcaster; its hosting limitation remains explicit. See `history/CLAIM_AUDIT_2026-10-25.md`.
 
 ## Independent decision-model data
 
