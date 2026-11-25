@@ -13,11 +13,19 @@ The JSON retains L1/L2/L3 groups for compatibility. Those groups describe editor
 - `editorial`: a Sparkfolio illustration or heuristic, not a statutory rule or externally established numerical requirement.
 - `calculated`: reproducible arithmetic with explicit assumptions, not a verified forecast or legal conclusion. Legal inputs can themselves remain under review.
 
-Historical `2026-Q4` labels live in `legacy_verification_label`, not `reviewed_on`. They are not converted into precise review dates. Entries with a passed `review_due` date display as needing review both in the built page and dynamic source notes. Review queues are end-of-quarter for L3 and post-Budget for L2; a future law or notification may require earlier review. No scheduled automation is configured.
+Historical `2026-Q4` labels live in `legacy_verification_label`, not `reviewed_on`. They are not converted into precise review dates. A verified claim with a passed `review_due` date displays as needing review in newly built pages and the agent surface. Review queues are end-of-quarter for L3 and post-Budget for L2. A future law or notification may require earlier review.
 
 When an agent requests a date before a verified claim's recorded source review, its effective status is also `needs_review`. This does not rewrite the historical record or determine which law applied on that date. The agent interface exposes evidence timing separately from the claim's effective period. Model timing and warnings are returned separately from the 38 registered claims; no source-review date is advanced by a code change.
 
 Every entry requires `claim_type`, `review_status`, `reviewed_on`, `effective_period`, `assumptions` and sources with `title`, `url` and a passage locator. Numeric inputs are separate where used. Unknown markers, duplicate IDs, missing provenance and fabricated verification dates fail validation.
+
+## Review checklists and public badges
+
+The [evidence maintenance workflow](../.github/workflows/evidence-review.yml) runs daily at 02:47 UTC (08:17 IST) on `main`. It groups claims and the decision model by `review_due` and opens one checklist issue per batch starting 14 calendar days before the deadline. It can catch up on already overdue dates. It preserves checked items and notes outside the generated block, and leaves closed issues closed.
+
+Check the sources and record the outcome in a pull request. Tick completed items in the issue, keep unresolved items open, and close the issue when the batch is resolved. Each checklist links the registered sources and passage locators. Verification dates, claim values and dispositions require a source or editorial review. See the [November evidence audit](history/CLAIM_AUDIT_2026-11-25.md) for the latest findings and follow-up windows.
+
+A separate job compares deployed source badges with the current registry status and dispatches the normal validation and deployment workflow on `main` when a badge is missing or differs. It skips dispatch while a production deployment is active. A failed fetch or a response without any recognizable badges fails the check. Later daily runs recheck the live guide and can recover from a missed schedule or failed deployment. GitHub can disable scheduled workflows in public repositories after 60 days without repository activity. If that happens, open the maintenance workflow in Actions and choose **Enable workflow**. Use **Run workflow** on `main` whenever an immediate recheck is needed. [GitHub schedule behavior](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
 
 ## Rendering and calculations
 
@@ -32,7 +40,7 @@ Projection convention: effective annual return converted to monthly rate `(1 + a
 All 38 entries were classified and reviewed for scope. Source-checked entries are limited to the provider listing, court decision, circular, tax mapping or research result actually inspected. No blanket current-law verification is claimed.
 
 - PPF and SSY: provider listing checked; confirm the applicable quarterly notification before use.
-- EPF: the 1 July 2026 circular declares 8.25% for FY 2025–26, following Ministry approval dated 17 June. A third-party-hosted reproduction was visually inspected and corroborated with Akashvani’s government news report; unsuccessful EPFO-host retrieval is disclosed. No FY 2026–27 rate is asserted.
+- EPF: the 1 July 2026 circular declares 8.25% for FY 2025-26, following Ministry approval dated 17 June. A third-party-hosted reproduction was visually inspected and corroborated with Akashvani's government news report; unsuccessful EPFO-host retrieval is disclosed. No FY 2026-27 rate is asserted.
 - Life Cycle Funds: the February 2026 category circular does not prescribe every individual's allocation.
 - SPIVA: the inspected Mid-Year 2026 page reports 74% ten-year large-cap underperformance; category and period are explicit.
 - Vanguard: the 2023 available-lump-sum comparison is distinct from salary-funded monthly SIPs.
@@ -52,7 +60,7 @@ Each entry's full audit trail is in the registry and public source notes. No nam
 
 ## Follow-up audit closure
 
-The SSoT now records 25 verified entries, 10 editorial entries and 3 calculated illustrations. All 17 original pending entries have dated source inspection, provision locators, verification scope and conditions. Verified means the specific recorded statement is supported. EPF’s original circular was inspected as a third-party-hosted reproduction and corroborated by the government broadcaster; its hosting limitation remains explicit. See `history/CLAIM_AUDIT_2026-10-25.md`.
+The SSoT now records 25 verified entries, 10 editorial entries and 3 calculated illustrations. All 17 original pending entries have dated source inspection, provision locators, verification scope and conditions. Verified means the specific recorded statement is supported. EPF's original circular was inspected as a third-party-hosted reproduction and corroborated by the government broadcaster; its hosting limitation remains explicit. See `history/CLAIM_AUDIT_2026-10-25.md`.
 
 ## Independent decision-model data
 
